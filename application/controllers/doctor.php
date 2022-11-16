@@ -886,8 +886,8 @@ class DoctorController extends BaseController
         ];
 
         if (isset($specialtySeoTags[$specialty->name])) {
-            $this->view->page_title = mb_str_replace('Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialtySeoTags[$specialty->name][0]);
-            $this->view->page_description = mb_str_replace('Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialtySeoTags[$specialty->name][1]);
+            $this->view->page_title = str_replace('в Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialtySeoTags[$specialty->name][0]);
+            $this->view->page_description = str_replace('в Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialtySeoTags[$specialty->name][1]);
         }
         $metroManager = new MetroManager();
         $this->view->hasMetro = !empty($metroManager->getListByCityId($city_id));
