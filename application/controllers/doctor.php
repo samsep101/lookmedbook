@@ -32,7 +32,7 @@ class DoctorController extends BaseController
         if (in_array($doctor_id, $landing_specialty_list)) {
             $doctor_id = str_replace('2', '', $doctor_id);
         }
-        $specialty  =   null;
+        $specialty = null;
 
 
         $district_manager = new DistrictManager();
@@ -45,37 +45,37 @@ class DoctorController extends BaseController
             'visit_type' => $this->request('visit_type', 'clinic'),
             'discount' => 0,
         ];
-        if (strpos($landing_alias,"detskij")!==false)// || $landing_alias=='detskij')
-           $search_flags['doctor_type']='children';
-        if (strpos($landing_alias,"na-dom")!==false)// || $landing_alias=='na-dom')
-           $search_flags['visit_type']='home';
-        if (strpos($landing_alias,"skidki")!==false)// || $landing_alias=='skidki')
-           $search_flags['discount']=1;
+        if (strpos($landing_alias, "detskij") !== false)// || $landing_alias=='detskij')
+            $search_flags['doctor_type'] = 'children';
+        if (strpos($landing_alias, "na-dom") !== false)// || $landing_alias=='na-dom')
+            $search_flags['visit_type'] = 'home';
+        if (strpos($landing_alias, "skidki") !== false)// || $landing_alias=='skidki')
+            $search_flags['discount'] = 1;
 
-        $landing_alias_e=$landing_alias;
-        $landing_alias_e=  str_replace("-detskij", "", $landing_alias_e);
-        $landing_alias_e=  str_replace("-na-dom", "", $landing_alias_e);
-        $landing_alias_e=  str_replace("-skidki", "", $landing_alias_e);
-        $landing_alias_e=  str_replace("detskij", "", $landing_alias_e);
-        $landing_alias_e=  str_replace("na-dom", "", $landing_alias_e);
-        $landing_alias_e=  str_replace("skidki", "", $landing_alias_e);
-        $v=explode('-',$landing_alias_e);
-        $district   =   null;
-        $metro      =   null;
-        $region     =   null;
-        $street     =   null;
+        $landing_alias_e = $landing_alias;
+        $landing_alias_e = str_replace("-detskij", "", $landing_alias_e);
+        $landing_alias_e = str_replace("-na-dom", "", $landing_alias_e);
+        $landing_alias_e = str_replace("-skidki", "", $landing_alias_e);
+        $landing_alias_e = str_replace("detskij", "", $landing_alias_e);
+        $landing_alias_e = str_replace("na-dom", "", $landing_alias_e);
+        $landing_alias_e = str_replace("skidki", "", $landing_alias_e);
+        $v = explode('-', $landing_alias_e);
+        $district = null;
+        $metro = null;
+        $region = null;
+        $street = null;
         if ($v) {
             $r = [];
-            for ($i=0;$i<=count($v);++$i) {
-                $r[]=(isset($v[$i])) ? $v[$i] : '';
-                for ($j=0;$j<=count($v);++$j) {
-                    $r[]=(isset($v[$i]) and isset($v[$j])) ? $v[$i].'-'.$v[$j] : '';
-                    for ($k=0;$k<=count($v);++$k) {
-                        $r[]=(isset($v[$i]) and isset($v[$j]) and isset($v[$k])) ? $v[$i].'-'.$v[$j].'-'.$v[$k] : '';
-                        for ($z=0;$z<=count($v);++$z) {
-                            $r[]=(isset($v[$i]) and isset($v[$j]) and isset($v[$k]) and isset($v[$z])) ? $v[$i].'-'.$v[$j].'-'.$v[$k].'-'.$v[$z] : '';
-                            for ($q=0;$q<=count($v);++$q) {
-                                $r[]=(isset($v[$i]) and isset($v[$j]) and isset($v[$k]) and isset($v[$z]) and isset($v[$q])) ? $v[$i].'-'.$v[$j].'-'.$v[$k].'-'.$v[$z].'-'.$v[$q] : '';
+            for ($i = 0; $i <= count($v); ++$i) {
+                $r[] = (isset($v[$i])) ? $v[$i] : '';
+                for ($j = 0; $j <= count($v); ++$j) {
+                    $r[] = (isset($v[$i]) and isset($v[$j])) ? $v[$i] . '-' . $v[$j] : '';
+                    for ($k = 0; $k <= count($v); ++$k) {
+                        $r[] = (isset($v[$i]) and isset($v[$j]) and isset($v[$k])) ? $v[$i] . '-' . $v[$j] . '-' . $v[$k] : '';
+                        for ($z = 0; $z <= count($v); ++$z) {
+                            $r[] = (isset($v[$i]) and isset($v[$j]) and isset($v[$k]) and isset($v[$z])) ? $v[$i] . '-' . $v[$j] . '-' . $v[$k] . '-' . $v[$z] : '';
+                            for ($q = 0; $q <= count($v); ++$q) {
+                                $r[] = (isset($v[$i]) and isset($v[$j]) and isset($v[$k]) and isset($v[$z]) and isset($v[$q])) ? $v[$i] . '-' . $v[$j] . '-' . $v[$k] . '-' . $v[$z] . '-' . $v[$q] : '';
                             }
                         }
                     }
@@ -85,7 +85,7 @@ class DoctorController extends BaseController
             //костыль, ищем сначала длинные названия например САДОВАЯ КОРЕТНАЯ потом короткие СОДОВАЯ
             //иначе найдем первое короткое название и остановимся.
             //select * from street where name like '%садовая%'
-            usort($r, function($a, $b) {
+            usort($r, function ($a, $b) {
                 return strlen($b) - strlen($a);
             });
 
@@ -95,54 +95,54 @@ class DoctorController extends BaseController
             $specialty = $specialty_manager->getFirstByAliases($r);
             $street = $street_manager->getFirstByAliases($r);
         } else {
-          $district = $district_manager->getOneByAlias($landing_alias);
-          $metro    = $metro_manager->getOneByAlias($landing_alias);
-          $region   = $region_manager->getOneByAlias($landing_alias);
-          $specialty = $specialty_manager->getOneByAlias($landing_alias);
-          $street = $street_manager->getOneByAlias($landing_alias);
+            $district = $district_manager->getOneByAlias($landing_alias);
+            $metro = $metro_manager->getOneByAlias($landing_alias);
+            $region = $region_manager->getOneByAlias($landing_alias);
+            $specialty = $specialty_manager->getOneByAlias($landing_alias);
+            $street = $street_manager->getOneByAlias($landing_alias);
         }
         if (
-                $specialty!=null
-             || $district!=null
-             || $region!=null
-             || $metro!=null
-             || $street!=null
-             || $search_flags['doctor_type']!='adult'
-             || $search_flags['visit_type']!='clinic'
-             || $search_flags['discount']!=0
+            $specialty != null
+            || $district != null
+            || $region != null
+            || $metro != null
+            || $street != null
+            || $search_flags['doctor_type'] != 'adult'
+            || $search_flags['visit_type'] != 'clinic'
+            || $search_flags['discount'] != 0
 
         ) {
-            $this->index($specialty ? $specialty->alias : null, $district, $metro, $region,$street,$search_flags);
+            $this->index($specialty ? $specialty->alias : null, $district, $metro, $region, $street, $search_flags);
             unset($specialty);
             unset($district);
             unset($metro);
             unset($region);
             unset($street);
 
-/*
-        if ($region){
-            $this->index(null, null, null, $region);
-            unset($specialty);
-            unset($district);
-            unset($metro);
-            unset($region);
-        }elseif ($metro){
-            $this->index(null, null, $metro);
-            unset($specialty);
-            unset($district);
-            unset($metro);
-        }elseif ($district){
-            $this->index(null, $district);
-            unset($specialty);
-            unset($district);
-        }elseif ($specialty) {
-            $this->index($landing_alias);
-            unset($specialty);
-*/
+            /*
+                    if ($region){
+                        $this->index(null, null, null, $region);
+                        unset($specialty);
+                        unset($district);
+                        unset($metro);
+                        unset($region);
+                    }elseif ($metro){
+                        $this->index(null, null, $metro);
+                        unset($specialty);
+                        unset($district);
+                        unset($metro);
+                    }elseif ($district){
+                        $this->index(null, $district);
+                        unset($specialty);
+                        unset($district);
+                    }elseif ($specialty) {
+                        $this->index($landing_alias);
+                        unset($specialty);
+            */
         } else {
             $doctor = $doctor_manager->getOneByIdOrAlias($doctor_id);
 
-            if (is_null($doctor)){
+            if (is_null($doctor)) {
                 $doctor = $doctor_manager->getOneByOldAlias($doctor_id);
                 if ($doctor) {
                     RedirectManager::redirect301(DoctorPageLinkViewHelper::getLink($doctor));
@@ -189,11 +189,11 @@ class DoctorController extends BaseController
             );
 
             if (!empty($texts) && count($texts) > 0) {
-                foreach ($texts AS $tKey => $tValue) {
+                foreach ($texts as $tKey => $tValue) {
                     preg_match_all("|<iframe(.*)/>|U", $tValue, $out, PREG_PATTERN_ORDER);
                     if (count($out[0])) {
                         $replace = array();
-                        foreach ($out[0] AS $oValue) {
+                        foreach ($out[0] as $oValue) {
                             $replace[] = substr($oValue, 0, strlen($oValue) - 2) . '></iframe>';
                         }
                         $text = str_replace($out[0], $replace, $tValue);
@@ -236,7 +236,6 @@ class DoctorController extends BaseController
             unset($relations);
 
 
-
             foreach ($doctor->clinics as $clinic) {
                 foreach ($doctor->specialties as $specialty) {
                     $shed = $doctor_schedule_manager->getOneCurrentByDoctorIdAndClinicIdAndSpecialtyId($doc_id, $clinic->id, $specialty->id);
@@ -249,16 +248,15 @@ class DoctorController extends BaseController
             unset($doctor_schedules);
 
             $specnames = [];
-            foreach($doctor->specialties as $one){
+            foreach ($doctor->specialties as $one) {
                 $specnames[] = $one->name;
             }
 
             // Врач диетолог, эндокринолог, терапевт, врач узи Ковшутина Любовь Михайловна: отзывы, запись на прием, цены и рейтинг на LookMedBook
             //$this->view->page_title = $doctor->full_name . ': отзывы, запись на прием, цены и рейтинг на '.SITE_NAME;
-            $this->view->page_title = sprintf('Врач %s %s: отзывы, запись на прием, цены и рейтинг на '.SITE_NAME, implode(', ', $specnames), $doctor->full_name);
-            $this->view->page_description = 'Интересует врач '.$doctor->full_name.'? '.SITE_NAME.' предлагает посмотреть отзывы и рейтинг от клиентов, узнать стоимость и время приема и возможность записи онлайн.';
+            $this->view->page_title = sprintf('Врач %s %s: отзывы, запись на прием, цены и рейтинг на ' . SITE_NAME, implode(', ', $specnames), $doctor->full_name);
+            $this->view->page_description = 'Интересует врач ' . $doctor->full_name . '? ' . SITE_NAME . ' предлагает посмотреть отзывы и рейтинг от клиентов, узнать стоимость и время приема и возможность записи онлайн.';
         }
-
 
 
         $this->view->city_id = $this->city->getId();
@@ -267,9 +265,9 @@ class DoctorController extends BaseController
         $maxPrice = null;
         $purpose_prices = array();
         if (!empty($doctor->clinics)) {
-            foreach ($doctor->clinics AS $clinic) {
+            foreach ($doctor->clinics as $clinic) {
                 $first_price = $second_price = 0;
-                foreach ($doctor->specialties AS $specialty) {
+                foreach ($doctor->specialties as $specialty) {
                     $first_price = $doctor->getFirstVisitPrice($clinic->id, $specialty->id);
                     $second_price = $doctor->getSecondVisitPrice($clinic->id, $specialty->id);
                     $minPrice = min(
@@ -282,10 +280,10 @@ class DoctorController extends BaseController
                         $this->getMaxPrice($first_price),
                         $this->getMaxPrice($second_price)
                     );
-                    $purpose_prices[$clinic->id]['spec'][ $specialty->id]['first_price']['name'] = 'Первичный прием';
-                    $purpose_prices[$clinic->id]['spec'][ $specialty->id]['first_price']['price'] = $first_price;
-                    $purpose_prices[$clinic->id]['spec'][ $specialty->id]['second_price']['name'] = 'Вторичный прием';
-                    $purpose_prices[$clinic->id]['spec'][ $specialty->id]['second_price']['price'] = $second_price;
+                    $purpose_prices[$clinic->id]['spec'][$specialty->id]['first_price']['name'] = 'Первичный прием';
+                    $purpose_prices[$clinic->id]['spec'][$specialty->id]['first_price']['price'] = $first_price;
+                    $purpose_prices[$clinic->id]['spec'][$specialty->id]['second_price']['name'] = 'Вторичный прием';
+                    $purpose_prices[$clinic->id]['spec'][$specialty->id]['second_price']['price'] = $second_price;
                 }
                 if (!$first_price) {
                     $first_price = $doctor->getFirstVisitPrice($clinic->id);
@@ -347,16 +345,17 @@ class DoctorController extends BaseController
         return $value === null ? 0 : $value;
     }
 
-    private function getDoctorsToSlider($doctor_id) {
+    private function getDoctorsToSlider($doctor_id)
+    {
         $clinics = [];
         $specialties = [];
         $doctor_search_params = new DoctorSearchParams();
-        $doctor_search_params->doctor_id =$doctor_id;
-        $doctor_search_params->_id =$doctor_id;
+        $doctor_search_params->doctor_id = $doctor_id;
+        $doctor_search_params->_id = $doctor_id;
         $doctor_search_params->group_by = 'ds2c';
         $doctor_specialty_to_clinic_manager = ModelManagerFactory::getByName('doctor_specialty_to_clinic');
         $clinics_and_specialities = $doctor_specialty_to_clinic_manager->getListByDoctorSearchParams($doctor_search_params);
-        foreach($clinics_and_specialities as $rec) {
+        foreach ($clinics_and_specialities as $rec) {
             $clinics[$rec->clinic_id] = $rec->clinic;
             $specialties[$rec->specialty_id] = $rec->specialty;
         }
@@ -366,7 +365,7 @@ class DoctorController extends BaseController
 
         $clinic_ids = [];
         //все врачи тех же специальностей, которые работают в клиниках текущего врача
-        foreach ($clinics AS $clinic) {
+        foreach ($clinics as $clinic) {
             $clin_id = $clinic->getId();
             $clinic_ids[] = $clin_id;
             $clinics_names[$clin_id] = $clinic->name;
@@ -374,7 +373,7 @@ class DoctorController extends BaseController
 
         //все врачи специальностей текущего врача из всех базы
         $specialties_ids = [];
-        foreach ($specialties AS $specialty) {
+        foreach ($specialties as $specialty) {
             $spec_id = $specialty->getId();
             $specialties_ids[] = $spec_id;
             $specialties_names[$spec_id] = $specialty->name;
@@ -387,11 +386,13 @@ class DoctorController extends BaseController
         $doctor_search_params->group_by = 'doctor';
 
         $clinics_and_specialities = $doctor_specialty_to_clinic_manager->getListByDoctorSearchParams($doctor_search_params);
-        foreach($clinics_and_specialities as $rec) {
-            if($rec->doctor_id != $doctor_id) {
+        foreach ($clinics_and_specialities as $rec) {
+            if ($rec->doctor_id != $doctor_id) {
                 $doctors[] = $rec->doctor;
             }
-            if(count($doctors)>50) { break; }
+            if (count($doctors) > 50) {
+                break;
+            }
         }
         unset($doctor_search_params);
 
@@ -411,11 +412,11 @@ class DoctorController extends BaseController
             $specialties_names = [];
 
             $regions_ids = [];
-            foreach ($clinics AS $clinic) {
+            foreach ($clinics as $clinic) {
                 $regions_ids[] = $clinic->region_id;
             }
             $specialties_ids = [];
-            foreach ($specialties AS $specialty) {
+            foreach ($specialties as $specialty) {
                 $spec_id = $specialty->getId();
                 $specialties_ids[] = $spec_id;
                 $specialties_names[$spec_id] = $specialty->name;
@@ -427,11 +428,13 @@ class DoctorController extends BaseController
             $doctor_search_params->group_by = 'doctor';
 
             $clinics_and_specialities = $doctor_specialty_to_clinic_manager->getListByDoctorSearchParams($doctor_search_params);
-            foreach($clinics_and_specialities as $rec) {
-                if($rec->doctor_id != $doctor_id) {
+            foreach ($clinics_and_specialities as $rec) {
+                if ($rec->doctor_id != $doctor_id) {
                     $doctors[] = $rec->doctor;
                 }
-                if(count($doctors)>50) { break; }
+                if (count($doctors) > 50) {
+                    break;
+                }
             }
             unset($doctor_search_params);
 
@@ -472,7 +475,7 @@ class DoctorController extends BaseController
             case 'other':
                 $specialties_name = array();
 
-                foreach ($data['data'] AS $dValue) {
+                foreach ($data['data'] as $dValue) {
                     $specialties_name[] = $dValue->plural_name;
                 }
 
@@ -490,13 +493,13 @@ class DoctorController extends BaseController
         $specialties_for_title = array();
         $clinics_for_title = array();
 
-        foreach ($specialties AS $sValue) {
+        foreach ($specialties as $sValue) {
             if ($sValue->plural_name) {
                 $specialties_for_title[] = $sValue->plural_name;
             }
         }
 
-        foreach ($clinics AS $cValue) {
+        foreach ($clinics as $cValue) {
             if ($cValue->name) {
                 $clinics_for_title[] = $cValue->name;
             }
@@ -560,7 +563,7 @@ class DoctorController extends BaseController
     }
 
 
-    public function index($specialty_alias = NULL, $district = 0, $metro_station = 0, $region = 0, $street =0, $search_flags=null)
+    public function index($specialty_alias = NULL, $district = 0, $metro_station = 0, $region = 0, $street = 0, $search_flags = null)
     {
         if ($_SERVER['REQUEST_URI'] == '/doctor/search')
             ErrorPageViewHelper::page404('404');
@@ -584,8 +587,8 @@ class DoctorController extends BaseController
 
         $this->view->landing_page = $landing;
 
-        $this->view->page_title = 'Найти врача - «'.SITE_NAME.'»';
-        $this->view->page_description = 'Найти врача - вся информация обо всех известных заболеваниях на сервисе '.SITE_NAME.'';
+        $this->view->page_title = 'Найти врача - «' . SITE_NAME . '»';
+        $this->view->page_description = 'Найти врача - вся информация обо всех известных заболеваниях на сервисе ' . SITE_NAME . '';
 
         $this->view->menu_active = 'doctor';
 
@@ -636,7 +639,7 @@ class DoctorController extends BaseController
         if ($specialty_alias) {
             $specialty = $specialty_manager->getOneByAlias($specialty_alias);
             if (!$specialty) {
-                    ErrorPageViewHelper::page404('404');
+                ErrorPageViewHelper::page404('404');
             }
         }
 
@@ -645,7 +648,7 @@ class DoctorController extends BaseController
         $longitude = $city->lng;
         $city_id = $city->getId();
 
-        if (!$district){
+        if (!$district) {
             $district_manager = new DistrictManager();
             $district = NULL;
             $district_alias = $this->request('district');
@@ -656,8 +659,7 @@ class DoctorController extends BaseController
             }
         }
 
-        if (!$region)
-        {
+        if (!$region) {
             $region_manager = new RegionManager();
             $region = NULL;
             $region_alias = $this->request('region');
@@ -666,8 +668,8 @@ class DoctorController extends BaseController
                 if (!$region || $region->district_id != $district->getId())
                     ErrorPageViewHelper::page404();
             }
-        }else{
-            if (!$district){
+        } else {
+            if (!$district) {
                 $district = $region->parent;
             }
         }
@@ -684,8 +686,7 @@ class DoctorController extends BaseController
             }
         }
 
-        if (!$metro_station)
-        {
+        if (!$metro_station) {
             $metro_station_manager = new MetroStationManager();
             $metro_station = NULL;
             $metro_alias = $this->request('metro');
@@ -786,13 +787,13 @@ class DoctorController extends BaseController
             }
 
             $this->view->page_title = SeoTextViewHelper::getTitle($specialty, $address_object, $search_flags);
-            $this->view->page_description = SeoTextViewHelper::getDescription($specialty, $address_object,$search_flags);
+            $this->view->page_description = SeoTextViewHelper::getDescription($specialty, $address_object, $search_flags);
         }
         $this->view->specialty = $specialty;
         if (is_array($search_flags)) {
-            $this->view->visit_type=$search_flags['visit_type'];
-            $this->view->doctor_type=$search_flags['doctor_type'];
-            $this->view->discount=$search_flags['discount'];
+            $this->view->visit_type = $search_flags['visit_type'];
+            $this->view->doctor_type = $search_flags['doctor_type'];
+            $this->view->discount = $search_flags['discount'];
         }
         $this->view->address = new Address();
         $this->view->address->city_id = $city ? $city->getId() : FALSE;
@@ -850,6 +851,44 @@ class DoctorController extends BaseController
             $doctorSearchParams
         );
 
+        //todo здесь короче прихуярю встройку SEO
+        $specialtySeoTags = [
+            'аллерголог-иммунолог' => [
+                'Врачи аллергологи-иммунологи в Москве - записаться на прием к доктору',
+                'Ищете врача аллерголог-иммунолога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'
+            ],
+            'андролог'=>['Врачи андрологи в Москве, записаться на прием, отзывы, цена консультации | Посоветуйте хорошего','Ищете врача андролога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'акушер-гинеколог'=>['Врачи акушер-гинекологи в Москве, запись на прием, отзывы и рейтинги','Ищете врача акушер-гинеколога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'анестезиолог-реаниматолог'=>['Врачи анестезиологи-реаниматологи в Москве, отзывы','Ищете врача анестезиолог-реаниматолога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'вертебролог'=>['Врачи вертебрологи в Москве - запись на прием | Вертеброневролог записаться на консультация по ОМС','Ищете врача вертебролога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'врач ЛФК'=>['Врачи ЛФК в Москве, отзывы | Специалисты лечебной физкультуры и спортивной медицины','Ищете врача врача ЛФК в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'врач МРТ'=>['Врачи МРТ в Москве - запись на прием, отзывы на LookMedBook','Ищете врача врача МРТ в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'врач УЗИ'=>['Врачи УЗИ диагностики в Москве, отзывы о специалистах','Ищете врача врача УЗИ в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'врач функциональной диагностики'=>['Врачи функциональной диагностики в Москве - запись на прием, отзывы','Ищете врача врач функциональной диагностика в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'врач-онколог (ОМС)'=>['Врачи-онкологи в Москве по ОМС, запись на прием, отзывы','Ищете врача врача-онколога (ОМС) в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'гастроэнтеролог'=>['Врачи гастроэнтерологи в Москве,  записаться на прием | Запись на консультацию','Ищете врача гастроэнтеролога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'гематолог'=>['Врачи гематологи в Москве - записаться на прием к доктору','Ищете врача гематолога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'гинеколог'=>['Врачи гинекологи в Москве, отзывы | Гинекология записаться к доктору','Ищете врача гинеколога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'гирудотерапевт'=>['Врачи гирудотерапевты в Москве | Запись на прием, отзывы','Ищете врача гирудотерапевта в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'гомеопат'=>['Врачи гомеопаты в Москве - записаться на прием, отзывы','Ищете врача гомеопата в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'дерматовенеролог'=>['Врачи дерматовенерологи в Москве, отзывы | Дерматолог венеролог','Ищете врача дерматовенеролога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'дерматолог'=>['Врачи дерматологи в Москве, запись на прием, отзывы | Записаться онлайн к доктору','Ищете врача дерматолога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'диетолог'=>['Врачи диетологи в Москве, запись на прием по похудению | Диетология, врач по питанию','Ищете врача диетолога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'иглорефлексотерапевт'=>['Врачи иглорефлексотерапевты в Москве | Невролог рефлексотерапевт','Ищете врача иглорефлексотерапевта в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'инфекционист'=>['Врачи инфекционисты в Москве, записаться на прием, отзывы','Ищете врача инфекциониста в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'кардиолог'=>['Врачи кардиологи в Москве, записаться на прием, отзывы | Запись на консультацию','Ищете врача кардиолога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'кардиохирург'=>['Врачи кардиохирурги в Москве, запись на прием | Кардиолог','Ищете врача кардиохирурга в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'кинезиолог'=>['Врачи кинезиологи в Москве, запись на прием, отзывы | Консультация','Ищете врача кинезиолога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'ЛОР (отоларинголог)'=>['Врачи ЛОРы в Москве, запись на прием, отзывы и рейтинг | Доктор отоларинголог','Ищете врача ЛОРа (отоларинголога) в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'маммолог'=>['Врачи маммологи в Москве, запись на прием, отзывы и рейтинги докторов','Ищете врача маммолога в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'мануальный терапевт'=>['Врачи мануальные терапевты в Москве | Записаться к доктору костоправу','Ищете врача мануальный терапевта в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.'],
+            'массажист'=>['Врачи массажисты в Москве | Услуги массажа, профессиональные мастера','Ищете врача массажиста в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.']
+        ];
+
+        if (isset($specialtySeoTags[$specialty->name])) {
+            $this->view->page_title = mb_str_replace('Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialtySeoTags[$specialty->name][0]);
+            $this->view->page_description = mb_str_replace('Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialtySeoTags[$specialty->name][1]);
+        }
         $metroManager = new MetroManager();
         $this->view->hasMetro = !empty($metroManager->getListByCityId($city_id));
 
@@ -1259,7 +1298,7 @@ class DoctorController extends BaseController
             $params = isset($specialtyParams[$specialtyAlias]) ? $specialtyParams[$specialtyAlias] : array();
 
             if ($params) {
-                foreach ($verifiableField AS $vfValue) {
+                foreach ($verifiableField as $vfValue) {
                     if (!empty($params['tableFields'][$vfValue])) {
                         $doctor_search_params->$vfValue = $params['tableFields'][$vfValue];
                     }
@@ -1288,13 +1327,13 @@ class DoctorController extends BaseController
         $key = 'search_params_return';
         $specialty_id = $doctor_search_params->specialty_id;
 
-        $url_parts = explode("/", empty($_SERVER['HTTP_REFERER'])?'':$_SERVER['HTTP_REFERER']);
+        $url_parts = explode("/", empty($_SERVER['HTTP_REFERER']) ? '' : $_SERVER['HTTP_REFERER']);
         $last_part = $url_parts[count($url_parts) - 1];
         $url_params = explode("?", $last_part);
         $search_params_key = $url_params[0];
 
         if (isset($_SESSION['last_search_params']) && $_SESSION['last_search_params']->sort_salt) {
-          $doctor_search_params->sort_salt = $_SESSION['last_search_params']->sort_salt;
+            $doctor_search_params->sort_salt = $_SESSION['last_search_params']->sort_salt;
         }
 
         $_SESSION['last_search_params'] = $doctor_search_params;
@@ -1322,7 +1361,8 @@ class DoctorController extends BaseController
         return $doctor_search_params;
     }
 
-    public function ajaxSearch_specialty($doctor_search_params) {
+    public function ajaxSearch_specialty($doctor_search_params)
+    {
         $specialty_manager = ModelManagerFactory::getByName('specialty');
         $specialty = $specialty_manager->getOneByIdOrAlias($doctor_search_params->specialty_id);
         $this->view->specialty = $specialty;
@@ -1333,7 +1373,8 @@ class DoctorController extends BaseController
 
     // уебанский способ - выбирает всех врачей из базы прямо сюда, а потом делает срез, выкидывая остатки.
     // надо будет сделать нормальную выборку.
-    public function ajaxSearch__search_wo_doctname($doctor_search_params, $doctor_manager, $specialty, $doctors, $exclude_doctor_ids) {
+    public function ajaxSearch__search_wo_doctname($doctor_search_params, $doctor_manager, $specialty, $doctors, $exclude_doctor_ids)
+    {
         if (!empty($doctor_search_params->doctor_name)) {
             return [$doctors, 0, 0];
         }
@@ -1346,15 +1387,15 @@ class DoctorController extends BaseController
         if (!$total_number_doctors) {
             $total_doctors = $doctor_manager->doctorsForRelatedSpecialty($doctor_search_params, $specialty->getId());
             $total_number_doctors = count($total_doctors);
-            if($exclude_doctor_ids) foreach($total_doctors as $i=>$doctor){
-                if(in_array($doctor->id, $exclude_doctor_ids)){
+            if ($exclude_doctor_ids) foreach ($total_doctors as $i => $doctor) {
+                if (in_array($doctor->id, $exclude_doctor_ids)) {
                     unset($total_doctors[$i]);
                 }
             }
         } //new DoctorModel()
         $rated_doctors = [];
         $total_cnt = count($total_doctors);
-        for($i=0;$i<$total_cnt;$i++) {
+        for ($i = 0; $i < $total_cnt; $i++) {
             $doctor = array_shift($total_doctors);
             $rate = $doctor->rate;
             $rated_doctors[$rate][] = $doctor;
@@ -1362,27 +1403,28 @@ class DoctorController extends BaseController
 
         $doctors = [];
         krsort($rated_doctors);
-        foreach($rated_doctors as $rate=>&$doc_list) {
+        foreach ($rated_doctors as $rate => &$doc_list) {
             shuffle($rated_doctors[$rate]);
             $doc_list_cnt = count($doc_list);
-            for($i=0;$i<$doc_list_cnt;$i++) {
-                if(count($doctors)>=($doctor_search_params->by_page+1)) {
+            for ($i = 0; $i < $doc_list_cnt; $i++) {
+                if (count($doctors) >= ($doctor_search_params->by_page + 1)) {
                     break;
                 }
                 $doctors[] = array_shift($rated_doctors[$rate]);
             }
         }
 
-        if(isset($doctors[$doctor_search_params->by_page])) {
+        if (isset($doctors[$doctor_search_params->by_page])) {
             $getNextPageFlag = 1;
             unset($doctors[$doctor_search_params->by_page]);
-        }else{
+        } else {
             $getNextPageFlag = 0;
         }
         return [$doctors, $total_number_doctors, $getNextPageFlag];
     }
 
-    public function ajaxSearch__clinics_count($doctors, $doctor_search_params) {
+    public function ajaxSearch__clinics_count($doctors, $doctor_search_params)
+    {
         $clinics_count = 0;
         if ($doctors) {
             /**
@@ -1415,7 +1457,8 @@ class DoctorController extends BaseController
         $this->view->noWrap = true;
     }
 
-    public function ajaxSearch__search_page_description($address_object, $specialty)  {
+    public function ajaxSearch__search_page_description($address_object, $specialty)
+    {
         $search_page_description = '';
         if ((isset($this->view->address->district_id) ||
                 isset($this->view->address->region_id) ||
@@ -1429,7 +1472,8 @@ class DoctorController extends BaseController
     }
 
 
-    public function ajaxSearch() {
+    public function ajaxSearch()
+    {
         $this->layout = 'ajax';
         $this->view->page_type = 'doctor';
 
@@ -1442,7 +1486,7 @@ class DoctorController extends BaseController
         $doctor_search_params = $this->getSearchParams();
         $specialtyParams = $this->paramsFormFieldsSpecialty($doctor_search_params->specialty_id, $doctor_search_params);
 
-                //die(print_r($doctor_search_params));
+        //die(print_r($doctor_search_params));
 
 
         //поиск по имени - значит без остальной фильтрации
@@ -1476,10 +1520,10 @@ class DoctorController extends BaseController
         } else {
             $canonicalLink = '/doctor';
             $specialty_name = '';
-            if(isset($doctor_search_params->by_page)) {
+            if (isset($doctor_search_params->by_page)) {
                 $getNextPageFlag = 1;
                 unset($doctors[$doctor_search_params->by_page]);
-            }else{
+            } else {
                 $getNextPageFlag = 0;
             }
         }
@@ -1507,8 +1551,7 @@ class DoctorController extends BaseController
         }
 
 
-
-    $get_good_search_flag = count($doctors) == 0 ? false : $doctorSearchAlgorithm->getGoodSearchFlag();
+        $get_good_search_flag = count($doctors) == 0 ? false : $doctorSearchAlgorithm->getGoodSearchFlag();
 
         $result = array(
             'html' => $html,
@@ -1570,7 +1613,8 @@ class DoctorController extends BaseController
         return [$doctors, $doctorsTotalCount, $additionalDoctors];
     }
 
-    private function getDoctorsSearchErrorBlock(DoctorSearchAlgorithm $doctorSearchAlgorithm, DoctorSearchParams $params)   {
+    private function getDoctorsSearchErrorBlock(DoctorSearchAlgorithm $doctorSearchAlgorithm, DoctorSearchParams $params)
+    {
         if ($doctorSearchAlgorithm->getGoodSearchFlag() === false) {
             $is_empty_city = 0;
             $city = ModelManagerFactory::getByName('city')->getOneById($params->city_id);
@@ -1628,7 +1672,6 @@ class DoctorController extends BaseController
         $doctor_manager = new DoctorManager();
 
         $offset = 4 + ($page - 2) * 10;
-
 
 
         $reviews = $review_manager->getConfirmedListByDoctorIdWithPagging($doctor_id, $offset, 10);
