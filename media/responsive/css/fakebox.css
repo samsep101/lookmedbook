@@ -1,0 +1,10 @@
+.fake-box {
+	background-color: #5c5c5c;
+    border-radius: 3px;
+    min-height: 100px;
+    opacity: 0.3;
+    margin: 0 0 10px;
+}
+.fake-box[bg-red] {
+	background-color: #CD2667;
+}

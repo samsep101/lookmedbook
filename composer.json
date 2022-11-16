@@ -1,0 +1,39 @@
+{
+  "name": "anharchenko/lookmedbook",
+  "description": "lookmedbook master",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "splashx",
+      "email": "hghsasha@gmail.com"
+    }
+  ],
+  "require": {
+    "google/recaptcha": "1.2.4",
+    "guzzlehttp/guzzle": "*",
+    "matthiasmullie/minify": "^1.3",
+    "neeckeloo/closure-compiler-php": "dev-master",
+    "robmorgan/phinx": "v0.5.3",
+    "ruflin/elastica": "^5.3",
+    "sentry/sentry": "^1.6",
+    "sokolnikov911/yandex-turbo-pages-php5": "^1.1",
+    "sunra/php-simple-html-dom-parser": "1.5.1.x-dev",
+    "unisender/api-wrapper": "1.4.0",
+    "zendframework/zend-http": "2.5.5",
+    "zendframework/zend-stdlib": "3.0.1",
+    "zendframework/zend-validator": "2.8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "app\\": "application"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4",
+    "phpunit/phpunit-selenium": "^1"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

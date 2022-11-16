@@ -1,0 +1,30 @@
+@media (max-width: 991px) {
+    .content .inner-2 {
+        width: 100%;
+    }
+    .map-box.refactor {
+        width: 100%;
+    }
+    .top_number {
+        width: 100%;
+    }
+    
+    .inner-2.flo,
+    .search-box.flo {
+        padding: 0;
+        margin-top: 50px !important;
+    }
+    .inner-2 .search-form {
+        position: static;
+    }
+    .map-box .search-box input.txt, .clinic-map-search input.txt, .doctor-map-search input.txt {
+        width: 315px !important;
+    }
+    .doctor-map-search, .clinic-map-search {
+        top: 50%;
+    }
+    .content #clinic-search-form .search-form,
+    .content #doctor-search-form.refactor .search-form {
+        width: 100%;
+    }
+}

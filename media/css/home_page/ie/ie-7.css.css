@@ -1,0 +1,12 @@
+.clear-fix{
+    display: block;
+    zoom:1;
+}
+
+button>span.jQueryTextShadow{
+    top:20px !important;
+    left:1px !important;
+}
+
+*+html .footer-block{display: inline}
+*+html .line-list li{display: inline}

@@ -1,0 +1,1 @@
+<h1 style="margin-top:200px;color:white;">Доступ запрещен.</h1>

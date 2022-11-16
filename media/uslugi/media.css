@@ -1,0 +1,21 @@
+@media (max-width: 1199px) {
+
+    div.clinic-map-search {
+        top: 0;
+    }
+
+    .map-box.refactor {
+        margin-top: 0;
+    }
+    .clinic-map-search {
+        position: absolute;
+        top: 35px;
+        right: 0;
+    }
+
+    .info-box > .location-box > .box .box {
+        bottom: -10px;
+        left: 5px;
+        position: absolute;
+    }
+}

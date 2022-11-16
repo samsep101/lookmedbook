@@ -1,0 +1,162 @@
+@media(min-width: 1200px){
+
+	.tree-services .row > .column:nth-child(4n+1) {
+		clear:left;
+	}
+}
+
+@media(max-width: 1199px){ /* md */
+
+	.header {
+		background-position: 0 -40px;
+	}
+
+	.header .quick-search {
+		float: left;
+		margin-left: 0;
+		position: relative;
+		margin-right: 0;
+		width: 100%;
+		padding-top: 3px;
+		padding-bottom: 6px;
+	}
+
+	.header .quick-search .quick-search-input {
+		width: 100%;
+	}
+	
+	.tree-services .row > .column:nth-child(4n+1) {
+		clear:left;
+	}
+}
+
+@media(max-width: 991px ){ /* sm */
+
+	.btn-enter, .btn-reg {
+		font-size: 12px;
+	}
+
+	.footer {
+		height: 180px;
+	}
+
+	.footer-inner-bottom .inner-bottom-navigation {
+		float: none;
+		padding: 15px 0 0;
+		margin: 0;
+	}
+
+	.footer-inner-top {
+		padding: 32px 15px 0;
+	}
+	.footer-inner-bottom {
+		font-size: 14px;
+		height: inherit;
+		display: block;
+		clear: both;
+		padding: 15px 15px 0;
+		text-align: center;
+	}
+	.footer-inner-bottom .inner-bottom-copyright {
+		float: none;
+		display: inline-block;
+	}
+	
+	.tree-services .row > .column:nth-child(4n+1) {
+		clear:none;
+	}
+	.tree-services .row > .column:nth-child(3n+1) {
+		clear:left;
+	}
+}
+
+@media(max-width: 767px ){ /* xs */
+
+	.header nav a.toggle-opener {
+		display: inline-block;
+	}
+
+	.nav-table {
+		position: absolute;
+		margin: 0;
+		height: initial;
+		padding: 0;
+		overflow: hidden;
+		top: 100%;
+		left: 0;
+		width: 110px;
+		background-color: #444;
+		padding: 3px;
+		border-radius: 0 3px 3px 3px;
+		box-shadow: 0 2px 20px -5px;
+		display: none;
+		opacity: 0;
+	}
+	.header nav a {
+		width:100%;
+	}
+
+	.open .nav-table {
+		display: block;
+		opacity: 1;
+	}
+
+	.nav-table li {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	
+	.tree-services .row > .column:nth-child(3n+1) {
+		clear:none;
+	}
+}
+
+@media(max-width: 680px){
+
+	.footer-inner-top {
+		padding: 15px 15px 0;
+		text-align: center;
+	}
+	.footer-inner-top .inner-top-info {
+		float: none;
+		display: block;
+	}
+	.footer-inner-top .inner-top-socials {
+		float: none;
+		overflow: hidden;
+		margin: 0;
+		padding: 4px 0 0;
+		display: inline-block;
+	}
+	.responsive .discount {
+		display: none;
+	}
+	.switz-left-version.banner-treatment-in-switz {
+		display:none;
+	}
+}
+
+@media(max-width: 425px){
+
+	.btn-reg > i {
+		display: inline-block;
+	}
+
+	.btn-reg > span {
+		display: none;
+	}
+	.footer-inner-bottom {
+		font-size: 12px;
+	}
+	.footer-inner-top .inner-top-socials {
+		position: absolute;
+		width: 94px;
+		left: 50%;
+		margin-left: -47px;
+		top: 64px;
+	}
+	.footer-inner-bottom {
+		padding: 27px 15px 0;
+	}
+}

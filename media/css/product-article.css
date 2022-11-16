@@ -1,0 +1,179 @@
+.shop-product-article {
+	padding: 0 25px 30px;
+    font-size: 14px;
+}
+.shop-product-article.catalog {
+	padding: 10px 0px 30px;
+    font-size: 14px;
+}
+.shop-product-article ul.goods_blocks {
+	padding: 0 0 0 20px;
+    float: right;
+    margin-right: -5px;
+}
+.shop-product-article p {
+	padding: 0 0 15px;
+    line-height: 1.7em;
+}
+.shop-product-article h1 {
+	float: none;
+    width: 100%;
+    padding: 0 0 15px;
+}
+.shop-product-article h2 {
+	float: none;
+    margin: 0;
+    padding: 0 0 15px;
+    font-size: 17px;
+    display: block!important;
+}
+.shop-product-article h3 {
+	float: none;
+    margin: 0;
+    padding: 0 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+    display: block!important;
+}
+
+.shop-product-article h4 {
+    margin: 0;
+    padding: 0 0 15px;
+    font-size: 15px;
+}
+.shop-product-article h5 {
+    margin: 0;
+    padding: 0 0 15px;
+    font-size: 14px;
+}
+.shop-product-article table {
+	width: 100%;
+    background-color: #fff;
+    margin: 0 0 15px;
+}
+.shop-product-article table tr > th {
+	background-color: #f3f3f3;
+    padding: 10px 20px;
+    text-align: left;
+    box-sizing: border-box;
+	border-right: 1px solid #ddd;
+}
+.shop-product-article table tr > th:last-child {
+	border-right: 0;
+}
+.shop-product-article table tr > td {
+	background-color: #fff;
+    padding: 10px 20px;
+    text-align: left;
+    box-sizing: border-box;
+	border-bottom: 1px solid #eee;
+}
+.shop-product-article table tr:hover > td{
+	background-color: #f7f7f7;
+}
+.shop-product-article img {
+	max-width: 100%;
+}
+.shop-product-article img.left {
+	float: left;
+    margin: 0 25px 15px 0;
+    max-height: 350px;
+}
+.shop-product-article blockquote {
+	display: block;
+    width: 100%;
+    background-color: #eee;
+    padding: 40px 20px 15px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin: 0 0 15px;
+    color: #444;
+    position: relative;
+}
+.shop-product-article blockquote > span {
+	display: inline-block;
+    background-color: #59BAC7;
+    color: #fff;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-size: 11px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+.shop-product-article blockquote.doctor > span {
+	background-color: #fff;
+    color: #444;
+    font-size: 12px;
+}
+.shop-product-article ul {
+	padding: 0 15px 5px;
+}
+.shop-product-article ul > li {
+	list-style-type: disc;
+    padding: 0 0 10px;
+}
+.shop-product-article ol > li {
+	list-style-position: inside;
+    padding: 0 0 10px;
+}
+
+.quote-section {
+	position    : relative;
+    margin      : 6px 0 28px;
+    padding     : 17px 34px 22px 42px;
+    background  : #D5D5D5;
+    font-size   : 17px;
+    color       : #6D6D6D;
+    text-shadow : 1px 1px 1px #FFFFFF;
+}
+.quote-section:before {
+	content    : "";
+    background : url(/media/images/illness-description-befor.png) repeat-x;
+    width      : 100%;
+    height     : 5px;
+    left       : 0;
+    top        : -5px;
+    position   : absolute;
+}
+.quote-section:after {
+	content    : "";
+    background : url(/media/images/illness-description-after.png) repeat-x;
+    width      : 100%;
+    height     : 5px;
+    left       : 0;
+    bottom     : -5px;
+    position   : absolute;
+}
+
+.article-final {
+	font-size: 17px;
+    border-top: 1px dashed #d5d5d5;
+    padding: 15px 0;
+}
+
+.shop-product-article .remain {
+	display:none;
+	overflow: hidden;
+}
+.shop-product-article.catalog .remain {
+	display: none;
+    overflow: hidden;
+    clear: both;
+    padding-top: 10px;
+}
+
+
+.like_p {
+    line-height: 20px;
+    padding-bottom: 15px;
+    font-size: 14px;
+}
+
+.bgwhite{background: white;}
+.oh{overflow: hidden}
+.mb15{margin-bottom: 15px;}
+.mt20{margin-top: 20px;}
+.w100{width:100%}
+.panel-post{padding: 25px; font-size:14px; line-height: 18px;}
+.services-menu .chzn-container-single{width:100% !important;}

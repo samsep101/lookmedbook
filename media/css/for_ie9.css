@@ -1,0 +1,8 @@
+@charset "utf-8";
+.right_owl {margin-bottom: -10px;}
+.content .search-form .tabs li.active, .btn, .doctor-item .review-link:active, .content .review-link {filter:none;}
+
+
+.wrap.landing .call-order-block {
+    height: 496px;
+}

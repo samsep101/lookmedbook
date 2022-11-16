@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+*html .flo {height:1%;}
+*:first-child+html .flo {height:1%;}
+
+.header nav a.active {background:#000;}
+.content .search-form .tabs li.active, .nav li.ui-state-active, .about-ilness-content .illness-nav .sub-nav li a.active {background:#4ebac8;}
+.btn, .medicament-block .medicament-btn {background:#ebebeb;}
+.about-ilness-content .side-column .info-box, .about-ilness-content .main-cont, .clinic-landing, .card-popup, .doctor-landing, .doc-popup-sm {background:#FFF;}
+.header .quick-search .quick-search-input, .map-box .search-box input.txt {line-height:32px;}
+.side-column .search-info .quick-search-block .txt {line-height:42px;}
+.booking .form-block .txt input, .form .txt input {line-height:58px;}
+.content .search-form .search-by-name .txt {line-height:34px;}
+.search-block input.txt {line-height:51px;}
+.content .review-link {background: #fcfcfc;}
+.content .review-link:active {background:#eeeeee;}
+.jspDrag {background: #fafafa;}
+body.hidden {overflow:auto;}

@@ -1,0 +1,8 @@
+.wt_clear-fix, #page #header .menu ul,.wt_new-users-add,.wt_table-games {
+    display: block;
+    zoom:1;
+}
+
+.email-container input{
+    padding-top: 15px;
+}

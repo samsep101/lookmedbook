@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="init.php" colors="true">
+    <testsuites>
+        <testsuite name="unit">
+            <directory>application/library/classes</directory>
+            <file>application/library/helpers/AddressHelperTest.php</file>
+            <directory>core</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

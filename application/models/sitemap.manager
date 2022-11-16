@@ -1,0 +1,6 @@
+<?php
+
+class SitemapManager extends AliasManager
+{
+    
+}

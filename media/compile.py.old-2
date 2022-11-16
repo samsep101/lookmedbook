@@ -1,0 +1,65 @@
+# coding=utf-8
+
+import os, sys, codecs
+import re
+import lxml.html
+from lxml.cssselect import CSSSelector
+
+def compile(html_path, compiled_path):
+        if not os.path.exists(compiled_path):
+            os.makedirs(compiled_path)
+        
+        popups = ['form.html', 'form_v1.html', 'notification.html', 'accept.html']
+        banners = [each for each in os.listdir(html_path) if each.endswith('.html') and each not in popups]
+        
+        for banner in banners:
+            with open(os.path.join(html_path, banner), 'r') as html_file:
+                js_name = os.path.join(compiled_path, banner[:-4] + "js")
+                
+                with open(js_name, 'w') as js_file:
+                    sys.stdout.write(os.path.basename(js_name) + "...")
+                    js_file.write(get_js_from_html(html_file, 'banner', '.lmb-banner'))
+                    sys.stdout.write("  Done!\n")
+        
+        # popups
+        js_name = os.path.join(compiled_path, "popups.js")
+        with open(js_name, 'w') as js_file:
+            sys.stdout.write(os.path.basename(js_name) + "...")
+            for popup in popups:
+                with open(os.path.join(html_path, popup), 'r') as html_file:
+                    sys.stdout.write(" [" + popup + "]")
+                    js_file.write(get_js_from_html(html_file, popup[:-5], '.lmb-popup'))
+            
+            sys.stdout.write("  Done!\n")
+                    
+def chunker(seq, size):
+    return (seq[pos:pos + size] for pos in xrange(0, len(seq), size))
+    
+def get_js_from_html(file, func_name, selector):
+    parser = lxml.etree.HTMLParser(encoding='utf-8')
+    tree = lxml.etree.HTML(file.read(), parser)
+    sel = CSSSelector(selector)
+    selection = lxml.html.tostring(sel(tree)[0])
+    
+    groupped_lines = []
+    
+    for chunk in chunker(selection.split('\n'), 20): # get by 20 lines
+        groupped_lines.append(
+            u''.join([re.sub(r"/\*.*?\*/", u'', line.strip()).split("//", 1)[0] for line in chunk]))
+    
+    result = u''.join([u"function lmb" + func_name + u"""Str(){var s="";""",
+        u'\n'.join([u"s+=\"" + line.replace("\"", u"\\\"") + "\";" for line in groupped_lines]),
+        u"return s;}"])
+    
+    return result
+
+if __name__ == '__main__':
+    BASE_WIDGET_PATH = os.path.dirname(os.path.abspath(sys.argv[0])) + '/widget2'
+    HTML_PATH = BASE_WIDGET_PATH + '/html'
+
+    TARGET_PATH = os.path.dirname(os.path.abspath(sys.argv[0])) + '/build/widget'
+    COMPILED_PATH = TARGET_PATH + '/js/compiled'
+
+    if len(sys.argv) > 1: HTML_PATH = sys.argv[1]
+    if len(sys.argv) > 2: COMPILED_PATH = sys.argv[2]
+    compile(HTML_PATH, COMPILED_PATH)

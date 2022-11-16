@@ -1,0 +1,940 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+:focus {
+  outline: 0; }
+
+ins {
+  text-decoration: none; }
+
+del {
+  text-decoration: line-through; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  height: 100%; }
+
+header, nav, section, article, aside, footer {
+  display: block; }
+
+img {
+  border: none; }
+
+input {
+  vertical-align: middle; }
+
+a {
+  color: blue;
+  outline: none;
+  text-decoration: underline; }
+
+a:hover {
+  text-decoration: none; }
+
+p {
+  margin: 0 0 18px; }
+
+::-ms-clear, ::-ms-reveal {
+    display: none;
+}
+
+
+
+.block {
+  display: block; }
+
+.bold {
+  font-weight: bold; }
+
+.right {
+  float: right; }
+
+.left {
+  float: left; }
+
+.clear {
+  clear: both;
+  background: url("/media/images/home_page/bg-whitebtm.jpg") repeat scroll left bottom transparent;  }
+
+.clear-fix:after, #content:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0; }
+
+.line-list li {
+  display: inline-block; }
+
+.wt_box_sizing {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+html {
+  height: 100%; }
+
+body {
+  width: 100%;
+  height: 100%;
+  background: url(/media/images/home_page/vet/back.jpg) left top; }
+
+a {
+  color: blue;
+  outline: none;
+  text-decoration: underline; }
+
+a:hover {
+  text-decoration: none; }
+
+p {
+  margin: 0 0 18px; }
+
+img {
+  border: none; }
+
+input {
+  vertical-align: middle; }
+
+#wrapper {
+  width: auto;
+  margin: 0 auto;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  background: none; }
+
+/* Header
+-----------------------------------------------------------------------------*/
+#header {
+    height: 70px;
+    min-width: 1000px;
+    position: relative;
+    z-index: 1;
+    background: url(/media/images/home_page/back-top.png) left -5px repeat-x;
+    border-top: solid 5px #FE9A66;
+}
+
+/* Middle
+-----------------------------------------------------------------------------*/
+#content {
+  padding: 0 0 370px;
+  width: 980px;
+  margin: 0 auto 0; }
+
+#logo {
+    float: left     ;
+    margin: -130px 0 -75px -113px;
+}
+
+.register {
+    padding: 75px 0 0 9px;
+    float: left;
+    width: 510px;
+}
+
+.h-text {
+    font: normal 30px 'pf_agora_slab_proregular';
+    color: #d93474;
+    text-shadow: 0 1px 0 #b62c61;
+    margin: 0;
+    padding: 3px 0 0 62px;
+}
+p.h-text {
+  font-size: 29px;
+  text-align: center;
+}
+
+
+.email-container {
+  background: url(/media/images/home_page/email.png) left top no-repeat;
+  height: 58px;
+  margin: 0 0 8px 0; }
+  .email-container input {
+    font-family: verdana;
+    font-size: 20px;
+    color: #666666;
+    border: none;
+    background-color: transparent;
+    height: 53px;
+    padding: 0 0 0 17px; }
+
+.smart-button {
+  width: 222px;
+  height: 43px;
+  border: none;
+  padding-bottom: 5px;
+  background: url(/media/images/home_page/reg-button.png) center center no-repeat transparent;
+  cursor: pointer;
+  font-family: 'pf_agora_slab_probold';
+  text-decoration: none;
+  font-size: 17px;
+  color: white;
+  text-shadow: 0 2px 0 #721b3d;
+  zoom: 1; }
+
+  .smart-button-2 {
+  width: 120px;
+  height: 43px;
+  border: none;
+  padding-bottom: 5px;
+  background: url(/media/images/home_page/exit-button.png) center center no-repeat transparent;
+  cursor: pointer;
+  font-family: 'pf_agora_slab_probold';
+  text-decoration: none;
+  font-size: 17px;
+  color: #3b3b3b;
+  zoom: 1;}
+
+
+.footer-block {
+    margin: 36px 0 0 100px;
+}
+
+.footer-title {
+    color: #07597d;
+    font: normal 24px 'pf_agora_slab_proregular';
+    line-height: .84;
+    text-shadow: 0 1px 0 #111111;
+    word-wrap: break-word;
+    display: inline-block;
+    margin: 0;
+}
+.footer-title a {
+    text-decoration: none;
+    color: #07597d;
+}
+
+.footer-title small {
+    font-size: 17px;
+}
+
+.footer-text {
+    font-family: pf_agora_slab_proregular;
+    font-size: 16px;
+    line-height: 1;
+    margin: 9px 0 0 0;
+}
+.footer-text a {
+    color: #000;
+}
+
+/*.error, .email-container input.error {
+  color: #ad295b;
+  font-family: verdana;
+  font-size: 20px; }*/
+
+.form-error {
+  display: none;
+  margin-bottom: 10px; }
+
+/* Footer
+-----------------------------------------------------------------------------*/
+.footer-top-line, .footer-bottom-line {
+    clear: both;
+    position: relative;
+    z-index: 0;
+    height: 8px;
+}
+.footer-top-line {
+    background: url(/media/images/home_page/vet/footer.png) left top repeat-x;
+}
+
+.inner-home {
+    margin: -15px auto 55px;
+    width: 1000px;
+}
+    .inner-home-main .center {width: 1000px;margin: -15px auto 0;}
+
+	.partners {
+	margin-left: 100px;
+	}
+	.partners h5 {
+	padding-bottom: 20px;
+	color: #DF4A84;
+    font-family: 'pfagoraslabpro-thin';
+	font-size: 18px;
+    line-height: 18px;
+	padding-left:10px;
+	}
+	.partners img {
+	margin-left: 120px;
+	display: block;
+    float: left;
+    max-width: 30%;
+	}
+	.smaller {
+	margin-top:15px;
+	}
+
+
+/* quality learn-more socials-blocks team */
+.about_dis {
+    background: url("/media/images/cloth_alike.png");
+    color: #3b3b3b;
+    padding-bottom: 41px;
+}
+.about_dis .center {
+    width: 1250px;
+    margin: auto;
+    background: url(/media/images/home_page/doctor.png) 145px 50% no-repeat;
+}
+
+.learn-more {
+    min-height: 332px;
+    background: url(/media/images/home_page/vet/bg-top-learn.png) left top repeat-x, url(/media/images/home_page/vet/bg-learn.png) top left repeat;
+    *background: url(/media/images/home_page/vet/bg-learn.png) 0 0 repeat;
+    background: url(/media/images/home_page/vet/bg-learn.png) 0 0 repeat\0/;
+}
+
+.learn-more.not-disease-about {
+    min-height: 332px;
+    background: url(/media/images/home_page/vet/bg-learn.png) top left repeat;
+    *background: url(/media/images/home_page/vet/bg-learn.png) 0 0 repeat;
+    background: url(/media/images/home_page/vet/bg-learn.png) 0 0 repeat\0/;
+}
+.not-disease-about .wave-separator {
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    margin: -7px 0 0;
+    background: url(/media/images/home_page/bg-top-learn-no-top-bg.png) left top repeat-x;
+}
+
+.line-shadow {
+    height: 12px;
+    position: relative;
+    z-index: 0;
+    background: url(/media/images/home_page/shadow-line.png) 50% 100% no-repeat;
+}
+
+.socials-blocks {
+    width: 1000px;
+    margin: 0 auto;
+    background: url("/media/images/home_page/shadow-line-2.png") 50% 100% no-repeat;
+    overflow: hidden;
+}
+.socials-blocks .fb, .socials-blocks .vk {
+    width: 304px;
+    padding: 30px 0 30px 195px;
+    float: left;
+    min-height: 300px;
+}
+.socials-blocks .fb {
+    background: url('/media/images/home_page/social_fb.png') 0 50% no-repeat;
+}
+.socials-blocks .vk {
+    background: url('/media/images/home_page/social_vk.png') 0 50% no-repeat;
+}
+
+.thisis {
+    background: url("/media/images/home_page/bg-team.png");
+    margin: 0 0 -25px;
+    padding-bottom: 40px;
+    position: relative;
+    height: 550px;
+}
+.thisiscenter .h-txt .btn-1 {
+    font-size: 17px;
+    width: 136px;
+    height: 38px;
+    padding: 0;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    line-height: 38px;
+    margin-bottom: 4px;
+}
+.thisiscenter .list-about {list-style: none;overflow: hidden;}
+.thisiscenter .list-about li {
+    width: 25%;
+    float: left;
+    padding: 0;
+    font-family: 'pf_agora_slab_prolight';
+    color: #3b3b3b;
+    font-size: 17px;
+}
+
+
+.thisiscenter .list-about li img{
+    width: 178px;
+    height: 178px;
+}
+.thisiscenter .list-about li img.thisis-li1 {
+    background: url(/media/images/home_page/vet/thisis-li1.png) center center no-repeat;
+}
+.thisiscenter .list-about li img.thisis-li2{
+    background: url(/media/images/home_page/vet/thisis-li2.png) center center no-repeat;
+}
+.thisiscenter .list-about li img.thisis-li3{
+    background: url(/media/images/home_page/vet/thisis-li3.png) center center no-repeat;
+}
+.thisiscenter .list-about li img.thisis-li4{
+    background: url(/media/images/home_page/vet/thisis-li4.png) center center no-repeat;
+}
+
+
+
+.inner-home-main {
+    background: url('/media/images/home_page/bg-inner-home-main_s.png') 72% -70px no-repeat;
+    width: 100%;
+    padding-top: 109px;
+    margin-bottom: -10px;
+    margin-top: -29px;
+    position: relative;
+}
+
+/**************************************/
+.main-logo-big {
+    width: 96px;
+    margin-left: -48px;
+    position: absolute;
+    left: 50%;
+    z-index: 2;
+}
+.sp-links .phone small, .sp-links .phone .calltime {font-size: 13px;font-family:'pf_agora_slab_pro_medium';color: #c2c2c2;}
+.sp-links .phone .flo {display: block;}
+.sp-links .phone, .sp-links .a-dashed {
+    padding-top: 9px;
+    font: normal 17px/0.8 'pf_agora_slab_proregular';
+    position: relative;
+    text-align: center;
+}
+.sp-links .a-dashed {
+    font-size: 14px;
+    border-bottom: 1px #fff dotted;
+    text-decoration: none;
+    margin: 0 35px 10px 15px;
+    padding-bottom: 2px;
+}
+.left_search {
+    width: 41%;
+    margin-left: 9%;
+    position: relative;
+    float: left;
+}
+.left_search .chzn-select {width: 100%!important;}
+.right_owl {
+    background: url('/media/images/home_page/vet/right_owl_s.png') 100% 100% no-repeat;
+    height: 349px;
+    width: 414px;
+    float: left;
+    position: relative;
+}
+:-o-prefocus,.right_owl {margin-bottom: -10px;}
+.content .search-form .tabs li {padding:0 3px 0 1px; float:left; margin-right:4px; border:1px #c4c4c4 solid; border-radius:6px 6px 0 0; font-family: 'pf_agora_slab_pro_medium';  font-size:18px; line-height:19px; color:#343434; text-decoration:none; background:#dddddd; box-shadow:3px 3px 6px #d5d5d5 inset; text-shadow:2px 1px 1px #fff; position:relative; cursor:pointer;}
+.left_search .chzn-container-single .chzn-single, .left_search .search-form .sel-box {height: 28px;}
+.left_search .chzn-container-single .chzn-single span {background: none;}
+.left_search .chzn-container-single .chzn-single {
+    padding:0 0 0 6px;
+    line-height:28px;
+    background: none;
+    background: #f3f3f3;
+    border: 1px #dadada solid;
+    border-radius: 4px;
+    box-shadow: inset 0 -1px 2px rgba(0,0,0,0.1);
+}
+.left_search .chzn-container-single .chzn-single div b {
+    background: none;
+    height: 0;
+    width: 0;
+    border-top: 6px #d93474 solid;
+    border-bottom: 6px transparent solid;
+    border-left: 7px transparent solid;
+    border-right: 7px transparent solid;
+    margin: 12px 0 0 8px;
+}
+
+.search-form span.label{
+    color: #f48221;
+    font: normal 14px/18px 'pf_agora_slab_pro_medium';
+}
+.abs {position: absolute;font:normal 17px/0.8 'pf_agora_sans_proregular';text-shadow:0 0 0 #000;color: #f48221;text-align: center;}
+.abs small {font-size: 12.5px;}
+.abs1 small{
+    font-size: 18px !important;
+}
+.abs1 {
+    right: -178px;
+    top: 112px;
+}
+.abs2 {top:-21px; left:11px;width: 169px;height: 90px;background: url('/media/images/home_page/vet/abs2.png') 100% 100% no-repeat;}
+.abs3 {top:99px; left:343px;width: 160px;padding-left:0px;height: 65px;background: url('/media/images/home_page/vet/abs6.png') 50% 100% no-repeat;}
+.abs3 small {padding-left: 60px;}
+.abs4 {z-index:1;top:274px; left:358px;width: 120px;padding: 0 110px 0 0;height: 115px;background: url('/media/images/home_page/vet/abs5.png') 100% 100% no-repeat;}
+.abs5 {top:149px; right:2px;height:26px;width:80px;}
+.abs6 {top:190px; right:0;height: 158px;width: 98px;}
+
+
+.h-text {padding: 6px 0 0 23%;}
+.left_search .search-form .sel-box {margin-bottom: 8px;}
+.left_search .search-form .sel-box .chzn-container {font-size: 13px;}
+.left_search .search-form .box {padding-top: 8px;}
+.left_search .search-form .gender .man, .left_search .search-form .gender .woman {
+    width: 32px;
+    height: 46px;
+    background: url(/media/images/gender_pic_s2.png) no-repeat;
+}
+.content .left_search .search-form .gender {position: absolute;top: 73px;right: 23px;width: 68px;}
+
+.content .left_search .search-form .gender .legend {
+    font-size: 11px;
+}
+.left_search .search-form .choose-section {
+    margin: 0 15px;
+    padding: 1px 0 5px;
+}
+.left_search .search-form .choose-section .head-label {
+    margin-bottom: 3px;
+}
+.left_search .search-form .choose-section .choose-list li {
+    margin-bottom: 5px;
+    font-size: 12px!important;
+}
+.left_search .search-form .choose-section .choose-list li .radioBox span {
+    margin: -2px 3px 0 0;
+}
+.left_search .search-form .btn-box .btn-1 {height: 38px;}
+.left_search .search-form .choose-section #after_select_options {
+    margin-bottom: 15px!important;
+}
+.about_dis .center {
+    width: 1000px;
+    margin: auto;
+    background: url(/media/images/home_page/doctor.png) 13% 100% no-repeat;
+}
+
+.about_dis .h-txt {
+    font: normal 30px 'pf_agora_slab_proregular';
+    padding: 35px 0 20px 51%;
+    line-height: 1;
+    margin: 0;
+}
+.about_dis .h-txt.underline {font-size: 29px;}
+.l_txt {
+    font: normal 18px 'pf_agora_slab_prolight';
+    padding: 10px 9% 8px 51%;
+    line-height: 1.2;
+    margin: 0;
+}
+.about_dis a {color: #f48221;text-decoration: underline;}
+.about_dis a:hover {color: #dd3183;text-decoration: underline;}
+
+.about_dis .none_pb {padding-bottom: 0;}
+.about_dis .none_pt {padding-top: 0;}
+.search-block-mainpage input.txt {padding: 0 10px 0 25px;width: 272px;height: 54px;background: #f9f9f9;color:#898989;font-size:18px;font-family: 'pf_agora_sans_promedium';}
+.learn-txt {
+    width: 820px;
+    min-height: 332px;
+    margin: 0 auto;
+    padding: 44px 0 15px 0;
+    background: url('/media/images/home_page/learn-more.png') 95% 60% no-repeat;
+}
+.learn-txt .h-txt {
+    font: normal 30px/1 'pf_agora_slab_proregular';
+    padding: 0;
+    color: #fff;
+    text-shadow: 0 1px 0 #111;
+    margin: 0;
+}
+.learn-txt .h-txt .flo {display: block;}
+.learn-txt .l_txt {
+    padding: 37px 50% 30px 0;
+    margin: 0;
+    color: #fff;
+}
+.learn-txt a {
+    display: block;
+    background: url(/media/images/home_page/learn-button.png) 0 0 no-repeat;
+    width: 268px;
+    height: 63px;
+    line-height: 63px;
+    text-decoration: none;
+    font-family: 'pf_agora_slab_probold';
+    font-size: 25px;
+    text-align: center;
+    color: #3b3b3b;
+    text-shadow: 0 0 1px #fff;
+}
+
+.line-rgba {
+    height: 40px;
+    position: relative;
+    z-index: 0;
+    background: url(/media/images/home_page/bg-bottom-learn.png) left top repeat-x;
+}
+.line-shadow {
+    height: 12px;
+    position: relative;
+    z-index: 0;
+    background: url(/media/images/home_page/shadow-line.png) 50% 100% no-repeat;
+}
+
+.thisiscenter .h-txt,.thisiscenter h1 {
+    font-family: 'pf_agora_slab_prolight';
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1;
+    color: #ed145b;
+    text-shadow: -1px 1px 0 #950c3a;
+    padding: 23px 0 48px 45px;
+}
+.thisiscenter h1 {padding-right: 30%;}
+.thisiscenter .h-txt-blue{
+    color: #f48221;
+    padding: 5px 0 25px 45px;
+    text-shadow: -1px 1px 0 #DCECF8;
+}
+.thisiscenter .h-txt-blue span {
+    display: inline-block;
+    vertical-align: bottom;
+    padding-right: 48px;
+}
+
+.thisiscenter {
+    width: 915px;
+    margin: 0 auto;
+}
+
+.thisiscenter .list-about li img {width: 110px;display: block;margin: auto;}
+.thisiscenter .list-about li p {padding:37px 0px 30px 23px;margin: 0;font-size: 18px;}
+.thisiscenter .list-about li:first-child + li + li + li p {padding-right: 0;padding-left: 0;}
+.thisiscenter .list-about li:first-child p {padding: 37px 25px 30px 47px;}
+
+.thisis .up_page, .specialties-groups-wrapper .up_page {
+    background: url('/media/images/arrow_up.png') 0 0 no-repeat;
+    min-height: 16px;
+    padding: 58px 0 0 48px;
+    position: absolute;
+    left: 50px;
+    bottom: 33px;
+    font-family: 'pf_agora_sans_promedium';
+    font-size: 15px;
+    color: #008aa3;
+    text-decoration: none;
+}
+.thisis .up_page:hover, .specialties-groups-wrapper .up_page:hover {color: #00b1d1;}
+
+#footer {
+    padding: 45px 0;
+    width: 100%;
+    min-width: 990px;
+    background: #BFF08E;
+    position: relative;
+    overflow: hidden;
+    background: url(/media/images/home_page/vet/bg-blue-lines.png) top left repeat;
+
+}
+
+
+.form-call {
+    position: absolute;
+    z-index: 3;
+    color:#363636;
+    cursor: default;
+    background: #FAFAFA url('/media/images/home_page/form-call.jpg') 0 100% repeat-x;
+    width: 275px;
+    padding-bottom: 15px;
+    top: 45px;
+    right: -103px;
+    border-radius: 7px;
+    -moz-box-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+.form-call:before {
+    position: absolute;
+    content: "";
+    width: 36px;
+    height: 12px;
+    top: -11px;
+    left: 50%;
+    margin-left: -18px;
+    background: url('/media/images/home_page/form-call-before.png') 0 0 no-repeat
+}
+.form-call .h-txt {font: normal 20px 'pf_agora_sans_promedium';padding: 13px 0 8px;margin: 0;text-align: center;}
+.form-call .txt {font: normal 18px/1 'pf_agora_sans_proregular';text-align: center;padding: 17px 0 5px;margin: 0;}
+.form-call label, .form-call input[type="text"] {display: block;}
+.form-call label {font: normal 17px/38px 'pf_agora_sans_proregular';height:36px; width: 18%; margin-bottom:12px; float: left;text-align: right;padding: 0 2% 0 0;}
+.form-call input[type="text"] {color:#989898;border:1px #ccc solid;border-radius:3px;width: 68%;margin: 0 6% 8px 0;float: right;padding:0 2%;font: normal 21px/36px 'pf_agora_sans_promedium';height: 36px;margin-bottom: 11px;}
+.form-call input[type="text"].success {border: 1px #61b6c1 solid;box-shadow: 0 0 2px #61b6c1;}
+.form-call input[type="text"].error {border: 1px #e4a2bb solid;box-shadow: 0 0 2px #e4a2bb;}
+.form-call .time-txt {
+    font-size: 12px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+/* mac */
+.macos_safari * {text-shadow: 0 0 0 transparent!important;font-weight: normal!important;}
+.macos_safari .abs {font-family:'pf_agora_sans_prothin';}
+.macos_safari .content .left_search .search-form .search-by-name .txt {font-family: 'pf_agora_sans_proregular';}
+.macos_safari .btn-1, .macos_safari .content .search-form .choose-section .head-label, .macos_safari .content .search-form .tabs li {font-family: 'pf_agora_slab_proregular';}
+
+/**************************************/
+@media screen and (min-width: 1600px) {
+    .thisis {height: 630px;}
+    .slider-cards .div_nav > li {margin: 0 10px;}
+    .sp-links.right-links {
+        margin-left: 115px;
+        min-width: 430px;
+    }
+    .sp-links .phone .flo, .learn-txt .flo {display: none}
+    .sp-links.left-links {margin-left: -620px;}
+    .main-logo-big {
+        margin-left: -60px;
+        width: 120px;
+    }
+    .sp-links .phone, .sp-links .a-dashed {
+        font: normal 17px/1 'pf_agora_slab_proregular';
+        position: relative;
+        text-align: center;
+        padding-top: 0;
+        margin-bottom: 0;
+    }
+    .content .left_search .search-form {
+        width: auto !important;
+    }
+    .search-form-main-page-container .search-form .search-by-name {
+        width: 348px !important;
+    }
+
+    .search-form-main-page-container #clinic-search-form .lmb .search_txt {
+        width: 190px !important;
+        font-size: 18px!important;
+        display: inline-block;
+    }
+
+    @-moz-document url-prefix()
+    {
+        .search-form-main-page-container #clinic-search-form .lmb .search_txt {
+            width: 184px !important;
+            font-size: 18px!important;
+        }
+    }
+
+    .sp-links .a-dashed small {font-size: 10.5px;}
+    .sp-links .phone .calltime {font-size: 14px;}
+    .sp-links .phone small {font-size: 14px;}
+    .content .left_search .search-form {width: 370px;}
+    .inner-home-main .center {width: 1250px;}
+    .inner-home-main {
+        background: url('/media/images/home_page/bg-inner-home-main.png') 43% -70px no-repeat;
+        padding-top: 107px;
+    }
+    .content .left_search .search-form .choose-section .choose-list li {font-size:12.6px!important;margin-bottom: 7px;}
+    .left_search {
+        width: 52%;
+        margin: 20px 0 0;
+    }
+    .right_owl {
+        background: url('/media/images/home_page/vet/right_owl.png') 100% 100% no-repeat;
+        float: right;
+        width: 47%;
+        height: 430px;
+    }
+    .content .search-form .tabs li {font-size: 19px;}
+
+    .abs {line-height: 0.85;font-size: 16.5px;}
+    .abs .flo {display: none;}
+    .abs small {font-size: 12.6px;}
+    .abs3 small {padding-left: 0;}
+    .abs1 {
+        top: 121px;
+        right: -120px;
+    }
+    .abs2 {left: 40px;height: 100px;width:155px;top:-27px;}
+    .abs3 {
+        width: 200px;
+        left: 464px;
+        padding-left: 59px;
+        background: url('/media/images/home_page/vet/abs3.png') 0 100% no-repeat;
+    }
+    .abs4 {
+        width: 120px;
+        height: 190px;
+        top: 270px;
+        left: 463px;
+        padding: 0 0 0 40px;
+        background: url('/media/images/home_page/vet/abs4.png') 0 100% no-repeat;
+    }
+    .abs5 {
+        top: 158px;
+        right: 0px;
+        height: 34px;
+        width: 103px;
+    }
+    .abs6 {
+        top: 230px;
+        height: 195px;
+        width: 117px;
+    }
+    .content .left_search .search-form .box {padding-top: 9px;}
+    .left_search .search-form .sel-box {margin-bottom: 10px;}
+    .slider-cards .div_nav {top: -37px;}
+    .content .left_search .search-form .gender {top: 95px;right: 20px;width: 77px;}
+    .content .left_search .search-form .gender .legend {font-size: 12px;}
+    .content .left_search .search-form .gender .man, .content .left_search .search-form .gender .woman {
+        width: 36px;
+        height: 52px;
+        background: url(/media/images/gender_pic_s.png) no-repeat;
+    }
+    .about_dis .center {
+        width: 1250px;
+        background-position: 150px 100%;
+    }
+    .content .left_search .search-form .lmb .btn_red {
+
+    }
+    .content .left_search .search-form .search-by-name .txt {
+        font-size: 18px;
+        width: 165px;
+        padding-left: 12px;
+        display: inline-block;
+    }
+    .content .left_search .search-form .choose-section #after_select_options {margin-bottom: 15px!important;}
+
+    .about_dis .h-txt {
+        padding: 60px 0 30px 51%;
+    }
+
+    .about_dis .l_txt {
+        font-size: 22px;
+        padding: 9px 0 8px 51%;
+        line-height: 1;
+    }
+    .about_dis .l_txt.underline {font-size: 19px;}
+    .about_dis {
+        padding-bottom: 56px;
+    }
+    .search-block-mainpage {margin-top: 37px;}
+    .search-block-mainpage input.txt {width: 400px;height: 56px;font-size:20px;padding: 0 20px;}
+    .btn-6 {height:58px;width: 160px; padding:0; font-size:24px;}
+
+    .learn-txt {width: 1250px;padding: 68px 0 10px 0;background-position: 82% 70%;}
+    .learn-txt .l_txt {font-size: 22px;padding: 45px 0 50px;line-height: 0.94;}
+    .learn-txt .h-txt .flo {display: none;}
+    .line-rgba {
+        height: 70px;
+    }
+    .thisiscenter .h-txt, .thisiscenter h1 {
+        padding: 61px 0 23px;
+    }
+    .thisiscenter h1 {padding-right: 50%;}
+    .thisiscenter {width: 1250px;}
+    .thisiscenter .h-txt-blue {
+        padding: 9px 0 60px;
+    }
+
+    .thisiscenter .list-about li img {width: auto;}
+    .thisiscenter .list-about li p {padding: 30px 5px;line-height: 1.1;}
+    .thisiscenter .list-about li:first-child p {padding: 30px 22px 0 0;}
+    .thisiscenter .list-about li:first-child + li p {padding-left: 3%;}
+    .thisiscenter .list-about li:first-child + li + li p {padding-right: 3%;padding-left: 10%;}
+    .thisiscenter .list-about li:first-child + li + li + li p {padding-right:0;}
+    .thisis .up_page, .specialties-groups-wrapper .up_page {bottom: 27px;}
+    .thisiscenter .h-txt-blue span {padding-right: 95px;}
+    .thisiscenter .h-txt .btn-1 {width: 144px; font-size: 18px;}
+    #footer {
+        padding: 60px 0 65px;
+    }
+    .footer .inner {width: 1250px;}
+}
+
+@media screen and (min-width: 1920px) {
+    .slider-cards {
+        width: 1475px;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+.thisis .up_page, .specialties-groups-wrapper .up_page {left: 5px;}
+}
+
+@media screen and (max-width: 1024px) {
+    .inner-home-main .center, .about_dis .center , .slider-cards {
+        width: 100%;
+        min-width: 980px;
+        padding: 0;
+    }
+    .sp-links.right-links {
+        margin-left: 60px;
+    }
+    .slider-cards .prev-nav, .slider-cards .next-nav {display: none!important;}
+}
+
+.specialties-groups-wrapper {
+    position: relative;
+    background: url("/media/images/cloth_alike.png") repeat scroll 0 0 transparent;
+    margin: 0 0 -20px;
+    padding: 0 0 20px;
+}
+    .specialties-groups-wrapper .specialties-shadow-block {
+        background: url(/media/images/shadowBottomImageGrayBG.png) repeat-x scroll 0 0 transparent;
+        position: absolute;
+        height: 19px;
+        width: 100%;
+    }
+    .specialties-groups-wrapper .specialties-groups {
+        margin: 0 auto;
+        max-width: 1000px;
+        min-width: 800px;
+        padding: 50px 60px;
+        width: auto;
+    }
+        .specialties-groups-wrapper .specialties-groups .sg-title {
+            margin: 12px 0 36px;
+            color: #438b94;
+            font-family: 'PF Agora Slab Pro Regular','PF Agora Slab Pro';
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 400;
+        }
+            .specialties-groups-wrapper .specialties-groups ul li a span.specialty-name-firs-letter {
+                color: #2e88bc;
+                font-family: 'PF Agora Sans Pro Bold','PF Agora Sans Pro';
+                font-size: 16px;
+                font-style: normal;
+            }
+            .specialties-groups-wrapper .specialties-groups ul li a.first-specialty span.specialty-name-firs-letter {
+                font-size: 15px;
+                font-weight: 700;
+                text-decoration: underline;
+            }
+            .specialties-groups-wrapper .specialties-groups ul li a span.specialty-name-other-part {
+                font-family: 'PF Agora Sans Pro Bold','PF Agora Sans Pro';
+                font-size: 16px;
+                font-style: normal;
+            }
+
+.search-form .search-by-name .show_input, .search-form .search-by-name .show_inp {
+    display : none;
+}
+
+.content .left_search .search-form .search-by-name .txt {
+    display: inline-block !important;
+}

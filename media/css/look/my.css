@@ -1,0 +1,6933 @@
+body.editprofile .right-column {
+    background : #F5F5F5;
+}
+
+.pr_ph_status {
+    cursor : pointer;
+}
+
+A {
+    text-decoration : underline;
+}
+
+A:hover {
+    text-decoration : none;
+    cursor          : pointer;
+}
+
+.body_div {
+    margin : 50px 0 50px 5%;
+}
+
+.body_div h1 {
+    margin : 50px 0 50px 5%;
+}
+
+ul.hr {
+    margin  : 0;
+    padding : 4px;
+}
+
+ul.hr li {
+    display      : inline;
+    margin-right : 5px;
+    border       : 1px solid #000000;
+    padding      : 3px;
+}
+
+ul.vrt {
+    margin     : 0;
+    margin-top : 3%;
+    padding    : 4px;
+}
+
+ul.vrt li {
+    /*display: inline;*/
+    margin-right : 5px;
+    border       : 1px solid #000000;
+    padding      : 3px;
+    width        : 100px;
+}
+
+#persoval_info {
+    float       : left;
+    margin-left : 2%;
+    margin-top  : 1%;
+}
+
+.grey {
+    font-size : 12px;
+    color     : #808080;
+}
+
+.blue {
+    margin    : 20px 0 20px 50px;
+    font-size : 18px;
+    color     : #33B2E5;
+}
+
+.skip {
+    font-size : 12px;
+    color     : #74B2E2;
+}
+
+.last_visit {
+    margin : 50px 0 50px 10%;
+}
+
+.coming_visit {
+    margin : 50px 0 50px 10%;
+}
+
+label {
+    display : inline;
+}
+
+.cards {
+    overflow : hidden;
+}
+
+.card-small {
+    overflow : hidden;
+    float    : left;
+    width    : 470px;
+    height   : 270px;
+}
+
+.card-small .doctor-image {
+    width        : 120px;
+    float        : left;
+    margin-right : 20px;
+}
+
+.card-small table {
+    width : auto;
+}
+
+.card-small .time-period {
+    font-size : 12px;
+}
+
+.card-small td {
+    padding : 3px;
+}
+
+.load-next-page {
+    font-size  : 16px;
+    margin-top : 20px;
+    text-align : center;
+    cursor     : pointer;
+}
+
+.not_full {
+    padding     : 10px;
+    text-align  : center;
+    font-weight : bold;
+}
+
+.medicine-block {
+    width      : 240px;
+    background : #87CEEB;
+    padding    : 15px;
+}
+
+.nav--sub-tab > li > a {
+    color       : #3392C2;
+    font-family : pfagorasanspro-bold, Arial;
+    font-size   : 12px;
+    text-align  : center;
+}
+
+.nav--sub-tab > li > a .outer span {
+    display        : table-cell;
+    vertical-align : middle;
+}
+
+.illness__info .info__title a {
+    color           : #000000;
+    font-family     : pfagoraslabpro-medium, Arial;
+    font-size       : 16px;
+    font-weight     : normal;
+    text-decoration : none;
+}
+
+.doctor-search-page .search-form {
+    float : none;
+}
+
+#map {
+    width             : 549px;
+    height            : 472px;
+    user-zoom         : fixed;
+    -webkit-user-zoom : fixed;
+    zoom              : 0;
+}
+
+.clinic-map #map {
+    width             : 549px;
+    height            : 300px;
+    user-zoom         : fixed;
+    -webkit-user-zoom : fixed;
+    zoom              : 0;
+}
+
+.citymaps-legend-container {
+    text-align       : center;
+    background-color : white;
+    font-family      : arial, Tahoma;
+    font-size        : 12px;
+    border           : 1px solid #CCCCCC;
+    border-radius    : 3px;
+    padding          : 2px;
+    width            : 120px;
+    overflow         : hidden;
+    box-shadow       : rgba(0, 0, 0, 0.398438) 0 2px 4px;
+}
+
+.citymaps-legend-title {
+    font-size : 12px;
+}
+
+.citymaps-legend-icon DIV {
+    border : none;
+}
+
+.citymaps-balloon-container .ins1 {
+    width    : 0;
+    height   : 0;
+    position : absolute;
+    top      : 200px;
+    left     : 238px;
+}
+
+.citymaps-balloon-container .ins2 {
+    width        : 0;
+    width        : 0;
+    height       : 0;
+    position     : absolute;
+    top          : 200px;
+    left         : 244px;
+    border-top   : 12px solid white;
+    border-left  : 8px solid transparent;
+    border-right : 8px solid transparent;
+}
+
+.citymaps-balloon-content table {
+    font-size       : 12px;
+    width           : 100%;
+    font-weight     : normal;
+    border-collapse : collapse;
+    background      : #FEFEFE;
+}
+
+.citymaps-balloon-content table tbody tr:nth-child(even) {
+    background : #F8F8F8;
+}
+
+.citymaps-balloon-content table thead {
+    color : #781020;
+}
+
+.citymaps-balloon-content table th {
+    border-bottom : 1px solid #781020;
+}
+
+.citymaps-balloon-content table td, .citymaps-balloon-content table th {
+    width      : 25%;
+    text-align : center;
+    min-height : 25px;
+}
+
+citymaps-balloon-content-selected td {
+    background-color : #FFEFD5;
+}
+
+.citymaps-balloon-content-hover td {
+    cursor           : pointer;
+    background-color : white;
+    text-decoration  : underline;
+}
+
+.citymaps-balloon-content DL {
+    padding   : 0 10px;
+    font-size : 14px;
+    height    : 130px;
+}
+
+.citymaps-balloon-content DL DT {
+    clear         : left;
+    float         : left;
+    padding-right : 5px;
+}
+
+.citymaps-balloon-content DL DD {
+    font-weight : bold;
+}
+
+.citymaps-balloon-buttons {
+    position : absolute;
+    left     : 63px;
+    width    : 100px;
+    margin   : 0 0 0 -100px;
+    padding  : 0;
+}
+
+.citymaps-balloon-buttons2 {
+    width  : 100%;
+    margin : -22px 0 0 -63px;
+    height : 100%;
+}
+
+.citymaps-balloon-buttons .citymaps-balloon-close {
+    width                 : 14px;
+    height                : 14px;
+    list-style            : none;
+    text-decoration       : none;
+    -webkit-border-radius : 5px;
+    border-radius         : 10px;
+    border                : 3px white solid;
+    color                 : white;
+    margin                : 0 1px;
+    background-color      : #E2D4A7;
+    text-align            : center;
+    font-weight           : bold;
+    cursor                : pointer;
+    line-height           : 0.8;
+    float                 : right;
+    position              : relative;
+}
+
+.citymaps-balloon-menu {
+    border-top : #781020 2px solid;
+    color      : #781020;
+    width      : auto;
+    font-size  : 12px;
+    height     : 30px !important;
+    margin     : 0;
+    padding    : 0;
+    overflow   : hidden !important;
+}
+
+.citymaps-balloon-menu a, .citymaps-balloon-menu a:link, .citymaps-balloon-menu a:visited {
+    font-weight      : bolder;
+    height           : 20px;
+    float            : left;
+    color            : #781020;
+    text-decoration  : none;
+    background-color : #E2D4A7;
+    display          : block;
+    margin           : 3px;
+    border-radius    : 5px;
+    padding          : 3px 10px;
+}
+
+.content .section .map-block a {
+    color : #000000 !important;
+}
+
+.citymaps-balloon-menu a:hover {
+    background-color : #781020;
+    color            : #E2D4A7;
+}
+
+.like_service_ul {
+    text-shadow     : 1px 1px 1px #FFFFFF;
+    color           : #1F8EBE !important;
+    line-height     : 18px;
+    text-decoration : none !important;
+    border-bottom   : 1px #1F8EBE dashed;
+}
+
+.like_service_ul:hover {
+    cursor              : pointer;
+    color               : #DD3183 !important;
+    border-bottom-color : #DD3183;
+}
+
+.popup {
+    color    : #3B3B3B;
+    display  : none;
+    font     : 14px 'pf_agora_sans_promedium';
+    padding  : 30px 110px 32px 170px;
+    position : relative;
+    width    : 350px;
+}
+
+.popup .logo {
+    display  : block;
+    left     : 37px;
+    position : absolute;
+    top      : 1px;
+}
+
+.popup .intro {
+    min-height : 44px;
+    padding    : 0 0 10px 6px;
+}
+
+.popup .forgot-form .btn-1 {
+    display : inline-block;
+    float   : none;
+}
+
+.help-result {
+    color           : #CD2667 !important;
+    text-decoration : none !important;
+}
+
+.wrap .search-block .help-drop-menu {
+    width : 696px !important;
+}
+
+#my_doctors_container .btn-bookmark {
+    display : none;
+}
+
+
+.location-box .section {height: 85px;}
+.doctor-big-card .location-box .section {height: auto;}
+
+.doctor-page-cont .location-box .section.refactor-section-styles {
+    height:175px;
+}
+
+.info-card.flo {
+    /*clear : both;*/
+
+}
+
+.info-card.flo:first-child {
+    /* margin: 0px 5px 10px 0px; */
+}
+
+.info-card.flo:last-child {
+    /* margin: 0px 0px 10px 5px; */
+}
+
+.info-card.flo.fright {
+    clear : none;
+}
+
+.schedule-extended .prev-nav, .schedule-extended .next-nav {
+    background : url("/media/images/slider_controls_blue.png") no-repeat scroll 0 0 transparent;
+    display    : block;
+    height     : 32px;
+    left       : -19px;
+    position   : absolute;
+    top        : 46px;
+    width      : 16px;
+}
+
+.schedule-extended .next-nav {
+    background-position : 100% 0;
+    left                : auto;
+    right               : -17px;
+}
+
+.schedule-extended .prev-nav.disabled, .schedule-extended .next-nav.disabled {
+    background : none;
+    cursor     : default;
+}
+
+.schedule-extended .prev-nav:hover {
+    background-position : 0 100%;
+}
+
+.schedule-extended .next-nav:hover {
+    background-position : 100% 100%;
+}
+
+.view-more {
+    cursor : pointer;
+}
+
+ul.list-description li {
+    background    : url("/media/images/list_bull.gif") no-repeat scroll 0 6px transparent;
+    margin-bottom : 6px;
+    padding-left  : 28px;
+    line-height   : 18px;
+}
+
+ul.list-description-2 {
+    margin-top : 5px;
+}
+
+ul.list-description-2 li {
+    background    : url("/media/images/bullit-type-3.png") no-repeat scroll 0 10px transparent;
+    margin-bottom : 6px;
+    padding-left  : 28px;
+}
+
+.content .search-form .btn-box {
+    display : block;
+}
+
+#my_clinics_container .btn-bookmark {
+    display : none;
+}
+
+#visited_clinic_container .btn-bookmark {
+    display : none;
+}
+
+.content .search-form .choose-section-2 {
+    display : block;
+}
+
+.doctor-big-card .info-box {
+    width: 100%;
+    margin-top: -40px;
+}
+
+.info-card .schedule-extended .schedule {
+    height: auto;
+}
+
+.doctor-big-card .schedule-extended {
+    width  : 347px;
+    height: auto;
+    border: 0;
+}
+
+.info-card .schedule-extended .day {
+    border: 1px solid #ECECEC;
+    border-radius: 6px;
+    color: #B2AEAE;
+    float: left;
+    font: 11px Arial, Helvetica, sans-serif;
+    height: 70px;
+    padding: 5px 0 0 6px;
+    width: 40px;
+    margin: 16px 9px 0 0px;
+}
+
+.record-to-the-doctor-popup .schedule-extended .prev-nav, .schedule-extended .next-nav {
+    top : 13px;
+}
+
+.booking .shedule-var .dday-var.active .day div, .booking .dday-var.active.time li.unactive {
+    background : none;
+}
+
+.booking .dday-var.active.time li.unactive {
+    height : 0;
+}
+
+.booking .time li {
+    height         : 35px;
+    padding-top    : 9px;
+    vertical-align : middle;
+}
+
+.record-to-the-doctor-popup .jspVerticalBar {
+    display : none !important;
+}
+
+.btns .error-msg-auth {
+    height        : 36px;
+    line-height   : 36px;
+    display       : none;
+    padding       : 0 10px;
+    color         : #FFFFFF;
+    font-size     : 16px;
+    font-family   : 'pf_agora_sans_proregular';
+    background    : url(/media/images/novalid_bg.png);
+    white-space   : nowrap;
+    position      : absolute;
+    right         : -8px;
+    top           : -47px;
+    border-radius : 4px;
+    text-shadow   : 1px 1px 1px #333333;
+}
+
+.btns .error-msg-auth:after {
+    content      : "";
+    position     : absolute;
+    bottom       : -10px;
+    right        : 19px;
+    border-style : solid;
+    border-width : 10px 10px 0;
+    border-color : rgba(223, 19, 98, 0.6) transparent;
+    display      : block;
+    width        : 0;
+    z-index      : 1;
+}
+
+.btns .error-msg-email {
+    height        : 36px;
+    line-height   : 36px;
+    display       : none;
+    padding       : 0 10px;
+    color         : #FFFFFF !important;
+    font-family   : Arial !important;
+    font-size     : 16px !important;
+    background    : url(/media/images/novalid_bg.png);
+    white-space   : nowrap;
+    position      : absolute;
+    right         : -8px;
+    top           : -47px;
+    border-radius : 4px;
+    text-shadow   : 1px 1px 1px #333333;
+}
+
+.btns .error-msg-email:after {
+    content      : "";
+    position     : absolute;
+    bottom       : -10px;
+    right        : 19px;
+    border-style : solid;
+    border-width : 10px 10px 0;
+    border-color : rgba(223, 19, 98, 0.6) transparent;
+    display      : block;
+    width        : 0;
+    z-index      : 1;
+}
+
+.error-msg-text {
+    height        : 36px;
+    line-height   : 36px;
+    padding       : 0 10px;
+    color         : #FFFFFF;
+    font-size     : 16px;
+    font-family   : 'pf_agora_sans_proregular';
+    background    : url(/media/images/novalid_bg.png);
+    white-space   : nowrap;
+    position      : absolute;
+    right         : -8px;
+    top           : -47px;
+    border-radius : 4px;
+    text-shadow   : 1px 1px 1px #333333;
+}
+
+.error-msg-text:after {
+    content      : "";
+    position     : absolute;
+    bottom       : -10px;
+    right        : 19px;
+    border-style : solid;
+    border-width : 10px 10px 0;
+    border-color : rgba(223, 19, 98, 0.6) transparent;
+    display      : block;
+    width        : 0;
+    z-index      : 1;
+}
+
+#new-pass-popup .error-msg-rec-pass {
+    height        : 36px;
+    line-height   : 36px;
+    display       : none;
+    padding       : 0 10px;
+    color         : #FFFFFF;
+    font-size     : 16px;
+    font-family   : 'pf_agora_sans_proregular';
+    background    : url(/media/images/novalid_bg.png);
+    white-space   : nowrap;
+    position      : absolute;
+    right         : -8px;
+    top           : -47px;
+    border-radius : 4px;
+    text-shadow   : 1px 1px 1px #333333;
+}
+
+#new-pass-popup .error-msg-rec-pass:after {
+    content      : "";
+    position     : absolute;
+    bottom       : -10px;
+    right        : 19px;
+    border-style : solid;
+    border-width : 10px 10px 0;
+    border-color : rgba(223, 19, 98, 0.6) transparent;
+    display      : block;
+    width        : 0;
+    z-index      : 1;
+}
+
+.about-form .row-phone .error-msg-phone {
+    height        : 36px;
+    line-height   : 36px;
+    display       : none;
+    padding       : 0 10px;
+    color         : #FFFFFF;
+    font-size     : 16px;
+    font-family   : 'pf_agora_sans_proregular';
+    background    : url(/media/images/novalid_bg.png);
+    white-space   : nowrap;
+    position      : absolute;
+    right         : -8px;
+    top           : -47px;
+    border-radius : 4px;
+    text-shadow   : 1px 1px 1px #333333;
+}
+
+.about-form .row-phone .error-msg-phone:after {
+    content      : "";
+    position     : absolute;
+    bottom       : -10px;
+    right        : 19px;
+    border-style : solid;
+    border-width : 10px 10px 0;
+    border-color : rgba(223, 19, 98, 0.6) transparent;
+    display      : block;
+    width        : 0;
+    z-index      : 1;
+}
+
+h2.pretty {
+    color         : #D42C6D;
+    font          : 24px 'pf_agora_slab_pro_medium';
+    margin-bottom : 4px;
+    text-align    : center;
+    text-shadow   : 0 1px 0 #000000;
+}
+
+div.no-review, .no-text {
+    color         : #000000;
+    font-family   : 'pf_agora_slab_pro_medium';
+    font-size     : 16px;
+    font-weight   : normal;
+    margin-bottom : 12px;
+    text-align    : center;
+}
+
+.map-box {
+    height   : 471px;
+    overflow : hidden;
+}
+
+.map-box.clinic-map {
+    height   : 352px;
+    width    : 649px;
+    overflow : hidden;
+}
+
+.about-ilness-content .main-cont .content .section .like_p {
+    line-height    : 20px;
+    padding-bottom : 15px;
+    font-size      : 14px;
+}
+
+.about-ilness-content .main-cont .content .section .like_p a {
+    color           : #DD3183;
+    font-family     : 'pf_agora_sans_probold';
+    text-decoration : none;
+}
+
+.about-ilness-content .illness-description .like_p {
+    line-height : 26px;
+}
+
+.like_p a {
+    text-decoration : none;
+}
+
+.inner-2 .search-form {
+    position : absolute;
+    z-index  : 1000;
+}
+
+header {
+    z-index : 1005;
+    position: relative;
+}
+
+.full-map {
+    padding-top : 75px;
+}
+
+.full-map .bott-panel .shell {
+    text-align : right;
+    width: auto;
+    margin: 0 auto;
+    padding-top: 10px;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    margin-left: -223px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #4f4f4f;
+}
+
+.about-ilness-content .main-cont .content .section .like_p {
+    line-height    : 20px;
+    padding-bottom : 15px;
+    font-size      : 14px;
+}
+
+.about-ilness-content .main-cont .content .section .like_p a {
+    color           : #DD3183;
+    font-family     : 'pf_agora_sans_probold';
+    text-decoration : none;
+}
+
+.beta-logo {
+    position : absolute;
+    top      : 30px;
+    right    : -30px;
+    z-index  : 1;
+}
+
+.main-logo {
+    position : absolute;
+    z-index  : 2;
+    background: url(/media/images/home_page/look/main_logo.png) center center no-repeat;
+    width:90px;
+    height: 146px;
+}
+
+.beta-logo-big {
+    position : absolute;
+    top      : 25px;
+    left     : 524px;
+    z-index  : 1;
+}
+
+.main-logo-big {
+    position    : absolute;
+    left        : 50%;
+    margin-left : -60px;
+    z-index     : 2;
+    width       : 120px;
+}
+
+.record-to-the-doctor-popup .intro {
+    min-height : 44px;
+    padding    : 0 0 10px 6px;
+}
+
+.record-to-the-doctor-popup .heading h3 {
+    color         : #3B3B3B;
+    font          : normal 18px 'pf_agora_slab_proregular';
+    text-align    : center;
+    margin-bottom : 13px;
+}
+
+.record-to-the-doctor-popup .heading h3 span {
+    padding    : 0 15px;
+    background : url(/media/images/cloth_alike.png);
+}
+
+.error-plate {
+    background    : url("/media/images/ilness_error_bg.png") repeat scroll 0 0 transparent;
+    border-radius : 6px 6px 6px 6px;
+    color         : #3B3B3B;
+    font-family   : 'pf_agora_slab_pro_medium';
+    font-size     : 28px;
+    line-height   : 28px;
+    margin        : 35px 0 23px;
+    padding       : 19px 20px 20px 20px;
+    position      : relative;
+    text-align    : center;
+}
+
+.ctitle {
+    font        : 28px 'pf_agora_slab_proregular' !important;
+    margin-left : 30px;
+    color       : black !important;
+    text-align  : center;
+}
+
+.citymaps-balloon-buttons .citymaps-balloon-close {
+    background : url("/media/images/close_ico.png") no-repeat scroll 0 0 transparent;
+    cursor     : pointer;
+    display    : block;
+    height     : 11px;
+    position   : absolute;
+    right      : 1px;
+    width      : 11px;
+}
+
+.cab-page .sub-menu img {
+    position : relative;
+    right    : 66px;
+}
+
+.for-whom-clinic {
+    margin : 0 0 19px;
+}
+
+.visit-target .sel-box .chzn-select {
+    width : 296px !important;
+}
+
+.sel-box.clinic-field-margin-bottom {
+    margin-bottom : 20px !important;
+}
+
+.info-card .corn-top {
+    background : url("/media/images/doc-popup-corn.png") no-repeat scroll 0 0 transparent;
+    display    : block;
+    height     : 23px;
+    left       : 43px;
+    position   : absolute;
+    top        : -23px;
+    width      : 43px;
+    z-index    : 200;
+}
+
+.ymaps-balloon-overlay .info-card {
+    left     : -63px;
+    position : absolute;
+    top      : 23px;
+}
+
+.search-box .btn-search {
+    position : absolute !important;
+}
+
+.colapse {
+    background  : url("/media/images/colapse_form.png") no-repeat;
+    height      : 20px;
+    margin-left : 190px;
+    display     : none;
+    cursor      : pointer;
+}
+
+.h1_colapse {
+    cursor : pointer;
+}
+
+.hidding_fio_gender, .hidding_name_clinic {
+    background  : url("/media/images/colapse_form.png") no-repeat;
+    height      : 20px;
+    margin-left : 190px;
+    display     : block;
+    cursor      : pointer;
+}
+
+.city-block {
+    padding : 30px 30px 13px
+}
+
+.city-block .search-block, .city-block .or {
+    display: none;
+}
+
+.city-block .not-empty-cities {
+    margin    : 0 21px 25px;
+    font-size : 0;
+}
+
+::i-block-chrome, .city-block .not-empty-cities {
+    display : table;
+}
+
+.city-block .not-empty-cities li {
+    width          : 33%;
+    display        : inline-block;
+    vertical-align : top;
+    margin         : 6px 0;
+}
+
+.city-block .for_icons {
+    width : 35px;
+    float : left;
+}
+
+.city-block .icon_clinic, .city-block .icon_analyzes {
+    display    : block;
+    width      : 15px;
+    height     : 14px;
+    margin     : 0 1px;
+    float      : right;
+    background : url('/media/images/icons_city_popup.png');
+}
+
+.city-block .icon_clinic {
+    background-position : 100% 0 !important;
+}
+
+.city-block .icon_analyzes {
+    background-position : 0 0 !important;
+}
+
+.city-block .save-city-checkbox {
+    margin-bottom : 10px;
+    margin-top    : 20px;
+    cursor        : pointer;
+}
+
+.city-block .info_icons {
+    float : right;
+    font  : normal 13px 'pf_agora_slab_pro_medium';
+}
+
+.city-block .info_icons span {
+    float   : none;
+    display : inline-block;
+    margin  : 2px 0 -2px 10px;
+}
+
+.city-block .btns-holder {
+    margin-left : 460px;
+}
+
+.city-block .not-empty-cities a {
+    color           : #1D96A6;
+    text-decoration : none;
+    font            : 15px 'pf_agora_slab_pro_medium';
+    text-shadow     : 1px 1px 1px #FFFFFF;
+    width           : 138px;
+    display         : block;
+    float           : right;
+}
+
+.city-block .not-empty-cities a:hover {
+    color : #CD2667;
+}
+
+.all_city {
+    display  : none;
+    margin   : 10px 0 0 -29px;
+    position : relative;
+    width    : 537px;
+    padding  : 0 50px;
+}
+
+.all_city .city > a {
+    color           : #1D96A6;
+    text-decoration : none;
+    font            : 14px 'pf_agora_slab_pro_medium';
+    width           : 138px;
+    display         : block;
+    float           : right;
+    word-break      : break-all;
+}
+
+.all_city .city > a:hover {
+    color : #CD2667;
+}
+
+.all_city ul li {
+    width : 179px;
+    float : left;
+}
+
+.all_city ul li .city {
+    width  : 100%;
+    float  : left;
+    margin : 2px 0;
+}
+
+.city-block h3 {
+    font          : 24px 'pf_agora_slab_pro_medium';
+    margin-bottom : 0;
+    color         : #393939;
+    text-align    : center;
+}
+
+.city-block h3 a {
+    text-decoration : none;
+    color           : #1D96A6;
+}
+
+.city-block h3 a:hover {
+    color : #CD2667;
+}
+
+.city-block .beforeh {
+    text-align : center;
+    font       : normal 16px 'pf_agora_slab_pro_medium';
+    padding    : 20px 0 15px;
+    margin     : 0;
+}
+
+.city-block .or {
+    text-align : center;
+    font       : italic 13px Arial;
+    padding    : 10px 0 15px;
+    margin     : 0;
+}
+
+.city-block .show_all {
+    position        : relative;
+    color           : #1D96A6;
+    font-size       : 14px;
+    text-decoration : none;
+    border-bottom   : 1px #1D96A6 dotted;
+    display: none;
+}
+
+.city-block .show_all:before {
+    position          : absolute;
+    content           : "";
+    height            : 0;
+    width             : 0;
+    border            : 5px transparent solid;
+    border-left-color : #1D96A6;
+    top               : 4px;
+    right             : -20px;
+}
+
+.city-block .show_all.active:before {
+    position         : absolute;
+    content          : "";
+    height           : 0;
+    width            : 0;
+    border           : 5px transparent solid;
+    border-top-color : #1D96A6;
+    top              : 7px;
+    right            : -20px;
+}
+
+.city-block .drop-menu {
+    border        : 1px #CECECE solid;
+    border-radius : 0 0 6px 6px;
+    background    : #FFFFFF;
+    padding       : 9px 17px 6px 15px;
+    position      : absolute;
+    width         : 272px;
+    top           : 36px;
+    left          : 2px;
+    box-shadow    : 0 0 3px #A1A1A2;
+    z-index       : 20;
+    display       : none;
+}
+
+.city-block .drop-menu {
+    width      : 612px;
+    z-index    : 501;
+    top        : 51px;
+    left       : 0;
+    box-shadow : 0 1px 2px #A9A9A9;
+    padding    : 11px 23px 12px;
+}
+
+.city-block .drop-menu li {
+    font-size   : 18px;
+    font-family : 'pf_agora_slab_proregular';
+    color       : #2A93A0;
+}
+
+.city-block .drop-menu li a {
+    color           : #2A93A0;
+    text-decoration : none;
+    cursor          : pointer;
+}
+
+.city-block .drop-menu {
+    width : 404px;
+}
+
+.search-city-block .drop-menu li {
+    padding : 0 !important;
+    border  : none;
+}
+
+.search-city-block .drop-menu {
+    width       : 554px !important;
+    margin-left : 122px;
+}
+
+.drop-menu li {
+    clear : both;
+}
+
+.search-product-name {
+    float       : left;
+    width       : 320px;
+    font-weight : bold;
+}
+
+.search-product-price {
+    float       : right;
+    font-weight : bold;
+    color       : #D93474;
+}
+
+.search-product-manufacturer {
+    float          : left;
+    clear          : both;
+    padding-bottom : 5px;
+    font-size      : 14px;;
+    color          : #8B8B8B;
+}
+
+.modal-popup p {
+    margin-top    : 15px;
+    font          : 28px 'pf_agora_slab_pro_medium';
+    margin-bottom : 13px;
+    text-align    : center;
+}
+
+.modal-popup .ask-section {
+    margin        : 200px 0 0 130px;
+    margin-bottom : 100px;
+}
+
+.doctor-big-card .close-card-span {
+    float  : right;
+    cursor : pointer;
+}
+
+.clinic-card .close-card-span {
+    float  : right;
+    cursor : pointer;
+}
+
+.record-to-the-doctor-popup.reg-popup {
+    display : block;
+}
+
+.ask-section #ask_section_save_butoon {
+    margin : 0 50px 20px -85px;
+}
+
+.ask-section a {
+    color           : #1D96A6;
+    text-decoration : none;
+    text-shadow     : 1px 1px 1px #FFFFFF;
+    font-size       : 17px;
+}
+
+.ask-section a:hover {
+    text-decoration : underline;
+}
+
+.register .reg-link {
+    text-decoration : none
+}
+
+.doing-box .todo-list a {
+    color  : #3392C2;
+    cursor : pointer;
+}
+
+.info-card .close {
+    background : url(/media/images/close_ico.png) no-repeat;
+    width      : 11px;
+    height     : 10px;
+
+}
+
+.chzn-container-single .chzn-search {
+    display : block;
+}
+
+.reg-info p strong a {
+    color           : black;
+    text-decoration : none;
+    cursor          : pointer;
+}
+
+.reg-info p strong a:hover {
+    color : black;
+}
+
+.sub-nav li {
+    width : 100px;
+}
+
+.map-card-block.clinic-popup .more {
+    color           : #CD2667;
+    text-decoration : underline;
+}
+
+.map-card-block.clinic-popup .descr {
+    min-height : 122px;
+}
+
+.info-card.clinic-card {
+    min-height : 230px;
+}
+
+.account_active .info-card.clinic-card {
+    min-height : 290px;
+}
+
+.info-card .descr .name {
+    margin-bottom : 6px;
+}
+
+.info-card .descr .tooltip {
+    padding     : 5px 7px;
+    margin-top  : -5px;
+    position    : relative;
+    font-family : 'pf_agora_sans_proregular';
+    line-height : 1;
+}
+
+.advice-buttons {
+    margin-left : 150px;
+    height      : 80px;
+}
+
+.advice-buttons .finger-up {
+    display      : block;
+    width        : 65px;
+    height       : 65px;
+    background   : url(/media/images/fingers-up.png) no-repeat;
+    margin-right : 73px;
+    cursor       : pointer;
+    float        : left;
+}
+
+.advice-buttons .finger-down {
+    display    : block;
+    width      : 65px;
+    height     : 65px;
+    background : url(/media/images/fingers-down.png) no-repeat;
+    margin-top : 27px;
+    cursor     : pointer;
+    float      : left;
+}
+
+.advice-buttons .finger-up.selected {
+    background-position : 0 -65px;
+}
+
+.advice-buttons .finger-down.selected {
+    background-position : 0 -65px;
+}
+
+.advice-buttons .error-msg-text:after {
+    position : static;
+}
+
+.advice-buttons .error-msg-text {
+    clear : both;
+}
+
+.error_span:after {
+    content      : "";
+    position     : absolute;
+    bottom       : -10px;
+    left         : 19px;
+    border-style : solid;
+    border-width : 10px 10px 0;
+    border-color : rgba(223, 19, 98, 0.6) transparent;
+    display      : block;
+    width        : 0;
+    z-index      : 1;
+}
+
+input + span .error:after {
+    border-color : rgba(223, 19, 98, 0.6) transparent;
+    border-style : solid;
+    border-width : 10px 10px 0;
+    bottom       : -10px;
+    content      : "";
+    display      : block;
+    position     : absolute;
+    right        : 19px;
+    width        : 0;
+    z-index      : 1;
+}
+
+span.error_span {
+    background    : url("/media/images/novalid_bg.png") repeat scroll 0 0 transparent;
+    border-radius : 4px 4px 4px 4px;
+    color         : #FFFFFF;
+    display       : block;
+    font-family   : 'pf_agora_sans_proregular' !important;
+    font-size     : 16px !important;
+    height        : 36px;
+    line-height   : 36px;
+    padding       : 0 10px;
+    position      : absolute;
+    text-shadow   : 1px 1px 1px #333333;
+    white-space   : nowrap;
+}
+
+span.error_span label {
+    color       : #FFFFFF !important;
+    font-family : Arial !important;
+    font-size   : 16px !important;
+    display     : inline-block !important;
+    width       : auto;
+}
+
+.chekBox {
+    cursor : pointer;
+}
+
+.other-clinic-search-params .choose-list li div {
+    cursor : default !important;
+}
+
+.other-clinic-search-params li:first-child {
+    padding : 0 5px 0 0;
+}
+
+.other-clinic-search-params li {
+    padding : 15px 5px 0 0;
+}
+
+.other-clinic-search-params .choose-list .chekBox {
+    display     : block;
+    padding     : 0 15px 0 10px;
+    cursor      : pointer !important;
+    color       : #3992BE;
+    font-family : 'PF Agora Slab Pro Regular', 'PF Agora Slab Pro';
+    font-size   : 14px;
+    font-style  : normal;
+    font-weight : 400;
+}
+
+.other-clinic-search-params .search-param-icon {
+    float  : right;
+    margin : 0 0 0 15px;
+}
+
+.other-clinic-search-params .search-param-icon.icon-credit-card {
+    background   : url(/media/images/clinic_search_param_icon3.png) top left no-repeat;
+    width        : 25px;
+    height       : 15px;
+    margin-top   : 2px;
+    margin-right : 9px;
+}
+
+.other-clinic-search-params .search-param-icon.icon-time {
+    background   : url(/media/images/clinic_search_param_icon2.png) top left no-repeat;
+    width        : 20px;
+    height       : 20px;
+    margin-right : 14px;
+}
+
+.other-clinic-search-params .search-param-icon.icon-pandus {
+    background   : url(/media/images/clinic_search_param_icon1.png) top left no-repeat;
+    width        : 31px;
+    height       : 14px;
+    margin-top   : 2px;
+    margin-right : 2px;
+}
+
+.other-clinic-search-params .search-param-icon.act {
+    background-position : bottom left;
+}
+
+.other-clinic-search-params .chekBox {
+    float : left;
+}
+
+.other-clinic-search-params .dotted-area {
+    background : url(/media/images/dotted-line.png) repeat-x scroll 0 9px transparent;
+    display    : block !important;
+    height     : 20px;
+    overflow   : hidden;
+}
+
+.search-form-main-page-container .search-form .field-label,
+.account-search-form-clinic .search-form .field-label {
+    float : none;
+}
+
+.search-form-main-page-container .search-form .for-whom-clinic .choose-list li,
+.account-search-form-clinic .search-form .for-whom-clinic .choose-list li {
+    display   : block;
+    padding   : 5px 0 0 0;
+    font-size : 14px;
+    color     : #746F6C;
+}
+
+.search-form-main-page-container .search-form .for-whom-clinic .choose-list li:first-child,
+.account-search-form-clinic .search-form .for-whom-clinic .choose-list li:first-child {
+    padding : 10px 0 0 0;
+}
+
+.search-form-main-page-container .for-whom-clinic {
+    float  : right;
+    margin : 0 34px 0 0;
+}
+
+.search-form-main-page-container .other-clinic-search-params .search-param-icon,
+.account-search-form-clinic .other-clinic-search-params .search-param-icon,
+.search-form-main-page-container .other-clinic-search-params .dotted-area,
+.account-search-form-clinic .other-clinic-search-params .dotted-area {
+    display : none !important;
+}
+
+.search-form-main-page-container .other-clinic-search-params .choose-list,
+.account-search-form-clinic .other-clinic-search-params .choose-list {
+    margin : 7px 0 0;
+}
+
+.search-form-main-page-container .other-clinic-search-params .choose-list li {
+    overflow : hidden;
+    padding  : 10px 0 0;
+}
+
+.search-form-main-page-container .search-form {
+    width : 353px !important;
+}
+
+.search-form-main-page-container .search-form .search-by-name {
+    width : 330px !important;
+}
+
+.search-form-main-page-container .search-form .field-label,
+.account-search-form-clinic .search-form .field-label {
+    padding : 0 25px 0 0;
+}
+
+.search-form-main-page-container .lmb .pad_tb,
+.account-search-form-clinic .lmb .pad_tb {
+    float   : left;
+    padding : 9px 0 3px;
+}
+
+.search-form-main-page-container .other-clinic-search-params .choose-list .chekBox,
+.account-search-form-clinic .other-clinic-search-params .choose-list .chekBox {
+    padding : 0 15px 0 0;
+}
+
+.search-form-main-page-container .lmb .a_dashed,
+.account-search-form-clinic .lmb .a_dashed {
+    margin    : 0;
+    font-size : 12px;
+}
+
+.search-form-main-page-container .left_search .search-form .btn-box,
+.account-search-form-clinic .left_search .search-form .btn-box {
+    padding-top : 9px;
+}
+
+.search-form-main-page-container .left_search .search-form .search-by-name,
+.account-search-form-clinic .left_search .search-form .search-by-name {
+    padding-bottom : 3px;
+    height         : auto !important;
+}
+
+.search-form-main-page-container .btn-box,
+.account-search-form-clinic .btn-box {
+    padding-top    : 9px !important;
+    padding-bottom : 3px !important;
+}
+
+.search-form-main-page-container #clinic-search-form .lmb .search_txt {
+    width : 174px !important;
+}
+
+@-moz-document url-prefix() {
+    .search-form-main-page-container #clinic-search-form .lmb .search_txt {
+        width : 168px !important;
+    }
+}
+
+.search-form-main-page-container .search-form .choose-section-2 {
+    margin : 0 0 5px !important;
+}
+
+.account-search-form-clinic .search-form {
+    width : 414px !important;
+}
+
+.account-search-form-clinic .search-form .search-by-name {
+    width : 390px !important;
+}
+
+.account-search-form-clinic .other-clinic-search-params .choose-list li {
+    overflow : hidden;
+    padding  : 10px 0 0;
+}
+
+.account-search-form-clinic .other-clinic-search-params .choose-list li:first-child {
+    padding : 3px 0 0;
+}
+
+.account-search-form-clinic .search-form .btn-box .btn_red {
+    width : 160px;
+    float : right;
+}
+
+.account-search-form-clinic #clinic-search-form .lmb .search_txt {
+    width : 205px !important;
+}
+
+.account-search-form-clinic .for-whom-clinic {
+    float  : right;
+    margin : 0;
+}
+
+.search-form-main-page-container .search-form .search-by-name,
+#clinic-license-form .uploadify {
+    width  : 190px !important;
+    height : 48px !important;
+}
+
+#clinic-license-form .uploadify-button {
+    background      : url("/media/images/appoint_btn_longest.png") no-repeat scroll 0 0 transparent !important;
+    border          : 1px solid #F6F2FA !important;
+    border-radius   : 5px 5px 5px 5px !important;
+    cursor          : pointer !important;
+    display         : block !important;
+    float           : left !important;
+    font            : 16px Arial, Helvetica, sans-serif !important;
+    font-family     : 'pf_agora_slab_probold' !important;
+    height          : 48px !important;
+    line-height     : 48px !important;
+    text-align      : center !important;
+    text-decoration : none !important;
+    text-shadow     : 1px -1px 1px #23629A !important;
+    width           : 220px !important;
+    z-index         : 2;
+}
+
+#clinic-license-form .uploadify #SWFUpload_0 {
+    width   : 192px !important;
+    height  : 48px !important;
+    cursor  : pointer !important;
+    z-index : 5 !important;
+}
+
+.form .txt {
+    position : relative;
+}
+
+.fancybox-outer, .fancybox-inner {
+    position : static !important;
+}
+
+.fancybox-skin {
+    position : static !important;
+}
+
+.fancybox-wrap-owl {
+    width : 590px !important;
+}
+
+.fancybox-wrap-owl .fancybox-skin {
+    -webkit-box-shadow : none;
+    -moz-box-shadow    : none;
+    box-shadow         : none;
+    background         : url(/media/images/bg_popup_owl.png) 0 0 no-repeat;
+    text-align         : center;
+    width              : 590px !important;
+}
+
+.fancybox-wrap-owl .fancybox-skin p {
+    margin : 0;
+}
+
+.fancybox-wrap-owl #landing-popup-registration.land-popup {
+    width      : 300px;
+    min-height : 235px;
+    margin     : 64px 0 70px 38px;
+}
+
+.fancybox-wrap-owl .form .hi {
+    font-size      : 38px;
+    color          : #383838;
+    font-family    : 'pf_agora_slab_prolight';
+    padding-bottom : 20px;
+}
+
+.fancybox-wrap-owl .form .save {
+    font-size   : 28px;
+    color       : #383838;
+    font-family : 'pf_agora_slab_prolight';
+    line-height : 0.8;
+}
+
+.fancybox-wrap-owl .form .account {
+    font-size   : 28px;
+    color       : #D93474;
+    font-family : 'pf_agora_slab_prolight';
+}
+
+.fancybox-wrap-owl .form .login {
+    padding-bottom : 11px;
+}
+
+.fancybox-wrap-owl .form .login, .fancybox-wrap-owl .form .login a {
+    color : #55BCC8;
+    font  : 500 14px 'pf_agora_sans_proregular', Arial;
+}
+
+.fancybox-wrap-owl #landing-popup-registration .reg-popup {
+    padding : 0;
+}
+
+.fancybox-wrap-owl .form .txt {
+    background : none;
+    float      : none;
+}
+
+.fancybox-wrap-owl .form .row {
+    margin-bottom : 5px;
+}
+
+.fancybox-wrap-owl .form .txt input {
+    width       : 200px;
+    padding     : 0 8px !important;
+    height      : 40px;
+    line-height : 40px;
+    background  : url(/media/images/popup_txt_owl.png) no-repeat 100% 100%;
+    font-size   : 21px;
+    margin      : 0 auto;
+}
+
+.fancybox-wrap-owl .reg-form .form .btns {
+    padding-bottom : 8px;
+}
+
+.fancybox-wrap-owl .form .btn-1 {
+    height    : 37px;
+    float     : none;
+    font-size : 20px;
+}
+
+#landing-forgotpass-popup p {
+    margin-top    : 15px;
+    font          : 19px 'pf_agora_slab_pro_medium';
+    margin-bottom : 13px;
+    text-align    : justify;
+}
+
+.record-day-pick {
+    color      : #1F8EBE !important;
+    text-align : center;
+    position   : relative;
+    left       : -3px;
+    top        : -3px
+}
+
+.ui-datepicker-next, .ui-datepicker-prev {
+    cursor : pointer;
+}
+
+.card-popup .cont {
+    float : right;
+}
+
+#new-pass-popup .forgot-form .btn-1 {
+    margin-left : 28px;
+}
+
+.my_disease_description .finish_text_link {
+    color       : #5FC3D0 !important;
+    display     : inline-block;
+    font-size   : 18px;
+    line-height : 1em;
+    margin      : 8px 11px;
+}
+
+.chzn-search input[type=text] {
+    position : absolute;
+    left     : -2000px;
+}
+
+.chzn-container .chzn-results .active-result {
+    border-radius : 0px;
+}
+
+.chzn-container .chzn-results {
+    border-radius : 0px;
+}
+
+#new-pass-popup .forgot-form .btn-1 {
+    margin-left : 28px;
+}
+
+.moderate_comment {
+    width         : 700px;
+    padding       : 5px;
+    background    : url("/media/images/novalid_bg.png") repeat scroll 0 0 transparent;
+    font-size     : 12px;
+    color         : #FFFFFF;
+    font-family   : Arial;
+    border-radius : 4px;
+    margin-top    : 5px;
+}
+
+input.moderate_comment_input {
+    width : 500px;
+}
+
+div.moderate_comment_input_block {
+    margin-top : 5px;
+}
+
+.row-record .buttons {
+    margin-top : 5px;
+}
+
+.row-record .buttons img {
+    cursor : pointer;
+}
+
+.header #authorization-block-on-disease-page {
+    position : absolute;
+    right    : -20px;
+}
+
+.header .navigation_link {
+    cursor : pointer;
+}
+
+.we-good {
+    height : 370px;
+}
+
+.we-good a.btn-reg {
+    background      : url("/media/images/btn-head_bg.png") repeat-x scroll 0 -62px transparent;
+    border-radius   : 2px 2px 2px 2px;
+    box-shadow      : 0 1px 2px #000000;
+    color           : #FFFFFF;
+    display         : block;
+    float           : right;
+    font-family     : 'pf_agora_slab_probold';
+    font-size       : 14px;
+    height          : 32px;
+    line-height     : 32px;
+    padding         : 0 15px;
+    position        : relative;
+    text-decoration : none;
+    text-shadow     : 2px 1px 1px #90103C;
+    margin          : 10px 20px 0 0;
+}
+
+.we-good a.btn-reg:active {
+    background-position : 0 -90px;
+}
+
+.we-good .list p {
+    color          : #3D3D3D;
+    font-family    : 'pf_agora_sans_probold';
+    padding-bottom : 2px;
+    font-size      : 13px;
+    margin-bottom  : 20px;
+}
+
+.we-good img {
+    position : absolute;
+    width    : 40px;
+    height   : 27px;
+    float    : right;
+    margin   : -2px 0 0 175px
+}
+
+.cancel-visit {
+    cursor : pointer !important;
+    margin : -40px 0 0 130px;
+}
+
+#landing-login-popup .reg-popup .socials {
+    width    : 189px;
+    bottom   : 15px;
+    left     : 70px;
+    position : absolute;
+}
+
+#landing-login-popup .reg-popup .socials ul li a {
+    background : url(/media/images/socials_new.png) no-repeat;
+}
+
+#landing-login-popup .reg-popup .socials .heading {
+    background  : url("/media/images/socials_title_new.png") repeat-x scroll 0 center transparent;
+    margin-left : 2px;
+    width       : 184px;
+}
+
+#landing-login-popup .reg-popup .socials .heading h3 {
+    margin-bottom : 1px;
+}
+
+#landing-login-popup .reg-popup .socials .heading h3 span {
+    padding   : 0 10px;
+    font-size : 10px;
+    position  : relative;
+    bottom    : 2px;
+}
+
+#landing-login-popup .reg-popup .socials ul li {
+    margin-left : 8px;
+}
+
+#landing-login-popup .reg-popup .socials ul li:first-child {
+    margin : 0;
+}
+
+#landing-login-popup .reg-popup .socials ul li:first-child {
+    margin : 0;
+}
+
+#landing-login-popup .reg-popup .socials ul li a {
+    width  : 41px;
+    height : 41px;
+}
+
+#landing-login-popup .reg-popup .socials ul li.socials-odnoklassniki a {
+    background-position : -48px 0;
+}
+
+#landing-login-popup .reg-popup .socials ul li.socials-mailru a {
+    background-position : -98px 0;
+}
+
+#landing-login-popup .reg-popup .socials ul li.socials-facebook a {
+    background-position : -148px 0;
+}
+
+#landing-login-popup .reg-popup .center-align {
+    bottom         : 10px;
+    position       : relative;
+    right          : -180px;
+    width          : 204px;
+    padding-bottom : 15px;
+}
+
+#landing-login-popup .reg-popup, #landing-popup-registration .reg-popup {
+    padding : 0px 0px 0px 150px;
+}
+
+#landing-login-popup .reg-popup .btns .chekBox {
+    margin : 4px 0 0;
+}
+
+#landing-login-popup.land-popup .head-block .vis li i, #landing-popup-registration.land-popup .head-block .vis li i {
+    background : url("/media/images/landing_bg_new.png") no-repeat scroll 0 0 transparent;
+    height     : 74px;
+    width      : 80px;
+    margin     : 0 auto 3px;
+}
+
+#landing-login-popup.land-popup .head-block .vis .vis-2 i, #landing-popup-registration.land-popup .head-block .vis .vis-2 i {
+    background-position : -172px 0;
+}
+
+#landing-login-popup.land-popup .head-block .vis .vis-3 i, #landing-popup-registration.land-popup .head-block .vis .vis-3 i {
+    background-position : -335px 0;
+}
+
+#landing-login-popup.land-popup .head-block .vis .vis-1, #landing-popup-registration.land-popup .head-block .vis .vis-1 {
+    width : 185px;
+}
+
+#landing-login-popup.land-popup .head-block .vis, #landing-popup-registration.land-popup .head-block .vis {
+    margin-left : 15px;
+}
+
+#landing-login-popup.land-popup .head-block .vis li, #landing-popup-registration.land-popup .head-block .vis li {
+    margin-left : 0px;
+}
+
+#landing-login-popup.land-popup .head-block .vis .vis-2, #landing-login-popup.land-popup .head-block .vis .vis-3,
+#landing-popup-registration.land-popup .head-block .vis .vis-2, #landing-popup-registration.land-popup .head-block .vis .vis-3 {
+    margin-left : 20px;
+}
+
+#landing-login-popup.land-popup .head-block, #landing-popup-registration.land-popup .head-block {
+    background : url("/media/images/landing_popup_bg.jpg") no-repeat scroll 0 -99px transparent;
+    height     : 190px;
+    width      : 548px;
+}
+
+#landing-login-popup.land-popup, #landing-popup-registration.land-popup {
+    width : 550px;
+}
+
+#landing-login-popup.land-popup .reg-popup .intro {
+    padding-top    : 5px;
+    padding-bottom : 5px;
+    min-height     : 0px;
+}
+
+#landing-popup-registration.land-popup .reg-popup .link {
+    padding : 10px 0 20px;
+}
+
+#landing-popup-registration.land-popup .reg-popup .logo {
+    top : -18px;
+}
+
+.info-block-visit .review-link.cancel-visit {
+    width : 108px;
+    left  : 30px;
+}
+
+.rev-popup .btns .complaint-button {
+    position : absolute;
+}
+
+.wrap .drop-menu a {
+    text-decoration : none;
+}
+
+.header .quick-search .drop-menu li {
+    color : #D93474;
+}
+
+.colleft .radioBox span {
+    cursor : pointer;
+}
+
+.visit-target .avatar {
+    margin-left : 20px !important;
+}
+
+.booking.record-to-the-doctor-popup .progress-bar.flo .current_bar {
+    height       : 20px;
+    color        : #FFFFFF;
+    background   : #00B1C5;
+    padding-left : 5px;
+    padding-top  : 2px;
+}
+
+.booking.record-to-the-doctor-popup .progress-bar.flo .after_current_bar {
+    background-color : #C8CAC9;
+    color            : #888687;
+    height           : 20px;
+    padding-top      : 2px;
+}
+
+.booking.record-to-the-doctor-popup .step-block-1 .current_bar {
+    width : 280px;
+}
+
+.booking.record-to-the-doctor-popup .step-block-1 .after_current_bar {
+    margin-left : -30px;
+    width       : 285px;
+}
+
+.booking.record-to-the-doctor-popup .step-block-2 .current_bar {
+    margin-left : -16px;
+    width       : 260px;
+}
+
+.booking.record-to-the-doctor-popup .step-block-2 .after_current_bar {
+    width : 260px;
+}
+
+.booking.record-to-the-doctor-popup .step-block-2 .steps img {
+    margin-top  : 2px;
+    margin-left : 5px;
+    position    : absolute;
+}
+
+.booking.record-to-the-doctor-popup .step-block-2 .step_1_label {
+    margin-left : 20px;
+    margin-top  : -2px;
+}
+
+.booking.record-to-the-doctor-popup .visit-target .rating {
+    margin   : 56px 0 0 124px;
+}
+
+.booking.record-to-the-doctor-popup .visit-target {
+    margin-bottom : 0;
+}
+
+.booking.record-to-the-doctor-popup .visit-target .name {
+    width     : 445px;
+    word-wrap : break-word;
+    padding   : 5px 0 0 20px;
+}
+
+.booking.record-to-the-doctor-popup .step-block-2 .chzn-container {
+    margin-top : 10px;
+}
+
+.booking.record-to-the-doctor-popup .location-box .tabs li span {
+    margin : 9px auto 0;
+}
+
+.booking.record-to-the-doctor-popup .location-box .section .price-inf span {
+    font-size: 11px;
+    font-weight : bold;
+}
+
+.colright .radioBox span {
+    cursor : pointer;
+}
+
+.inner-404 #logo-404 {
+    margin-left : 0px !important;
+    margin-top  : 2px;
+    float       : left;
+}
+
+.inner-404 .register {
+    padding : 70px 0 0 60px;
+    float   : left;
+    width   : 482px;
+}
+
+.inner-404 .register h1 {
+    margin-bottom : 10px;
+}
+
+.inner-404 {
+    margin   : 0 auto;
+    width    : 950px;
+    position : relative;
+    top      : 10px;
+}
+
+.inner-404 .btn-1 {
+    font-family : 'pf_agora_slab_pro_medium';
+    font-size   : 28px;
+}
+
+.inner-404 .text-bold {
+    font-family : 'pfagoraslabpro-thin';
+    font-size   : 40px;
+    color       : #343433;
+    font-weight : bold;
+}
+
+.inner-404 .text-bold p {
+    font-weight : normal;
+}
+
+.inner-404 .oops {
+    margin-left : 100px;
+}
+
+.inner-404 .reg-linking-btn-404 {
+    text-decoration : none;
+    color           : #FFFFFF;
+    display         : inline-block;
+    line-height     : 52px
+}
+
+.calendar thead {
+    display : table-header-group;
+}
+
+.calendar {
+    z-index : 100;
+}
+
+.short-one {
+    width : 675px;
+}
+
+.search-form .field-label {
+    font-size : 14px;
+    display   : inline-block;
+    float     : left;
+    padding   : 0 25px 0 10px;
+}
+
+.search-form .for-whom-clinic .choose-list li {
+    display : inline-block;
+    padding : 0 10px 0 0;
+}
+
+.search-form .choose-list li div, .search-form .colleft .radioBox {
+    display : inline-block;
+    cursor  : pointer;
+}
+
+.search-form .colleft .radioBox.disable {
+    color : #656565;
+}
+
+.set-main-photo-button {
+    position : absolute;
+    top      : 10px;
+    left     : 10px;
+}
+
+.carousel-stage ul li:first-child .set-main-photo-button {
+    display : none;
+}
+
+.delete-photo-button {
+    background : url(/media/images/remove.png);
+    width      : 22px;
+    height     : 22px;
+    position   : relative;
+    top        : -360px;
+    left       : 630px;
+    cursor     : pointer;
+    display    : block;
+}
+
+.connected-carousels .clinic-carousel.carousel-stage {
+    width  : 660px;
+    height : 360px;
+}
+
+.connected-carousels .clinic-carousel.carousel-stage li,
+.connected-carousels .clinic-carousel.carousel-stage li img {
+    width : 660px;
+}
+
+.clinic-carousel .prev {
+    width       : 52px;
+    height      : 52px;
+    background  : url(/media/images/popup_controls.png) 0 -52px no-repeat;
+    position    : absolute;
+    margin-top  : 130px;
+    margin-left : 10px;
+}
+
+.clinic-carousel .next {
+    width       : 52px;
+    height      : 52px;
+    background  : url(/media/images/popup_controls.png) -52px -52px no-repeat;
+    position    : absolute;
+    margin-top  : 130px;
+    margin-left : 600px;
+}
+
+.clinic-carousel .next.inactive {
+    background-position : -52px 0;
+}
+
+.clinic-carousel .prev.inactive {
+    background-position : 0 0;
+}
+
+.connected-carousels .stage .map-corn {
+    right : 5px;
+}
+
+.doctor-landing .connected-carousels .stage {
+    padding-bottom : 6px;
+    width          : 178px;
+}
+
+.connected-carousels .carousel li {
+    position : relative;
+}
+
+.doctor_images .set-main-photo-button {
+    position : absolute;
+    top      : 10px;
+    left     : 10px;
+}
+
+.doctor_images .delete-photo-button {
+    position : absolute;
+    top      : 10px;
+    right    : 10px;
+}
+
+/* page show_cards */
+.show_cards {
+    width  : 1040px;
+    margin : 0 auto;
+}
+
+.more_patient {
+    padding    : 15px 0 30px 390px;
+    background : url('/media/images/home_page/bg-more-patient.png') 138px 50% no-repeat;
+    min-height : 180px;
+}
+
+.show_cards h2 {
+    font        : normal 33px 'pf_agora_slab_proregular';
+    text-shadow : 1px 2px 0 #FFFFFF;
+    color       : #D93474;
+    margin      : 19px 0 26px;
+}
+
+.show_cards .txt {
+    font  : normal 20px/0.9 'pf_agora_slab_proregular';
+    color : #3B3B3B;
+}
+
+.show_cards_line {
+    background    : url('/media/images/dev_shadow.png') 50% 50% no-repeat;
+    height        : 36px;
+    margin-bottom : -36px;
+}
+
+.need_patient {
+    padding    : 15px 400px 30px 44px;
+    background : url('/media/images/home_page/bg-need-patient.png') 645px 65% no-repeat;
+    min-height : 140px;
+}
+
+.show-page {
+    width    : 101%;
+    margin   : 10px 0 40px;
+    overflow : hidden;
+}
+
+.show-page .column {
+    width : 50%;
+    float : left;
+}
+
+.column .blue-txt {
+    font  : italic 17px/1 'pf_agora_slab_prolight';
+    color : #1F8EBE;
+}
+
+.show-page .column img {
+    margin : 15px 0 10px;
+}
+
+.show-page .column a {
+    font  : normal 20px 'pf_agora_slab_pro_medium';
+    color : #1F8EBE;
+}
+
+.online_patient {
+    padding    : 28px 0 30px 390px;
+    background : url('/media/images/home_page/bg-online.png') 120px 50% no-repeat;
+    min-height : 247px;
+}
+
+.online_patient img {
+    margin-top : 45px;
+}
+
+.work_with_us {
+    padding    : 45px 420px 30px 44px;
+    background : url('/media/images/home_page/bg-work.png') 653px 40% no-repeat;
+    min-height : 186px;
+}
+
+.work_with_us .blue-txt {
+    font-family  : 'pf_agora_slab_probold';
+    font-size    : 24px;
+    color        : #1F8EBE;
+    padding-left : 25px;
+}
+
+.clear-line {
+    clear  : both;
+    width  : 100%;
+    height : 0;
+}
+.nav-table {
+    margin: -7px 0 0;
+    height: 44px;
+}
+.treatment-in-switz {
+    text-align: center;
+}
+
+@media screen and (max-width : 1199px) {
+    .wrap {
+        width     : auto;
+        min-width : 0;
+    }
+
+    .header .inner {
+        width : 100%;
+    }
+
+    .header nav {
+        float       : left;
+        margin-left : 95px;
+        min-width   : 350px;
+    }
+
+    .show_cards, .show-page {
+        width : auto;
+    }
+
+    .show-page .column {
+        margin-bottom: 50px;
+        width : 100%;
+        text-align: center;
+    }
+
+    .show-page .column * {
+        text-align: center;
+    }
+
+    .show-page .column img {
+        width : 100%;
+        height: auto;
+    }
+    .header nav {
+        width: 405px;
+    }
+    .header .quick-search .quick-search-input {
+        width: 155px;
+    }
+}
+
+.fancybox-inner .reg-popup, .fancybox-inner .land-popup {
+    display : block;
+}
+
+/*#forgot-popup-link {
+    color: #cd2667;
+}*/
+
+input:focus, a:focus {
+    outline : 0;
+}
+
+.fancybox-inner .reg-popup, .fancybox-inner .land-popup {
+    display : block;
+}
+
+/*#forgot-popup-link {
+    color: #cd2667;
+}*/
+
+input:focus, a:focus {
+    outline : 0;
+}
+
+.links-block {
+    overflow : hidden;
+}
+
+.links-block .left-block {
+    width : 45%;
+    float : left;
+}
+
+.links-block .right-block {
+    width : 45%;
+    float : right;
+}
+
+.links-block .text {
+    line-height : 150%;
+}
+
+.links-block .text a {
+    display      : inline-block;
+    margin-right : 15px;
+}
+
+.doctor-special-links {
+    position : relative;
+}
+
+body.hidden .doctor-special-links {
+    display: none;
+}
+
+.clearfix {
+    clear    : both;
+    display  : block;
+    height   : 1px;
+    overflow : hidden;
+    width    : 100%;
+}
+
+.specialties-groups, .specializationDiseasesArea {
+    width    : 960px;
+    position : relative;
+    margin   : 0 auto;
+    overflow : hidden;
+}
+
+.clinic-list-link {
+    width    : 976px;
+    position : relative;
+    margin   : 0 auto 20px;
+    overflow : hidden;
+}
+
+.specialties-groups .specialty-group, .specializationDiseasesArea .sdaDiseaseBlock {
+    float    : left;
+    width    : 25%;
+    overflow : hidden;
+}
+
+.clinic-list-link .cllSTBlocks {
+    overflow : hidden;
+}
+
+.specialties-groups .specialty-group .group-name, .specializationDiseasesArea .sdaName {
+    color       : #C72566;
+    font-family : 'PF Agora Slab Pro Regular', 'PF Agora Slab Pro';
+    font-size   : 20px;
+    font-style  : normal;
+    font-weight : 400;
+    margin      : 0 0 17px;
+    text-align  : center;
+}
+
+.specializationDiseasesArea .sdaTitle {
+    font-family : 'PF Agora Slab Pro Regular', 'PF Agora Slab Pro';
+    font-size   : 18px;
+    font-style  : normal;
+    font-weight : 400;
+    margin      : 30px 0;
+    text-align  : center;
+    overflow    : hidden;
+}
+
+.specializationDiseasesArea .sdaTitle .sdaTitleContainer {
+    position : relative;
+    display  : inline-block;
+}
+
+.specializationDiseasesArea .sdaTitle .sdaTitleContainer .sdaTitlePart {
+    position   : absolute;
+    height     : 100%;
+    width      : 200%;
+    background : url(/media/images/u15_line.png) repeat-x scroll 0 center transparent;
+}
+
+.specializationDiseasesArea .sdaTitle .sdaTitleContainer .sdaTitlePart.sdaLeft {
+    left : -210%;
+}
+
+.specializationDiseasesArea .sdaTitle .sdaTitleContainer .sdaTitlePart.sdaRight {
+    right : -210%;
+}
+
+.specializationDiseasesArea .sdaDiseaseBlocks a:hover, .clinic-list-link .cllSTBlocks a:hover {
+    text-decoration : none;
+}
+
+.specialties-groups.doctor-specialties .specialty-group .group-name {
+    color : #333333;
+}
+
+.specialties-groups .specialty-group ul li, .specializationDiseasesArea ul li {
+    display : block;
+    padding : 0 10px 0 0;
+    color   : #2E88BC;
+}
+
+.cllSTBlocks ul li {
+    display : block;
+    padding : 0 10px 5px 0;
+    width   : 32%;
+    float   : left;
+    color   : #2E88BC;
+}
+
+.specializationDiseasesArea ul li {
+    display : block;
+    padding : 0 10px 3px 0;
+    color   : #2E88BC;
+}
+
+.specialties-groups ul li.specialty-group-separator {
+    height : 12px;
+}
+
+.specialties-groups .specialty-group ul li a, .specializationDiseasesArea ul li a, .cllSTBlocks ul li a {
+    display         : inline-block;
+    color           : #2E88BC;
+    text-decoration : underline;
+}
+
+.specialties-groups ul li a span.specialty-name-firs-letter, .specializationDiseasesArea ul li a span {
+    color       : #2E88BC;
+    font-family : 'PF Agora Sans Pro Bold', 'PF Agora Sans Pro';
+    font-size   : 16px;
+    font-style  : normal;
+}
+
+.specialties-groups ul li a.first-specialty span.specialty-name-firs-letter,
+.specializationDiseasesArea ul li a.first-specialty span.disease-name-firs-letter {
+    font-size       : 15px;
+    font-weight     : 700;
+    text-decoration : underline;
+}
+
+.specialties-groups ul li a span.specialty-name-other-part, .specializationDiseasesArea ul li a span.disease-name-other-part {
+    font-family : 'PF Agora Sans Pro Bold', 'PF Agora Sans Pro';
+    font-size   : 16px;
+    font-style  : normal;
+}
+
+.specialties-groups h2 {
+    text-align : center;
+    margin     : 0 0 25px;
+}
+
+.specializationDiseasesArea ul li a, .specializationDiseasesArea ul li a span, .cllSTBlocks ul li a {
+    font-size : 14px !important;
+}
+
+.not-main-specialties .specialty-group ul li a, .not-main-specialties .specialty-group ul li a span {
+    font-size : 12px !important;
+}
+
+.not-main-specialties .specialty-group ul li a span:first-child {
+    font-size : 13px !important;
+}
+
+.specialties-block-modernize .specialties-block {
+    width    : 50%;
+    float    : left;
+    overflow : hidden;
+}
+
+.specialties-block-modernize .specialties-block:first-child .text {
+    padding : 0 20px 0 0;
+}
+
+.special-block.links-block.inner-2.specialties-block-modernize.districtsBlock {
+    padding-bottom : 15px;
+    padding-top    : 5px;
+}
+
+.districtsBlock .specialties-block, .districtsBlock .specialties-block .text {
+    text-align : center !important;
+    width      : auto !important;
+    float      : none !important;
+}
+
+.otherAddressData .specialties-block {
+    width : auto !important;
+    float : none !important;
+}
+
+.districtsBlock .specialties-block .text a {
+    color          : #2E88BC;
+    font-family    : 'PF Agora Sans Pro Regular', 'PF Agora Sans Pro';
+    font-size      : 16px;
+    font-style     : normal;
+    font-weight    : 400;
+    text-align     : center;
+    text-transform : uppercase;
+}
+
+.otherAddressData .specialties-block .text {
+    margin : 0 0 0 -25px;
+}
+
+.otherAddressData .specialties-block .text a {
+    color       : #2E88BC;
+    font-family : 'PF Agora Sans Pro Regular', 'PF Agora Sans Pro';
+    font-style  : normal;
+    font-weight : 400;
+    margin      : 0 0 5px 25px;
+}
+
+.otherAddressData .specialties-block .text a:first-child {
+}
+
+.specialties-block {
+    margin-bottom : 15px;
+}
+
+.specialties-block .text {
+    text-align : justify;
+}
+
+.breadcrumbs, .breadcrumbs a {
+    color       : #1F8EBE;
+    font-family : 'pf_agora_sans_proregular', Arial;
+    font-size   : 12px;
+}
+
+.special-block h1 {
+    text-align : center;
+    color      : #393939;
+}
+
+.special-block h2 {
+    color : #393939;
+    text-align: center;
+    margin: 0;
+}
+.specialties-block h2 {
+    margin: 0 0 10px;
+}
+
+.special-block a {
+    color : #393939;
+}
+
+input:focus, a:focus {
+    outline : 0;
+}
+
+@media screen and (max-width : 1024px) {
+    .top_number {
+        padding-left : 100px;
+    }
+}
+
+.top_number .number_right {
+    text-align   : center;
+    width: 100%;
+    margin-right : 40px;
+    padding-bottom: 15px;
+}
+
+.top_number .number_left {
+    width: 100%;
+    text-align: center;
+    padding-bottom : 15px;
+    padding-top    : 15px;
+}
+
+.top_number .number_right span {
+    font-size    : 22px;
+    padding-left : 20px;
+}
+
+.top_number .number_right span.number_set {
+    font-size   : 28px;
+    background  : url(/media/images/footer_top_info_phone.png) left 50% no-repeat;
+    font-family : pf_agora_slab_proregular;
+    color       : #CD2667;
+}
+
+.top_number.default_top_number {
+    padding : 20px 0 0;
+}
+
+.family_relation_inline {
+    padding : 20px 0 8px 2px;
+}
+
+.family_relation_inline li {
+    display     : inline;
+    margin-left : 30px;
+}
+
+.family_relation_inline span {
+    cursor : pointer;
+}
+
+.popup-textarea {
+    word-wrap     : break-word;
+    resize        : none;
+    background    : url(/media/images/popup_textarea.png) no-repeat 50% 50%;
+    height        : 56px;
+    overflow      : auto;
+    text-overflow : ellipsis;
+    width         : 371px;
+    border        : none;
+    color         : #666666;
+    font          : 21px/27px 'pf_agora_slab_proregular';
+    margin-right  : -9px;
+    padding       : 7px 0 18px 13px;
+    outline       : none;
+}
+
+.all .inner-top-info {
+    text-align  : center;
+    color       : #55BCC8;
+    padding-top : 20px;
+    font-family : 'pf_agora_sans_probold', Arial;
+    font-size   : 14px;
+}
+
+.all .inner-top-info .info-phone {
+    display      : inline-block;
+    background   : url(/media/images/footer_top_info_phone.png) left top no-repeat;
+    height       : 25px;
+    line-height  : 25px;
+    padding-left : 20px;
+    color        : #000000;
+    margin       : 0 5px 0 10px;
+}
+
+.record-purpose-list {
+    display : inline-block;
+}
+
+.price {
+    color      : #D93474;
+    display    : block;
+    float      : right;
+    margin-top : 20px;
+}
+
+.purpose-row .price {
+    margin : 0;
+}
+
+.fancybox-inner .reg-popup, .fancybox-inner .land-popup {
+    display : block;
+}
+
+/*#forgot-popup-link {
+    color: #cd2667;
+}*/
+
+input:focus, a:focus {
+    outline : 0;
+}
+
+.links-block {
+    overflow : hidden;
+}
+
+.links-block .left-block {
+    width : 45%;
+    float : left;
+}
+
+.links-block .right-block {
+    width : 45%;
+    float : right;
+}
+
+.links-block .text {
+    line-height : 150%;
+}
+
+.links-block .text a {
+    display      : inline-block;
+    margin-right : 15px;
+}
+
+.specialties-block {
+    margin-bottom : 15px;
+}
+
+.specialties-block .text {
+    text-align : justify;
+}
+
+.special-block .h1 {
+    display               : block;
+    font-size             : 2em;
+    -webkit-margin-before : 0.67em;
+    -webkit-margin-after  : 0.67em;
+    -webkit-margin-start  : 0px;
+    -webkit-margin-end    : 0px;
+    font-weight           : bold;
+    font-family           : 'pf_agora_sans_proregular', Arial;
+}
+
+.special-block h1, .special-block .h1 {
+    text-align : center;
+    color      : #393939;
+}
+
+.special-block h2 {
+    color : #393939;
+}
+
+.special-block a {
+    color : #393939;
+}
+
+input:focus, a:focus {
+    outline : 0;
+}
+
+.top_number {
+    width         : 910px;
+    margin        : 0 auto;
+    font-size     : 24px;
+    padding-left  : 0;
+    font-family   : pf_agora_slab_pro_medium;
+    margin-bottom : -25px;
+    overflow      : hidden;
+}
+
+.register a {
+    text-decoration : none;
+}
+
+@media screen and (max-width : 1024px) {
+    .top_number {
+        padding-left : 100px;
+    }
+}
+
+.top_number .number_right {
+    text-align   : center;
+    width: 100%;
+    margin-right : 40px
+}
+
+.top_number left{
+    width: 100%;
+    text-align: center;
+    padding-bottom : 15px;
+    padding-top    : 15px;
+}
+
+.top_number.refactor .number_left {
+    padding-top : 20px;
+}
+
+.top_number.refactor .number_left.refactor-number-left-styles {
+    padding-top : 0;
+}
+
+.top_number h1.number_left {
+    font-family : pf_agora_slab_pro_medium;
+    font-size   : 20px;
+    font-weight : normal;
+}
+
+.top_number .number_right span {
+    font-size    : 22px;
+    padding-left : 20px;
+}
+
+.top_number .number_right span.number_set {
+    font-size   : 28px;
+    background  : url(/media/images/footer_top_info_phone.png) left 50% no-repeat;
+    font-family : pf_agora_slab_proregular;
+    color       : #CD2667;
+
+}
+
+.top_number .number_right span.work_time {
+    display   : block;
+    margin    : 0;
+    font-size : 15px;
+}
+
+.top_number.refactor {
+    width        : 895px;
+    padding-left : 80px;
+}
+
+.top_number .number_right.refactor {
+    text-align : right;
+    margin     : -17px 0 0;
+}
+
+.top_number .number_right span.refactor {
+    font-size : 15px;
+}
+
+.top_number .number_right span.number_set.refactor {
+    font-size : 24px;
+}
+
+.seo-specialty-description, .seo-geo-description {
+    font-size  : 14px;
+    margin     : 20px 0 0;
+    text-align : justify;
+}
+
+.sp-links {
+    position    : absolute;
+    left        : 50%;
+    margin-top  : 15px;
+    line-height : 29px;
+}
+
+.sp-links.left-links {
+    margin-left : -215px;
+    width       : 500px;
+}
+
+.sp-links a, .sp-links span, .sp-links #authorization-block-on-disease-page {
+    display        : inline-block;
+    vertical-align : middle;
+}
+
+.sp-links a, .sp-links span {
+    color : #FFFFFF;
+}
+
+.sp-links.left-links {
+    margin-left : -525px;
+}
+
+.sp-links .phone .calltime {
+    font-size   : 14px;
+    font-family : 'pf_agora_slab_pro_medium';
+    color       : #C2C2C2;
+}
+
+.sp-links .phone .flo {
+    display : none
+}
+
+.sp-links .phone small {
+    font-size : 14px;
+}
+
+.sp-links .a-dashed {
+    border-bottom   : 1px #FFFFFF dashed;
+    text-decoration : none;
+    margin          : 0 35px 0 15px;
+}
+
+.sp-links .a-dashed small {
+    font-size : 11px;
+}
+
+.sp-links.right-links {
+    margin-left : 70px;
+    min-width   : 430px;
+}
+
+.users-filter {
+    margin-bottom : 15px;
+}
+
+.block-button {
+    margin-bottom : 15px;
+}
+
+.block {
+    margin-bottom : 15px;
+}
+
+.styled-table thead {
+    background-color : #6495ED;
+    color            : white;
+}
+
+.styled-table {
+    font-size : 13px;
+}
+
+.styled-table select {
+    max-width : 350px;
+}
+
+.styled-table thead th, .styled-table tr td {
+    padding-left   : 10px;
+    padding-right  : 10px;
+    padding-top    : 5px;
+    padding-bottom : 5px;
+}
+
+.bold {
+    font-weight : bold;
+}
+
+div[data-name="purpose_of_visit_to_clinic"] input[name="visit_price"] {
+    width        : 50px;
+    margin-right : 30px;
+}
+
+#facebookG {
+    width    : 150px;
+    position : fixed;
+    top      : 45%;
+    left     : 40%;
+}
+
+.facebook_blockG {
+    background-color                  : #FFFFFF;
+    border                            : 4px solid #000000;
+    float                             : left;
+    height                            : 107px;
+    margin-left                       : 8px;
+    width                             : 29px;
+    opacity                           : 0.1;
+    -moz-animation-name               : bounceG;
+    -moz-animation-duration           : 2.1s;
+    -moz-animation-iteration-count    : infinite;
+    -moz-animation-direction          : linear;
+    -moz-transform                    : scale(0.7);
+    -webkit-animation-name            : bounceG;
+    -webkit-animation-duration        : 2.1s;
+    -webkit-animation-iteration-count : infinite;
+    -webkit-animation-direction       : linear;
+    -webkit-transform                 : scale(0.7);
+    -ms-animation-name                : bounceG;
+    -ms-animation-duration            : 2.1s;
+    -ms-animation-iteration-count     : infinite;
+    -ms-animation-direction           : linear;
+    -ms-transform                     : scale(0.7);
+    -o-animation-name                 : bounceG;
+    -o-animation-duration             : 2.1s;
+    -o-animation-iteration-count      : infinite;
+    -o-animation-direction            : linear;
+    -o-transform                      : scale(0.7);
+    animation-name                    : bounceG;
+    animation-duration                : 2.1s;
+    animation-iteration-count         : infinite;
+    animation-direction               : linear;
+    transform                         : scale(0.7);
+}
+
+#blockG_1 {
+    -moz-animation-delay    : 0.6300000000000001s;
+    -webkit-animation-delay : 0.6300000000000001s;
+    -ms-animation-delay     : 0.6300000000000001s;
+    -o-animation-delay      : 0.6300000000000001s;
+    animation-delay         : 0.6300000000000001s;
+}
+
+#blockG_2 {
+    -moz-animation-delay    : 0.8400000000000001s;
+    -webkit-animation-delay : 0.8400000000000001s;
+    -ms-animation-delay     : 0.8400000000000001s;
+    -o-animation-delay      : 0.8400000000000001s;
+    animation-delay         : 0.8400000000000001s;
+}
+
+#blockG_3 {
+    -moz-animation-delay    : 1.05s;
+    -webkit-animation-delay : 1.05s;
+    -ms-animation-delay     : 1.05s;
+    -o-animation-delay      : 1.05s;
+    animation-delay         : 1.05s;
+}
+
+@-moz-keyframes bounceG {
+    0% {
+        -moz-transform : scale(1.2);
+        opacity        : 1
+    }
+
+    100% {
+        -moz-transform : scale(0.7);
+        opacity        : 0.1
+    }
+
+}
+
+@-webkit-keyframes bounceG {
+    0% {
+        -webkit-transform : scale(1.2);
+        opacity           : 1
+    }
+
+    100% {
+        -webkit-transform : scale(0.7);
+        opacity           : 0.1
+    }
+
+}
+
+@-ms-keyframes bounceG {
+    0% {
+        -ms-transform : scale(1.2);
+        opacity       : 1
+    }
+
+    100% {
+        -ms-transform : scale(0.7);
+        opacity       : 0.1
+    }
+
+}
+
+@-o-keyframes bounceG {
+    0% {
+        -o-transform : scale(1.2);
+        opacity      : 1
+    }
+
+    100% {
+        -o-transform : scale(0.7);
+        opacity      : 0.1
+    }
+
+}
+
+@keyframes bounceG {
+    0% {
+        transform : scale(1.2);
+        opacity   : 1
+    }
+
+    100% {
+        transform : scale(0.7);
+        opacity   : 0.1
+    }
+
+}
+
+div.error-notify {
+    border-radius : 5px;
+}
+
+div.error-notify .gritter-top {
+    border-top-right-radius : 10px;
+    border-top-left-radius  : 10px;
+}
+
+div.error-notify .gritter-bottom {
+    border-bottom-right-radius : 10px;
+    border-bottom-left-radius  : 10px;
+}
+
+div.error-notify .gritter-top, div.error-notify .gritter-item, div.error-notify .gritter-bottom {
+    background  : url("/media/images/novalid_bg.png") repeat scroll 0 0 transparent;
+    font-family : Arial;
+    font-size   : 14px;
+}
+
+.clinic-list {
+    overflow : hidden;
+}
+
+.clinic-check-more-button {
+    font-weight : bold;
+    font-size   : 20px;
+    text-align  : center;
+    margin-top  : 20px;
+    cursor      : pointer;
+}
+
+.notchecked, .notchecked-block, .checked-block {
+    cursor : pointer;
+}
+
+.clinic-list {
+    clear      : both;
+    margin-top : 10px;
+}
+
+.buttons {
+    clear : both;
+}
+
+.fields-block-inner .clinic-list .region-clinic .about p {
+    color       : black;
+    font-size   : 13px;
+    font-weight : normal;
+}
+
+.row-record-data #date_contract {
+    width : 100px;
+}
+
+.row-record-data #date_contract_picker {
+    width : 100px;
+}
+
+.clinic-card .phone_a span {
+    display : block;
+}
+
+.hint-doctor .clinic-info-hint {
+    display : none;
+}
+
+.hint-doctor:first-child {
+    display : block;
+}
+
+.analizes-center .criteria li.not-active {
+    color : silver;
+}
+
+.analizes-center .simple-text .text {
+    text-align : justify;
+}
+
+.info-card.reviews-page-card .descr {
+    float   : none;
+    display : inline-block;
+}
+
+.btn-call {
+    text-align      : center !important;
+    cursor          : pointer;
+    border          : none;
+    width           : 201px !important;
+    float           : right;
+    margin-right    : 6%;
+    display         : block !important;
+    height          : 36px;
+    padding         : 0;
+    line-height     : 36px;
+    font-size       : 24px;
+    font-family     : 'pf_agora_slab_pro_medium';
+    text-decoration : none;
+    color           : #FFFFFF;
+    background      : url(/media/images/btn-call.jpg) 0 0 repeat-x;
+    text-shadow     : 0 -1px 0 #222222;
+    border-radius   : 3px;
+    box-shadow      : 0 1px 2px #000000;
+    position        : relative;
+}
+
+.btn-call:active {
+    background-position : 0 100%;
+}
+
+.clear_line {
+    width       : 100%;
+    margin      : 0;
+    padding     : 0;
+    clear       : both;
+    font-family : 'pf_agora_sans_prolight';
+}
+
+.slider-cards {
+    position : relative;
+    margin   : auto;
+    width    : 984px;
+}
+
+.slider-cards .caroufredsel_wrapper {
+    width : 100% !important;
+}
+
+.slider-cards .next-nav, .slider-cards .prev-nav, .all_city .next-nav, .all_city .prev-nav {
+    display    : block;
+    position   : absolute;
+    top        : 0;
+    width      : 44px;
+    height     : 100%;
+    max-height : 288px;
+}
+
+.all_city .next-nav.disabled, .all_city .prev-nav.disabled {
+    display : none !important;
+}
+
+.slider-cards .next-nav .bg_nav, .slider-cards .prev-nav .bg_nav,
+.all_city .next-nav .bg_nav, .all_city .prev-nav .bg_nav {
+    position      : absolute;
+    top           : 0;
+    width         : 100%;
+    height        : 100%;
+    display       : block;
+    border-radius : 5px;
+    background    : url('/media/images/home_page/slider-cards-nav.png');
+    box-shadow    : 0 0 10px #919191;
+    opacity       : 0;
+}
+
+.slider-cards .prev-nav .bg_nav, .all_city .prev-nav .bg_nav {
+    background-position : 100% 100%;
+}
+
+.slider-cards .next-nav .bg_nav, .all_city .next-nav .bg_nav {
+    background-position : -100% 0;
+}
+
+.all_city .prev-nav {
+    left : 0;
+}
+
+.next-nav, .all_city .next-nav {
+    right : 0;
+}
+
+.slider-cards .prev-nav {
+    left : -48px;
+}
+
+.slider-cards .next-nav {
+    right : -48px;
+}
+
+.slider-cards .next-nav .bg_arrow, .slider-cards .prev-nav .bg_arrow,
+.all_city .next-nav .bg_arrow, .all_city .prev-nav .bg_arrow {
+    background : url('/media/images/home_page/slider-cards-nav-arrows.png');
+    display    : block;
+    height     : 46px;
+    width      : 23px;
+    position   : absolute;
+    top        : 50%;
+    left       : 50%;
+    margin     : -23px 0 0 -11.5px;
+}
+
+.slider-cards .prev-nav:active .bg_arrow, .all_city .prev-nav:active .bg_arrow {
+    background-position : 0 100%;
+}
+
+.slider-cards .next-nav:active .bg_arrow, .all_city .next-nav:active .bg_arrow {
+    background-position : 100% 100%;
+}
+
+.slider-cards .prev-nav .bg_arrow, .all_city .prev-nav .bg_arrow {
+    background-position : 0 0;
+}
+
+.slider-cards .next-nav .bg_arrow, .all_city .next-nav .bg_arrow {
+    background-position : 100% 0;
+}
+
+.slider-cards .ul_cards > li {
+    overflow : hidden;
+    float    : left;
+    margin   : 0 6px;
+}
+
+.slider-cards .ul_cards > li .info-card {
+    clear  : none;
+    margin : 0;
+}
+
+.slider-cards .div_nav {
+    position   : absolute;
+    z-index    : 1;
+    width      : 100%;
+    top        : -29px;
+    left       : 0;
+    text-align : center;
+}
+
+.slider-cards .div_nav > a {
+    display    : inline-block;
+    cursor     : pointer;
+    height     : 11px;
+    width      : 11px;
+    margin     : 0 3px;
+    background : url('/media/images/home_page/slider_nav.png') 100% 0 no-repeat;
+}
+
+.slider-cards .div_nav > a span {
+    display : none;
+}
+
+.slider-cards .div_nav > a.selected, .slider-cards .div_nav > a:hover {
+    background-position : 0 0;
+}
+
+#wrapper.wrap .search-block .drop-menu {
+    width : 262px;
+}
+
+a.search-doctor-button {
+    text-decoration : none;
+}
+
+.form-call {
+    display : none;
+}
+
+.about_us h1, .about_us h2, .about_us .contacts > .h-txt {
+    font       : normal 28px 'pf_agora_slab_pro_medium';
+    text-align : center;
+    clear      : both;
+}
+
+.about_us h1 {
+    color   : #1F8EBE;
+    padding : 14px 0;
+}
+
+.about_us h2 {
+    color         : #333333;
+    padding       : 0 100px;
+    margin-bottom : 25px;
+}
+
+.about_us .line_p {
+    text-align  : center;
+    font-size   : 19px;
+    float       : left;
+    margin      : 30px 0;
+    width       : 100%;
+    font-family : pf_agora_sans_probold;
+}
+
+.about_us .line_p2 {
+    font-size   : 17px !important;
+    font-family : pf_agora_sans_probold !important;
+}
+
+.about_us .line_p-white {
+    background  : #FFFFFF;
+    padding     : 11px 0;
+    width       : 100%;
+    float       : left;
+    margin      : 0 0 35px;
+    font-size   : 20px;
+    font-family : pf_agora_sans_promedium;
+}
+
+.about_us .white_bl {
+    width         : 330px;
+    height        : 240px;
+    padding       : 10px;
+    background    : #FFFFFF;
+    border-radius : 8px;
+    position      : relative;
+}
+
+.about_us .white_bl-l {
+    float : left;
+}
+
+.about_us .white_bl-r {
+    float : right;
+}
+
+.about_us .white_bl p {
+    font-size   : 17px;
+    font-family : pf_agora_sans_probold;
+}
+
+.about_us .white_bl ul li {
+    font-size   : 13px;
+    margin      : 12px 0;
+    font-family : pf_agora_sans_promedium;
+}
+
+.about_us .owl {
+    position   : relative;
+    width      : 268px;
+    height     : 260px;
+    float      : left;
+    background : url(/media/images/owl.png) 50% 50% no-repeat;
+}
+
+.about_us .owl p {
+    text-align  : center;
+    font        : normal 20px 'pf_agora_slab_proregular';
+    color       : #D93474;
+    text-shadow : 0 1px 0 #B62C61;
+}
+
+.about_us .owl .bottom {
+    position : absolute;
+    bottom   : 0;
+    left     : 0;
+    width    : 100%;
+}
+
+.about_us .list_info {
+    margin-bottom : 40px;
+    float         : left;
+    width         : 100%;
+}
+
+.about_us .list_info li {
+    width        : 360px;
+    padding-left : 75px;
+    font-size    : 14px;
+    float        : left;
+}
+
+.about_us .list_info li:first-child {
+    background   : url(/media/images/tooltip_icon1.png) 28px 50% no-repeat;
+    margin-right : 60px;
+}
+
+.about_us .list_info li:last-child {
+    background : url(/media/images/tooltip_icon3.png) 26px 50% no-repeat;
+}
+
+.about_us .contacts {
+    float : left;
+    width : 100%;
+}
+
+.about_us .contacts > .h-txt {
+    padding-bottom : 19px;
+}
+
+.about_us .contacts ul {
+    clear : both;
+}
+
+.about_us .contacts ul li {
+    float      : left;
+    min-height : 66px;
+}
+
+.about_us .contacts ul li:first-child {
+    width        : 250px;
+    padding-left : 80px;
+    margin-left  : 150px;
+}
+
+.about_us .contacts ul li:first-child + li {
+    width        : 200px;
+    padding-left : 95px;
+    margin-left  : 90px;
+}
+
+.about_us .contacts ul li:first-child {
+    background : url(/media/images/about_tel.png) 0 50% no-repeat;
+}
+
+.about_us .contacts ul li:first-child + li {
+    background : url(/media/images/about_email.jpg) 0 50% no-repeat;
+}
+
+.about_us .contacts ul li p {
+    padding : 7px 0 5px;
+}
+
+.about_us .contacts ul li .h-txt {
+    font-size : 14px;
+}
+
+.about_us .contacts ul li .txt {
+    font-size   : 19px;
+    font-family : pf_agora_sans_promedium;
+}
+
+.about_us .address {
+    float  : left;
+    margin : 35px 0 15px;
+}
+
+.about_us .address .index {
+    display        : inline-block;
+    vertical-align : bottom;
+    /*background     : url(/media/images/post_index.jpg) 100% 0 no-repeat;*/
+    min-height     : 33px;
+    padding        : 9px 130px 0 0;
+    padding-right  : 130px;
+    font-size      : 14px;
+    text-align     : right;
+    margin-right   : 13px;
+}
+
+.about_us .address .txt {
+    font-size   : 20px;
+    font-family : pf_agora_sans_promedium;
+}
+
+.about-map-box {
+    width         : 100%;
+    background    : #FFFFFF;
+    height        : 280px;
+    margin-bottom : -20px;
+}
+
+.about-map-box #map {
+    height : 100%;
+    width  : 100%;
+}
+
+.about_us a {
+    color : #3392C2;
+}
+
+.about_us a:hover {
+    text-decoration : underline;
+    color           : #DD3183;
+}
+
+.flag_address {
+    border-radius : 6px;
+    position      : relative;
+    padding       : 58px 10px 10px 10px;
+    background    : #FFFFFF url('/media/images/eyes_owl_line_tr_b.png') 50% 10px no-repeat;
+    width         : 200px;
+    font-size     : 14px;
+    box-shadow    : 1px 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.flag_address:before {
+    position           : absolute;
+    content            : "";
+    top                : 16px;
+    left               : -30px;
+    border             : 15px transparent solid;
+    border-right-color : #FFFFFF;
+    height             : 0;
+    width              : 0;
+}
+
+#kladr-button {
+    width    : 150px;
+    top      : 7px;
+    left     : 10px;
+    position : relative;
+}
+
+.row-header {
+    border-bottom : 1px solid #E0DFDA;
+    width         : 100%;
+    padding-top   : 10px;
+}
+
+.row-header label {
+    font : 15px Arial;
+}
+
+.doc_alr_exist {
+    clear                 : both;
+    width                 : 700px;
+    background            : url(/media/images/cloth_alike.png) #ECECEC;
+    -webkit-border-radius : 4px;
+    -moz-border-radius    : 4px;
+    border-radius         : 4px;
+}
+
+.doc_alr_exist .doc_block {
+    display        : inline-block;
+    vertical-align : middle;
+    width          : 60%;
+    border-right   : 1px #999999 dashed;
+    padding        : 0 2%;
+}
+
+.doc_alr_exist .doc_block img {
+    border         : 5px #FFFFFF solid;
+    border-radius  : 6px;
+    box-shadow     : 0 0 6px #B29C9C;
+    vertical-align : middle;
+}
+
+.doc_alr_exist .doc_block .doc_info {
+    margin         : 3% 0 3% 15px;
+    display        : inline-block;
+    vertical-align : middle;
+    font-size      : 14px;
+    line-height    : 2.8;
+    height         : 127px;
+}
+
+.doc_alr_exist .doc_block .doc_info .btn-appoint {
+    width      : auto;
+    background : url(/media/images/btn-4_bg.png) no-repeat;
+    padding    : 0 10px;
+}
+
+.doc_alr_exist .doc_block hr {
+    border : 0;
+}
+
+.doc_alr_exist .create_block {
+    display        : inline-block;
+    vertical-align : middle;
+    width          : 34%;
+    text-align     : center;
+}
+
+.doc_alr_exist .create_block .txt {
+    padding   : 10px;
+    font-size : 14px;
+}
+
+/* MAGAZINE */
+.magazine .search-block {
+    margin     : 0 0 0 58px;
+    position   : relative;
+    text-align : right;
+}
+
+.magazine .search-block label {
+    color         : #393939;
+    font          : normal 34px 'pf_agora_slab_pro_medium';
+    padding-right : 20px;
+}
+
+.magazine .search-block input.txt {
+    width : 440px;
+    float : none;
+}
+
+.magazine h2 {
+    margin      : 25px 0 5px;
+    font-size   : 18px;
+    font-family : 'pf_agora_slab_pro_medium';
+    color       : #000000;
+    text-shadow : 1px 1px 1px #FFFFFF;
+}
+
+.bg_gradient {
+    position              : relative;
+    background            : #FFFFFF;
+    background            : -moz-linear-gradient(top, #FFFFFF 0%, #F7F7F7 100%);
+    background            : url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background            : -webkit-linear-gradient(#FFFFFF, #F7F7F7);
+    background            : -moz-linear-gradient(#FFFFFF, #F7F7F7);
+    background            : -o-linear-gradient(#FFFFFF, #F7F7F7);
+    background            : -ms-linear-gradient(#FFFFFF, #F7F7F7);
+    -webkit-border-radius : 8px;
+    -moz-border-radius    : 8px;
+    border-radius         : 8px;
+    -webkit-box-shadow    : 0 1px 2px #A9A9A9;
+    -moz-box-shadow       : 0 1px 2px #A9A9A9;
+    box-shadow            : 0 1px 2px #A9A9A9;
+}
+.catalog_list_container {
+    text-align : center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.bg_gradient h3 .category, h4 .category {
+    color           : #000000;
+    text-decoration : none;
+}
+
+.block_left {
+    width : 740px;
+    float : left;
+}
+
+.block_right {
+    width : 220px;
+    float : right;
+}
+
+.catalog_list {
+    list-style    : none;
+    overflow      : hidden;
+    padding       : 15px 0 9px;
+    margin-bottom : 0 !important;
+    text-align    : left;
+}
+
+.catalog_list li {
+    width          : 320px;
+    float          : left;
+    display        : block;
+    vertical-align : top;
+    min-height     : 18px;
+    padding        : 7px 0 0 3%;
+    height         : 62px;
+    overflow       : hidden;
+    text-align     : left;
+}
+
+.catalog_list li img {
+    margin : 4px 0 -4px -20px;
+}
+
+.catalog_list li a {
+    float       : left;
+    display     : block;
+    width       : 170px;
+    margin-left : 5px;
+}
+
+.catalog_list .search_pattern {
+    font-family : pf_agora_sans_proregular, Arial;
+    font-size   : 20px;
+    float       : left;
+    margin-left : 20px;
+    padding     : 0;
+    color       : #76A19A;
+    width       : auto;
+}
+
+.category-image {
+    background          : url('/media/images/icons_catalog.png') no-repeat;
+    display             : block;
+    float               : left;
+    width               : 20px;
+    height              : 20px;
+    overflow            : hidden;
+    background-position : -55px -9px;
+}
+
+/*.catalog_list li.img1 {background: url('/media/images/magazine/cat_1.png') 0 8px no-repeat;}
+.catalog_list li.img2 {background: url('/media/images/magazine/cat_2.png') 0 8px no-repeat;}
+.catalog_list li.img3 {background: url('/media/images/magazine/cat_3.png') 0 8px no-repeat;}
+.catalog_list li.img4 {background: url('/media/images/magazine/cat_4.png') 0 8px no-repeat;}
+.catalog_list li.img5 {background: url('/media/images/magazine/cat_5.png') 0 8px no-repeat;}*/
+.catalog_list li a {
+    color           : #1F8EBE;
+    text-decoration : none;
+    font            : 15px 'pf_agora_slab_pro_medium';
+    text-shadow     : 1px 1px 1px #FFFFFF;
+}
+
+.catalog_list li a:hover {
+    color : #CD2667;
+}
+
+.catalog_list + .more-link {
+    font-size   : 15px;
+    font-family : 'pf_agora_sans_probold';
+    width       : 100%;
+    padding     : 0 0 10px;
+    margin      : 0;
+    text-align  : center;
+    color       : #6D6D6D;
+    display     : inline-block;
+    margin      : 0 !important;
+}
+
+.catalog_list + .more-link:hover {
+    text-decoration : none;
+}
+
+.catalog_list h3 a {
+    margin : 0 10px 0 0 !important;
+}
+
+.goods_blocks > li {
+    width          : 182px;
+    border-radius  : 5px;
+    margin         : 6px 5px 6px 6px;
+    display        : inline-block;
+    vertical-align : top;
+}
+
+.goods_blocks > li:hover {
+    -webkit-box-shadow : 0 0 10px #3392C2;
+    -moz-box-shadow    : 0 0 10px #3392C2;
+    box-shadow         : 0 0 10px #3392C2;
+}
+
+.goods_blocks > li:nth-child(4n) {
+    margin-right : 0;
+}
+
+.goods_blocks > li > a {
+    display       : block;
+    height        : 145px;
+    border-radius : 6px;
+    box-shadow    : 0 0 1px #B29C9C;
+    border        : 5px #FFFFFF solid;
+    margin        : 10px 10px 5px;
+    line-height   : 145px;
+    text-align    : center;
+}
+
+.goods_blocks > li img {
+    display        : inline-block;
+    vertical-align : middle;
+    max-width      : 140px;
+    max-height     : 140px;
+}
+
+.goods_blocks > li .good_name {
+    padding     : 0 5px;
+    height      : 62px;
+    overflow    : hidden;
+    line-height : 1.3;
+    text-align  : center;
+    font-size   : 12px;
+    color       : #6D6D6D;
+    font-family : 'pf_agora_sans_proregular';
+    word-wrap   : break-word;
+}
+
+.goods_blocks > li .good_name a {
+    color           : #1F8EBE;
+    text-decoration : none;
+    font-family     : 'pf_agora_sans_probold';
+    max-height      : 31px;
+    display         : block;
+    overflow        : hidden;
+    margin-bottom   : 2px;
+}
+
+.goods_blocks > li .good_name a:hover {
+    color : #CD2667;
+}
+
+.goods_blocks > li .inbasket {
+    text-align  : center;
+    line-height : 14px;
+    visibility  : hidden;
+}
+
+.goods_blocks > li .inbasket a {
+    color : #5FC3D0;
+}
+
+.goods_blocks > li .price-btn {
+    padding     : 4px 3px 7px 7px;
+    overflow    : hidden;
+    height      : 23px;
+    text-align  : right;
+    line-height : 23px;
+}
+
+.goods_blocks > li .price-btn b {
+    font : normal 15px 'pf_agora_slab_probold';
+}
+
+.goods_blocks > li .price-btn .btn-w {
+    float       : right;
+    margin-left : 5px;
+}
+
+.goods_blocks > li .price-btn .counter {
+    float   : right;
+    margin  : 0 10px;
+    display : none;
+}
+.goods_blocks > li .product-card-message {
+    font-size: 10px;
+    padding: 4px 3px 7px;
+    text-align: center;
+    color: #6d6d6d;
+}
+.buy .product-card-message {
+    color: #6d6d6d;
+}
+
+.btn-w {
+    position            : relative;
+    cursor              : pointer;
+    background          : url(/media/images/appoint_btn.png) no-repeat;
+    font-family         : 'pf_agora_slab_probold';
+    color               : #FFFFFF !important;
+    text-decoration     : none !important;
+    text-align          : center;
+    text-shadow         : 1px -1px 1px #23629A;
+    display             : block;
+    border              : 1px solid #CDD1FF;
+    padding             : 0 13px;
+    height              : 23px;
+    background-size     : cover;
+    background-position : -5px -5px;
+    line-height         : 23px;
+    font-size           : 12px;
+    border-radius       : 5px;
+}
+
+.btn-w:active {
+    background-position : 0 100%;
+}
+
+.btn-w:hover {
+    box-shadow : 0px 0px 4px #B6CCD7;
+}
+
+.magazine {
+    position : relative;
+}
+
+.magazine .sort_year {
+    position : relative;
+    float    : right;
+    clear    : both;
+    top      : 0;
+    right    : -60px;
+    padding  : 5px 13px;
+    margin   : 0 0 5px;
+}
+
+.magazine .block_right .h-txt, .magazine .block_right .h-txt a {
+    font-family     : 'pf_agora_slab_probold';
+    color           : #333333;
+    text-align      : center;
+    font-size       : 18px;
+    text-decoration : none;
+}
+
+.magazine .block_right .h-txt a {
+    color      : #3392C2;
+    display    : block;
+    height     : 100%;
+    text-align : left;
+}
+
+.magazine .block_right .h-txt a:hover {
+    color : #CD2667;
+}
+
+.magazine .block_right .h-txt {
+    padding : 12px 0 10px;
+}
+
+.magazine .block_right .h-txt-b {
+    padding-top : 0;
+    color       : #3D3D3D;
+}
+
+.magazine .block_right .txt {
+    color       : #3D3D3D;
+    font-family : 'pf_agora_sans_probold';
+    font-size   : 13px;
+    text-align  : left;
+    padding     : 5px 31px 10px;
+    line-height : 1;
+}
+
+.magazine .block_right .txt a {
+    color     : #3F3F3F;
+    font-size : 12px;
+}
+
+.magazine .block_right .txt a:hover {
+    text-decoration : none;
+}
+
+.magazine .block_right .grey-txt {
+    font-size : 16px;
+    color     : #999999;
+}
+
+.magazine .block_right .order_btn {
+    margin      : 0 auto 17px;
+    font-family : pf_agora_slab_pro_medium;
+    font-size   : 16px;
+}
+
+.magazine .block_right .list {
+    margin  : 0 10px 0 23px;
+    padding : 0 0 7px;
+}
+
+.magazine .block_right ul.list li {
+    padding-left   : 25px;
+    color          : #3D3D3D;
+    font-family    : 'pf_agora_sans_proregular';
+    padding-bottom : 2px;
+    font-size      : 13px;
+}
+
+.h-delivery, .h-pay, .h-bask {
+    min-height  : 42px;
+    line-height : 42px;
+    text-align  : left !important;
+    padding     : 5px 0 5px 21px !important;
+}
+
+.h-delivery {
+    background : url('/media/images/magazine/delivery.png') 92% 50% no-repeat;
+}
+
+.h-pay {
+    background : url('/media/images/magazine/pay.png') 92% 50% no-repeat;
+}
+
+.h-bask {
+    background : url('/media/images/magazine/basket.png') 92% 50% no-repeat;
+}
+
+.mb_15 {
+    margin-bottom : 15px;
+}
+
+.magazine .way_line {
+    margin : 7px 0 21px 72px;
+}
+
+.magazine .way_line.m0 {
+    margin: 0;
+    padding: 25px 0 15px;
+}
+
+.magazine .way_line li, .magazine .way_line a {
+    display   : inline-block;
+    font-size : 12px;
+    color     : #1F8EBE;
+}
+
+.magazine .way_line a {
+    padding : 0 5px;
+}
+
+.magazine .way_line a:hover {
+    text-decoration : none;
+}
+
+.magazine .way_line li:before {
+    content : "→";
+}
+
+.magazine .way_line li:first-child:before {
+    content : "";
+}
+
+.good {
+    position              : relative;
+    background            : #FFFFFF;
+    -webkit-border-radius : 8px;
+    -moz-border-radius    : 8px;
+    border-radius         : 8px;
+    -webkit-box-shadow    : 0 1px 2px #A9A9A9;
+    -moz-box-shadow       : 0 1px 2px #A9A9A9;
+    box-shadow            : 0 1px 2px #A9A9A9;
+}
+
+.good h3 {
+    padding   : 0 0 14px;
+    margin    : 0;
+    float     : left;
+    font-size : 18px;
+    width     : 320px;
+}
+
+.magazine .back {
+    background   : url('/media/images/magazine/back.png') 0 0 no-repeat;
+    padding-left : 30px;
+    margin-top   : 9px;
+    float        : right;
+    font         : normal 14px 'pf_agora_slab_prolight';
+    color        : #5FC3D0;
+}
+
+.magazine h4 .back {
+    margin-top : 4px;
+}
+
+.magazine .info .back {
+    margin-top : 0;
+}
+
+.good .foto {
+    height         : 200px;
+    margin         : 2% 0 2% 2.3%;
+    padding        : 2%;
+    vertical-align : middle;
+    display        : inline-block;
+    border-radius  : 6px;
+    border         : 1px #DED2D2 solid;
+}
+
+.good .foto img {
+    min-width  : 185px;
+    max-height : 200px;
+}
+
+.good .foto img:hover {
+    cursor : default;
+}
+
+.good .info {
+    width          : 63%;
+    padding        : 2%;
+    display        : inline-block;
+    vertical-align : middle;
+}
+
+.good .info .name {
+    color     : #999999;
+    font-size : 14px;
+    clear     : both;
+}
+
+.good .info .buy {
+    margin     : 90px 0 0 10px;
+    min-height : 47px;
+    text-align : right;
+}
+
+.good .info .buy .product_price {
+    height : 47px;
+    font   : normal 28px/47px 'pf_agora_slab_proregular';
+}
+
+.buy-left {
+    float : left;
+    width : 65%;
+}
+
+.buy-right {
+    float : right;
+    width : 35%;
+}
+
+.buy {
+    margin : 30px 0 0;
+}
+
+.numeric {
+    border         : 1px #CCCCCC solid;
+    display        : inline-block;
+    vertical-align : middle;
+    font-size      : 0;
+}
+
+.numeric li {
+    background     : -moz-linear-gradient(top, #FFFFFF 0%, #F7F7F7 100%);
+    background     : url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background     : -webkit-linear-gradient(#FFFFFF, #F7F7F7);
+    background     : -moz-linear-gradient(#FFFFFF, #F7F7F7);
+    background     : -o-linear-gradient(#FFFFFF, #F7F7F7);
+    background     : -ms-linear-gradient(#FFFFFF, #F7F7F7);
+    font-size      : 16px;
+    font-weight    : bold;
+    display        : inline-block;
+    vertical-align : middle;
+    padding        : 5px 7px;
+    cursor         : pointer;
+}
+
+.numeric li:first-child {
+    border-radius : 3px 0 0 3px;
+}
+
+.numeric li:last-child {
+    border-radius : 0 3px 3px 0;
+}
+
+.numeric li.count {
+    background   : #FFFFFF;
+    border-right : 1px #CCCCCC solid;
+    border-left  : 1px #CCCCCC solid;
+    font-weight  : normal;
+    font-family  : pf_agora_slab_proregular;
+}
+
+.goods_blocks > li .numeric > li {
+    font-size : 15px;
+    padding   : 0px 3px;
+}
+
+.buy .btn-appoint, .basket_head .btn-appoint, .basket_total .btn-appoint {
+    display        : inline-block;
+    vertical-align : middle;
+    height         : 33px;
+    line-height    : 33px;
+    /*width          : auto;*/
+    width          : 140px;
+    padding        : 0 20px;
+    font-size      : 14px;
+    margin-left    : 20px;
+}
+
+.buy .btn-appoint {
+    float      : left;
+    margin-top : 7px;
+}
+
+.basket_head .btn-appoint, .basket_total .btn-appoint {
+    float : right;
+}
+
+.basket_total .btn-appoint {
+    height      : 46px;
+    line-height : 46px;
+    font-size   : 16px;
+    padding     : 0;
+    width       : 159px;
+    margin      : 9px 0 0;
+}
+
+.buy .product_price {
+    display        : inline-block;
+    vertical-align : middle;
+}
+
+.buy *, .basket_good .goodcount * {
+    -webkit-user-select : none;
+    -moz-user-select    : none;
+    -ms-user-select     : none;
+}
+
+.product_price span {
+    font-size   : 28px;
+    font-family : pf_agora_slab_proregular
+}
+
+.good .p_grey {
+    background  : #F5F5F5;
+    font-size   : 20px;
+    font-weight : bold;
+    clear       : both;
+    height      : 53px;
+}
+
+.good .p_grey .instruction {
+    float  : left;
+    margin : 15px 0 0 15px
+}
+
+.good .p_grey .info-from-vidal {
+    float  : right;
+    font   : 12px 'pf_agora_sans_proregular';
+    color  : #ABABAB;
+    margin : 30px 15px 0 0;
+}
+
+.good .p_grey .info-from-vidal a {
+    color : #ABABAB;
+}
+
+.good .left_nav {
+    width          : 250px;
+    vertical-align : top;
+    display        : table-cell;
+}
+
+.good .left_nav li:first-child {
+    border-top : 1px #CCCCCC solid;
+}
+
+.good .left_nav li {
+    border-bottom : 1px #CCCCCC solid;
+}
+
+.good .left_nav li a {
+    padding         : 5px 5px 5px 15px;
+    text-decoration : none;
+    font-size       : 16px;
+    display         : block;
+    height          : 100%;
+    color           : #333333;
+}
+
+.good .left_nav li.active a, .good .left_nav li.active a:hover {
+    color      : #FFFFFF;
+    background : #3B98C7;
+    background : -moz-linear-gradient(top, #3B98C7 0%, #2E769B 100%);
+    background : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3B98C7), color-stop(100%, #2E769B));
+    background : -webkit-linear-gradient(top, #3B98C7 0%, #2E769B 100%);
+    background : -o-linear-gradient(top, #3B98C7 0%, #2E769B 100%);
+    background : -ms-linear-gradient(top, #3B98C7 0%, #2E769B 100%);
+    background : linear-gradient(to bottom, #3B98C7 0%, #2E769B 100%);
+}
+
+.good .left_nav li a:hover {
+    background : #FFFFFF;
+    background : -moz-linear-gradient(top, #FFFFFF 0%, #F7F7F7 100%);
+    background : url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background : -webkit-linear-gradient(#FFFFFF, #F7F7F7);
+    background : -moz-linear-gradient(#FFFFFF, #F7F7F7);
+    background : -o-linear-gradient(#FFFFFF, #F7F7F7);
+    background : -ms-linear-gradient(#FFFFFF, #F7F7F7);
+}
+
+.good .goods_txt {
+    border-left : 1px #CCCCCC solid;
+    width       : 460px;
+    padding     : 10px 10px 10px 15px;
+    display     : none;
+}
+
+.good .goods_txt.visible {
+    display : table-cell;
+}
+
+.good .goods_txt p {
+    padding-bottom : 10px;
+    font-size      : 14px;
+}
+
+.good .goods_txt .h-txt {
+    font-size      : 18px;
+    font-family    : pf_agora_slab_proregular;
+    margin         : 0;
+    padding-bottom : 10px;
+    color          : #368CB5;
+}
+
+.good_info {
+    display : table;
+}
+
+.basket {
+    margin-left : 77px;
+}
+
+.magazine .h-basket {
+    margin    : 0 0 10px 80px;
+    font-size : 24px;
+}
+
+.basket_head {
+    position      : relative;
+    padding       : 10px 20px;
+    line-height   : 33px;
+    border-bottom : 1px #C4C4C4 dotted;
+    font-family   : pf_agora_slab_proregular;
+}
+
+.person_basket_head {
+    border     : none;
+    text-align : right;
+}
+
+.basket_head span {
+    font-size : 15px;
+}
+
+.basket_total {
+    padding            : 18px 15px 0 20px;
+    width              : 610px;
+    background         : url('/media/images/magazine/check.png') 0 0 repeat;
+    margin             : 40px 20px;
+    float              : right;
+    position           : relative;
+    box-shadow         : 1px 3px 6px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow    : 1px 3px 6px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow : 1px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.basket_total:after {
+    position   : absolute;
+    content    : "";
+    top        : 0;
+    left       : 0;
+    height     : 34px;
+    width      : 100%;
+    background : url('/media/images/magazine/check_top.png') 0 0 repeat-x;
+}
+
+.basket_total:before {
+    position   : absolute;
+    content    : "";
+    bottom     : -13px;
+    left       : 0;
+    height     : 13px;
+    width      : 100%;
+    background : url('/media/images/magazine/check_bottom.png') 0 0 repeat-x;
+}
+
+.shadow_check {
+    height     : 13px;
+    width      : 675px;
+    background : url('/media/images/magazine/shadow_check.png') 0 0 no-repeat;
+    position   : absolute;
+    top        : -12px;
+    right      : -2%;
+}
+
+.order_total {
+    margin     : 0;
+    padding    : 18px 30px 0;
+    width      : 445px;
+    text-align : right;
+    height     : auto;
+    position   : relative;
+}
+
+.basket_total .total_line {
+    position    : relative;
+    line-height : 60px;
+    font-family : pf_agora_slab_proregular;
+    font-size   : 36px;
+    padding     : 10px 0;
+}
+
+.order_total .total_line {
+    border-top : 1px #333333 dashed;
+    margin-top : 20px;
+}
+
+.basket_total .count .like_i {
+    display        : inline-block;
+    vertical-align : middle;
+    line-height    : 1;
+    text-align     : center;
+    font-size      : 20px;
+    padding        : 0 15px 7px 5px;
+}
+
+.basket_total .count .like_i span {
+    font-size  : 20px;
+    font-style : normal;
+}
+
+.basket_total .count .like_i .count_all_good, .basket_total .count .like_i .order_all_n {
+    font-size : 36px;
+}
+
+.basket_clear {
+    float     : right;
+    color     : #333333 !important;
+    font-size : 13px;
+}
+
+.basket_clear:hover {
+    color : #000000;
+}
+
+.person_basket_head .basket_clear {
+    float : left;
+}
+
+.basket_good {
+    margin   : 0 20px;
+    padding  : 20px 0;
+    position : relative;
+}
+
+.basket .basket_good {
+    border        : 1px transparent solid;
+    border-bottom : 1px #C4C4C4 dotted;
+    margin-top    : -1px;
+}
+
+.basket_good .about {
+    float   : left;
+    width   : 400px;
+    padding : 0 5px 0 15px;
+}
+
+.basket_good .about .goodname {
+    font-size      : 16px;
+    line-height    : 1;
+    padding-bottom : 15px;
+    font-family    : 'pf_agora_sans_probold';
+}
+
+.basket_good .about .goodname a {
+    color           : #1F8EBE;
+    text-decoration : none;
+}
+
+.basket_good .about .goodname a:hover {
+    color : #CD2667;
+}
+
+.basket_good .about .goodprod {
+    font-size : 14px;
+    color     : #999999;
+}
+
+.basket_good .hb {
+    font-size      : 14px;
+    font-weight    : bold;
+    padding-bottom : 7px;
+}
+
+.basket_good .goodcount {
+    width      : 115px;
+    float      : left;
+    text-align : center;
+}
+
+.basket_good .goodcount .big {
+    font-size   : 18px;
+    font-weight : bold;
+}
+
+.basket_good .goodprice {
+    width      : 150px;
+    float      : right;
+    text-align : right;
+}
+
+.basket_good .product_price {
+    width   : auto;
+    padding : 0;
+}
+
+.basket_good .product_price .gprice {
+    display : none;
+}
+
+.basket_good .del_good {
+    position   : absolute;
+    top        : -19px;
+    right      : -17px;
+    width      : 45px;
+    height     : 45px;
+    background : url('/media/images/magazine/del_good.png') 0 0 no-repeat;
+    cursor     : pointer;
+    display    : none;
+}
+
+.basket_good .del_good:active {
+    background-position : 0 100%;
+}
+
+.basket .basket_good.buy:hover {
+    margin     : -1px 10px 0;
+    padding    : 20px 10px;
+    border     : 1px #C4C4C4 solid;
+    background : #FFFFFF;
+    background : -moz-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+    background : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFFFFF), color-stop(100%, #F2F2F2));
+    background : -webkit-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+    background : -o-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+    background : -ms-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+    background : linear-gradient(to bottom, #FFFFFF 0%, #F2F2F2 100%);
+}
+
+.basket .basket_good.buy:hover .del_good {
+    display : block;
+}
+
+.basket_good .deleted {
+    text-align : right;
+}
+
+.basket_good .product-avatar, .basket_good .basket_good_image {
+    float         : left;
+    display       : block;
+    width         : 150px;
+    height        : 150px;
+    border        : 5px #FFFFFF solid;
+    border-radius : 6px;
+    box-shadow    : 0 0 6px #B29C9C;
+    line-height   : 147px;
+    text-align    : center;
+}
+
+.basket_good img, .basket_good .basket_good_image img {
+    max-width      : 150px;
+    max-height     : 150px;
+    vertical-align : middle;
+}
+
+.order_tabs {
+    width  : 375px;
+    margin : 15px 0 0 70px;
+    float  : left;
+}
+
+.order_tabs > ul {
+    height : 58px;
+    width  : 100%;
+}
+
+.order_tabs > ul li {
+    width            : 50%;
+    box-shadow       : inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+    height           : 100%;
+    background-color : #F2F2F2;
+    border-radius    : 6px 6px 0 0;
+    font-family      : 'pf_agora_slab_pro_medium';
+    float            : right;
+}
+
+.order_tabs > ul li:first-child {
+    float : left;
+}
+
+.order_tabs > ul li.active {
+    background-color : #FFFFFF;
+    box-shadow       : none;
+}
+
+.order_tabs > ul li p {
+    font-size : 13px;
+    padding   : 8px 10px 2px;
+}
+
+.order_tabs .box {
+    position              : relative;
+    background            : #FFFFFF;
+    background            : -moz-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+    background            : url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background            : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFFFFF), color-stop(100%, #F2F2F2));
+    background            : -webkit-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+    background            : -o-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+    background            : -ms-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+    background            : linear-gradient(to bottom, #FFFFFF 0%, #F2F2F2 100%);
+    -webkit-border-radius : 0 0 8px 8px;
+    -moz-border-radius    : 0 0 8px 8px;
+    border-radius         : 0 0 8px 8px;
+    -webkit-box-shadow    : 0 1px 2px #A9A9A9;
+    -moz-box-shadow       : 0 1px 2px #A9A9A9;
+    box-shadow            : 0 1px 2px #A9A9A9;
+}
+
+.order_tabs .box .section {
+    display     : none;
+    padding     : 12px;
+    font-family : 'pf_agora_slab_proregular';
+}
+
+.order_tabs .box .section.visible {
+    display : block;
+}
+
+.good_inbasket li {
+    list-style  : inside decimal;
+    text-align  : left;
+    line-height : 1;
+    padding     : 6px 0;
+    font-family : pf_agora_slab_prolight;
+    font-size   : 18px;
+    color       : #3B3B3B;
+}
+
+.good_inbasket li .pricegood {
+    float : right;
+}
+
+.good_inbasket li .namegood {
+    display        : inline-block;
+    vertical-align : top;
+    max-width      : 260px;
+}
+
+.order_tabs .box .section .h-txt {
+    font-size : 19px;
+    padding   : 8px 0;
+}
+
+.order_tabs .box .section .h-txt .order-number {
+    font-style : italic;
+}
+
+.order_tabs .box .section .txt {
+    font-size : 13px;
+    padding   : 5px 0;
+}
+
+.order_tabs .linetop {
+    border-top : 1px #CCCCCC dotted;
+}
+
+.order_tabs .for_radio span {
+    font    : 12px 'pf_agora_sans_proregular';
+    color   : #ED3481;
+    display : block;
+    margin  : 0 0 4px 30px;
+}
+
+.order_tabs .for_radio label, .order_tabs .for_radio_child label {
+    cursor         : pointer;
+    color          : #333333;
+    display        : inline-block;
+    vertical-align : top;
+    padding        : 7px 0 7px 7px;
+}
+
+.order_tabs .for_radio .disabled, .order_tabs .for_radio_child .disabled {
+    color : #B9B9B9;
+}
+
+.order_tabs .for_radio label {
+    max-width : 335px;
+    font-size : 16px;
+}
+
+.order_tabs .for_radio_child label {
+    max-width : 296px;
+    font-size : 14px;
+}
+
+.order_tabs .for_radio_child {
+    margin-left : 25px;
+}
+
+.order_tabs .for_radio input + label, .order_tabs .for_radio_child input + label {
+    position : relative;
+}
+
+.order_tabs .for_radio .radio, .order_tabs .for_radio_child .radio {
+    vertical-align : middle;
+    width          : 19px;
+    height         : 19px;
+    background     : url(/media/images/home_page/look/radio.png) 0 0 no-repeat;
+    cursor         : pointer;
+    margin         : 7px 0 0;
+}
+
+.order_tabs .for_radio .radio.checked, .order_tabs .for_radio_child .radio.checked {
+    background-position : 0 100%;
+}
+
+.order_tabs .for_radio .radio.checked + label, .order_tabs .for_radio_child .radio.checked + label {
+    color : #333333;
+}
+
+.order_tabs .box .section textarea {
+    width       : 96%;
+    padding     : 1% 2%;
+    height      : 75px;
+    resize      : none;
+    overflow    : auto;
+    font-family : Arial;
+    font-family : 'pf_agora_slab_proregular';
+    font-size   : 16px;
+}
+
+.order_tabs .btn-appoint {
+    float      : right;
+    margin-top : 20px;
+}
+
+.ontheside {
+    font-family : 'pf_agora_slab_proregular';
+    text-align  : right;
+    width       : 295px;
+    float       : right;
+    margin-top  : 20px;
+    padding     : 10px 13px;
+    font-size   : 16px;
+}
+
+.magazine .fr {
+    float : right;
+    width : 475px;
+}
+
+.order_tabs .box .section .w100 {
+    width   : 96%;
+    height  : 35px;
+    padding : 0 2%;
+    font    : 16px/35px 'pf_agora_slab_proregular';
+}
+
+.order_tabs .box .section .w100, .order_tabs .box .section textarea {
+    position              : relative;
+    border                : 0;
+    outline               : none;
+    display               : inline-block;
+    background            : #FFFFFF;
+    background            : -moz-linear-gradient(top, #F7F7F7 0%, #FFFFFF 100%);
+    background            : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F7F7F7), color-stop(100%, #FFFFFF));
+    background            : -webkit-linear-gradient(top, #F7F7F7 0%, #FFFFFF 100%);
+    background            : -o-linear-gradient(top, #F7F7F7 0%, #FFFFFF 100%);
+    background            : -ms-linear-gradient(top, #F7F7F7 0%, #FFFFFF 100%);
+    background            : linear-gradient(to bottom, #F7F7F7 0%, #FFFFFF 100%);
+    -webkit-border-radius : 5px;
+    -moz-border-radius    : 5px;
+    border-radius         : 5px;
+    -webkit-box-shadow    : inset 0 1px 4px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow       : inset 0 1px 4px rgba(0, 0, 0, 0.5);
+    box-shadow            : inset 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.order_tabs .box .section .pre_inp {
+    font-size : 14px;
+    padding   : 8px 0 3px;
+    display   : inline-block;
+}
+
+.stepgood {
+    background-image    : url('/media/images/magazine/stepgood.png');
+    background-repeat   : no-repeat;
+    background-position : 95% 50%;
+}
+
+.radio_hide {
+    display : none;
+}
+
+.forstep_fin {
+    display    : none;
+    width      : 238px;
+    height     : 77px;
+    float      : right;
+    margin-top : 30px;
+    background : url('/media/images/magazine/forstep_fin.png') 0 0 no-repeat;
+}
+
+.step_fin .btn-appoint {
+    float : left;
+}
+
+.catalog_more_h {
+    padding       : 10px;
+    font-size     : 16px;
+    margin-bottom : 10px;
+}
+
+.catalog_more_h .back {
+    margin-top : 4px;
+}
+
+.about_good {
+    padding    : 10px;
+    margin-top : 20px;
+}
+
+.about_good .h-txt {
+    font           : normal 18px 'pf_agora_slab_pro_medium';
+    padding-bottom : 15px;
+}
+
+.about_good .txt {
+    font-size   : 14px;
+    line-height : 1;
+}
+
+.catalog_more_ul {
+    list-style : none;
+}
+
+.catalog_more_ul li {
+    width: 32.5%;
+    background: #FFFFFF;
+    margin: 0 5px 5px 0;
+    float: left;
+    height: 50px;
+    padding: 8px 15px;
+    overflow: hidden;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.catalog_more_ul li:nth-child(3n) {
+    margin-right : 0;
+}
+
+.catalog_more_ul li a {
+    text-decoration : none;
+    color           : #333333;
+    font-size       : 14px;
+    display         : block;
+    height          : 100%;
+    font-family     : 'pf_agora_slab_proregular';
+}
+
+.catalog_more_ul li:hover {
+    background : #E4E4E4;
+}
+
+.catalog_more_ul li.active {
+    background : #E4E4E4;
+}
+
+.magazine h4, .magazine h3 {
+    font: normal 18px 'pf_agora_slab_pro_medium';
+    text-shadow: 1px 1px 1px #FFFFFF;
+    padding: 10px 15px;
+}
+
+.magazine h4 {
+    padding : 20px 0 10px;
+}
+
+.orders_claster {
+    padding  : 10px;
+    position : relative;
+}
+
+.orders_claster .showhide {
+    cursor     : pointer;
+    position   : absolute;
+    top        : 50%;
+    right      : 10px;
+    height     : 15px;
+    width      : 30px;
+    margin-top : -7px;
+    background : url('/media/images/magazine/showhide.png') 0 100% no-repeat;
+}
+
+.orders_claster.active {
+    border-bottom : 1px #333333 dashed;
+}
+
+.orders_claster.active .showhide {
+    background-position : 0 0;
+}
+
+.orders_claster .n_order {
+    font-size     : 16px;
+    padding-right : 20px;
+}
+
+.orders_claster .process {
+    font-size : 14px;
+}
+
+.showhide_block {
+    display : none;
+}
+
+.bg_gradient.mb {
+    margin-bottom : 15px;
+}
+
+.payments {
+    padding : 15px;
+}
+
+.payments .h-txt {
+    font-size      : 20px;
+    padding-bottom : 15px;
+}
+
+.payments .txt {
+    font-size   : 14px;
+    line-height : 1;
+    padding     : 6px 0;
+}
+
+.cost_of_delivery {
+    display    : inline-block;
+    width      : 85%;
+    background : #FFFFFF;
+}
+
+.cost_of_delivery table {
+    width           : 100%;
+    border-collapse : separate;
+    border-spacing  : 0;
+    border          : none;
+    font-size       : 14px;
+}
+
+.cost_of_delivery table thead {
+    background : #EAF5FB;
+    background : -moz-linear-gradient(top, #EAF5FB 0%, #DDEBF0 100%);
+    background : -webkit-linear-gradient(#EAF5FB, #DDEBF0);
+    background : -moz-linear-gradient(#EAF5FB, #DDEBF0);
+    background : -o-linear-gradient(#EAF5FB, #DDEBF0);
+    background : -ms-linear-gradient(#EAF5FB, #DDEBF0);
+}
+
+.cost_of_delivery table tr:hover {
+    background : #F5F5F5;
+}
+
+.cost_of_delivery table tr td {
+    padding : 6px;
+}
+
+.cost_of_delivery table tr td i {
+    font-size : 13px;
+}
+
+.cost_of_delivery table tr td:first-child {
+    width : 60%;
+}
+
+.cost_of_delivery table thead tr td:first-child {
+    font-size   : 18px;
+    font-weight : bold;
+}
+
+.good .showhide {
+    visibility : hidden;
+}
+
+.goood_totalp {
+    display        : inline-block;
+    vertical-align : middle;
+    float          : right;
+    text-align     : center;
+    font-size      : 16px;
+    margin-left    : 15px;
+}
+
+.goood_totalp a {
+    color : #5FC3D0;
+}
+
+.goood_totalp span {
+    font-size : 24px;
+}
+
+.product-like-p {
+    font-size      : 14px;
+    padding-bottom : 10px;
+}
+
+.good_basket {
+    display : none;
+}
+
+.not_available {
+    display      : inline-block;
+    padding-left : 80px;
+    height       : 70px;
+    line-height  : 70px;
+    font-size    : 18px;
+    font-family  : pf_agora_slab_probold;
+    color        : #898989;
+    background   : url('/media/images/magazine/not_available.png') 0 0 no-repeat;
+}
+
+.increment.disabled, .decrement.disabled {
+    color : silver;
+}
+
+.delete-from-basket {
+    cursor : pointer;
+}
+
+.separator_h {
+    height : 52px;
+    border : 0;
+}
+
+.magazine .info-message {
+    margin-left : 80px;
+    font-size   : 16px;
+    font-weight : bold;
+    margin-top  : 20px;
+}
+
+.basket-limit {
+    color      : #ED3481;
+    text-align : right;
+}
+
+.good_basket .basket-limit {
+    text-align     : center;
+    padding-bottom : 20px;
+}
+
+#header nav .n_goods {
+    color         : #FFFFFF;
+    background    : #E23C7E;
+    background    : -moz-linear-gradient(top, #E23C7E 0%, #B81152 100%);
+    background    : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #E23C7E), color-stop(100%, #B81152));
+    background    : -webkit-linear-gradient(top, #E23C7E 0%, #B81152 100%);
+    background    : -o-linear-gradient(top, #E23C7E 0%, #B81152 100%);
+    background    : -ms-linear-gradient(top, #E23C7E 0%, #B81152 100%);
+    background    : linear-gradient(to bottom, #E23C7E 0%, #B81152 100%);
+    font          : 14px pf_agora_sans_probold;
+    border-radius : 9px;
+    padding       : 0px 5px;
+    box-shadow    : 0px 1px 1px rgba(0, 0, 0, 0.9);
+    margin-left   : -22px;
+    z-index       : 1;
+    position      : relative;
+    cursor        : pointer;
+}
+
+.rating .tooltip-block .corn {
+    left     : 82%;
+    position : absolute;
+    top      : -10px;
+}
+
+.doctor-big-card .review-link {
+    position : static !important;
+}
+
+.doctor-big-card .rating .review-link:active {
+    background : linear-gradient(to bottom, #FDFDFD 0%, #F8F8F8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.doctor-big-card .rating .review-link.remaked-review-link {
+    font        : 14px pf_agora_sans_proregular;
+    height      : 31px;
+    line-height : 30px;
+    width       : 138px;
+}
+
+.info-card .descr .tooltip-block.without-reviews-yet {
+    top : 42px;
+}
+
+.info-card .descr .tooltip-block.my-review-needed {
+    top : 67px;
+}
+
+.rating .tooltip-block .corn {
+    left     : 82%;
+    position : absolute;
+    top      : -10px;
+}
+
+.doctor-big-card .review-link {
+    position : static !important;
+}
+
+.doctor-big-card .rating .review-link:active {
+    background : linear-gradient(to bottom, #FDFDFD 0%, #F8F8F8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.doctor-big-card .rating .review-link.remaked-review-link {
+    font        : 14px pf_agora_sans_proregular;
+    height      : 31px;
+    line-height : 30px;
+    width       : 138px;
+}
+
+.equal-elements {
+    margin-top : 50px
+}
+
+.equal-elements .clinic-service-list {
+    text-align     : center;
+    font           : 14px pf_agora_sans_proregular;
+    color          : #6D6D6D;
+    padding-bottom : 15px;
+}
+
+.equal-elements .heading-line {
+    background : url(/media/images/heading_line.gif) repeat-x 0 9px;
+}
+
+.equal-elements .heading-line p {
+    text-align : center;
+}
+
+.equal-elements .heading-line p span {
+    font       : 14px pf_agora_sans_proregular;
+    color      : #6D6D6D;
+    padding    : 0 40px;
+    background : url(/media/images/cloth_alike.png)
+}
+
+.equal-elements .all-elements {
+    text-align : center;
+    margin-top : 20px;
+}
+
+.equal-elements .all-elements .show-all {
+    position        : relative;
+    text-align      : center;
+    color           : #1D96A6;
+    font-size       : 14px;
+    text-decoration : none;
+    border-bottom   : 1px #1D96A6 dotted;
+}
+
+.equal-elements .all-elements .show-all:before {
+    position          : absolute;
+    content           : "";
+    height            : 0;
+    width             : 0;
+    border            : 5px transparent solid;
+    border-left-color : #1D96A6;
+    top               : 4px;
+    right             : -20px;
+}
+
+.equal-elements .all-elements .show-all.active:before {
+    position         : absolute;
+    content          : "";
+    height           : 0;
+    width            : 0;
+    border           : 5px transparent solid;
+    border-top-color : #1D96A6;
+    top              : 7px;
+    right            : -20px;
+}
+
+.equal-elements .equal-elements-container {
+    display : none;
+}
+
+.equal-elements .equal-elements-container ul {
+    display        : inline-block;
+    width          : 33%;
+    margin-top     : 20px;
+    vertical-align : text-top;
+}
+
+.equal-elements .equal-elements-container ul li {
+    display     : block;
+    padding     : 5px 0;
+    margin-left : 20px;
+}
+
+.equal-elements .equal-elements-container ul li a {
+    color           : #1D96A6;
+    text-decoration : none;
+    font            : 15px 'pf_agora_slab_pro_medium';
+}
+
+.equal-elements .equal-elements-container ul li a:hover {
+    color : #CD2667;
+}
+
+.info-card .descr .tooltip-block.without-reviews-yet {
+    top : 42px;
+}
+
+.info-card .descr .tooltip-block.my-review-needed {
+    top : 67px;
+}
+
+.good h1 {
+    font        : 18px 'pf_agora_slab_pro_medium';
+    text-shadow : 1px 1px 1px #FFFFFF;
+    float       : left;
+    font-size   : 18px;
+    margin      : 0;
+    padding     : 0 0 14px;
+    width       : 320px;
+}
+
+#screenshot {
+    position   : absolute;
+    border     : 1px solid #CCCCCC;
+    background : #FFFFFF;
+    padding    : 5px;
+    display    : none;
+    color      : #000000;
+    z-index    : 10000;
+    max-height : 410px;
+}
+
+#screenshot img {
+    max-height : 410px
+}
+
+.magazine .search-block .btn-1 {
+    width : 220px
+}
+
+.disease-only-info {
+    float       : right;
+    margin-left : 20px;
+    display     : block;
+}
+
+.disease-only-info .info-line {
+    display     : block;
+    padding     : 0 0 2px 0 !important;
+    font-family : "Minion Pro", "Times New Roman";
+    font-size   : 24px !important;
+    color       : #C9C9C9;
+    text-align  : center;
+}
+
+.content .search-count-block {
+    width   : 976px;
+    margin  : 0 auto;
+    display : block;
+}
+
+.content .search-count-block.clinic-search {
+    width      : 976px;
+    margin     : 0 auto;
+    display    : block;
+    text-align : center;
+}
+
+.content .search-count-block .divider-shadow {
+    height     : 36px;
+    background : url(/media/images/dev_shadow.png) no-repeat;
+    margin     : 0;
+}
+
+.content .search-count-block .count {
+    width                 : 500px;
+    display               : block;
+    text-align            : center;
+    font-size             : 15px;
+    font-family           : 'pf_agora_sans_proregular', Arial;
+    margin                : 0 auto;
+    padding               : 10px;
+    border                : 1px solid #CCCCCC;
+    border-bottom         : none;
+    background            : #FFFFFF;
+    color                 : #393939;;
+    -webkit-border-radius : 6px 6px 0 0;
+    -moz-border-radius    : 6px 6px 0 0;
+    border-radius         : 6px 6px 0 0;
+}
+
+.content .search-count-block.clinic-search .count {
+    display : inline-block !important;
+    width   : auto !important;
+}
+
+.content .search-count-block .count .count-digit,
+.content .search-count-block .count .count-specialty {
+    font-family : 'pf_agora_sans_probold', Arial;
+}
+
+.product-license-block {
+    float : left;
+    clear : both;
+    width : 100%
+}
+
+.product-license-block .all-elements {
+    margin : 40px 0 0 10px;
+}
+
+.product-license-block .all-elements .show-all {
+    position        : relative;
+    color           : #1D96A6;
+    font-size       : 16px;
+    text-decoration : none;
+    border-bottom   : 1px #1D96A6 dotted;
+}
+
+.product-license-block .all-elements .show-all:before {
+    position          : absolute;
+    content           : "";
+    height            : 0;
+    width             : 0;
+    border            : 5px transparent solid;
+    border-left-color : #1D96A6;
+    top               : 4px;
+    right             : -20px;
+}
+
+.product-license-block .all-elements .show-all.active:before {
+    position         : absolute;
+    content          : "";
+    height           : 0;
+    width            : 0;
+    border           : 5px transparent solid;
+    border-top-color : #1D96A6;
+    top              : 7px;
+    right            : -20px;
+}
+
+.product-license-block .product-license-container {
+    display     : none;
+    margin-left : 10px
+}
+
+.product-license-block .product-license-container .line {
+    padding    : 5px 0;
+    clear      : both;
+    background : url(/media/images/heading_line_license.gif) repeat-x;
+    margin-top : 10px;
+}
+
+.product-license-block .product-license-container p {
+    float          : left;
+    padding-bottom : 10px;
+    font           : 14px pf_agora_sans_proregular;
+    color          : #393939;
+}
+
+.product-license-block .product-license-container p .bigger {
+    font-size : 16px;
+}
+
+.product-license-block .product-license-container ul li {
+    float        : left;
+    padding-left : 11px
+}
+
+.product-license-block .product-license-container ul li a img {
+    height : 155px
+}
+
+.product-license-block .product-license-container .connected-carousels .stage {
+    width         : auto;
+    padding       : 0;
+    margin        : 0;
+    background    : none;
+    box-shadow    : none;
+    border-radius : 0;
+}
+
+.product-license-block .product-license-container .connected-carousels .stage .carousel {
+    height : 155px
+}
+
+.content #doctor-search-form.refactor .search-form {
+    width  : 414px;
+    height : 363px;
+}
+
+.content #doctor-search-form.refactor .search-form .gender {
+    float : right;
+}
+
+.content #doctor-search-form.refactor .search-form .choose-section .col:first-child {
+    width  : 187px;
+    margin : 0 0 0 -2px;
+}
+
+.content #doctor-search-form.refactor .search-form .choose-section .col {
+    width : 90px;
+}
+
+.content #doctor-search-form.refactor .search-form .choose-section .like-head-label {
+    color       : #1F8EBE;
+    font-family : 'pf_agora_slab_pro_medium';
+    font-size   : 13px;
+}
+
+.content .search-form .choose-section .choose-list.main-form-refactor-checkbox.like-head-label {
+    color       : #1F8EBE;
+    font-family : 'pf_agora_slab_pro_medium';
+    font-size   : 13px;
+    margin-top  : 2px;
+}
+
+.content #doctor-search-form.refactor .search-form .choose-section .col:first-child .choose-list {
+    margin-left   : 0;
+    margin-bottom : 0;
+}
+
+.lmb .pad_tb {
+    padding : 9px 0;
+}
+
+.inner-2 #doctor-search-form.refactor .search-form h2 {
+    font   : 18px 'pf_agora_slab_proregular';
+    margin : 0 0 12px;
+}
+
+.content #doctor-search-form.refactor .search-form .choose-section {
+    border-bottom : none;
+    min-height    : 95px;
+}
+
+.map-box.refactor #map {
+    height : 352px;
+    width  : 649px;
+}
+
+.map-box.refactor {
+    height : 352px;
+    width  : 550px;
+}
+
+.doctor-map-search.refactor input.txt {
+    width : 397px !important;
+}
+
+.content #doctor-search-form.refactor .search-form .colapse,
+.content #clinic-search-form .search-form .colapse {
+    margin: 0 auto;
+    width: 16px;
+}
+
+.doctor-search-filters .chekBox {
+    color         : #1F8EBE;
+    font-family   : 'pf_agora_slab_pro_medium';
+    font-size     : 13px;
+}
+
+.inner-2 #doctor-search-form.refactor .search-form .in_colapse {
+    height : 292px;
+}
+
+.left_search .search-form .choose-section.choose-section-free {
+    margin : 29px 15px 15px;
+}
+
+.content .account-search-form-clinic .search-form .choose-section {
+    min-height : 0px;
+}
+
+.content .account-search-form-doctor .search-form .choose-section {
+    min-height : 115px;
+}
+
+.left_search #doctor-search-form .search-form .box, .left_search #clinic-search-form .search-form .box {
+    /*height:196px;*/
+}
+
+.chzn-container-single .chzn-single span {
+    font-weight : bolder;
+}
+
+#reviews .aside {
+    padding : 17px 15px 15px 23px
+}
+
+/*#reviews .rating-line {width:83px; height:15px; background:url(/media/images/rating_stars_full_comment.png);}*/
+/*#reviews .rating-line span {display:block; height:15px; background:url(/media/images/rating_stars_full_comment.png) 0 100%;}*/
+#reviews .aside .name {
+    padding-bottom : 18px;
+}
+
+#reviews .review-box .review-cont {
+    width   : 280px;
+    padding : 12px 14px 25px 22px;
+}
+
+#reviews .review-box .review-cont .comment-data img {
+    float : left;
+}
+
+#reviews .review-box .review-cont .comment-data .author-name {
+    float  : left;
+    margin : 3px 0 0 8px;
+    font   : 14px 'pf_agora_sans_probold';
+}
+
+#reviews .review-box .review-cont .comment-data .comment-date {
+    display   : none;
+    float     : right;
+    margin    : 3px 3px 0 0;
+    color     : #666666;
+    font-size : 14px;
+}
+
+#reviews .review-box .review-cont .comment-text {
+    clear       : both;
+    padding-top : 12px;
+    font-size   : 13px;
+}
+
+.heading-line.doctor-page {
+    background : url(/media/images/heading_line.gif) repeat-x 0 22px
+}
+
+.heading-line.doctor-page .button-container {
+    width      : 360px;
+    margin     : 0 auto;
+    background : url(/media/images/cloth_alike.png);
+}
+
+.heading-line.doctor-page .button-container.refactor-button-container_styles {
+    margin-bottom : 40px;
+}
+
+.heading-line.doctor-page .button-container.refactor-button-container_styles .registration-phone {
+    font-size : 16px;
+    margin    : 5px 0 0;
+}
+
+.heading-line.doctor-page .button-container .btn-appoint {
+    margin     : 0 auto;
+    width      : 300px;
+    background : url(/media/images/appoint_btn_king_size.png);
+}
+
+.doctors-slider {
+    margin-bottom : 20px;
+}
+
+.doctors-slider .dsTitle {
+    font-family : "PF Agora Slab Pro Regular", "PF Agora Slab Pro";
+    font-size   : 24px;
+    font-style  : normal;
+    text-align  : center;
+    margin      : 0 0 20px;
+}
+
+.doctors-slider .dsTitle > span {
+    font-weight : bold;
+}
+
+.content.red .heading-line.doctor-page .button-container .btn-appoint {
+    background : url(/media/images/appoint_btn_king_size_red.png);
+}
+
+a.back-to-search {
+    background   : url("/media/images/magazine/back.png") no-repeat scroll 0 2px rgba(0, 0, 0, 0);
+    color        : #1F8EBE;
+    display      : inline-block;
+    font         : 16px 'pf_agora_slab_prolight';
+    padding-left : 30px;
+}
+
+a.back-to-search > span {
+    font-weight : bold;
+}
+
+a.back-to-search.doctor-top-page {
+    margin : 0 0 8px 15px;
+}
+
+/*a.back-to-search.doctor-bottom-page {*/
+/*margin: 25px auto 0;*/
+/*}*/
+.back-to-search-area {
+    text-align : center;
+}
+
+.map-card-block .rating-block {
+    float      : left;
+    display    : block;
+    width      : 93px;
+    min-height : 40px;
+}
+
+.map-card-block .reviews-map-count {
+    float    : left;
+    clear    : both;
+    position : relative;
+    width    : 80px;
+    height   : 20px;
+    left     : 5px;
+    top      : 16px;
+}
+
+.map-card-block .descr .name {
+    max-height : 70px;
+    overflow   : hidden;
+}
+
+.map-card-block .info-area {
+    position : relative;
+    top      : 10px;
+}
+
+.map-card-block .showTip.el {
+    display    : block;
+    width      : 100%;
+    text-align : center;
+}
+
+.map-card-block .appointment-button {
+    float      : left;
+    margin-top : 10px;
+}
+
+.map-box.map-card-block .appointment-button .btns a {
+    width      : 177px;
+    background : url(/media/images/appoint_btn_longest.png) no-repeat;
+}
+
+.content.red .map-card-block .appointment-button .btns a {
+    background : url(/media/images/appoint_btn_longest_red.png) no-repeat;
+}
+
+.about-ilness-content .side-column .info-box.what-to-do h3 {
+    color : #3D3D3D;
+}
+
+.about-ilness-content .side-column .info-box.what-to-do h3 span {
+    color : #DD3183;
+}
+
+.about-ilness-content .other-links.bottom-what-to-do .info-box h3 {
+    color         : #3D3D3D;
+    font-family   : 'pf_agora_slab_probold';
+    font-size     : 18px;
+    font-weight   : normal;
+    margin-bottom : 11px;
+}
+
+.about-ilness-content .other-links.bottom-what-to-do .info-box h3 span {
+    color : #DD3183;
+}
+
+.about-ilness-content .other-links.bottom-what-to-do .info-box .todo-list li {
+    color       : #DD3183;
+    font-family : 'pf_agora_sans_probold';
+    font-size   : 13px;
+    margin      : 0;
+}
+
+.about-ilness-content .other-links.bottom-what-to-do .info-box .todo-list li p {
+    color          : #3D3D3D;
+    font-family    : 'pf_agora_sans_probold';
+    padding-bottom : 12px;
+}
+
+.about-ilness-content .other-links.bottom-what-to-do .info-box ol.todo-list {
+    list-style-type : none;
+}
+
+.about-ilness-content .other-links.bottom-what-to-do .info-box {
+    text-align : center;
+}
+
+.about-ilness-content .other-links.bottom-what-to-do .info-box a.btn-find-doctor {
+    margin : 0 auto;
+}
+
+.booking .dday-var.active.time li:not(.unactive) {
+    background         : #FCFCFC; /* Old browsers */
+    background         : -moz-linear-gradient(top, #FCFCFC 0%, #D9D9D9 100%);
+    background         : -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FCFCFC), color-stop(100%, #D9D9D9));
+    background         : -webkit-linear-gradient(top, #FCFCFC 0%, #D9D9D9 100%);
+    background         : -o-linear-gradient(top, #FCFCFC 0%, #D9D9D9 100%);
+    background         : -ms-linear-gradient(top, #FCFCFC 0%, #D9D9D9 100%);
+    background         : linear-gradient(to bottom, #FCFCFC 0%, #D9D9D9 100%);
+    filter             : progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#d9d9d9', GradientType=0);
+    border             : 1px solid #CCCCCC;
+    -webkit-box-shadow : 0 1px 1px 0 rgba(50, 50, 50, 0.4);
+    -moz-box-shadow    : 0 1px 1px 0 rgba(50, 50, 50, 0.4);
+    box-shadow         : 0 1px 1px 0 rgba(50, 50, 50, 0.4);
+}
+
+.booking .dday-var.active.time li.clicked {
+    border             : 1px solid #DB3374;
+    -webkit-box-shadow : 0 1px 1px 0 rgba(219, 51, 116, 0.1);
+    -moz-box-shadow    : 0 1px 1px 0 rgba(219, 51, 116, 0.1);
+    box-shadow         : 0 1px 1px 0 rgba(219, 51, 116, 0.1);
+}
+
+.booking .dday-var.active.time li:not(.unactive):not(.selected):hover {
+    background         : #FFFFFF;
+    border             : 1px solid #0099FF;
+    -webkit-box-shadow : 0 1px 1px 0 rgba(0, 153, 255, 1);
+    -moz-box-shadow    : 0 1px 1px 0 rgba(0, 153, 255, 1);
+    box-shadow         : 0 1px 1px 0 rgba(0, 153, 255, 1);
+}
+
+.booking .dday-var.active.time li.selected,
+.booking .dday-var.active.time li.unactive {
+    cursor : default;
+}
+
+.schedule-extended.time-scroll .visit-note {
+    color          : #3B3B3B;
+    font-size      : 16px;
+    text-align     : center;
+    padding-bottom : 5px;
+    margin         : 0;
+}
+
+.schedule-extended.time-scroll .next-nav, .schedule-extended.time-scroll .prev-nav {
+    top : 35px;
+}
+
+.doctor-landing .info-box .schedule-extended__title {
+    color         : #000000;
+    font-family   : 'pf_agora_slab_pro_medium';
+    font-size     : 14px;
+    font-weight   : normal;
+    margin-bottom : 11px;
+    text-align    : center;
+}
+
+.doctor-landing .main-cont.doctor-page-cont {
+    padding-top: 15px;
+}
+.doctor-landing .main-cont.doctor-page-cont:before{content:'';display: block;height: 335px;border-left: 1px solid rgba(204, 204, 204, 0.65);position:  absolute;top: 17px;left: -7px;}
+
+.hint {
+    color      : #808080;;
+    font-style : italic;
+}
+
+.actual-dt {
+    font-size : 16px;
+}
+
+.clinic-actual-dt {
+    position : relative;
+    /*top      : -70px;*/
+    top: 0;
+    width: 75%;
+    background: #efefef;
+
+}
+
+.btn-appoint.btn-appoint-small {
+    width               : 83px;
+    height              : 23px;
+    background-size     : cover;
+    background-position : -5px -5px;
+    line-height         : 23px;
+    font-size           : 12px;
+    border-radius       : 5px;
+    background          : url(/media/images/appoint_btn.png) no-repeat;
+    display             : inline-block;
+    margin-left         : 15px;
+}
+
+.sp-links.right-links {
+    margin-left : 70px;
+    min-width   : 430px;
+}
+
+.landing-header-links {
+    left        : 10%;
+    line-height : 25px;
+    margin-top  : 5px;
+    position    : absolute;
+    min-width   : 1000px;
+}
+
+.landing-header-links a {
+    color        : #5FC3D0;
+    font-family  : 'pf_agora_slab_prolight';
+    font-size    : 14px;
+    float        : left;
+    padding-left : 40px;
+}
+
+.landing-header-links span {
+    color : #FFFFFF;
+    font  : 14px/25px 'pf_agora_slab_proregular';
+}
+
+.landing-header-links .phone {
+    float        : right;
+    margin-right : 100px;
+}
+
+.landing-header-links .phone-block {
+    float        : right;
+    margin-right : 100px;
+}
+
+.landing-header-links .phone-block .small-time {
+    line-height : 4px;
+    font-size   : 13px;
+}
+
+.landing-header-links span.bigger-span {
+    font-size : 25px;
+}
+
+.footer-landing {
+    background : url("/media/images/landing/landing-footer-back.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height     : 225px;
+    margin-top : -8px;
+    position   : relative;
+}
+
+.footer-landing .footer-top-blue-line {
+    background : url("/media/images/landing/landing-footer-top-blue-line.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    height     : 10px;
+}
+
+.footer-landing .inner {
+    padding : 25px 0 0;
+}
+
+.footer-landing section {
+    float : left;
+}
+
+.footer-landing section.next {
+    padding-left : 30px;
+}
+
+.ax_paragraph {
+    color          : #333333;
+    font-family    : 'pf_agora_slab_proregular', Arial;
+    font-size      : 16px;
+    padding-bottom : 20px;
+}
+
+.ax_paragraph.last {
+    padding-bottom : 0;
+}
+
+.ax_paragraph span {
+    display : block;
+}
+
+.ax_paragraph .big-phone {
+    font-size  : 28px;
+    text-align : center;
+}
+
+.small-time {
+    font-size  : 13px;
+    text-align : center;
+    display    : block;
+}
+
+.ax_paragraph .mail-to {
+    font-size       : 18px;
+    text-align      : center;
+    text-decoration : underline;
+    margin-top      : 7px;
+    font-family     : 'Arial Regular', 'Arial';
+}
+
+.ax_paragraph .mail-to a {
+    color : #333333;
+}
+
+.footer-landing a.btn-1:link, a.btn-1:visited, .landing-center a.btn-1:link, a.btn-1:visited {
+    color           : #FFFFFF;
+    text-decoration : none;
+}
+
+.footer-landing a.btn-1, .landing-center a.btn-1 {
+    /*font-family: 'PF Agora Slab Pro Bold','PF Agora Slab Pro';*/
+    font-family : 'pf_agora_slab_pro_medium';
+    font-size   : 16px;
+    width       : 237px;
+    display     : inline-block;
+    font-weight : 700;
+    height      : auto;
+    padding     : 0;
+}
+
+.footer-landing .contacts-header {
+    color       : #000000;
+    font-family : 'PF Agora Slab Pro Regular', 'PF Agora Slab Pro';
+    font-size   : 20px;
+}
+
+.landing-center {
+    margin : 0 auto;
+    width  : 1000px;
+}
+
+.landing-center .landing-h-text {
+    color      : #359BAC;
+    font       : 28px 'pf_agora_slab_proregular';
+    /*font: 28px 'PF Agora Slab Pro Regular','PF Agora Slab Pro';*/
+    margin     : 0;
+    text-align : center;
+}
+
+.landing-center .landing-h-text.header-about {
+    padding-left : 60px;
+}
+
+.landing-checkboxes {
+    margin : 10px 0 0 50px;
+}
+
+.landing-checkbox {
+    background      : url("/media/images/landing/landing-checkbox.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    padding-left    : 40px;
+    height          : 65px;
+    float           : left;
+    font-family     : 'pf_agora_slab_prolight';
+    font-size       : 18px;
+    color           : #333333;
+    background-size : 30px 30px;
+}
+
+.landing-checkbox:first-child {
+    margin-left : 40px;
+}
+
+.landing-checkbox span {
+    display : block;
+}
+
+.landing-checkbox.next {
+    margin-left : 70px;
+}
+
+.checkbox-header {
+    background-color : #F2F2F2;
+    min-height       : 160px;
+    position         : relative;
+    padding-bottom   : 10px;
+}
+
+.checkbox-header .landing-center {
+    padding-top : 40px;
+}
+
+.call-order-block {
+    background-color : #FFFFFF;
+    height           : 495px;
+}
+
+.bolder {
+    font-weight : bold;
+}
+
+.call-order-block .landing-center .landing-h-text {
+    font-size : 34px;
+    padding   : 20px 0;
+}
+
+.call-order-block .order-tooltip {
+    float : left;
+    width : 500px;
+}
+
+.call-order-block .order-tooltip li i {
+    display        : inline-block;
+    margin-right   : 1px;
+    text-align     : center;
+    vertical-align : middle;
+    width          : 100px;
+}
+
+.call-order-block .order-tooltip li span {
+    display        : inline-block;
+    vertical-align : middle;
+}
+
+.order-tooltip li {
+    font   : 28px 'pf_agora_slab_proregular';
+    /*font-family: 'PF Agora Slab Pro Regular','PF Agora Slab Pro';
+    font-size: 28px;*/
+    color  : #333333;
+    margin : 20px 0 35px;
+}
+
+.call-order-block .order-form {
+    float            : left;
+    width            : 400px;
+    background-color : #CEE3E6;
+    border-radius    : 7px;
+    color            : #363636;
+    cursor           : default;
+    padding-bottom   : 15px;
+    height           : 400px;
+}
+
+.order-form {
+    margin-left : 100px;
+    position    : relative;
+}
+
+.order-form-inner {
+    padding  : 10px 0px;
+    position : relative;
+}
+
+.order-form-inner-header {
+    font       : 28px 'pf_agora_slab_proregular';
+    /*font-family: 'PF Agora Slab Pro Regular','PF Agora Slab Pro';
+    font-size: 28px;*/
+    color      : #000000;
+    text-align : center;
+}
+
+.order-form-inner-italic {
+    font-family : 'Arial Курсив', 'Arial';
+    font-size   : 16px;
+    font-style  : italic;
+    text-align  : center;
+    color       : #333333;
+    padding     : 10px 0;
+}
+
+.order-form input[type="text"], .order-form textarea {
+    border        : 1px solid #CCCCCC;
+    border-radius : 7px;
+    color         : #999999;
+    /*font: 21px/26px 'pf_agora_sans_promedium';*/
+    font          : 18px 'Arial Regular', 'Arial';
+    height        : 36px;
+    margin        : 0 6% 11px 40px;
+    padding       : 5px 4%;
+    width         : 285px;
+}
+
+.order-form textarea {
+    height      : 55px;
+    resize      : none;
+    padding-top : 10px;
+}
+
+.order-form a.btn-1 {
+    font-size   : 16px;
+    width       : 285px;
+    font-weight : 700;
+    height      : auto;
+    padding     : 7px 15px;
+    margin-left : 40px;
+}
+
+.left-arrow {
+    position : absolute;
+    bottom   : 50px;
+    left     : -55px;
+}
+
+.underorder {
+    background : url("/media/images/landing/underorder-blue-line.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height     : 10px;
+    width      : 420px;
+    position   : absolute;
+    bottom     : 0px;
+    left       : -10px;
+}
+
+.its-doctor-time {
+    background : url("/media/images/landing/dashed-block.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    width      : 962px;
+    height     : 162px;
+    position   : relative;
+}
+
+.its-doctor-time .landing-h-text {
+    font-weight : bold;
+    padding     : 10px 0;
+}
+
+.its-doctor-time-text {
+    /*font-family: 'PF Agora Sans Pro Regular','PF Agora Sans Pro';*/
+    font-size  : 16px;
+    text-align : center;
+    width      : 900px;
+    margin-top : 11px;
+}
+
+.its-doctor-time-text span {
+    display : block;
+}
+
+.its-doctor-time-image {
+    position : absolute;
+    right    : 35px;
+    bottom   : 50px;
+}
+
+.long-grey-block {
+    background-color : #F2F2F2;
+}
+
+.long-grey-block .landing-center {
+    margin-top  : 0px;
+    padding-top : 20px;
+}
+
+.landing-center .landing-h-text.how-it-works {
+    font-size : 24px;
+}
+
+.white-symptom-block {
+    border-radius    : 7px;
+    background-color : #FFFFFF;
+    /*font-family: 'PF Agora Slab Pro Bold','PF Agora Slab Pro';*/
+    font-family      : 'pf_agora_slab_proregular', Arial;
+    font-size        : 18px;
+    color            : #333333;
+    width            : 942px;
+    height           : 330px;
+    padding          : 10px;
+}
+
+.long-grey-block .landing-center.symptoms-block {
+    padding-top : 0px;
+}
+
+.white-symptom-block .white-symptom-header {
+    text-align : center;
+}
+
+.double-list ul {
+    width     : 46%;
+    float     : left;
+    font-size : 16px;
+    padding   : 30px 0px 0px 15px;
+}
+
+.double-list ul:first-child {
+    padding-left : 45px;
+}
+
+.double-list {
+    min-height : 230px;
+}
+
+.double-list ul li {
+    background   : url("/media/images/list_bull.gif") no-repeat scroll 0 10px rgba(0, 0, 0, 0);
+    padding-left : 28px;
+}
+
+.white-symptom-footer {
+    font-size  : 28px;
+    margin     : 30px auto 0;
+    text-align : center;
+    width      : 850px;
+}
+
+.white-symptom-footer-part {
+    float : left;
+}
+
+.white-symptom-footer img {
+    margin-left : 60px;
+}
+
+.white-symptom-footer .white-symptom-footer-phone {
+    margin-left : 30px;
+}
+
+.phone-with-time {
+    position : relative;
+    top      : -5px;
+}
+
+.bubbles-block {
+    height      : 280px;
+    padding-top : 25px;
+}
+
+.bubbles-block .simple-arrow, .bubbles-block .bubble {
+    float : left;
+}
+
+.bubbles-block .simple-arrow {
+    background : url("/media/images/landing/simple-arrow-right-full.png") no-repeat scroll 0 100px rgba(0, 0, 0, 0);
+    width      : 68px;
+    height     : 248px;
+}
+
+.bubbles-block .bubble {
+    background      : url("/media/images/landing/shapy-field.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    width           : 258px;
+    height          : 248px;
+    background-size : 258px 248px;
+    position        : relative;
+}
+
+.bubbles-block .bubble:first-child {
+    margin-left : 0;
+}
+
+.bubbles-block .simple-arrow, .bubbles-block .bubble {
+    margin-left : 10px;
+}
+
+.bubbles-block .bubble span, .bubbles-block .bubble img {
+    display : block;
+}
+
+.bubbles-block .bubble img {
+    margin : 40px auto 15px;
+}
+
+.simple-text-span {
+    color     : #333333;
+    font-size : 16px;
+}
+
+.bubble .simple-text-span {
+    text-align : center;
+}
+
+.bubble .bubble-text {
+    position : absolute;
+    bottom   : 0;
+    margin   : 0 0 50px 40px;
+}
+
+.bubbles-block .bubble-arrow {
+    position : absolute;
+    bottom   : 0;
+}
+
+.bubbles-block .simple-arrow {
+    position : relative;
+}
+
+.bubble-arrow-down {
+    -moz-transform    : rotate(-60deg);
+    -ms-transform     : rotate(-60deg);
+    -webkit-transform : rotate(-60deg);
+    -o-transform      : rotate(-60deg);
+    transform         : rotate(-60deg);
+}
+
+.bubble-arrow-up {
+    -moz-transform    : rotate(90deg);
+    -ms-transform     : rotate(90deg);
+    -webkit-transform : rotate(90deg);
+    -o-transform      : rotate(90deg);
+    transform         : rotate(90deg);
+    top               : 0px;
+}
+
+.landing-heading-line {
+    background     : url("/media/images/heading_line.gif") repeat-x scroll 0 21px rgba(0, 0, 0, 0);
+    padding-bottom : 40px;
+}
+
+.landing-heading-line .button-container {
+    background  : #F2F2F2;
+    padding     : 0 35px;
+    width       : 430px;
+    margin-left : 250px;
+}
+
+.landing-center .landing-heading-line a.btn-1 {
+    padding     : 0 40px;
+    width       : 346px;
+    height      : 44px;
+    line-height : 42px;
+}
+
+.white-review-block {
+    background-color : #FFFFFF;
+    height           : 440px;
+}
+
+.single-review .author {
+    color      : #333333;
+    font-size  : 20px;
+    width      : 160px;
+    text-align : center;
+}
+
+.single-review .review-text {
+    background : #F2F2F2;
+    width      : 300px;
+    /*font-family: 'PF Agora Slab Pro Italic','PF Agora Slab Pro';*/
+    font-size  : 16px;
+    font-style : italic;
+    position   : relative;
+    padding    : 10px 15px;
+    height     : 300px;
+}
+
+.single-review .author, .single-review .review-text {
+    float : left;
+}
+
+.review-triangle {
+    left              : -25px;
+    position          : absolute;
+    top               : 50px;
+    -moz-transform    : rotate(90deg);
+    -ms-transform     : rotate(90deg);
+    -webkit-transform : rotate(90deg);
+    -o-transform      : rotate(90deg);
+    transform         : rotate(90deg);
+    transform         : rotate(90deg);
+}
+
+.white-review-block .landing-h-text {
+    padding   : 20px 0 30px;
+    font-size : 24px;
+}
+
+.white-review-block .landing-h-text, .landing-h-text.how-it-works {
+    font-weight : bold;
+}
+
+.checkbox-header .landing-center {
+    margin-top : -20px;
+}
+
+.wrap.landing {
+    padding-bottom : 0;
+}
+
+a.landing-h-text {
+    display         : block;
+    text-decoration : none;
+    cursor          : default;
+}
+
+.text-center {
+    text-align : center;
+}
+.text-right {
+    text-align : right;
+}
+
+a.btn-double-floor {
+    /*background: url("/media/images/btn_appoint_disease_new.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);*/
+    /*background      : url("/media/images/btn-6_bg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);*/
+    background: green;
+    border-radius   : 6px;
+    height          : 52px;
+    width           : 220px;
+    font-family     : 'pf_agora_slab_proregular';
+    font-weight     : 700;
+    font-size       : 13px;
+    text-decoration : none;
+    display         : table;
+}
+
+a.btn-double-floor:hover {
+    background: #069B06;
+}
+
+.disease-green-btn a.btn-double-floor {
+    background : url("/media/images/btn-7_bg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.btn-double-floor:hover {
+    box-shadow : 0 1px 5px #BBBBBB;
+}
+
+.btn-double-floor:active {
+    background-position : 0 100%;
+}
+
+.what-to-do .btn-double-floor {
+    position   : relative;
+    left       : -25px;
+    margin-top : 10px;
+}
+
+.doing-box .todo-list a.btn-double-floor {
+    color : #FFFFFF;
+}
+
+.btn-double-floor span.just-text {
+    text-align     : center;
+    display        : table-cell !important;
+    vertical-align : middle;
+}
+
+.with-sign {
+    background      : url("/media/images/landing/attention.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background-size : 33px 31px;
+    padding-left    : 40px;
+    text-align      : center;
+    border          : 2px solid #cd2667;
+}
+
+.in-middle {
+    text-align : center;
+}
+
+.in-middle ol {
+    list-style-type : none;
+}
+
+.about-ilness-content .main-cont .content .section .in-middle p a {
+    color : #3392C2;
+}
+
+.in-middle a .just-text {
+    padding : 17px 2px;
+}
+
+.in-middle a.btn-double-floor {
+    margin : 0 auto;
+}
+
+.in-middle a.btn-double-floor.consult-button {
+    width : 270px;
+}
+
+a.btn-double-floor {
+    color : #FFFFFF;
+}
+
+.in-middle .list-description li {
+    display : inline;
+}
+
+.in-middle-with-list ul.list-description li {
+    background    : url("/media/images/list_bull.gif") no-repeat scroll 0 6px rgba(0, 0, 0, 0);
+    margin-bottom : 6px;
+    margin-left   : 20px;
+    padding-left  : 15px;
+    font-size     : 14px;
+    line-height   : 18px;
+}
+
+.with-sign-bold {
+    line-height : 35px;
+    margin      : 0 auto 10px;
+}
+
+.where-is-analysis {
+    width : 250px;
+}
+
+.where-is-medicine {
+    width : 350px;
+}
+
+.in-middle .in-middle-with-list-triple {
+    display : block;
+    height  : 40px;
+}
+
+.in-middle-with-list ul.list-description.in-middle-with-list-triple li {
+    display     : block;
+    float       : left;
+    width       : 180px;
+    text-align  : left;
+    margin-left : 15px;
+}
+
+.attention-block {
+    display      : inline-block;
+    background   : url("/media/images/landing/attention.png") no-repeat scroll 0 0 / 33px 31px rgba(0, 0, 0, 0);
+    line-height  : 32px;
+    padding-left : 40px;
+}
+
+.about-ilness-content .other-links.bottom-what-to-do li a.btn-double-floor span {
+    background   : none;
+    color        : #FFFFFF;
+    cursor       : pointer;
+    display      : block;
+    font-family  : 'pf_agora_slab_proregular';
+    font-size    : 13px;
+    padding-left : 0;
+}
+
+.about-ilness-content .other-links.bottom-what-to-do li a.btn-double-floor {
+    margin : 0 auto;
+}
+
+.about-ilness-content .main-cont .content .section .in-middle p .disease-doctor {
+    text-decoration : underline;
+}
+
+.about-ilness-content .main-cont .content .section .in-middle p .disease-doctor:hover {
+    text-decoration : none;
+}
+
+.third-version-buttons-container {
+    display            : none;
+    width              : 975px;
+    margin-left        : 5px;
+    bottom             : 0;
+    font-family        : 'pf_agora_sans_proregular';
+    color              : #3D3D3D;
+    background         : #FCFCFC;
+    border             : 1px #D2D2D2 solid;
+    border-radius      : 6px 6px 0 0;
+    -webkit-box-shadow : 0 1px 1px #A9A9A9;
+    -moz-box-shadow    : 0 1px 1px #A9A9A9;
+    box-shadow         : 0 1px 1px #A9A9A9;
+    overflow           : hidden;
+    position           : fixed;
+    z-index            : 10000;
+}
+
+.third-version-buttons-container h3 {
+    margin-top  : 10px;
+    font-family : 'pf_agora_slab_probold';
+    font-size   : 18px;
+    text-align  : center;
+}
+
+.third-version-buttons-container h3 span {
+    color : #DD3183;
+}
+
+.third-version-buttons-container ol {
+    list-style : none;
+}
+
+.third-version-buttons-container .what-to-do .btn-double-floor {
+    left : 0;
+}
+
+.third-version-buttons-container ol {
+    margin   : 10px 0 10px 2px;
+    display  : block;
+    overflow : hidden;
+}
+
+.third-version-buttons-container ol li {
+    float       : left;
+    margin-left : 18px;
+}
+
+.third-version-buttons-container ol li a img {
+    float   : left;
+    width   : 34px;
+    padding : 8px 0 0 10px;
+}
+
+.longer-specialty .call-order-block .landing-center .landing-h-text {
+    font-size : 30px;
+}
+
+.longer-specialty .order-form-inner-header {
+    font-size : 22px;
+}
+
+.longer-specialty .call-order-block .order-form {
+    height : 404px;
+}
+
+.longer-specialty .white-symptom-footer-text {
+    font-size   : 22px;
+    padding-top : 5px;
+}
+
+.longer-specialty .double-list {
+    min-height : 280px;
+}
+
+.longer-specialty .white-symptom-block {
+    height : 390px;
+}
+
+.longer-specialty .landing-center .landing-heading-line a.btn-1 {
+    padding : 0 40px;
+    width   : 476px;
+}
+
+.longer-specialty .landing-heading-line .button-container {
+    margin-left : 210px;
+    padding     : 0 35px;
+    width       : 560px;
+}
+
+.longer-specialty.footer-landing a.btn-1 {
+    width : 247px;
+}
+
+.symptoms-block.short-symptom-list .white-symptom-block {
+    height : 300px;
+}
+
+.symptoms-block.short-symptom-list .double-list {
+    min-height : 190px;
+}
+
+.gray-separator {
+    border-top : 1px solid #CCCCCC;
+    padding    : 6px 0 0;
+    margin     : 2px 0 0;
+    width      : 100px;
+}
+
+.shadow-input{
+    float: left;
+    background: url(/media/images/popup_txt.png) no-repeat;
+    position: relative;
+}
+.shadow-input input{
+    position: relative;
+    width: 331px;
+    height: 58px;
+    background: url(/media/images/popup_txt.png) no-repeat 100% 100%;
+    border: none;
+    color: #666666;
+    font: 24px 'pf_agora_slab_proregular';
+    margin-right: -9px;
+    padding: 0 40px 0 13px;
+    outline: none;
+}
+.shadow-input input::placeholder {
+    opacity: 0.5;
+}
+.text-shadow-input{
+    display: inline-block;
+    float: left;
+    line-height: 58px;
+    margin-right: 10px;
+    width: 143px;
+}
+.recordFormSuccess{
+    text-align: center;
+    font-size: 2.5em;
+    color: green;
+    border-top: 1px dashed green;
+    padding: 20px 0;
+}
+.recordFormFail{
+    text-align: center;
+    font-size: 1.5em;
+    color: red;
+    border-top: 1px dashed red;
+    padding: 20px 0;
+}
+.disease-doc-block{
+    display: inline-block;
+    width: 100%;
+    border: 1px #E3E3E3 solid;
+    border-radius: 6px;
+    padding: 10px 5px;
+    box-sizing: border-box;
+}
+.disease-doc-text{
+    font-size: 14px;
+}
+.disease-doc-text .btn-appoint{
+    float: left;
+    width: 125px;
+    margin-top: 10px;
+}
+.disease-doc-image .avatar{
+    float: right;
+}
+.disease-doc-hide{
+    padding-top: 10px;
+}
+.col-10{
+    width: 80%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.col-2{
+    width: 20%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.col-8{
+    width: 66.66666667%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.col-4{
+    width: 33.33333333%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.m-b-5{margin-bottom: 5px;}
+.m-b-10{margin-bottom: 10px;}
+.m-b-15{margin-bottom: 15px;}
+.m-b-20{margin-bottom: 20px;}
+.m-b-25{margin-bottom: 25px;}
+.m-b-30{margin-bottom: 30px;}
+
+.a-c{text-align:center;}
+.a-l{text-align:left;}
+.a-r{text-align:right;}
+.actionsList{
+    padding-top: 10px;
+    margin-top: 20px;
+}
+.oneAction {
+    position: relative;
+    display: block;
+    width: 633px !important;
+    height: 260px;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.oneAction .actionName{
+    position: static;
+    width: 100%!important;
+    font-size: 16px;
+    line-height: 20px;
+    left: 0;
+    top: 0;
+    padding: 5px;
+    box-sizing: border-box;
+    background: rgba(245, 245, 220, 0.65);
+    font-weight: bold;
+}
+.oneAction .actionEdit{
+    float: left;
+    font-size: 14px;
+}
+.oneAction .actionImage{
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+.oneAction .actionDelete{
+    float: right;
+    font-size: 14px;
+}
+.actionText{
+    font-size: 14px;
+    color: #6D6D6D;
+    padding-bottom: 15px;
+}
+
+.actionLink{
+    display: inline-block;
+    line-height: 1em;
+    font-family: 'pf_agora_slab_probold';
+    font-size: 14px;
+    padding: 9px 15px 11px 15px;
+    margin-right: 8px;
+    background: rgb(252, 110, 111);
+    color: #fff!important;
+    text-decoration: none!important;
+    text-align: right;
+    border-radius: 15px 15px 0 0;
+}
+
+.b-specialization__item-link {
+    font-size: 12px;
+}
+
+.b-specialization__item-link:link,
+.b-specialization__item-link:visited {
+    text-decoration: none;
+    color: #2e88bc;
+}
+
+.b-specialization__item-count {
+    display: inline-block;
+    width: 30px;
+    text-align: right;
+    color: #777777;
+}
+
+.b-specialization__item-name {
+    text-decoration: underline;
+}
+
+.sitemap ul li {
+    font-size: 16pt;
+}
+.mobile-logo{ height: 50px; position: absolute; z-index: 9999;}
+.responsive-header__nav .btn-reg{}
+
+.tree-services > .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.type-and-service-area > .price {
+    font-size: 14px;
+    float: right;
+    color: #000;
+    margin-top: 0;
+    padding-top: 6px;
+}
+
+.user-agreement p {
+    margin: .5em 0;
+    text-indent: 1em;
+}
+
+.user-agreement__meta {
+    clear: both;
+    margin-bottom: 2em;
+}
+
+/* Disable schedule for clinic */
+.schedule-clinic-2500 {
+    visibility: hidden;
+}
+
+.footer-warning {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #cccccc;
+}
+
+.footer-warning__age {
+    height: 30px;
+    width: 30px;
+    border: #cccccc solid 2px;
+    border-radius: 50%;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.footer-warning__age > div {
+    margin: .3em .3em;
+}
+
+.contacts__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.contacts__column {
+    flex: 0 0 320px;
+}
+
+.search-result {
+    padding: 3px;
+}

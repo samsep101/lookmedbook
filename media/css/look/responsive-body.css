@@ -1,0 +1,92 @@
+.way_line.m0 {
+    margin-bottom: 20px;
+}
+
+.catalog_more_h h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.caroufredsel_wrapper {
+
+}
+
+.doctor-landing .schedule .day a {
+    height: auto !important;
+}
+
+.block__doctor {
+    min-height: 300px;
+    padding: 10px
+}
+.block__doctor .row{
+    background-color: #fff;}
+.block__doctor .doctor__avatar {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.block__doctor .doctor__info {
+    margin: 0;
+    padding: 20px;
+}
+
+.block__doctor .doctor__info .info__name {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.block__doctor .doctor__map {
+    margin: 0;
+    padding: 20px;
+}
+
+.doctor__map .price-inf::after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.weeks__week {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.weeks__week li {
+    float: left;
+    width: 14.285714285714286%;
+    height: 60px;
+}
+
+.weeks__week li::after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+@media (max-width: 1199px) {
+    .way_line.m0 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 649px) {
+    .catalog_more_ul li {
+        width: 100%;
+        margin: 0 0 0 0;
+    }
+}
+
+@media (min-width: 650px) and (max-width: 1199px) {
+    .catalog_more_ul li {
+        width: 50%;
+        margin: 0 0 0 0;
+    }
+}

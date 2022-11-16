@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+.fancybox-wrap {top:15px!important;}
+.doctor-landing .schedule .day:first-child .post {border-top: 0;}
+.map-box .resize {display: none;}
+
+.map-box .search-box input.txt, .clinic-map-search input.txt, .doctor-map-search input.txt {line-height: 31px;}
+.content .left_search .search-form .box, .about-ilness-content .side-column .info-box,.about-ilness-content .main-cont,.clinic-landing,.doctor-landing,.doc-popup-sm,.card-popup,.info-card,.content .view-more {-pie-background: linear-gradient(#ffffff, #f7f7f7);}
+.bg_gradient,.about-ilness-content .side-column .info-box,.about-ilness-content .main-cont,.clinic-landing,.doctor-landing,.doc-popup-sm,.card-popup,.info-card,.content .view-more {-pie-background: linear-gradient(#ffffff, #f7f7f7);}
+.map-box .search-box input.txt {-pie-background: linear-gradient(#f7f7f7, #ffffff);}
+.popup-handling {background: #c9c9c9}
+.order_tabs .box {-pie-background: linear-gradient(#ffffff, #f2f2f2);}
+.analysis_map_clinic .tabs li a {background: #e5e5e5;}
+.analysis_map_clinic .tabs li.active a {background: #fde7d0;}
+.avatar {width: 74px;}
+.cab-cont .switch li.active,.content .search-form .tabs li.active {-pie-background:linear-gradient(#61c9d6,#36a7b5);}
+.content .left_search .search-form .tabs li.active, .content .left_search .search-form .tabs li {-pie-background:none;}
+.btn {-pie-background:linear-gradient(#f3f3f3,#d9d9d9);}
+.info-box > .location-box > .box > .section,.doctor-big-card .schedule-extended .day {position: relative;}
+.error-msg:after, .error_span:after {border-color: #DF1362 transparent;}
+.content .left_search .search-form .tabs li,.content .left_search .search-form .tabs li.active {box-shadow: none;}
+input[type="password"] {letter-spacing: 3px;}
+.content .search-form .search-by-name .search-btn {display:inline-block!important;}
+.content .left_search .search-form .search-by-name .search-btn {display: none!important;}
+.goods_blocks > li {margin-right: 4px!important;}
+.catalog_more_ul li {margin-right: 1.1%;}
+.goods_blocks > li > a{outline: 1px #ccc solid;}
+
+.cab-cont .switch li.active,.about_us .white_bl,.popup-handling,.form-call,.all_city .next-nav .bg_nav, .all_city .prev-nav .bg_nav,.content .left_search .search-form .tabs li.active, .slider-cards .prev-nav .bg_nav,.slider-cards .next-nav .bg_nav,.left_search .chzn-container-single .chzn-single,.btn-6,.slider-cards .next-nav, .slider-cards .prev-nav, .content .left_search .search-form .box,.content .left_search .search-form .tabs li, .nav-doctor-card li,.analysis_map_clinic, .criteria,.about-ilness-content .illness-nav .sub-nav,.doc-popup-sm .info-area,.booking .shedule-var li .day div,.booking .shedule-var li .day,.fancybox-skin,.fancybox-opened .fancybox-skin,.btn,.about-ilness-content .side-column .info-box,.about-ilness-content .main-cont,.location-box .tabs_schedule li,.nav,.clinic-landing,.review-box,.doctor-landing .schedule .day a,.connected-carousels .carousel-navigation li,.connected-carousels .stage,.doctor-landing .main-cont,.doctor-landing,.search-block input.txt,.doc-popup-sm,.card-popup,.info-card .schedule-extended,.item-row .doctor-big-card .schedule-extended .day,.info-card .descr .tooltip,.btn-bookmark,.btn-appoint,.avatar,.btn-1,.map-box .search-box .btn-search,.map-box .search-box input.txt,.header nav a.active,.header .quick-search .quick-search-input,.btn-enter,.btn-reg,.content .search-form .box,.info-card,.content .view-more,.map-box, .simple-text, .search-box .txt, .search-box .btn-search {behavior: url(/media/pie/PIE.htc);}
+.cab-cont .rev-block .section .info-card,.slider-cards .info-card *, .slider-cards .info-card, .visit-remind-block .info-card-gr {behavior: none!important;}
+.slider-cards .ul_cards > li .info-card {background: #fff}
+.criteria {width: 165px;}
+.order_tabs .box .section .w100, .order_tabs .box .section textarea,.order_tabs .box,.good,.btn-w,.bg_gradient,.content .search-form .tabs li, .nav-doctor-card li,.analysis_map_clinic, .criteria,.about-ilness-content .illness-nav .sub-nav,.doc-popup-sm .info-area,.booking .shedule-var li .day div,.booking .shedule-var li .day,.fancybox-skin,.fancybox-opened .fancybox-skin,.btn,.about-ilness-content .side-column .info-box,.about-ilness-content .main-cont,.location-box .tabs_schedule li,.nav li,.nav,.clinic-landing,.review-box,.doctor-landing .schedule .day a,.connected-carousels .carousel-navigation li,.connected-carousels .stage,.doctor-landing .main-cont,.doctor-landing,.search-block input.txt,.doc-popup-sm,.card-popup,.info-card .schedule-extended,.doctor-big-card .schedule-extended .day,.info-card .descr .tooltip,.btn-bookmark,.btn-appoint,.avatar,.btn-1,.map-box .search-box .btn-search,.map-box .search-box input.txt,.header nav a.active,.header .quick-search .quick-search-input,.btn-enter,.btn-reg,.content .search-form .box,.info-card,.content .view-more,.map-box {behavior: url(/media/pie/PIE.htc);}

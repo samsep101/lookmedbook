@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /media/css/
+Allow: /media/images/
+Allow: /media/js/
+Allow: /media/responsive/
+Disallow: /shop/
+Disallow: /ajax/
+Disallow: /*search*
+Disallow: /*utm_
+Disallow: /*_openstat
+Disallow: /*?
+Disallow: /*booking*
+Disallow: /disease
+Disallow: /media/js/ajaxContent.js
+Host: https://{{domain}}
+
+
+User-agent: Googlebot
+Disallow: /

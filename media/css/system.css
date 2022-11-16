@@ -1,0 +1,103 @@
+body {
+    background: url("/media/images/cloth_alike.png") repeat scroll 0 0 transparent;
+    height: auto;
+    min-height: 100%;
+    min-width: 1150px;
+}
+body table thead {
+    background: #4F4F4F;
+}
+body table thead td{
+    color: #DDDDDD;
+}
+
+body table tr:nth-child(2n){
+    background: #FBFBFB;
+}
+.tab-container {
+    margin: 100px 0 0 0;
+}
+
+.etabs {
+    margin: 0;
+    padding: 0;
+}
+
+.tab {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    background: #50BCC9;
+    border-bottom: none;
+    border-radius: 7px 7px 0 0;
+    -moz-border-radius: 7px 7px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+}
+
+.tab a {
+    font-size: 16px;
+    line-height: 2em;
+    display: block;
+    padding: 0 10px;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+}
+
+.tab a:hover {
+    text-decoration: underline;
+}
+
+.tab.active {
+    background: #E14C88;
+    padding-top: 6px;
+    position: relative;
+    top: 1px;
+    border-color: #666;
+}
+
+.tab a.active {
+    font-weight: bold;
+}
+
+.tab-container .panel-container {
+    background: #fff;
+    border: solid #666 1px;
+    padding: 10px;
+    -moz-border-radius: 0 4px 4px 4px;
+    -webkit-border-radius: 0 4px 4px 4px;
+}
+
+.tab-container .after_ul {
+    margin: 20px 0 0 10px;
+}
+
+.select-city{
+    margin: 50px 0 -80px 0;
+}
+
+.calendar {width:273px; float:left; font:14px Verdana, Geneva, sans-serif; color:#000; margin-top:-3px;}
+.calendar .ui-datepicker-title {color:#3b3b3b; font:18px 'pf_agora_slab_pro_medium'; text-transform:uppercase; display:inline-block;}
+.calendar .ui-datepicker-prev, .calendar .ui-datepicker-next {display:block; width:8px; height:20px; background:url(/media/images/slider_controls.png) no-repeat; text-indent:-9999px; float:left;}
+.calendar .ui-datepicker-next {background-position:100% 0; float:right;}
+.calendar .ui-datepicker-header {text-align:center; margin-bottom:7px; padding:0 45px;}
+.ui-datepicker-calendar {display: none;}
+.ui-datepicker-year {display: block;}
+
+.docx-error {
+    background: none repeat scroll 0 0 #E14C88;
+    font-weight: bold;
+    padding:10px;
+    margin: 10px 0px 30px;
+    border-radius: 7px;
+    color:#fff;
+    display:none;
+}
+
+.visit-date-pick {
+    padding: 5px;
+}
+.visit-date-pick span {
+    display: inline-block;
+    width: 20px;
+}

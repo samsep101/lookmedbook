@@ -1,0 +1,34 @@
+<?php
+
+class DayViewHelper {
+
+	public function day($date)
+	{
+		$days = array(
+			1 => 'Понедельник',
+			2 => 'Вторник',
+			3 => 'Среда',
+			4 => 'Четверг',
+			5 => 'Пятница',
+			6 => 'Суббота',
+			7 => 'Воскресение',
+		);
+		$result = $days[date('N', $date)];
+		return $result;
+	}
+
+    public static  function shortDay($date)
+    {
+        $days = array(
+            1 => 'Пн',
+            2 => 'Вт',
+            3 => 'Ср',
+            4 => 'Чт',
+            5 => 'Пт',
+            6 => 'Сб',
+            7 => 'Вс',
+        );
+        $result = $days[date('N', $date)];
+        return $result;
+    }
+}

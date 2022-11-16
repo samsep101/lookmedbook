@@ -1,0 +1,137 @@
+<script>
+    $(document).ready(function(){
+        var statistic_controller = new SiteStatisticController('<?php echo isset($docx_error) ? $docx_error : null?>');
+        statistic_controller.init();
+    });
+</script>
+
+<h1>Страница статистики</h1>
+<h3>Общая информация</h3>
+<table>
+    <thead>
+    <tr>
+        <td>Город</td>
+        <td>Клиник</td>
+        <td>Докторов</td>
+        <td>Специализаций в справочнике</td>
+        <td>Специализаций покрыто клиниками</td>
+        <td>Специализаций покрыто докторами</td>
+    </tr>
+    </thead>
+
+    <tbody>
+        <?php if ($city_current_statistic_information): ?>
+            <?php foreach ($city_current_statistic_information as $information): ?>
+                <tr align="center">
+                    <td><?php echo $information['city_name']; ?></td>
+                    <td><?php echo $information['clinics']; ?></td>
+                    <td><?php echo $information['doctors']; ?></td>
+                    <td><?php echo $information['all_specialties']; ?></td>
+                    <td><?php echo $information['specialties_by_clinics']; ?></td>
+                    <td><?php echo $information['specialties_by_doctors']; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        <?php if ($current_statistic_information): ?>
+            <?php foreach ($current_statistic_information as $information): ?>
+                <tr align="center">
+                    <td>Все</td>
+                    <td><?php echo $information['clinics']; ?></td>
+                    <td><?php echo $information['doctors']; ?></td>
+                    <td><?php echo $information['all_specialties']; ?></td>
+                    <td><?php echo $information['specialties_by_clinics']; ?></td>
+                    <td><?php echo $information['specialties_by_doctors']; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </tbody>
+
+</table>
+
+<div style="margin-top: 50px">
+    <li class="tab docotor_tab">
+        <a href="javascript:void(0)">
+            Доктора, не привязанные к клиникам
+        </a>
+    </li>
+    <div id="doctors_without_clinic" style="display: none">
+        <?php $this->doctors = $doctors; ?>
+        <?php /*$this->block('system/blocks/doctors_without_clinic'); */
+?>
+    </div>
+</div>
+
+
+<div class="select-city">
+    <?php if ($city_current_statistic_information): ?>
+        <label>Статистика по городам</label>
+        <select>
+            <?php foreach ($city_current_statistic_information as $information):?>
+                <option value="<?php echo $information['city_id']?>"><?php echo $information['city_name']?></option>
+            <?php endforeach?>
+            <option value="all">Все</option>
+        </select>
+    <?php endif; ?>
+</div>
+
+<div id="tab-container" class="tab-container">
+    <ul class='etabs'>
+        <li class='tab'><a href="#clinic-doctor-specialty">Клиника-доктора-специализации</a></li>
+        <li class='tab' style="display: none"><a href="#doctors" class="doctors_href">Доктора без клиники</a></li>
+        <li class='tab'><a href="#specialties-doctor-clinic">Специализация-доктора-клиники</a></li>
+        <li class='tab'><a href="#specialties">Специализации без докторов/клиник</a></li>
+        <li class="tab"><a href="#clinic-visits">Посещения клиник</a></li>
+        <li class="tab"><a href="#visit-statistic">Месячные отчеты по заявкам</a></li>
+    </ul>
+    
+    <div class="after_ul">
+        <div id="clinic-doctor-specialty">
+            <?php $this->block('system/blocks/clinic_doctor_specialty'); ?>
+        </div>
+
+        <div id="specialties-doctor-clinic">
+            <?php $this->block('system/blocks/specialties_doctor_clinic'); ?>
+        </div>
+
+        <div id="specialties">
+            <?php $this->block('system/blocks/specialties'); ?>
+        </div>
+
+        <div id="datepicker" class="calendar" style="display: none;"></div>
+
+        <table class="visits-info" style="text-align: center; margin-bottom: 10px;">
+            <thead>
+            <tr>
+                <td>Обращения</td>
+                <td>Все заявки</td>
+                <td>Был у врача</td>
+                <td>Не был у врача</td>
+                <td>Был / Не был</td>
+                <td>Отменено</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="appeal"></td>
+                <td id="all"></td>
+                <td id="visited"></td>
+                <td id="not_visited"></td>
+                <td id="visited_and_not_visited"></td>
+                <td id="canceled"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <span class="docx-error">В выбранной клинике нет ни одной успешной заявки </span>
+        <div id="clinic-visits">
+            <?php $this->block('system/blocks/clinic_visits'); ?>
+        </div>
+        <div id="visit-statistic">
+            <?php $this->block('system/blocks/visit_statistic'); ?>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#tab-container').easytabs();
+</script>

@@ -1,0 +1,1 @@
+<script type="text/javascript" src="/media/js/js_library.js?<?= RELEASE__NUMBER?>" defer></script>

@@ -1,0 +1,15 @@
+.kartoteka-content {
+    font-size: 16px;
+}
+
+.kartoteka-content ul {
+    margin : 0 0 7px 3px;
+}
+
+.kartoteka-content ul li {
+    background    : url("/media/images/list_bull.gif") no-repeat scroll 0 6px transparent;
+    margin-bottom : 6px;
+    padding-left  : 28px;
+    line-height   : 18px;
+}
+
