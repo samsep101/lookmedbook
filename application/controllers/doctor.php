@@ -891,7 +891,8 @@ class DoctorController extends BaseController
             $this->view->page_description = str_replace('в Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialtySeoTags[$specialty->name][1]);
         }
         if ($_GET['debug'] == '1'){
-            $this->view->page_title = $specialty->meta_title;
+            $this->view->page_title = $specialty->__get('meta_title');
+            $this->view->page_description = $specialty->__get('meta_description');
         }
 
         $metroManager = new MetroManager();
