@@ -885,12 +885,13 @@ class DoctorController extends BaseController
             'массажист'=>['Врачи массажисты в Москве | Услуги массажа, профессиональные мастера','Ищете врача массажиста в Москве? LookMedBook поможет выбрать опытного врача по отзывам и рейтингам клиентов, узнать стоимость и записаться на прием.']
         ];
 
+
         if (isset($specialtySeoTags[$specialty->name])) {
             $this->view->page_title = str_replace('в Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialtySeoTags[$specialty->name][0]);
             $this->view->page_description = str_replace('в Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialtySeoTags[$specialty->name][1]);
         }
         if ($_GET['debug'] == '1'){
-            $this->view->page_title = print_r($specialty, 1);
+            $this->view->page_title = $specialty->meta_title;
         }
 
         $metroManager = new MetroManager();
