@@ -78,7 +78,13 @@ else
     <?= $this->block('doctor/blocks/breadcrumbs') ?>
   </div>
   <div class="special-block">
-      <h1 class="js--main-h1"><?= SeoTextViewHelper::getSpecialtyH1($specialty, $address_object); ?></h1>
+      <h1 class="js--main-h1">
+          <?php
+            if ($specialty->__get('h1') == ''){
+                echo SeoTextViewHelper::getSpecialtyH1($specialty, $address_object);
+          }else {
+                echo $specialty->__get('h1');
+          } ?></h1>
   </div>
     <p class="count">
         Мы нашли для Вас <span class="count-digit"><?= $doctorTotalCount ?></span> <span class="count-doctor"><?= SpecialtyHelper::getDoctorWordForm($doctorTotalCount) ?></span>
