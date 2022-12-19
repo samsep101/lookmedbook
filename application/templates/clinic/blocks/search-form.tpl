@@ -66,11 +66,11 @@
                             <div class="lmb">
                                 <p class="pad_tb">
                                     <a class="a_dashed show_inp" href="javascript:void(0)">Искать клинику по названию</a>
-                                    <input type="text" class="search_txt" name="clinic_name" placeholder="Название клиники"/>
+                                    <input type="text" class="txt" name="clinic_name" placeholder="Название клиники"/>
                                 </p>
 
                                 <div class="btn-box flo">
-                                    <input class="btn_red clinic_search_options" type="submit" value="Найти клинику" data-category-for-counters="find-clinic" data-action-for-counters="find-clinic"/>
+                                    <input class="btn-1 btn-doctor" type="submit" value="Найти клинику" data-category-for-counters="find-clinic" data-action-for-counters="find-clinic"/>
                                 </div>
                             </div>
                         </div>

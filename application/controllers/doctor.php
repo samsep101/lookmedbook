@@ -886,18 +886,20 @@ class DoctorController extends BaseController
         ];
 
 
-        if (isset($specialtySeoTags[$specialty->name])) {
-            $this->view->page_title = str_replace('в Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialtySeoTags[$specialty->name][0]);
-            $this->view->page_description = str_replace('в Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialtySeoTags[$specialty->name][1]);
-        }
-
-        if ($_GET['debug'] == '1') {
+        //if (isset($specialtySeoTags[$specialty->name])) {
+        //    $this->view->page_title = str_replace('в Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialtySeoTags[$specialty->name][0]);
+        //    $this->view->page_description = str_replace('в Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialtySeoTags[$specialty->name][1]);
+        //}
+	//debug
+        if ($specialty) {
             if ($specialty->__get('meta_title')) {
-                $this->view->page_title = $specialty->__get('meta_title');
+               	 $title = $specialty->__get('meta_title');
+		 $this->view->page_title = str_replace('в Москве', SeoTextViewHelper::getAddressObjectName($address_object), $title);
             }
 
             if ($specialty->__get('meta_description')) {
-                $this->view->page_description = $specialty->__get('meta_description');
+		$description = $specialty->__get('meta_description');
+                $this->view->page_description = str_replace('в Москве', SeoTextViewHelper::getAddressObjectName($address_object), $description);
             }
         }
 
