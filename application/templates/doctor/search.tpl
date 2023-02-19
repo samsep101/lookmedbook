@@ -93,8 +93,8 @@ else
 
 
     <p class="count">
-        Мы нашли для Вас <span class="count-digit"><?= $doctorTotalCount ?></span> <span class="count-doctor"><?= SpecialtyHelper::getDoctorWordForm($doctorTotalCount) ?></span>
-        <span class="count-specialty"><?= isset($specialty->id) ? SpecialtyHelper::getNameByCount($specialty, $doctorTotalCount) : '' ?></span>
+            Мы нашли для Вас <span class="count-digit"><?= $doctorTotalCount ?></span> <span class="count-doctor"><?= SpecialtyHelper::getDoctorWordForm($doctorTotalCount) ?></span>
+            <span class="count-specialty"><?= isset($specialty->id) ? SpecialtyHelper::getNameByCount($specialty, $doctorTotalCount) : '' ?></span>
     </p>
     <div class="divider-shadow" id="divider-shadow"></div>
 </div>
@@ -107,8 +107,6 @@ else
 HTML
 );
 ?>
-
-
 <div class="inner-2" style="padding-top: 0;">
     <div id="our-doctors">
         <?php if ($doctorsSearchErrorBlock) {
@@ -123,6 +121,27 @@ HTML
         } ?>
     </div>
 </div>
+
+<?php if ($doctorTotalCount == 0 ) { ?>
+<div class="inner-2" style="padding-top: 0;">
+    <p style="font-size: 14px">
+        К сожалению, все предложения в категории <?= isset($specialty->id) ? SpecialtyHelper::getNameByCount($specialty, $doctorTotalCount).' '. SeoTextViewHelper::getAddressObjectName($address_object) : '' ?> закончились, но мы можем вам предложить специалистов из районов поблизости.
+    </p>
+    <div id="our-doctors">
+        <?php if ($doctorsSearchErrorBlock) {
+                SeoHideHelper::begin();
+                echo $doctorsSearchErrorBlock;
+                SeoHideHelper::end();
+            }
+            $this->block('doctor/card_big_list_alt');
+
+        if ($nextPageFlag) {
+        echo "<a class=\"load-next-page view-more\"><i></i>Показать ещё 10 врачей</a>";
+        } ?>
+    </div>
+</div>
+<?php } ?>
+
 
 <div class="inner-2">
     <?php
