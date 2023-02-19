@@ -80,12 +80,8 @@ else
   <div class="special-block">
       <h1 class="js--main-h1">
         <?php
-        if ($specialty){
-            if ($specialty->__get('h1') == ''){
-                echo SeoTextViewHelper::getSpecialtyH1($specialty, $address_object);
-            }else {
-                echo $specialty->__get('h1');
-            }
+        if ($specialty && $specialty->__get('h1') != ''){
+            echo str_replace('в Москве', SeoTextViewHelper::getAddressObjectName($address_object), $specialty->__get('h1'));
           }else {
             echo SeoTextViewHelper::getSpecialtyH1($specialty, $address_object);
           }

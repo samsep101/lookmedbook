@@ -1,5 +1,7 @@
 <?php
 
+
+//эта страница отключена в роутингах
 class ClinicGroupController extends BaseController
 {
     protected static $settings = [
