@@ -845,6 +845,10 @@ class DoctorController extends BaseController
 
         $this->ajaxSearch__view_params($doctorSearchParams, $specialtyId, $doctors);
         $this->view->doctorTotalCount = $doctorSearchAlgorithm->getDoctorTotalCount();
+        if ($doctorSearchAlgorithm->getDoctorTotalCount() == 0 ){
+            $this->view->isHiddenFromRobots = true;
+
+        }
         $this->view->nextPageFlag = $doctorSearchAlgorithm->getNextPageFlag();
         $this->view->doctorsSearchErrorBlock = $this->getDoctorsSearchErrorBlock(
             $doctorSearchAlgorithm,

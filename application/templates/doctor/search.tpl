@@ -122,7 +122,7 @@ HTML
     </div>
 </div>
 
-<?php if ($doctorTotalCount == 0 ) { ?>
+<?php if ($doctorTotalCount == 0 && false) { ?>
 <div class="inner-2" style="padding-top: 0;">
     <p style="font-size: 14px">
         К сожалению, все предложения в категории <?= isset($specialty->id) ? SpecialtyHelper::getNameByCount($specialty, $doctorTotalCount).' '. SeoTextViewHelper::getAddressObjectName($address_object) : '' ?> закончились, но мы можем вам предложить специалистов из районов поблизости.

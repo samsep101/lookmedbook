@@ -90,6 +90,11 @@
 
 </head>
 <body>
+
+<?php if (isset($_GET['debug'])) {
+echo 1;
+print_r($doctorTotalCount);
+?>
     <?php if (isset($specialty) && iconv_strlen($specialty->lp_dative_name, 'UTF-8')>17):?>
         <?php $addicted_class = 'longer-specialty';?>
     <?php else:?>

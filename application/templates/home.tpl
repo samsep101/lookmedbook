@@ -72,11 +72,13 @@
         }
     </style>
     <script async type="text/javascript" src="//sjsmartcontent.org/static/plugin-site/js/sjplugin.js" site="6fmj"></script>
-    <?php if (!empty($isHiddenFromRobots)) { ?>
+    <?php if (!empty($isHiddenFromRobots) ) { ?>
         <meta name="robots" content="noindex, nofollow" />
     <?php } ?>
+
 </head>
 <body>
+
 <?php
 if (debug > 1) {
     benchmarks()->display(debug > 2);
