@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * @var View $this
  * @var int $city_id
@@ -79,20 +79,31 @@ else
   </div>
   <div class="special-block">
       <h1 class="js--main-h1">
-          <?php
-        	if ($specialty){  
-		  if ($specialty->__get('h1') == ''){
-        	        echo SeoTextViewHelper::getSpecialtyH1($specialty, $address_object);
-          	}else {
-                	echo $specialty->__get('h1');
-          } }else {echo SeoTextViewHelper::getSpecialtyH1($specialty, $address_object);}?></h1>
+        <?php
+        if ($specialty){
+            if ($specialty->__get('h1') == ''){
+                echo SeoTextViewHelper::getSpecialtyH1($specialty, $address_object);
+            }else {
+                echo $specialty->__get('h1');
+            }
+          }else {
+            echo SeoTextViewHelper::getSpecialtyH1($specialty, $address_object);
+          }
+        ?>
+      </h1>
+
+
   </div>
+
+
     <p class="count">
         Мы нашли для Вас <span class="count-digit"><?= $doctorTotalCount ?></span> <span class="count-doctor"><?= SpecialtyHelper::getDoctorWordForm($doctorTotalCount) ?></span>
         <span class="count-specialty"><?= isset($specialty->id) ? SpecialtyHelper::getNameByCount($specialty, $doctorTotalCount) : '' ?></span>
     </p>
     <div class="divider-shadow" id="divider-shadow"></div>
 </div>
+
+
 <?= HelpPhoneNumberViewHelper::renderPhoneBlock(<<<HTML
 <div align="center" class="adv_text_bf_search_result">
     Мы сравним для вас цены и найдем лучшее предложение.<br> Звоните {%phoneLink%}
@@ -117,7 +128,18 @@ HTML
     </div>
 </div>
 
+<div class="inner-2">
+    <?php
+if ($specialty_id) {
+    echo "<div class='seo_text-container'>".str_replace('<ul>', '<ul class="list list-description">', SeoTextViewHelper::getTextBySpecialtyId($specialty_id))."</div>";
+}
+?>
+</div>
+
+
 <div class="doctor-special-links">
+
     <?php $this->block('doctor/blocks/seo_block'); ?>
 </div>
 <?php $this->block('doctor/blocks/micro-markup'); ?>
+<style>.seo_text-container {margin: 2rem 0;} .seo_text-container p {padding: 1.5rem 0;}</style>

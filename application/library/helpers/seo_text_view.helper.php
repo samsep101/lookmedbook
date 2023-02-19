@@ -114,7 +114,7 @@ class SeoTextViewHelper
             return $result_text;
         }
 
-		public static function getTextBySpecialtyIdAndAddressObject($specialty_id, DynamicModel $address_object)
+		public static function getTextBySpecialtyIdAndAddressObject($specialty_id, $address_object)
 		{
 			if ($address_object) {
 				$seo_text_manager = new SeoTextManager();
@@ -125,6 +125,14 @@ class SeoTextViewHelper
 				return '';
 			}
 		}
+    public static function getTextBySpecialtyId($specialty_id)
+    {
+        $seo_text_manager = new SeoTextManager();
+        $text = $seo_text_manager->getOneBySpecialtyId($specialty_id);
+
+        return $text ? $text->text : '';
+
+    }
 
         /**
          * @param MetroStationModel|StreetModel|RegionModel|DistrictModel|CityModel|null $model

@@ -11,9 +11,17 @@
 	<?php if(!isset($cache) or !$cache->start($cache_id, 'counters_city')): ?>
 <!--LiveInternet counter-->
 <script type="text/javascript">
-    document.write('<a href="//www.liveinternet.ru/click" target=_blank><img style="display: none" src="//counter.yadro.ru/hit?t44.6;r' + escape(top.document.referrer) + ((typeof(screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";h" + escape(document.title.substring(0, 80)) + ";" + Math.random() + '" border=0 width=31 height=31 alt="" title="LiveInternet"><\/a>')</script><!--/LiveInternet-->
+    document.writeTwo=function(s){
+        var scripts = document.getElementsByTagName('script');
+        var lastScript = scripts[scripts.length-1];
+        lastScript.insertAdjacentHTML("beforebegin", s);
+    }
 
-    <?php if(!defined('debug') || debug == 0): ?>
+    document.writeTwo('<a href="//www.liveinternet.ru/click" target=_blank><img style="display: none" src="//counter.yadro.ru/hit?t44.6;r' + escape(top.document.referrer) + ((typeof(screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";h" + escape(document.title.substring(0, 80)) + ";" + Math.random() + '" border=0 width=31 height=31 alt="" title="LiveInternet"><\/a>')
+
+    // document.write('<a href="//www.liveinternet.ru/click" target=_blank><img style="display: none" src="//counter.yadro.ru/hit?t44.6;r' + escape(top.document.referrer) + ((typeof(screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";h" + escape(document.title.substring(0, 80)) + ";" + Math.random() + '" border=0 width=31 height=31 alt="" title="LiveInternet"><\/a>')
+</script><!--/LiveInternet-->
+
     <!-- Yandex.Metrika counter-->
     <script type="text/javascript">
     (function (d, w, c) {
@@ -60,23 +68,7 @@
         <div><img src="//mc.yandex.ru/watch/<?php echo (int)AnalyticCounterHelper::getCounterIdByCityIdAndCounterTypeId($city->getId(), AnalyticCounterTypeModel::YANDEX_COUNTER); ?>" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript>
     <!-- /Yandex.Metrika counter -->
-    <?php endif; ?>
 
-    <?php /*<script>
-    (function (i, s, o, g, r, a, m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-    m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-    })
-    (window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', '<?php echo AnalyticCounterHelper::getCounterIdByCityIdAndCounterTypeId($city->getId(), AnalyticCounterTypeModel::GOOGLE_COUNTER); ?>', 'lookmedbook.ru');
-
-    ga('send', 'pageview');
-    </script>*/?>
 
 
     <meta name='yandex-verification' content='76535cc7dd5d586f' />
@@ -85,7 +77,7 @@
     <script type="text/javascript">
         var RndNum4NoCash = Math.round(Math.random() * 1000000000);
         var ar_Tail='unknown'; if (document.referrer) ar_Tail = escape(document.referrer);
-        document.write('<img src="' + ('https:' == document.location.protocol ? 'https:' : 'http:') + '//ad.adriver.ru/cgi-bin/rle.cgi?' + 'sid=194132&bt=21&pz=0&rnd=' + RndNum4NoCash + '&tail256=' + ar_Tail + '" style="display:none;" border=0 width=1 height=1>')
+        document.writeTwo('<img src="' + ('https:' == document.location.protocol ? 'https:' : 'http:') + '//ad.adriver.ru/cgi-bin/rle.cgi?' + 'sid=194132&bt=21&pz=0&rnd=' + RndNum4NoCash + '&tail256=' + ar_Tail + '" style="display:none;" border=0 width=1 height=1>')
     </script>
     <noscript><img src="//ad.adriver.ru/cgi-bin/rle.cgi?sid=194132&bt=21&pz=0&rnd=873783956" border=0 width=1 height=1></noscript>
     <!--  AdRiver code END  -->

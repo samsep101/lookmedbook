@@ -140,7 +140,7 @@ $doctor_total_count = isset($clinic->additional_params['doctors_main_specialty']
 
         <div class="aata-address">
             <div class="aata-street">
-                <img src="/media/images/small_placemark_for_street.png"><?php echo $clinic->address; ?>
+                <img width="12px" height="16px" src="/media/images/small_placemark_for_street.png"><?php echo $clinic->address; ?>
             </div>
             <div class="aata-metro">
                 <?php if ($clinic->metro_stations) { ?>

@@ -393,7 +393,7 @@ p.h-text {
 
 
 .inner-home-main {
-    background: url(/media/images/home_page/bg-inner-home-main_s.png) 72% -70px no-repeat;
+    /*background: url(/media/images/home_page/bg-inner-home-main_s.png) 72% -70px no-repeat;*/
     width: 100%;
     margin-bottom: -6px;
     margin-top: -50px;

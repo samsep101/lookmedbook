@@ -56,14 +56,15 @@
 		/**
 		 * @return SeoTextModel
 		 */
-		public function getOneBySpecialtyIdAndAddressObject($specialty_id, DynamicModel $address)
+		public function getOneBySpecialtyIdAndAddressObject($specialty_id, $address)
 		{
 			$sql = 'SELECT *
 					FROM seo_text
 					WHERE specialty_id = ' . (int)$specialty_id . '
 						AND ';
 
-			switch($address)
+
+			switch(get_class($address))
 			{
 				case 'MetroStationModel':
 					$sql .= 'metro_station_id = ' . (int)$address->metro_station_id;
@@ -78,7 +79,7 @@
 					$sql .= 'district_id = ' . (int)$address->district_id;
 					break;
 				case 'CityModel':
-					$sql .= 'city_id = ' . (int)$address->city_id;
+					$sql .= 'city_id = ' . (int)$address->id;
 					break;
 				default:
 					return null;
@@ -86,6 +87,23 @@
 
 			$data = $this->db->query($sql);
 
+
 			return $data ? $this->initOne($data[0]) : null;
 		}
+
+        /**
+         * @return SeoTextModel
+         */
+        public function getOneBySpecialtyId($specialty_id)
+        {
+            $sql = 'SELECT *
+					FROM seo_text
+					WHERE specialty_id = ' . (int)$specialty_id;
+
+
+            $data = $this->db->query($sql);
+
+
+            return $data ? $this->initOne($data[0]) : null;
+        }
 	}

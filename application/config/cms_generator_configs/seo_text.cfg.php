@@ -59,7 +59,7 @@ $seo_text = array(
 			'filter' => 'true',
 			'sort_by'     => 'name'
 		),
-		'text' => 'text',
+		'text' => 'htmlarea',
 	),
 	'generator' => array(
 		'fields' => array(

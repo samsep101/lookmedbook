@@ -14,7 +14,7 @@
                 }
 	        }
             if ($image_path)
-                $image ='<img src="'.$image_path.'" alt="'.$metro_branch->name.'">';
+                $image ='<img width="12px" height="16px" src="'.$image_path.'" alt="'.$metro_branch->name.'">';
             return $image;
         }
     }

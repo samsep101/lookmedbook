@@ -23,7 +23,7 @@
                 $croppedImage = $clinic->card_image->crop($width, $height);
                 if ($croppedImage) {
                     $html = '<a href="'.ClinicPageLinkViewHelper::getLink($clinic).'">';
-                    $html .= '<img src="' . $croppedImage->path . '" alt="' . $clinic->name . '"/>';
+                    $html .= '<img width="74px" height="31px" src="' . $croppedImage->path . '" alt="' . $clinic->name . '"/>';
                     $html .= '</a>';
                 }
             } else {
