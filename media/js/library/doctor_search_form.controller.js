@@ -34,7 +34,9 @@ var DoctorSearchFormController = function (
     this.metro_branch_name = null;
 
     this.page = 1;
+
     this.by_page = 10;
+
 
     this.sort_by = 'rate';
     /** @var {YandexMapController} */

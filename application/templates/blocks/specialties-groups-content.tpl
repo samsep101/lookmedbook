@@ -14,7 +14,6 @@
                     <li>
                         <a <?php if($first) echo 'class="first-specialty"'; ?> href="<?php echo SeoLinkViewHelper::getSpecialtyPageLink($specialty_item, $address_object); ?>" title="<?php echo $specialty_item->name; ?>"><span class="specialty-name-firs-letter"><?php echo $specialty_item->firstLetter; ?></span><span class="specialty-name-other-part"><?php echo $specialty_item->otherPart; ?></span></a>
                     </li>
-
                     <?php
                         $first = 0;
                         endif;

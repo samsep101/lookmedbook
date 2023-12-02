@@ -61,10 +61,18 @@ else
         window.controller.init();
 
         window.doctor_form_controller = controller.form_controller;
+
+        if (window.doctor_form_controller){
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            const params = Object.fromEntries(urlSearchParams.entries());
+
+            if (! (params.page === undefined) && parseInt(params.page) + 1 !== window.doctor_form_controller.page ){
+                window.doctor_form_controller.page = parseInt(params.page);
+
+            }
+        }
     });
 </script>
-
-
 
 <?php
     $this->doctors_page = 1;
@@ -122,25 +130,30 @@ HTML
     </div>
 </div>
 
-<?php if ($doctorTotalCount == 0 && false) { ?>
+
+<?php if ($doctorTotalCount == 0) { ?>
 <div class="inner-2" style="padding-top: 0;">
     <p style="font-size: 14px">
         К сожалению, все предложения в категории <?= isset($specialty->id) ? SpecialtyHelper::getNameByCount($specialty, $doctorTotalCount).' '. SeoTextViewHelper::getAddressObjectName($address_object) : '' ?> закончились, но мы можем вам предложить специалистов из районов поблизости.
     </p>
-    <div id="our-doctors">
+    <div id="our-doctors" style="padding-top: 2rem ">
         <?php if ($doctorsSearchErrorBlock) {
                 SeoHideHelper::begin();
                 echo $doctorsSearchErrorBlock;
                 SeoHideHelper::end();
             }
-            $this->block('doctor/card_big_list_alt');
-
-        if ($nextPageFlag) {
-        echo "<a class=\"load-next-page view-more\"><i></i>Показать ещё 10 врачей</a>";
-        } ?>
+            $this->block('doctor/card_big_list-alt');
+        ?>
     </div>
 </div>
-<?php } ?>
+
+<?php } else {
+
+    $total = $doctorTotalCount;
+
+    $this->block('blocks/pagination');
+
+} ?>
 
 
 <div class="inner-2">

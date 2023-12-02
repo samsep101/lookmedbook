@@ -53,6 +53,17 @@ $specializationName = isset($specialization->name) ? $specialization->name : '';
         controller.init();
 
         window.clinic_form_controller = controller.form_controller;
+
+
+        if (window.clinic_form_controller){
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            const params = Object.fromEntries(urlSearchParams.entries());
+
+            if (! (params.page === undefined) && parseInt(params.page) + 1 !== window.clinic_form_controller.page ){
+                window.clinic_form_controller.page = parseInt(params.page) ;
+
+            }
+        }
     });
 </script>
 <?php $this->block('clinic/blocks/search-form-page'); ?>
@@ -85,6 +96,24 @@ $specializationName = isset($specialization->name) ? $specialization->name : '';
         } ?>
     </div>
 </div>
+
+
+<?php if ($clinicTotalCount == 0) { ?>
+<div class="inner-2" style="padding-top: 0;">
+    <p style="font-size: 14px">
+        К сожалению, все предложения в категории <?= isset($specialty->id) ? SpecialtyHelper::getNameByCount($specialty, $clinicTotalCount).' '. SeoTextViewHelper::getAddressObjectName($address_object) : '' ?> закончились, но мы можем вам предложить клиники из районов поблизости.
+    </p>
+    <div id="our-doctors" style="padding-top: 2rem ">
+        <?php
+            //$this->block('clinic/card_big_list-alt');
+        ?>
+    </div>
+</div>
+
+<?php } else {
+    $total = $clinicTotalCount;
+    $this->block('blocks/pagination');
+} ?>
 
 <div class="clinic-special-links">
     <?php $this->block('clinic/blocks/seo_block'); ?>

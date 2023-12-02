@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * @property-read string $title
  * @property int $id
  * @property int $disease_draft_id
  * @property int $disease_block_type_id
@@ -50,6 +51,9 @@ class DiseaseDraftBlockModel extends DynamicModel
         return static::$diseaseBlockTypes;
     }
 
+    public function _filed_title() {
+	return '123';
+    }
     public function _field_diseaseBlockType()
     {
         return isset(static::$diseaseBlockTypes[$this->disease_block_type_id])

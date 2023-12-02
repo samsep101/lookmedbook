@@ -34,6 +34,8 @@ class ClinicController extends BaseController
     {
         $urlVars = $this->fillUrlVars();
 
+
+
         end($urlVars);
 
         if (count($urlVars) < 3) { // val1/val2 - может быть alias'ом клиники
@@ -195,6 +197,7 @@ class ClinicController extends BaseController
 
     }
   }
+
   public function index($specialization_alias = NULL)
   {
       if ($_SERVER['REQUEST_URI'] == '/clinic/search') {
@@ -279,6 +282,37 @@ class ClinicController extends BaseController
     $params = ClinicSearchHelper::initClinicSearchParams($this->request, $this->city->id);
     $params->specialization_id = isset($specialization->id) ? $specialization->id : null;
 
+
+    if (isset($_GET['page'])){
+        if ($_GET['page'] == 1 || $_GET['page'] == 0) {
+          $request = $_REQUEST;
+          unset($request['page']);
+
+          $request = http_build_query($request);
+          $request = $request != '' ? '?'.$request.'&' : '';
+
+
+          $startUrl = 'https://lookmedbook.ru'.$_SERVER['REDIRECT_URL'].$request;
+          RedirectManager::redirect301($startUrl);
+        }
+        $params->page = $_GET['page'];
+    }
+
+
+    if (empty($params->district_id) && $this->district) {
+        $params->district_id = $this->district->id;
+
+    }
+    if (empty($params->region_id) && $this->region) {
+        $params->region_id = $this->region->id;
+    }
+    if (empty($params->street_id) && $this->street) {
+        $params->street_id = $this->street->id;
+    }
+    if (empty($params->metro_station_id) && $this->metro) {
+        $params->metro_station_id = $this->metro->id;
+    }
+
     $clinic_search_algorithm = new ClinicSearchAlgorithm();
     $clinic_search_algorithm->setIsSearchNearestAllowed(true);
     $clinics = $clinic_search_algorithm->search($params);
@@ -286,12 +320,19 @@ class ClinicController extends BaseController
     $clinicTotalCount = $clinic_search_algorithm->getTotalClinicCount();
     $additionalClinics = $clinic_search_algorithm->getAdditionalClinics();
 
+    if ( isset($_GET['page']) && (  ceil($clinicTotalCount / 10 ) < $_GET['page']) ){
+      $this->view->isHiddenFromRobots = true;
+      ErrorPageViewHelper::page404();
+    }
+
     $this->view->clinicsSearchErrorMessage = $this->getClinicSearchErrorMessage($clinic_search_algorithm, $params, $additionalClinics);
     $this->view->nextPageFlag = (($params->page - 1) * $params->by_page + count($clinics)) < $clinicTotalCount;
     $this->view->address_object = $address_object;
 
     $this->view->clinics = $clinics;
     $this->view->clinicTotalCount = $clinicTotalCount;
+
+    $this->view->total = $clinicTotalCount;
     $this->view->specialization = $specialization;
     $this->view->city = $city;
     $this->view->city_id = $city_id;

@@ -1,4 +1,5 @@
 <?php
+
 	class DistrictManager extends AliasManager
 	{
 		protected $table_name = 'district';
@@ -23,33 +24,74 @@
 			return $this->initList($this->orm_model->select()->where('city_id = ?', $city_id)->fetchAll());
 		}
 
+        public function getHavingDoctorsListBySpecialtyIdAndCityIdAndSearch($specialty_id, $city_id, $params=null){
+            $sql = 'SELECT *
+                FROM ' . $this->table_name . ' d
+                WHERE d.city_id = ' . (int)$city_id . '
+                    AND EXISTS (
+                        SELECT *
+                        FROM doctor dc
+                        INNER JOIN doctor_to_clinic d2c ON d2c.doctor_id = dc.id
+                        INNER JOIN doctor_specialty_to_clinic ds2c ON ds2c.doctor_id = dc.id
+                        INNER JOIN clinic c ON c.id = d2c.clinic_id
+                        WHERE
+                            (	SELECT COUNT(*)
+                                FROM region r
+                                WHERE c.region_id = r.id
+                                    AND r.district_id = d.id) > 0
+                            AND ds2c.clinic_id = c.id
+                            AND ds2c.specialty_id = ' . (int)$specialty_id . '
+                            AND dc.is_active = 1
+                            AND c.is_active = 1
+                    )
+
+                ORDER BY `name`
+                ';
+
+            $data = $this->db->query($sql);
+
+            $params = $params === null ? new DoctorSearchParams() : $params;
+
+            foreach ($data as $key => $district) {
+                $params->district_id = $district['id'];
+                $search = new DoctorSearchAlgorithm();
+                $search->setIsSearchNearestAllowed(true);
+                $search->search(clone $params);
+
+                if ($search->getDoctorTotalCount() < 1){
+                    unset($data[$key]);
+                }
+            }
+
+            return $this->initList($data);
+        }
 		public function getHavingDoctorsListBySpecialtyIdAndCityId($specialty_id, $city_id)
 		{
-			$sql = 'SELECT *
-					FROM ' . $this->table_name . ' d
-					WHERE d.city_id = ' . (int)$city_id . '
-						AND EXISTS (
-							SELECT *
-							FROM doctor dc
-							INNER JOIN doctor_to_clinic d2c ON d2c.doctor_id = dc.id
-							INNER JOIN doctor_specialty_to_clinic ds2c ON ds2c.doctor_id = dc.id
-							INNER JOIN clinic c ON c.id = d2c.clinic_id
-							WHERE
-								(	SELECT COUNT(*)
-								 	FROM region r
-								 	WHERE c.region_id = r.id
-								 		AND r.district_id = d.id) > 0
-								AND ds2c.clinic_id = c.id
-								AND ds2c.specialty_id = ' . (int)$specialty_id . '
-								AND dc.is_active = 1
-								AND c.is_active = 1
-						)
+            $sql = 'SELECT *
+                FROM ' . $this->table_name . ' d
+                WHERE d.city_id = ' . (int)$city_id . '
+                    AND EXISTS (
+                        SELECT *
+                        FROM doctor dc
+                        INNER JOIN doctor_to_clinic d2c ON d2c.doctor_id = dc.id
+                        INNER JOIN doctor_specialty_to_clinic ds2c ON ds2c.doctor_id = dc.id
+                        INNER JOIN clinic c ON c.id = d2c.clinic_id
+                        WHERE
+                            (	SELECT COUNT(*)
+                                FROM region r
+                                WHERE c.region_id = r.id
+                                    AND r.district_id = d.id) > 0
+                            AND ds2c.clinic_id = c.id
+                            AND ds2c.specialty_id = ' . (int)$specialty_id . '
+                            AND dc.is_active = 1
+                            AND c.is_active = 1
+                    )
 
-					ORDER BY `name`
-					';
+                ORDER BY `name`
+                ';
 
-			$data = $this->db->query($sql);
-			return $this->initList($data);
+            $data = $this->db->query($sql);
+            return $this->initList($data);
 		}
 
         /**
@@ -65,6 +107,7 @@
                     WHERE c.is_active AND stc.specialization_id = ' . (int) $specialization_id . '
                      AND d.city_id = ' . (int)$city_id . ';            
             ';
+
 
             $data = $this->db->query($sql);
             return $this->initList($data);

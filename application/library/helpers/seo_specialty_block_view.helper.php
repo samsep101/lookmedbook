@@ -30,17 +30,24 @@ class SeoSpecialtyBlockViewHelper
 		return $html;
 	}
 
-	public static function getViewByAddressObjectInArray(SpecialtyModel $specialty, DynamicModel $current_model)
+	public static function getViewByAddressObjectInArray(SpecialtyModel $specialty, DynamicModel $current_model, $searchParams = null)
 	{
 		$resultData = array();
 
 		switch (get_class($current_model)) {
 			case 'CityModel':
                 // Блок линковки по городам удален в рамках #3197. Он был прямо тут, правда-правда!
-                $resultData['districtsBlock'] = self::getDistrictsBlock($current_model, $specialty, NULL);
+                if ($searchParams !== null) {
+                    $resultData['districtsBlock'] = self::getDistrictsBlockByElasticSearch($current_model, $specialty, null, $searchParams);
+                }else
+                    $resultData['districtsBlock'] = self::getDistrictsBlock($current_model, $specialty, NULL);
 				break;
 			case 'DistrictModel':
-                $resultData['districtsBlock'] = self::getDistrictsBlock($current_model->city, $specialty, $current_model->getId());
+                if ($searchParams !== null) {
+                    $resultData['districtsBlock'] = self::getDistrictsBlockByElasticSearch($current_model->city, $specialty, $current_model->getId(), $searchParams);
+                }else
+                    $resultData['districtsBlock'] = self::getDistrictsBlock($current_model->city, $specialty, $current_model->getId());
+
                 $resultData['otherAddressData']['regionsBlock'] = self::getRegionsBlock($current_model, $specialty, NULL);
                 $resultData['otherAddressData']['metroStationsBlockByDistrict'] = self::getMetroStationsBlockByDistrict($current_model, $specialty, NULL);
 				break;
@@ -49,7 +56,6 @@ class SeoSpecialtyBlockViewHelper
                 $resultData['otherAddressData']['metroStationsBlockByRegion'] = self::getMetroStationsBlockByRegion($current_model, $specialty, NULL);
 				break;
 			case 'StreetModel':
-				//$html .= self::getStreetsBlock($current_model->region, $specialty, $current_model->getId());
 				break;
 			case 'MetroStationModel':
                 $resultData['metroStationsBlockByRegion'] = self::getMetroStationsBlockByRegion($current_model->region, $specialty, $current_model->getId());
@@ -91,6 +97,29 @@ class SeoSpecialtyBlockViewHelper
 		return $html;
 	}
 
+    public static function getDistrictsBlockByElasticSearch(CityModel $city, SpecialtyModel $specialty, $current_id = FALSE, $searchParams = null){
+        $html = '';
+
+        $district_manager = new DistrictManager();
+        $districts = $district_manager->getHavingDoctorsListBySpecialtyIdAndCityIdAndSearch($specialty->getId(), $city->getId(), $searchParams);
+
+
+        if (($current_id && count($districts) > 1) ||(!$current_id && $districts)) {
+            $html = '<div class="specialties-block">';
+            $html .= '<h2>' . StringHelper::startProposalWord($specialty->plural_name) . ' по округам ' . SeoTextViewHelper::getAddressObjectName($city) . ':</h2>';
+            $html .= '<div class="text">';
+
+            foreach ($districts as $district) {
+                if ($current_id && $current_id == $district->getId())
+                    continue;
+                $html .= '<a href="' . SeoLinkViewHelper::getSpecialtyPageLink($specialty, $district) . '">' . $district->formal_name . '</a>';
+            }
+            $html .= '</div>';
+            $html .= '</div>';
+        }
+
+        return $html;
+    }
 	public static function getDistrictsBlock(CityModel $city, SpecialtyModel $specialty, $current_id = FALSE)
 	{
 		$html = '';
@@ -98,10 +127,12 @@ class SeoSpecialtyBlockViewHelper
 		$district_manager = new DistrictManager();
 		$districts = $district_manager->getHavingDoctorsListBySpecialtyIdAndCityId($specialty->getId(), $city->getId());
 
+
 		if (($current_id && count($districts) > 1) ||(!$current_id && $districts)) {
 			$html = '<div class="specialties-block">';
 			$html .= '<h2>' . StringHelper::startProposalWord($specialty->plural_name) . ' по округам ' . SeoTextViewHelper::getAddressObjectName($city) . ':</h2>';
 			$html .= '<div class="text">';
+            
 			foreach ($districts as $district) {
 				if ($current_id && $current_id == $district->getId())
 					continue;

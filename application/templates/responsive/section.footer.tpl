@@ -44,7 +44,7 @@
 
 <?php else : ?>
 
-    <script async type="text/javascript" src="//sjsmartcontent.org/static/plugin-site/js/sjplugin.js" site="6fmj"></script>
+    <script async type="text/javascript" src="//sjsmartcontent.ru/static/plugin-site/js/sjplugin.js" site="6fmj"></script>
     <script type="text/template" id="citymaps-balloon-template">
         <div class="citymaps-balloon-wrapper">
         <div class="citymaps-balloon-container">

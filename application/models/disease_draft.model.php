@@ -63,6 +63,9 @@ class DiseaseDraftModel extends DynamicModel
         return $specialties;
     }
 
+    public function _field_title(){
+return 123;
+	}
     /**
      * @return DiseaseDraftBlockModel[]
      */

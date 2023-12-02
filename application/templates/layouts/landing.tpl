@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="/media/css/<?php echo CSS_DIR; ?>/responsive-header.css?ver=<?php echo microtime(true);?>" type="text/css"/>
     <link rel="stylesheet" href="/media/css/<?php echo CSS_DIR; ?>/responsive-body.css?ver=<?php echo microtime(true);?>" type="text/css"/>
     <script type="text/javascript" src="/media/js/jquery-1.8.3.min.js"></script>
-    <script async type="text/javascript" src="//sjsmartcontent.org/static/plugin-site/js/sjplugin.js" site="6fmj"></script>
+    <script async type="text/javascript" src="//sjsmartcontent.ru/static/plugin-site/js/sjplugin.js" site="6fmj"></script>
 </head>
 <body>
 

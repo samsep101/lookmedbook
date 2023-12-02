@@ -71,7 +71,7 @@
             font-size: 15px !important;
         }
     </style>
-    <script async type="text/javascript" src="//sjsmartcontent.org/static/plugin-site/js/sjplugin.js" site="6fmj"></script>
+    <script async type="text/javascript" src="//sjsmartcontent.ru/static/plugin-site/js/sjplugin.js" site="6fmj"></script>
     <?php if (!empty($isHiddenFromRobots) ) { ?>
         <meta name="robots" content="noindex, nofollow" />
     <?php } ?>

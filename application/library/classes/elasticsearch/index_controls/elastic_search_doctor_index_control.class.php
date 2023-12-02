@@ -34,7 +34,8 @@ class ElasticSearchDoctorIndexControl extends ElasticSearchModelIndexControl
       $query->setFieldQuery('full_name', $criteria->doctor_name);
       $query->setFieldOperator('full_name', 'AND');
       $criteria->specialty_id = null;
-    } else {
+    }
+    else {
       if ($criteria->not_virtual) {
         $match = new \Elastica\Query\Term();
         $match->setTerm('is_virtual', false);

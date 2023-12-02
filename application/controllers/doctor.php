@@ -634,7 +634,6 @@ class DoctorController extends BaseController
             }
         }
 
-
         $specialty = NULL;
         if ($specialty_alias) {
             $specialty = $specialty_manager->getOneByAlias($specialty_alias);
@@ -790,6 +789,8 @@ class DoctorController extends BaseController
             $this->view->page_description = SeoTextViewHelper::getDescription($specialty, $address_object, $search_flags);
         }
         $this->view->specialty = $specialty;
+
+
         if (is_array($search_flags)) {
             $this->view->visit_type = $search_flags['visit_type'];
             $this->view->doctor_type = $search_flags['doctor_type'];
@@ -824,10 +825,32 @@ class DoctorController extends BaseController
         $specialtyId = isset($specialty->id) ? $specialty->id : null;
 
         $doctorSearchParams = DoctorSearchHelper::initDoctorSearchParams($this->request, $this->city->getId());
+        $doctorAltSearchParams =  DoctorSearchHelper::initDoctorSearchParams($this->request, $this->city->getId());
+        $doctorAltSearchParams->distance = 1;
+
+
+        if (isset($_GET['page'])){
+            if ($_GET['page'] == 1 || $_GET['page'] == 0) {
+                $request = $_REQUEST;
+                unset($request['page']);
+
+                $request = http_build_query($request);
+                $request = $request != '' ? '?'.$request.'&' : '';
+
+
+                $startUrl = 'https://lookmedbook.ru'.$_SERVER['REDIRECT_URL'].$request;
+                RedirectManager::redirect301($startUrl);
+            }
+            $doctorSearchParams->page = $_GET['page'];
+        }
+
+
         if (empty($doctorSearchParams->specialty_id) && $specialty) {
             $doctorSearchParams->specialty_id = $specialty->id;
+            $doctorAltSearchParams->specialty_id = $specialty->id;
         }
         if (empty($doctorSearchParams->district_id) && $district) {
+
             $doctorSearchParams->district_id = $district->id;
         }
         if (empty($doctorSearchParams->region_id) && $region) {
@@ -839,14 +862,44 @@ class DoctorController extends BaseController
         if (empty($doctorSearchParams->metro_station_id) && $metro_station) {
             $doctorSearchParams->metro_station_id = $metro_station->id;
         }
+
+        if ($this->view->is_seo_page && $this->view->specialties_groups && $this->view->specialty ){
+            $this->view->addressDataArray = SeoSpecialtyBlockViewHelper::getViewByAddressObjectInArray($specialty, $address_object, (clone $doctorSearchParams));
+
+        }
+
+        $this->view->isPopularShow = ($district || $region || $street || $metro_station);
         $doctorSearchAlgorithm = new DoctorSearchAlgorithm();
         $doctorSearchAlgorithm->setIsSearchNearestAllowed(true);
         $doctors = $doctorSearchAlgorithm->search($doctorSearchParams);
 
+
+
+
+
         $this->ajaxSearch__view_params($doctorSearchParams, $specialtyId, $doctors);
         $this->view->doctorTotalCount = $doctorSearchAlgorithm->getDoctorTotalCount();
+        $this->view->total = $this->view->doctorTotalCount;
+
+        if ( isset($_GET['page']) && (  empty($doctors)) ){
+            $this->view->isHiddenFromRobots = true;
+            ErrorPageViewHelper::page404();
+        }
+
         if ($doctorSearchAlgorithm->getDoctorTotalCount() == 0 ){
             $this->view->isHiddenFromRobots = true;
+
+            if (isset($_GET['page']) && $doctorSearchAlgorithm->getAdditionalDoctors() === null){
+                ErrorPageViewHelper::page404();
+            }
+
+
+            $doctorAltSearchAlgorithm = new DoctorSearchAlgorithm();
+
+            $doctorAltSearchAlgorithm->setIsSearchNearestAllowed(true);
+            $doctorsAlt = $doctorAltSearchAlgorithm->search($doctorAltSearchParams);
+
+            $this->view->doctorAlt = $doctorsAlt;
 
         }
         $this->view->nextPageFlag = $doctorSearchAlgorithm->getNextPageFlag();
@@ -854,6 +907,7 @@ class DoctorController extends BaseController
             $doctorSearchAlgorithm,
             $doctorSearchParams
         );
+
 
         if ($specialty) {
             if ($specialty->__get('meta_title')) {
@@ -866,6 +920,10 @@ class DoctorController extends BaseController
                 $this->view->page_description = str_replace('в Москве', SeoTextViewHelper::getAddressObjectName($address_object), $description);
             }
         }
+        if (isset($_GET['page']) && is_numeric($_GET['page'])){
+            $this->view->page_title .= ' - '.$_GET['page'].' страница';
+        }
+
 
         $metroManager = new MetroManager();
         $this->view->hasMetro = !empty($metroManager->getListByCityId($city_id));

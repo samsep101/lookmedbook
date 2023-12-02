@@ -15,9 +15,8 @@
                     WHERE `disease_id` = "' . (int)($disease_id) . '"
                         AND `is_active` = 1
                     ORDER BY disease_block_type_id ASC';
-
+	
 			$data = $this->db->query($sql);
-
 			return (count($data)) ? $this->initList($data) : array();
 		}
 

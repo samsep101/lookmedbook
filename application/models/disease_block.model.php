@@ -7,6 +7,7 @@
  * @property int $disease_block_type_id
  * @property DiseaseBlockTypeModel $disease_block_type
  * @property string $content
+ * @property string $title
  * @property int $is_active
  * @property int $male_flag
  * @property int $female_flag

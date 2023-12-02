@@ -1,11 +1,12 @@
-<?php if (isset($doctors) && $doctors): ?>
+<?php  if (isset($doctorAlt) && $doctorAlt): ?>
     <?php $counter = 1; ?>
     <?php $virtual_doctors = array(); ?>
-    <?php foreach ($doctors as $doctor): ?>
+    <?php foreach ($doctorAlt as $doctor): ?>
         <?php if ($doctor->is_virtual): ?>
             <?php array_push($virtual_doctors, $doctor); ?>
             <?php continue; ?>
         <?php endif; ?>
+
 
         <?php if ($counter % 2 == 1): ?>
             <div class="item-row flo row">

@@ -86,6 +86,8 @@ class DoctorSearchAlgorithm
 
     $doctors = $this->manager->getListByDoctorSearchParams($doctor_search_params);
     $this->totalDoctorCount = $this->manager->getTotalHits();
+
+
     if (count($doctors) == ($doctor_search_params->by_page + 1)) {
       $this->next_page_flag = true;
       unset($doctors[$doctor_search_params->by_page]);

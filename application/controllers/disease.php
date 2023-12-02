@@ -133,12 +133,13 @@ class DiseaseController extends BaseController
     }
 
     $this->view->disease = $disease;
-
+	//print_r($disease);
     $account = ModelManagerFactory::getByName('account')->getOneById(Acc::accountId());
     $this->view->account = $account;
 
     $disease_blocks = $disease_block_manager->getActiveListByDiseaseId($disease->getId());
-    $disease_blocks_content = $disease_block_manager->getActiveListByDiseaseIdAndFlag($disease->getId(), $card);
+	 
+  $disease_blocks_content = $disease_block_manager->getActiveListByDiseaseIdAndFlag($disease->getId(), $card);
     $this->view->disease_blocks = $disease_blocks;
     $this->view->disease_blocks_content = $disease_blocks_content;
     $this->view->disease_tabs_flags = $disease_tabs_flags;
@@ -591,6 +592,7 @@ class DiseaseController extends BaseController
             $disease_block->children_flag = $block->is_children;
             $disease_block->newborn_flag = $block->is_newborn;
             $disease_block->pregnant_flag = $block->is_pregnant;
+            $disease_block->title = $block->title.'1';		 
 
             $disease_block_manager->save($disease_block);
           }

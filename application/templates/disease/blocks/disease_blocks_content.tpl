@@ -7,6 +7,8 @@
 ?>
 <?php foreach ($disease_blocks_content as $block): ?>
     <?php $field_anchor = 'b'.$block->id;?>
+<?php // echo $block->disease_block_type_id; ?>
+
     <?php if ($block->disease_block_type_id == DiseaseDraftBlockModel::DISEASE_BLOCK_DIAGNOSTIC): ?>
         <div class="section">
             <noindex>
@@ -14,6 +16,7 @@
                     <?= SITE_NAME; ?> напоминает: что данный материал размещен исключительно в ознакомительных целях и не заменяет консультацию врача!
                 </div>
             </noindex>
+
             <?php if ($disease_specialties):?>
                 <div class="doing-box not-hide in-middle">
                     <ol class="todo-list">
@@ -77,7 +80,9 @@
 
     <div class="section" id="<?php echo $field_anchor; ?>">
         <h2>
-            <?php if ($block->hasExtendableName() || $this->section !== 'default'):
+<?php 
+echo $block->title; //print_r($block); ?>
+	            <?php if ($block->hasExtendableName() || $this->section !== 'default'):
                     echo $block->disease_block_type->name . ' ' . $disease->h2_extend;
                 else:
                     echo $block->disease_block_type->name;
