@@ -1,27 +1,27 @@
 <?php
 
 $diseaseDraftBlock = [
-    'table'     => DB_PREFIX . 'disease_draft_block',
-    'title'     => 'Информационные блоки заболеваний',
+    'table' => DB_PREFIX . 'disease_draft_block',
+    'title' => 'Информационные блоки заболеваний',
     'fields' => [
         'id' => 'index',
         'disease_draft_id' => [
-            'type'        => 'category',
-            'cross_name'  => 'name',
+            'type' => 'category',
+            'cross_name' => 'name',
             'cross_index' => 'id',
             'cross_table' => DB_PREFIX . 'disease_draft',
-            'first'       => array(
+            'first' => array(
                 '0' => '',
             ),
-            'filter'      => 'true',
-            'sort_by'     => 'name',
+            'filter' => 'true',
+            'sort_by' => 'name',
         ],
         'disease_block_type_id' => [
             'type' => 'listvalue',
             'values' => DiseaseDraftBlockModel::getDiseaseBlockTypes(),
         ],
 
-	'title'=> 'input',
+        'title' => 'input',
         'is_active' => 'checkbox',
         'is_adult' => 'checkbox',
         'is_male' => 'checkbox',
@@ -35,8 +35,8 @@ $diseaseDraftBlock = [
     'generator' => [
         'fields' => [
             'id' => 'ID',
-	 
-            'title'=>'название блока',
+
+            'title' => 'название блока',
             'disease_draft_id' => 'Черновик статьи о заболевании',
             'disease_block_type_id' => 'Тип блока дополнительной информации',
             'is_active' => 'Активность',
@@ -52,6 +52,7 @@ $diseaseDraftBlock = [
         'list' => [
             'fields' => [
                 'disease_block_type_id',
+                'title',
                 'is_adult',
                 'is_male',
                 'is_female',
@@ -66,7 +67,7 @@ $diseaseDraftBlock = [
             'fields' => [
                 'Данные' => [
                     'disease_block_type_id',
-			'title',
+                    'title',
                     'is_active',
                     'is_adult',
                     'is_male',
@@ -78,7 +79,7 @@ $diseaseDraftBlock = [
                     'content',
                 ]
             ],
-            'title'  => 'Редактирование',
+            'title' => 'Редактирование',
             'submit' => 'Сохранить',
         ],
         'add' => [
@@ -86,8 +87,8 @@ $diseaseDraftBlock = [
                 'Данные' => [
                     'disease_draft_id',
                     'disease_block_type_id',
-			
-			'title',
+
+                    'title',
                     'is_active',
                     'is_adult',
                     'is_male',
@@ -99,7 +100,7 @@ $diseaseDraftBlock = [
                     'content',
                 ]
             ],
-            'title'  => 'Создание',
+            'title' => 'Создание',
             'submit' => 'Создать',
         ]
     ]
