@@ -65,7 +65,7 @@ class DiseaseDraftManager extends ModelManager
         return false;
     }
     public function log($content){
-        $file = fopen('/home/vhost/mebook/www/l.txt', 'a');
+        $file = fopen('/home/vhost/medbook/www/l.txt', 'a');
         fwrite($file, $content);
         fclose($file);
     }
