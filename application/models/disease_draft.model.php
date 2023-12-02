@@ -64,7 +64,7 @@ class DiseaseDraftModel extends DynamicModel
     }
 
     public function _field_title(){
-return 123;
+        return 123;
 	}
     /**
      * @return DiseaseDraftBlockModel[]

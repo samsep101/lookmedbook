@@ -67,7 +67,8 @@ class DiseaseDraftManager extends ModelManager
 
     protected function cloneToRelatedDisease(DiseaseDraftModel $diseaseDraftModel, DiseaseModel $diseaseModel)
     {
-        $diseaseModel->title = $diseaseDraftModel->name;
+
+        $diseaseModel->title = $diseaseDraftModel->title;
         $diseaseModel->genitive_name = $diseaseDraftModel->genitive_name;
         $diseaseModel->prepositional_name = $diseaseDraftModel->prepositional_name;
         $diseaseModel->content = $diseaseDraftModel->content;
