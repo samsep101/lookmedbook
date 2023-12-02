@@ -231,6 +231,7 @@ class DiseaseDraftManager extends ModelManager
 
             $diseaseBlock->disease_block_type_id = $contentBlock->disease_block_type_id;
             $diseaseBlock->content = $contentBlock->content;
+            $diseaseBlock->title = $contentBlock->title;
             $diseaseBlock->is_active = $contentBlock->is_active;
             $diseaseBlock->is_male = $contentBlock->male_flag;
             $diseaseBlock->is_female = $contentBlock->female_flag;

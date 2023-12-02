@@ -87,7 +87,6 @@ $diseaseDraftBlock = [
                 'Данные' => [
                     'disease_draft_id',
                     'disease_block_type_id',
-
                     'title',
                     'is_active',
                     'is_adult',

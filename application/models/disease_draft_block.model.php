@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @property-read string $title
+ * @property string $title
  * @property int $id
  * @property int $disease_draft_id
  * @property int $disease_block_type_id
@@ -52,7 +52,7 @@ class DiseaseDraftBlockModel extends DynamicModel
     }
 
     public function _filed_title() {
-	return '123';
+	    return '123';
     }
     public function _field_diseaseBlockType()
     {
