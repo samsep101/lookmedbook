@@ -52,7 +52,7 @@ class DiseaseDraftBlockModel extends DynamicModel
     }
 
     public function _filed_title() {
-	    return '123';
+	    return 'статья2';
     }
     public function _field_diseaseBlockType()
     {
