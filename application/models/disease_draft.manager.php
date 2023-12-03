@@ -70,20 +70,20 @@ class DiseaseDraftManager extends ModelManager
 
         return false;
     }
-//    public function log($content){
-//        $file = fopen('/home/vhost/medbook/www/l.txt', 'a');
-//        fwrite($file, $content);
-//        fclose($file);
-//    }
+    public function log($content){
+        $file = fopen('/home/vhost/medbook/www/l.txt', 'a');
+        fwrite($file, $content);
+        fclose($file);
+    }
 
     protected function cloneToRelatedDisease(DiseaseDraftModel $diseaseDraftModel, DiseaseModel $diseaseModel)
     {
 
         echo 1123;
-//        $this->log(print_r($diseaseModel, 1));
-//        $this->log(print_r($diseaseDraftModel, 1));
+        $this->log(print_r($diseaseModel, 1));
+        $this->log(print_r($diseaseDraftModel, 1));
 
-//        $diseaseModel->title = $diseaseDraftModel->title;
+        $diseaseModel->title = $diseaseDraftModel->title;
         $diseaseModel->genitive_name = $diseaseDraftModel->genitive_name;
         $diseaseModel->prepositional_name = $diseaseDraftModel->prepositional_name;
         $diseaseModel->content = $diseaseDraftModel->content;
