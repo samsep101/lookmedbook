@@ -83,7 +83,7 @@ class DiseaseDraftManager extends ModelManager
 //        $this->log(print_r($diseaseModel, 1));
 //        $this->log(print_r($diseaseDraftModel, 1));
 
-        $diseaseModel->title = $diseaseDraftModel->title;
+//        $diseaseModel->title = $diseaseDraftModel->title;
         $diseaseModel->genitive_name = $diseaseDraftModel->genitive_name;
         $diseaseModel->prepositional_name = $diseaseDraftModel->prepositional_name;
         $diseaseModel->content = $diseaseDraftModel->content;
