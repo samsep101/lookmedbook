@@ -79,11 +79,8 @@ class DiseaseDraftManager extends ModelManager
     protected function cloneToRelatedDisease(DiseaseDraftModel $diseaseDraftModel, DiseaseModel $diseaseModel)
     {
 
-        echo 1123;
-        $this->log(print_r($diseaseModel, 1));
-        $this->log(print_r($diseaseDraftModel, 1));
 
-        $diseaseModel->title = $diseaseDraftModel->title;
+        $diseaseModel->title = $diseaseDraftModel->name;
         $diseaseModel->genitive_name = $diseaseDraftModel->genitive_name;
         $diseaseModel->prepositional_name = $diseaseDraftModel->prepositional_name;
         $diseaseModel->content = $diseaseDraftModel->content;
@@ -136,9 +133,15 @@ class DiseaseDraftManager extends ModelManager
         $diseaseBlockManager->deleteByDiseaseId($diseaseModel->getId());
 
         foreach ($diseaseDraftModel->contentBlocks as $contentBlock) {
+
+//            $this->log(print_r($diseaseModel, 1));
+//            $this->log(print_r($diseaseDraftModel, 1));
+
+
             $diseaseBlock = new DiseaseBlockModel();
             $diseaseBlock->disease_id = $diseaseModel->getId();
 
+            $diseaseBlock->title = $contentBlock->title;
             $diseaseBlock->disease_block_type_id = $contentBlock->disease_block_type_id;
             $diseaseBlock->content = $contentBlock->content;
             $diseaseBlock->is_active = $contentBlock->is_active;
