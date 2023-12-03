@@ -81,12 +81,17 @@
     <div class="section" id="<?php echo $field_anchor; ?>">
         <h2>
 <?php 
-echo $block->title; //print_r($block); ?>
-	            <?php if ($block->hasExtendableName() || $this->section !== 'default'):
-                    echo $block->disease_block_type->name . ' ' . $disease->h2_extend;
-                else:
-                    echo $block->disease_block_type->name;
-                endif; ?>
+
+if ($block->title) {
+    echo  $block->title;
+}else {
+    if ($block->hasExtendableName() || $this->section !== 'default') {
+        echo $block->disease_block_type->name . ' ' . $disease->h2_extend;
+    }else {
+        echo $block->disease_block_type->name;
+    }
+}
+?>
         </h2>
         <div class="like_p">
             <?php $block->content = preg_replace('/<br \/>/','',$block->content);?>

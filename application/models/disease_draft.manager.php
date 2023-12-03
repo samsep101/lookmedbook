@@ -134,8 +134,6 @@ class DiseaseDraftManager extends ModelManager
 
         foreach ($diseaseDraftModel->contentBlocks as $contentBlock) {
 
-//            $this->log(print_r($diseaseModel, 1));
-//            $this->log(print_r($diseaseDraftModel, 1));
 
 
             $diseaseBlock = new DiseaseBlockModel();
