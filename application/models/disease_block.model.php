@@ -11,6 +11,7 @@
  * @property int $is_active
  * @property int $male_flag
  * @property int $female_flag
+ * @property string $title_block
  * @property int $adult_flag
  * @property int $children_flag
  * @property int $newborn_flag

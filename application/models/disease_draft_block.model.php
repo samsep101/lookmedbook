@@ -7,6 +7,7 @@
  * @property int $disease_block_type_id
  * @property string $content
  * @property bool $is_active
+ * @property string $title_block
  * @property bool $is_adult
  * @property bool $is_male
  * @property bool $is_female

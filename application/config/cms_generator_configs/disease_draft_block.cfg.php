@@ -20,7 +20,7 @@ $diseaseDraftBlock = [
             'type' => 'listvalue',
             'values' => DiseaseDraftBlockModel::getDiseaseBlockTypes(),
         ],
-
+        'title_block'=>'input',
         'title' => 'input',
         'is_active' => 'checkbox',
         'is_adult' => 'checkbox',
@@ -35,7 +35,7 @@ $diseaseDraftBlock = [
     'generator' => [
         'fields' => [
             'id' => 'ID',
-
+            'title_block' => 'название пункта меню',
             'title' => 'название блока',
             'disease_draft_id' => 'Черновик статьи о заболевании',
             'disease_block_type_id' => 'Тип блока дополнительной информации',
@@ -53,6 +53,7 @@ $diseaseDraftBlock = [
             'fields' => [
                 'disease_block_type_id',
                 'title',
+                'title_block',
                 'is_adult',
                 'is_male',
                 'is_female',
@@ -68,6 +69,7 @@ $diseaseDraftBlock = [
                 'Данные' => [
                     'disease_block_type_id',
                     'title',
+                    'title_block',
                     'is_active',
                     'is_adult',
                     'is_male',
@@ -88,6 +90,7 @@ $diseaseDraftBlock = [
                     'disease_draft_id',
                     'disease_block_type_id',
                     'title',
+                    'title_block',
                     'is_active',
                     'is_adult',
                     'is_male',
