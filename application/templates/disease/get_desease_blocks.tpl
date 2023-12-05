@@ -39,7 +39,7 @@
 													class="section-name content-active-<?php echo DiseaseBlockAliasViewHelper::getAlias($block->disease_block_type_id); ?>"
 													data-section-name="content-active-<?php echo DiseaseBlockAliasViewHelper::getAlias($block->disease_block_type_id); ?>"
                                                     data-t="<?php echo $field_anchor; ?>"
-													href="<?php echo DiseasePageLinkViewHelper::getLink($disease); ?>#<?php echo $field_anchor; ?>"><?php echo $block->disease_block_type->name; ?></a></li>
+													href="<?php echo DiseasePageLinkViewHelper::getLink($disease); ?>#<?php echo $field_anchor; ?>"><?php if(isset($block->title_block) && $block->title_block) echo $block->title_block; else echo $block->disease_block_type->name; ?></a></li>
 										<?php $sub_counter++;?>
 									<?php } ?>
 								<?php } ?>
