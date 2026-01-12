@@ -9,6 +9,7 @@
  * @property bool $is_active
  * @property string $title_block
  * @property bool $is_adult
+ * @property int $order
  * @property bool $is_male
  * @property bool $is_female
  * @property bool $is_children

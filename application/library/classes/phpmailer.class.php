@@ -596,7 +596,7 @@ class Phpmailer {
     /* Retry while there is no connection */
     while($index < count($hosts) && $connection == false) {
       $hostinfo = array();
-      if(eregi('^(.+):([0-9]+)$', $hosts[$index], $hostinfo)) {
+      if(preg_match("/^(.+):([0-9]+)$/", $hosts[$index], $hostinfo)) {
         $host = $hostinfo[1];
         $port = $hostinfo[2];
       } else {
@@ -1309,6 +1309,7 @@ class Phpmailer {
     }
 
     if ($x == 0) {
+
       return ($str);
     }
 
@@ -1316,10 +1317,11 @@ class Phpmailer {
     /* Try to select the encoding which should produce the shortest output */
     if (strlen($str)/3 < $x) {
       $encoding = 'B';
+
       if (function_exists('mb_strlen') && $this->HasMultiBytes($str)) {
      // Use a custom function which correctly encodes and wraps long
      // multibyte strings without breaking lines within a character
-        $encoded = $this->Base64EncodeWrapMB($str);
+	      $encoded = $this->Base64EncodeWrapMB($str);
       } else {
         $encoded = base64_encode($str);
         $maxlen -= $maxlen % 4;
@@ -1371,24 +1373,34 @@ class Phpmailer {
     // Average multi-byte ratio
     $ratio = $mb_length / strlen($str);
     // Base64 has a 4:3 ratio
-    $offset = $avgLength = floor($length * $ratio * .75);
+    $offset = $avgLength = floor($mb_length * .6);
 
     for ($i = 0; $i < $mb_length; $i += $offset) {
       $lookBack = 0;
+      
 
       do {
         $offset = $avgLength - $lookBack;
         $chunk = mb_substr($str, $i, $offset, $this->CharSet);
-        $chunk = base64_encode($chunk);
-        $lookBack++;
+  	$chunk = base64_encode($chunk);
+  
+	
+      	$lookBack++;
       }
       while (strlen($chunk) > $length);
+      
+       if (strlen($encoded)){
 
-      $encoded .= $chunk . $this->LE;
+	$encoded .= $start;
+	}	
+      $encoded .= $chunk . $end;
+
+	
     }
-
+ 
+	echo "\n Encoded ".$encoded."\n";
     // Chomp the last linefeed
-    $encoded = substr($encoded, 0, -strlen($this->LE));
+    $encoded = substr($encoded, 0, -strlen($end));
     return $encoded;
   }
 

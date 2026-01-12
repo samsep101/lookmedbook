@@ -138,6 +138,7 @@ class DiseaseDraftManager extends ModelManager
 
             $diseaseBlock = new DiseaseBlockModel();
             $diseaseBlock->disease_id = $diseaseModel->getId();
+            $diseaseBlock->order = $contentBlock->order;
 
             $diseaseBlock->title_block = $contentBlock->title_block;
             $diseaseBlock->title = $contentBlock->title;

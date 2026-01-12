@@ -722,6 +722,9 @@ class AjaxController extends BaseController
 
   public function recordToTheVisit()
   {
+
+
+	
       $a = '';
       $schedule_date = '';
       $clinic_id = '';
@@ -815,6 +818,7 @@ class AjaxController extends BaseController
                   ? (new AccountManager())->getOneById($visit_information->account_id)
                   : false,
           ]);
+
       }
 
     if ($status == 0) {

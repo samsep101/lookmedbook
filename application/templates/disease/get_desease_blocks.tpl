@@ -1,4 +1,39 @@
-	<div id="tabs">
+<?php 
+
+
+$sort = false;
+
+foreach($disease_blocks as $blocks) {
+
+	if ($blocks->order != 0 ){
+
+		$sort = true;
+	}
+
+}
+
+if ($sort){
+usort($disease_blocks, function($a, $b) {
+
+        if ($a->order > $b->order) {
+
+                return 1;
+        }
+        if ($a->order < $b->order) {
+
+                return -1;
+        }
+
+        return 1;
+});
+}
+?>
+
+
+
+
+
+<div id="tabs">
 		<div class="illness-nav-wrap">
 			<div class="illness-nav" data-spy="affix">
 				<div class="nav">

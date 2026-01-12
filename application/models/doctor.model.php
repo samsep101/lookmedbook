@@ -1020,7 +1020,7 @@
 
         public function getRecordButton($type = 1)
         {
-            if ($this->clinic && $this->clinic->docdoc_id) {
+            if (SITE_PHONE_CODE != '495'  && $this->clinic && $this->clinic->docdoc_id) {
                 $idval = 'docdocrecordToDoctor' . $this->id . '_' . rand(0, 1000);
                 $clinicId = $this->clinic->docdoc_id;
                 $doctorId = $this->docdoc_id ? $this->docdoc_id : 'null';

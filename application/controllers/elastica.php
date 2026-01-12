@@ -290,8 +290,8 @@ class ElasticaController extends BaseController
     $indexName = $indexName ?: $this->getArg(2, Register::get('ELASTIC_SEARCH_INDEX'));
 
     set_time_limit(0);
-
-    ini_set('memory_limit', '512M');
+    ini_set('max_execution_time','0');
+    ini_set('memory_limit', '2048M');
 
     ModelManager::disableEntityMapGlobal();
 

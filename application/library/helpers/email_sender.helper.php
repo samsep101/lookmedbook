@@ -1,4 +1,65 @@
 <?php
+require_once(ABS_ROOT . "/application/library/classes/phpmailer.class.php");
+
+function encode_subject($subject) {
+
+
+
+	return iconv(mb_detect_encoding($subject, mb_detect_order(), true), "UTF-8", $subject);
+}
+
+function new_mail($to, $subject, $message, $headers = [], $additional_params = []) {
+
+
+
+try{
+	 $ml = new PHPMailer();
+         $ml->Username = 'info@lookmedbook.ru'; 
+	 $ml->From = 'info@lookmedbook.ru';
+	 $ml->FromName = 'lookmedbook.ru';
+         $ml->Subject = encode_subject($subject);
+         $ml->MsgHTML($message);
+$ml->setLanguage('ru');
+$ml->Encoding = 'base64';
+
+         $ml->CharSet = "UTF-8";  
+    if (is_array($to)) {
+   	foreach ($to as $value) {
+ 		$ml->AddAddress($value);
+	}
+    }else    
+    	$ml->AddAddress($to);
+
+    $ml->isSMTP();
+
+$ml->SMTPAuth = true;
+
+$ml->SMTPDebug = 0;
+ 
+
+$ml->Host = 'ssl://smtp.yandex.ru';
+
+$ml->Port = 465;
+
+$ml->Username = 'info@lookmedbook.ru';
+
+	$ml->Password = 'lvlbedjhffriudmd';
+
+
+
+  $ml->Send();	
+   
+//echo inverse(5) . "\n";
+    //echo inverse(0) . "\n";
+} catch (Exception $e) {
+    echo 'PHP перехватил исключение: ',  $e->getMessage(), "\n";
+}
+
+
+
+}
+
+
 
 class EmailSenderHelper
 {
@@ -11,7 +72,7 @@ class EmailSenderHelper
     $headers .= 'Reply-To: no-reply@lookmedbook.ru' . "\r\n";
     $headers .= 'X-Mailer: PHP/' . phpversion();
 
-    mail($email, $subject, $message, $headers, '-fno-reply@lookmedbook.ru');
+    new_mail($email, $subject, $message, $headers, '-fno-reply@lookmedbook.ru');
   }
 
   public function sendConfirmEmailMessage($mail, $passwordSequence)
@@ -118,7 +179,7 @@ EOD;
     $headers = "Content-type: text/html; charset=utf-8 \r\n";
     $headers .= "From: lookmedbook.ru <no-reply@lookmedbook.ru>\r\n";
 
-    mail($to, $subject, $message, $headers);
+    new_mail($to, $subject, $message, $headers);
   }
 
   public function sendVisitMessage($email, $visit = null)
@@ -129,14 +190,14 @@ EOD;
     $headers = "Content-type: text/html; charset=utf-8 \r\n";
     $headers .= "From: lookmedbook.ru <no-reply@lookmedbook.ru>\r\n";
 
-    mail($to, $subject, $message, $headers);
+    new_mail($to, $subject, $message, $headers);
   }
 
 
     public function  sendRecordInformation($info){
         $city = SeoLinksHelper::getCityByPageLink();
-        $to = 'request@lookmedbook.ru,Yudin@medcore.ru';
-        $subject = 'Заявка на посещение врача №'.$info['visit_id'];
+        $to = explode(',', 'info@lookmedbook.ru,glyapustina@lookmedbook.ru,Yudin@medcore.ru');
+        $subject = 'Заявка на посещение врача номер '.$info['visit_id']."\n";
 
 
         $message = 'Пациент '.$info['full_name'].': '.$info['phone']."\r\n\r\n";
@@ -163,15 +224,15 @@ EOD;
 
         $headers = "Content-type: text/html; charset=utf-8 \r\n";
         $headers .= "From: lookmedbook.ru <no-reply@lookmedbook.ru>\r\n";
-
-
-        mail($to, $subject, $message, $headers);
-	    mail('request@lookmedbook.ru', $subject, $message, $headers);
+ 
+        echo new_mail($to, $subject, $message, $headers);     
+        //mail($to, $subject, $message, $headers);
+	//mail('request@lookmedbook.ru', $subject, $message, $headers));
     }
 
   public function  sendAppealInformation($info){
         /*$city = SeoLinksHelper::getCityByPageLink();
-        $to = 'karaseva1175@mail.ru,reeker14@mail.ru,myakovleva@lookmedbook.ru,Yudin@medcore.ru,kkornakova@lookmedbook.ru,lookmedbook@lookmedbook.ru';
+        $to = 'karaseva1175@mail.ru,reeker14@mail.ru,myakovleva@lookmedbook.ru,glyapustina@lookmedbook.ru,Yudin@medcore.ru,kkornakova@lookmedbook.ru,lookmedbook@lookmedbook.ru';
         $subject = 'Обращение №'.$info['appeal_id'];
         $city = SeoLinksHelper::getCityByPageLink();
 
@@ -203,7 +264,7 @@ EOD;
 
   public function sendVisitCreatedMessage($info=[])
   {
-    $to = 'request@lookmedbook.ru,Yudin@medcore.ru';
+    $to = explode(',', 'info@lookmedbook.ru,glyapustina@lookmedbook.ru,Yudin@medcore.ru');
     $subject = $info['id']['title'].' No:'.$info['id']['value'];
     if(isset($info['fio'])) {
       if ($info['fio']['value'] == 'Запрос на скидку')
@@ -222,8 +283,7 @@ EOD;
     $headers = "Content-type: text/html; charset=utf-8 \r\n";
     $headers .= "From: ".SITE_DOMAIN." <no-reply@".SITE_DOMAIN.">\r\n";
 
-
-    mail($to, $subject, $message, $headers);
+    new_mail($to, $subject, $message, $headers);
   }
 
 
@@ -232,10 +292,10 @@ EOD;
      */
     public static function sendVisitConfirmMessage($visit)
     {
-        $to = 'request@lookmedbook.ru,Yudin@medcore.ru';
-        $subject = 'Заявка №'.$visit->id.' подтверждена';
-
-        $message = 'Заявка №'.$visit->id.' подтверждена'.PHP_EOL.PHP_EOL;
+        $to = 'info@lookmedbook.ru,glyapustina@lookmedbook.ru,Yudin@medcore.ru';
+        $subject = 'Заявка номер '.$visit->id.' подтверждена';
+ 
+        $message = 'Заявка номер '.$visit->id.' подтверждена'.PHP_EOL.PHP_EOL;
         $message .= 'Пациент:'.$visit->full_name.PHP_EOL;
         $message .= 'Телефон:'.$visit->phone.PHP_EOL;
 
@@ -258,7 +318,7 @@ EOD;
 
         $emails = explode(',',$to);
         foreach ($emails as $to)
-            mail($to, $subject, $message, $headers);
+            new_mail($to, $subject, $message, $headers);
     }
 
 

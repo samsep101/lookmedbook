@@ -620,7 +620,7 @@
         }
 
         public function getRecordButton($type = 1){
-            if ($this->docdoc_id){
+            if (SITE_PHONE_CODE != '495'  && $this->docdoc_id){
                 $idval = 'docdocrecordToClinic' . $this->id . '_' . rand(0, 1000);
                 $clinicId = $this->docdoc_id;
                 $return = "<div id=\"$idval\"></div>

@@ -13,6 +13,7 @@
  * @property int $female_flag
  * @property string $title_block
  * @property int $adult_flag
+ * @property int $order
  * @property int $children_flag
  * @property int $newborn_flag
  * @property int $pregnant_flag

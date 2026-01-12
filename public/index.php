@@ -17,7 +17,8 @@ define('PUBLIC_ROOT', realpath(__DIR__));
 
 require(ABS_ROOT . '/application/config/site.cfg.php');
 
-if (!debug) {
+
+if ( !debug) {
     ini_set('display_errors', 'Off');
 } else {
     ini_set('display_errors', 'On');

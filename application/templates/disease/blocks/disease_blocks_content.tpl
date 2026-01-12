@@ -5,6 +5,40 @@
  * @var \DiseaseModel $disease
  */
 ?>
+
+
+<?php 
+
+
+
+$sort = false;
+
+foreach($disease_blocks as $blocks) {
+
+        if ($blocks->order != 0 ){
+
+                $sort = true;
+        }
+
+}
+
+
+if ($sort){
+usort($disease_blocks_content, function($a, $b) {
+        if ($a->order > $b->order) {
+
+                return 1;
+        }
+	if ($a->order < $b->order) {
+
+                return -1;
+        }
+
+        return 1;
+});
+}
+?>
+
 <?php foreach ($disease_blocks_content as $block): ?>
     <?php $field_anchor = 'b'.$block->id;?>
 <?php // echo $block->disease_block_type_id; ?>

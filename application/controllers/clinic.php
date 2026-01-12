@@ -32,6 +32,10 @@ class ClinicController extends BaseController
 
     public function get()
     {
+	$d = false;
+	if (isset($_GET['d'])){
+		$d = true;
+	}
         $urlVars = $this->fillUrlVars();
 
 
@@ -101,6 +105,7 @@ class ClinicController extends BaseController
             }
         }
 
+
         if ($specialization) {
             if ($district)
                 $this->view->district = $district;
@@ -121,10 +126,9 @@ class ClinicController extends BaseController
                 }
                 $this->view->metro_station = $metro;
             }
-
-            $this->index($specialization->alias);
+    $this->index($specialization->alias);
         } else {
-            $this->clinic(end($urlVars), prev($urlVars));
+        $this->clinic(end($urlVars), prev($urlVars));
         }
     }
 
@@ -974,6 +978,9 @@ class ClinicController extends BaseController
 
   protected function clinic($clinicAlias, $originalAlias = false)
   {
+	$d = isset($_GET['d']);
+
+
       $specializationManager = ModelManagerFactory::getByName('specialization');
 
       /** @var ClinicManager $clinicManager */
@@ -993,16 +1000,18 @@ class ClinicController extends BaseController
       }
 
       $clinic = $clinicManager->getOneByIdOrAliasAndIsActive($clinicAlias);
+      
 
-      if (!$clinic) {
+	if (!$clinic) {
           $clinic = $clinicManager->getOneByOldAlias($clinicAlias);
           if ($clinic) {
               RedirectManager::redirect301(ClinicPageLinkViewHelper::getLink($clinic));
           }
       }
-
+	
       if (strtolower($clinicAlias) !== $clinicAlias) {
-          RedirectManager::redirect301(ClinicPageLinkViewHelper::getLink($clinic));
+        
+	  RedirectManager::redirect301(ClinicPageLinkViewHelper::getLink($clinic));
       }
 
       if ($clinic) {
@@ -1087,10 +1096,12 @@ class ClinicController extends BaseController
           $main_specialty = $specialty_manager->getMainOneBySpecializationId($specialization->getId());
           $this->view->main_specialty = $main_specialty;
       }
-
+	
       $this->clinicServices($clinic);
-      $this->registerStyles();
-      return true;
+     
+	$this->registerStyles();
+      
+	return true;
   }
 
     private function getClinicPageH1($specialization)
@@ -1124,15 +1135,26 @@ class ClinicController extends BaseController
      */
     private function clinicServices($clinic)
     {
+	
         if ($clinic) {
             /** @var ServiceToClinicManager $serviceToClinicManager */
-            $serviceToClinicManager = ModelManagerFactory::getByName('service_to_clinic');
-            $serviceList = $serviceToClinicManager->getListByClinicId($clinic->id);
-            $tree = $this->servicesModel()->getTree();
-            $this->proccessServiceTree($tree, $serviceList);
-            if (!empty($tree)) {
+   
+	         $serviceToClinicManager = ModelManagerFactory::getByName('service_to_clinic');
+	          
+  $serviceList = $serviceToClinicManager->getListByClinicId($clinic->id);
+        	try{    
+	    $tree = $this->servicesModel()->getTree();
+	 }catch(Exception $e){}
+
+    	    if (empty($tree)){
+		return;
+	   }
+	 $this->proccessServiceTree($tree, $serviceList);
+           
+	    if (!empty($tree)) {
                 $this->view->serviceTree = $tree;
             }
+
         }
     }
 

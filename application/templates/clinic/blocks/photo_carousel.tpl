@@ -21,7 +21,7 @@
                             <?php if ($isFirst) : ?>
                                 <img src="<?= $url ?>" alt="<?= $clinic->name; ?>">
                             <?php else : ?>
-                                <img data-src="<?= $url ?>" alt="<?= $clinic->name; ?>" class="lazy-carousel">
+                                <img loading='lazy' src="<?= $url ?>" alt="<?= $clinic->name; ?>" class="lazy-carousel">
                             <?php endif; ?>
                         </li>
                     <?php
