@@ -1,0 +1,28 @@
+php index.php - консольный запуск
+Описание системных контроллеров
+elastica/reIndexAll - переиндексировать все документы в эластике
+elastica/reindexClinics - переиндексировать все клиники
+test/clearMemcache - очистка всего memcache
+test/createCompiledJSLibrary - обновление списка js файлов
+test/generateYandexCompaniesFeed - создает фид компаний для яндекса
+test/generateYandexFeedAllClinic - создает фид клиник для яндекса
+test/generateTopClinics - обновляет список клиник показываемых на странице клиники
+test/clearDoctorsCache - очищает кеш карточек врачей
+test/generateClinicCsvFile - создает CVS файл с клиниками
+test/generateDoctorsSpecialtyCsvFile - создает CVS файл с специальностями
+
+cron/updateDoctorsRate - обновляет рейтинг врачей
+cron/updateClinicsRate - обновляет рейтинг больниц
+cron/setDoctorsAvailability - обновляет доступность врача, многовероятно, что работает на основании расписания врача
+cron/setDoctorsVisitTime - обновляет рабочее время врача
+cron/processVisits - рассылает напоминания о визите к врачу
+cron/replaceVisits - меняет статут у записей у которых наступило время посещения
+cron/sendEmailForLate - рассылает письмо со списком заявок по которым надо получить обратную связь
+cron/generateSitemap - создает sitemap файлы
+elastica/reindexDoctors - обновить данные elastica о докторах
+elastica/reindexDiseases - обновить данные elastica о болезнях
+elastica/reindexClinics - обновить данные elastica о клиниках
+
+
+У нас теперь есть composer!!! Все библиотеки инсталить через него
+Для переноса изменений БД используется phinx RTFM
