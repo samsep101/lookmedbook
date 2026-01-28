@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://lookmedbook.ru/sitemaps/common-static.xml</loc>
+    <lastmod>2025-05-25T04:08:30+03:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://lookmedbook.ru/sitemaps/common-doctors.xml</loc>
+    <lastmod>2025-05-25T04:08:30+03:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://lookmedbook.ru/sitemaps/common-clinics.xml</loc>
+    <lastmod>2025-05-25T04:08:30+03:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://lookmedbook.ru/sitemaps/common-services.xml</loc>
+    <lastmod>2025-05-25T04:08:30+03:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://lookmedbook.ru/sitemaps/common-diseases.xml</loc>
+    <lastmod>2025-05-25T04:08:30+03:00</lastmod>
+  </sitemap>
+</sitemapindex>

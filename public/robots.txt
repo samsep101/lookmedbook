@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /media/css/
+Allow: /media/images/
+Allow: /media/js/
+Allow: /media/responsive/
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.woff
+Disallow: /shop/
+Disallow: /*utm_
+Disallow: /*_openstat
+Disallow: /*?
+Disallow: /*booking*
+Sitemap: https://lookmedbook.ru/sitemap.xml
+
