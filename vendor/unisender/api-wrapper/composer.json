@@ -1,0 +1,24 @@
+{
+    "name": "unisender/api-wrapper",
+    "description": "Unisender API wrapper",
+    "type": "library",
+    "keywords": ["extension", "unisender", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Unisender developers",
+            "email": "devs@unisender.com"
+        }
+    ],
+    "require": {
+        "php":                          ">=5.4.0"
+    },
+    "suggest": {
+        "ext-bz2": "Allows bzip2 compression"
+    },
+    "autoload": {
+        "psr-4": {
+            "Unisender\\ApiWrapper\\": ""
+        }
+    }
+}

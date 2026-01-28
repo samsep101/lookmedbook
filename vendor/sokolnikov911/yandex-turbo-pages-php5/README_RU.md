@@ -1,0 +1,152 @@
+PHP5 RSS feed генератор для Турбо-страниц Яндекса
+=====================================
+
+|  |  |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  | [![Latest Stable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/v/stable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5) [![Total Downloads](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/downloads)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5) [![Latest Unstable Version](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/v/unstable)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5) [![composer.lock](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/composerlock)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5) [![PHPPackages Rank](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5/badge/rank.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5) [![PHPPackages Referenced By](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5/badge/referenced-by.svg)](http://phppackages.org/p/sokolnikov911/yandex-turbo-pages-php5) |
+| Travis CI | [![Build Status](https://travis-ci.org/sokolnikov911/yandex-turbo-pages-php5.svg?branch=master)](https://travis-ci.org/sokolnikov911/yandex-turbo-pages-php5) |
+| Scrutinizer CI | [![Build Status](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages-php5/badges/build.png?b=master)](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages-php5/build-status/master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages-php5/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages-php5/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages-php5/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sokolnikov911/yandex-turbo-pages-php5/?branch=master) |
+
+Генератор валидного RSS потока для Турбо-страниц Яндекса. Для этой работы этой версии пакета
+необходим PHP как минимум 5.4 версии.
+
+Версию для PHP7 вы сможете найти [тут](https://github.com/sokolnikov911/yandex-turbo-pages).
+
+
+## Пример использования
+
+Этот рабочий пример вы сможете найти в `examples/example.php`
+
+```php
+// Создает фид со всеми необходимыми неймспейсами
+$feed = new Feed();
+
+// создает канал с описанием и примером использования рекламного блока РСЯ, прикрепляет канал к фиду
+$channel = new Channel();
+$channel
+    ->title('Channel Title')
+    ->link('http://blog.example.com')
+    ->description('Channel Description')
+    ->language('ru')
+    ->adNetwork(Channel::AD_TYPE_YANDEX, 'RA-123456-7', 'first_ad_place')
+    ->appendTo($feed);
+
+// добавляем Гугл аналитику и прикрепляем к каналу
+$googleCounter = new Counter(Counter::TYPE_GOOGLE_ANALYTICS, 'XX-1234567-89');
+$googleCounter->appendTo($channel);
+
+// добавляем счетчик Яндекс-метрики и прикрепляем к каналу
+$yandexCounter = new Counter(Counter::TYPE_YANDEX, 12345678);
+$yandexCounter->appendTo($channel);
+
+// добавляем первую турбо-страницу с активированным турбо-режимом, необходимым описанием, и прикрепляем ее к каналу
+$item = new Item();
+$item
+    ->title('Thirst page!')
+    ->link('http://www.example.com/page1.html')
+    ->author('John Smith')
+    ->category('Technology')
+    ->turboContent('Some content here!<br>Second content string.')
+    ->pubDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
+    ->appendTo($channel);
+
+// создаем список связанных страниц (страницы по теме)
+$relatedItemsList = new RelatedItemsList();
+
+// добавляем первую связанную страницу в список
+$relatedItem = new RelatedItem('Related article 1', 'http://www.example.com/related1.html');
+$relatedItem->appendTo($relatedItemsList);
+
+// добавляем вторую связанную страницу с картинкой в список
+$relatedItem = new RelatedItem('Related article 2', 'http://www.example.com/related2.html',
+    'http://www.example.com/related2.jpg');
+$relatedItem->appendTo($relatedItemsList);
+
+// прикрепляем список связанных страниц к турбо-странице
+$relatedItemsList
+    ->appendTo($item);
+
+// создаем еще одну турбо-страницу с деактивированным турбо-режимом
+$item = new Item(false);
+$item
+    ->title('Second page!')
+    ->link('http://www.example.com/page2.html')
+    ->author('John Smith')
+    ->category('Technology')
+    ->turboContent('Yet another content here!')
+    ->pubDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
+    ->appendTo($channel);
+
+// выводим XML код фида
+echo $feed;
+```
+
+Для быстрого генерирования контента для турбо-страниц вы можете использовать `Content` хелпер. Пример:
+
+```php
+// генерируем меню и шапку страницы
+$menuArray = [
+    ['url' => 'http://example/page1.html', 'title' => 'Page title 1'],
+    ['url' => 'http://example/page2.html', 'title' => 'Page title 2']
+];
+$header = Content::header('Main title', 'Second title',
+    'http://example.com/image1.jpg', 'Image description', $menuArray);
+```
+
+В настроящий момент вы можете использовать хелпер для генерирования следующих элементов:
+* заголовок страницы, включая меню;
+* картинку;
+* галерею картинок;
+* кнопки "поделиться";
+* кнопку с ссылкой или номером телефона;
+* блок комментариев;
+* рейтинг;
+* аккордеон;
+* видео со своего сервера;
+* видео с внешнего сервера;
+* елемент-указатель на место размещения рекламного блока;
+* галереия медиа-контента со слайдером;
+* блок ссылок на дополнительные материалы.
+
+Примеры использования хелпера для генерирования контента смотрите в `examples/content_helpers.php`.
+
+
+
+## Установка
+
+
+```bash
+# Устанавливаем Composer
+curl -sS https://getcomposer.org/installer | php
+```
+
+Потом запускаем комманду композера для установки последней версии пакета **yandex-turbo-pages**
+
+```bash
+php composer.phar require sokolnikov911/yandex-turbo-pages-php5
+```
+
+Подключаем автолоадер композора в файле, который является точкой входа в приложение (если это не было сделано ранее)
+
+```php
+require 'vendor/autoload.php';
+```
+
+Вы можете обновлять **yandex-turbo-pages** в любой момент используя composer:
+
+ ```bash
+composer.phar update
+ ```
+ 
+ 
+## Требования
+
+Для RSS feed генератор для Турбо-страниц Яндекса требуется PHP версии не ниже 5.4,
+т.к. в библиотеке используется полезнейшая штука − контроль типов.
+
+
+## License
+
+[![License](https://poser.pugx.org/sokolnikov911/yandex-turbo-pages-php5/license)](https://packagist.org/packages/sokolnikov911/yandex-turbo-pages-php5)
+
+This library is licensed under the MIT License.
