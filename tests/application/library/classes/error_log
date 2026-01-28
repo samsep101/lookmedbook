@@ -1,0 +1,1 @@
+[02-Dec-2014 06:54:59 UTC] PHP Fatal error:  Class 'PHPUnit_Framework_TestCase' not found in /home/lookmedb/public_html/tests/application/library/classes/PasswordHashGeneratorTest.php on line 4
