@@ -1,5 +1,5 @@
 <?php
-define('debug', 0);
+define('debug', 1);
 $memory_allocation_costil = 0;
 
 define('CONTACT_EMAIL','');

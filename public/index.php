@@ -1,4 +1,5 @@
 <?php
+
 if (php_sapi_name()!='cli') {
     header("Content-Type: text/html; charset=UTF-8");
 }

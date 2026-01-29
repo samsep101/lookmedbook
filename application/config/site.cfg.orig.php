@@ -1,5 +1,5 @@
 <?php
-define('debug', 0);
+define('debug', 1);
 
 define('CONTACT_EMAIL','');
 define('OUTPUT_LANGUAGE','RUSSIAN');

@@ -1,0 +1,52 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  php:
+    build: .
+    # или используйте image: если уже собрали
+    volumes:
+      - ./:/var/www
+    networks:
+      - app-network
+
+  nginx:
+    image: docker.io/nginx:alpine
+    ports:
+      - "8080:80"  # Публикуем порт наружу
+    volumes:
+      - ./:/var/www  # Общий код
+      - ../docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - php
+    networks:
+      - app-network
+  # elastic: 
+  #   image: docker.io/elasticsearch/elasticsearch:5.6.0
+  #   ports: 
+  #     - ""
+  memcached:
+    image: docker.io/memcached:alpine
+    ports:
+      - "11211:11211"
+    networks:
+      - app-network
+  mysql:
+    image: docker.io/mysql:5.5  # MySQL 5.7 - самая стабильная с PHP 5.6
+    ports:
+      - "3306:3306"  # Опционально, если нужен доступ с хоста
+    environment:
+      - MYSQL_ROOT_PASSWORD=dfghmt563
+      - MYSQL_DATABASE=lookmedbook
+      - MYSQL_USER=lookmedbook  # Опционально
+      - MYSQL_PASSWORD=dfghmt563  # Опционально
+    volumes:
+      - ../docker/mysql/:/var/lib/mysql  # Сохраняем данные БД
+      - ../docker/lookmed.sql:/docker-entrypoint-initdb.d/init.sql:ro  # SQL для инициализации
+    networks:
+      - app-network
+    command: 
+      - --bind-address=0.0.0.0  # Явно слушаем на всех интерфейсах
+networks:
+  app-network:
+    driver: bridge

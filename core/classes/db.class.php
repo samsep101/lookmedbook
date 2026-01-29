@@ -51,6 +51,7 @@ class Db
     $db_password = $this->password ? $this->password : DB_PASSWORD;
     $db_name = $this->db_name ? $this->db_name : DB_NAME;
 
+    
     if (($this->connection = mysqli_connect($db_host, $db_user, $db_password, $db_name)) === FALSE) {
       throw new Exception('Couldn\'t connect to DB');
     }
