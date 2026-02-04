@@ -41,8 +41,7 @@ services:
       - MYSQL_USER=lookmedbook  # Опционально
       - MYSQL_PASSWORD=dfghmt563  # Опционально
     volumes:
-      - ../docker/mysql/:/var/lib/mysql  # Сохраняем данные БД
-      - ../docker/lookmed.sql:/docker-entrypoint-initdb.d/init.sql:ro  # SQL для инициализации
+      - ./docker/mysql/:/var/lib/mysql  # Сохраняем данные БД
     networks:
       - app-network
     command: 
