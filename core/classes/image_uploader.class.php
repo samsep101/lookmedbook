@@ -3,19 +3,24 @@
 class ImageUploader
 {
   public static function upload($fileData, $uploadData, $alias_value = null)
+  	
   {
+
+//	  print_r($uploadData);
+//	  print_r($alias_value);  
     if (!preg_match('/\.([^\.]+)$/', $uploadData['name'], $matches)) {
       return FALSE;
     }
     $src = $matches[1];
 
-    $filename = ImageFilenameGeneratorHelper::getFilename($src, $alias_value);
-
+    $filename  = $uploadData['name'];
+    //$filename = ImageFilenameGeneratorHelper::getFilename($src, $alias_value);
+	echo 'filename is '.$filename;
     if (isset($fileData['upload_folder'])) {
-      $filepath = ABS_ROOT . MEDIA_UPLOAD_PATH . $fileData['upload_folder'] . $filename;
+      $filepath = ABS_ROOT . MEDIA_UPLOAD_PATH . $fileData['upload_folder'].  $filename;
       if (!is_dir(ABS_ROOT . MEDIA_UPLOAD_PATH . $fileData['upload_folder'])) {
         mkdir(ABS_ROOT . MEDIA_UPLOAD_PATH . $fileData['upload_folder'], '0755', true);
-      }
+      }	
     } else {
       $filepath = ABS_ROOT . MEDIA_UPLOAD_PATH . 'settings/' . $filename;
       if (!is_dir(ABS_ROOT . MEDIA_UPLOAD_PATH . 'settings/')) {
@@ -30,12 +35,13 @@ class ImageUploader
 
     $image_resizer = new SimpleImage();
     $image_resizer->load($filepath);
+    
     $image_resizer->resizeWithRatio(UPLOAD_IMAGES_WIDTH, UPLOAD_IMAGES_HEIGHT);
-
+    
     $image_info = getimagesize($filepath);
-
+	
     $image_resizer->save($filepath, $image_info[2]);
-
+    	
 
     $image = new ImageModel();
     if (isset($fileData['upload_folder']))

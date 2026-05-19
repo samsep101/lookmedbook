@@ -1,9 +1,9 @@
 <?php
 
 
-DEFINE("ABS_ROOT", "/home/vhost/medbook/www/");
+DEFINE("ABS_ROOT", "/var/www/");
 
 require("email_sender.helper.php");
 
-
-new_mail(["artyommakhmutov85@gmail.com"], 'Заявка на посещение врача номер 1001231230', 'пукпу');
+  EmailSenderHelper::sendVisitConfirmMessage("relay.samsep101@gmail.com");
+//new_mail(["relay.samsep101@gmail.com"], 'Заявка на посещение врача номер 1001231230', 'пукпу');

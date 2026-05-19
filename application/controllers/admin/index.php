@@ -3,6 +3,5 @@
     {
         public function index()
         {
-
         }
     }

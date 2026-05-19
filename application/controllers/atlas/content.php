@@ -38,9 +38,9 @@ class ContentAtlasController extends BaseController {
 
         if(is_null($DB)){
 
-            $conf = ['lookmedbook_content', 'localhost', 'lookmedbook', 'O9j8C6d9'];
+            $conf = ['lookmedbook_content', 'mysql', 'lookmedbook', 'dfghmt563'];
             if($this->is_production){
-                $conf = ['lookmedbook_content', 'localhost', 'look_content', 'kj34ghfD4'];
+                $conf = ['lookmedbook_content', 'mysql', 'lookmedbook', 'dfghmt563'];
             }
 
             $DB = new PDO('mysql:dbname='.$conf[0].';host='.$conf[1], $conf[2], $conf[3], [
@@ -61,9 +61,9 @@ class ContentAtlasController extends BaseController {
 
         if(is_null($DB)){
 
-            $conf = ['lookmedbook', 'localhost', 'lookmedbook', 'O9j8C6d9'];
+            $conf = ['lookmedbook', 'mysql', 'lookmedbook', 'dfghmt563'];
             if($this->is_production){
-                $conf = ['lookmedbook_prod', 'localhost', 'look_prod', 'dfghmt563'];
+                $conf = ['lookmedbook', 'mysql', 'lookmedbook', 'dfghmt563'];
             }
 
             $DB = new PDO('mysql:dbname='.$conf[0].';host='.$conf[1], $conf[2], $conf[3], [

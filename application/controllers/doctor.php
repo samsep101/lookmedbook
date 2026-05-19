@@ -10,7 +10,7 @@ class DoctorController extends BaseController
     public function get()
     {
 
-//	echo 1;
+	//echo 1;
 //exit();
         $landing = $this->request('landing');
         $recording = $this->request('recording');

@@ -289,6 +289,49 @@ class ImportController extends BaseController
         self::log("INSERT : {$createdClinicsCount}");
     }
 
+    public function migrate() {
+	    $imageManager = new ImageManager();
+
+		$data =	$imageManager->getAll();
+        // do {
+	//$doctors = $doctorManager->getActiveList();
+
+
+	for ($i = 0; $i < count($data); $i++){
+//		$doctor = $doctors[$i];
+
+
+		$image = $data[$i];
+		  
+		$path = $image["folder"].$image["filename"];
+
+		$pwd =  getcwd();
+
+
+		$full_path = $pwd . '/media/upload/' . $path;
+
+		$isExist = file_exists($full_path);
+
+		if (!$isExist){
+			echo $full_path ."\n";
+			$file = file_get_contents('https://lookmedbook.ru/media/upload/'  . $path);
+			if (!$file) {
+				echo 'Error get file';
+			}else {
+			
+				file_put_contents($full_path, $file);
+				//break;
+			}
+
+		}else {
+			echo 'image '.$full_path." exist\n";
+		}   
+	
+	} 
+    }
+
+
+
     /**
      * @param $clinic
      * @return mixed ключ - ID клиники в DB, значение - ID клиники в DocDoc
@@ -325,6 +368,30 @@ class ImportController extends BaseController
      */
     public function createOrUpdateClinic($dbClinic, $docDocClinic, $cityId, $loadImage = true)
     {
+       // IMAGE GET CONTEXT
+	 $opts = [
+  'http' => [
+    'method' => "GET",
+    'header' => implode("\n", [
+    	   'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0',
+            'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language: ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3',
+            'Accept-Encoding: gzip, deflate, br, zstd',
+            'Connection: keep-alive',
+            'Upgrade-Insecure-Requests: 1',
+            'Sec-Fetch-Dest: document',
+            'Sec-Fetch-Mode: navigate',
+            'Sec-Fetch-Site: none',
+            'Sec-Fetch-User: ?1',
+            'Priority: u=0, i',
+            'Pragma: no-cache',
+            'Cache-Control: no-cache'
+    ])
+  ]
+];
+
+$context = stream_context_create($opts);
+
         static $clinicManager = false;
         static $doctorManager = false;
         if ($clinicManager === false) {
@@ -464,9 +531,13 @@ class ImportController extends BaseController
             if (file_exists($tmp_name)) {
                 @unlink($tmp_name);
             }
+		
 
+	    $data =  file_get_contents($docDocClinic['Logo'], false, $context);
+
+	    print_r($data);
             // продолжаем процесс только если картинка сохранена
-            if (false !== file_put_contents($tmp_name, file_get_contents($docDocClinic['Logo']))) {
+            if (false !== file_put_contents($tmp_name, $data)) {
                 $imageIds = [];
                 if ($dbClinic->image_id) {
                     $imageIds[] = $dbClinic->image_id;
@@ -485,6 +556,7 @@ class ImportController extends BaseController
                 }
 
                 chmod($tmp_name , 0755);
+
 
                 $image_id = ImageUploader::upload(['upload_folder' => 'clinic/logo/'], ['name' => 'clinic_'.$dbClinic->docdoc_id.'.jpg', 'tmp_name' => $tmp_name], 'clinic_'.$dbClinic->docdoc_id);
 
@@ -666,7 +738,8 @@ class ImportController extends BaseController
                     $this->db->query($q, $params);
                 }
 
-                if (($isNewDoctor || $loadImage) && $docdata->Img){
+		
+                if (($isNewDoctor || true) && $docdata->Img){
                     $tmp_name = ABS_ROOT.'/media/upload/clinic/license/tmp_doctor_'.$doctor->id.'.jpg';
                     self::log("tmp file name:".$tmp_name);
                     if (file_exists($tmp_name)) {
@@ -674,8 +747,10 @@ class ImportController extends BaseController
                     }
 
                     // продолжаем процесс только если картинка сохранена
-                    if(false !== file_put_contents($tmp_name, file_get_contents($docdata->Img))){
 
+		    if(false !== file_put_contents($tmp_name, file_get_contents($docdata->Img, false, $context))){
+			
+		    	print_r($docdata->Img);
                         $imageIds = [];
                         if ($doctor->image_id) {
                             $imageIds[] = $doctor->image_id;
@@ -697,7 +772,7 @@ class ImportController extends BaseController
                         chmod($tmp_name , 0755);
 
                         $image_id = ImageUploader::upload(['upload_folder' => 'clinic/license/'], ['name' => 'doctor_'.$doctor->id.'.jpg', 'tmp_name' => $tmp_name], 'doctor_'.$doctor->id);
-
+			echo 'image_id = '.$image_id;
                         $doctor->image_id = $image_id;
                         $doctor->card_image_id = $image_id;
 
@@ -710,8 +785,14 @@ class ImportController extends BaseController
 
                         $q = "insert into image_to_doctor set doctor_id=?, image_id=?";
                         $this->db->query($q, [$doctor->id, $image_id]);
-                    }
-                }
+		    }else {
+	
+			echo 'картинка не сохранена';
+		}
+		}else {
+			echo 'pass';
+		}
+		
                 $doctor->save();
             }
         }

@@ -116,6 +116,7 @@
                 </div>
         <?php endif; ?>
 
+
             <?php if(isset($product_category) && $product_category): ?>
                     <h4>
                         <a class="category" href="<?php echo ProductCategoryLinkViewHelper::getLink($product_category); ?>">
@@ -154,7 +155,6 @@
                 <a class="load-next-page view-more" href="javascript:void(0);" data-page="1"><i class="icon-loader"></i></a>
             <?php endif; ?>
     </div>
-
     <?php /*
         <div class="block_right">
             <?php $this->block('shop/blocks/basket_info'); ?>

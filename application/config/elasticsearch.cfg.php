@@ -12,14 +12,14 @@
         Register::add('ELASTICA_SERVERS', array(
                 "servers" => array(
 			array(
-                        	'host' => 'localhost',
-                        	'port' => 9400
+                        	'host' => 'elastic',
+                        	'port' => 9200
                		),
 		/*	[
 				'host' => 'localhost',
 				'port' => 9100
 			]
-	*/	)
+*/ )	
         ));
 
 	$index_models = array(

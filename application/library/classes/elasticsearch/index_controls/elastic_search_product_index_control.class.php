@@ -16,7 +16,11 @@
 		 */
 		protected function getType()
 		{
-			return $this->getIndex()->getType('product');
+			$type = $this->getIndex()->getType('product');
+
+
+			//print_r($type);
+			return $type;
 		}
 
 		/**

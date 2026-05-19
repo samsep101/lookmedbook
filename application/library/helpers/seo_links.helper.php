@@ -11,9 +11,10 @@
 			 * @var CityManager $city_manager
 			 */
 			$city_manager = ModelManagerFactory::getByName('city');
-
-			if (preg_match('/^(' . SITE_SCHEME . ':\/\/)?([A-Za-z\-]+)\.'.$url.'$/', SERVER_NAME, $matches))
+			//if (preg_match('/([A-Za-z\-]+)\./', $url, $matches)) {
+			if (preg_match('/^(' . SITE_SCHEME . ':\/\/)?([A-Za-z\-]+)\.'.$url.'$/', $_SERVER['HTTP_HOST'], $matches))
 			{
+				//echo 123;
 				$alias = $matches[2];
 				$city = $city_manager->getOneByAlias($alias);
 			} else {

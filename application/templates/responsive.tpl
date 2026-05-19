@@ -89,14 +89,6 @@
         <?php } ?>
 
 
-        <div class="switz-left-version banner-treatment-in-switz <?php echo $treatmentInSwitzClass; ?>">
-            <a href="http://swiss.lookmedbook.ru/" class="banner-treatment-in-switz-link" <?php echo $treatmentInSwitzVisibleClose; ?>><div class="icon"></div>Лечение в Швейцарии <br/> Бесплатная консультация </a>
-            <div class="close" <?php echo $treatmentInSwitzVisibleClose; ?>>&times;</div>
-            <div class="banner-treatment-in-switz-open" <?php echo $treatmentInSwitzVisibleOpen; ?>>
-                <div class="icon"></div>
-            </div>
-        </div>
-
         <?php if ($this->show_horizontal_banner) : ?>
             <?php $this->block('blocks/horizontal-banner'); ?>
         <?php endif; ?>

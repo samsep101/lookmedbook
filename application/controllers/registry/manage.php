@@ -19,7 +19,7 @@
 		 */
 		public function index()
         {
-			$moderate_page_manager = new ModeratePageManager();
+		$moderate_page_manager = new ModeratePageManager();
 	        $updates = $moderate_page_manager->getTheUpdatedPagesByUserIdWithLimit(Acl::userId(), 0, 10);
 	        $this->view->updates = $updates;
 

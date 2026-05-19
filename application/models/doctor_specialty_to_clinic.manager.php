@@ -243,6 +243,16 @@ class DoctorSpecialtyToClinicManager extends ModelManager
 
   public function getListByDoctorSearchParams(DoctorSearchParams $doctor_search_params)
   {
+
+
+         $memcache = Register::get('memcache');
+                                $cache_key = 'list_by_doctor_'.json_encode($doctor_search_params);
+                                $cache = $memcache->get($cache_key);
+                                if ($cache !== false) {
+                                        return $cache;
+                                }
+
+
     $sql = 'SELECT ds2c.*
                     FROM doctor_specialty_to_clinic ds2c
                     INNER JOIN clinic c ON ds2c.clinic_id = c.id
@@ -310,6 +320,8 @@ class DoctorSpecialtyToClinicManager extends ModelManager
 
     $data = $this->db->query($sql);
 
-    return $this->initList($data);
+    $result =  $this->initList($data);
+       $memcache->set($cache_key, $result, 1080);
+                                        return $result;
   }
 }

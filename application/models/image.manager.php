@@ -2,12 +2,24 @@
 	class ImageManager extends ModelManager
 	{
 		protected $table_name = 'image';
+
+
+
 		protected $model_name = 'ImageModel';
 
         protected function beforeSave(DynamicModel $model)
         {
             //ImageWatermarkHelper::setWatermark($model->path);
-        }
+	}
+
+
+
+		       public function getAll() {
+
+
+                        return $this->db->query('select * from image');
+                }
+
 
 		public static function getImage($image_id, $width, $height, $action = "crop")
 		{

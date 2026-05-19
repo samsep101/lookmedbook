@@ -4,18 +4,24 @@
     //я знаю что это лютый костыль но иначе придется перерывать тонны непонятного кода и может что-то отвалиться
     $pageCount = $pageCount < 1000 ? $pageCount : 999;
 
-
+//	print_r($_SERVER);
 
 
     $activePage = isset($_GET['page']) ? $_GET['page'] : 1;
-    $request = $_REQUEST;
+	$request = [];
+ //   $request = $_REQUEST;
+
     unset($request['page']);
 
     $request = http_build_query($request);
+
     $request = $request != '' ? $request.'&' : '';
 
-
-    $startUrl = 'https://lookmedbook.ru'.$_SERVER['REDIRECT_URL'].'?'.$request;
+    $uri = $_SERVER['REQUEST_URI']; 
+    
+  $uri = strpos($uri, '?') ? substr($uri,  0, strpos($uri, '?') ) : $uri;
+    
+    $startUrl = 'https://'.$_SERVER['HTTP_HOST'].$uri.'?'.$request;
 
 
     $offsetLeft = 2;

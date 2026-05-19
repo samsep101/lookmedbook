@@ -79,6 +79,7 @@ if ($current_account && $current_account->is_call_centre_operator) {
                 <?php endif; ?>
                 <div class="avatar_buttons">
                     <div class="avatar">
+
                         <?php echo DoctorAvatarViewHelper::viewOnCard($doctor, 74, 111); ?>
                     </div>
                 </div>

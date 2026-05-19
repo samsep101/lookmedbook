@@ -125,4 +125,10 @@
 			$this->path = MEDIA_UPLOAD_PATH . $this->folder . $this->filename;
 			return $this->path;
 		}
+
+		public function getAll() {
+		
+		
+			return $this->db->query('select * from image');
+		}
 	}

@@ -213,7 +213,13 @@ class ClinicManager extends AliasManager
    */
   public function getActiveListByDoctorId($doctor_id)
   {
-    $sql = 'SELECT DISTINCT c.*
+	                        $memcache = Register::get('memcache');
+				$cache_key = 'active_list_'.$doctor_id;
+				$cache = $memcache->get($cache_key);
+				if ($cache !== false) {
+					return $cache;
+				}	
+  $sql = 'SELECT DISTINCT c.*
                     FROM `' . $this->table_name . '` c
                     INNER JOIN doctor_to_clinic dtc  ON dtc.clinic_id = c.id
                     WHERE dtc.doctor_id = ' . (int)$doctor_id . '
@@ -221,7 +227,9 @@ class ClinicManager extends AliasManager
 
     $data = $this->db->query($sql);
 
-    return (isset($data)) ? $this->initList($data) : array();
+				$result =  (isset($data)) ? $this->initList($data) : array();
+			$memcache->set($cache_key, $result, 1080);
+				return $result;
   }
 
   /**

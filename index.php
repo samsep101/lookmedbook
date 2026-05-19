@@ -1,5 +1,7 @@
 <?php
 
+ini_set('memory_limit', '-1');
+
 if (php_sapi_name() !== 'cli') {
     die();
 }

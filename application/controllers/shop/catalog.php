@@ -119,8 +119,8 @@
                     $this->view->root_product_category = $product_category;
                     $this->view->is_leader             = 1;
                     $this->view->page_title            = 'Лекарства';
-
-                    $this->render('shop/catalog/index');
+		   
+		    $this->render('shop/catalog/index');
                 }
             }
         }
@@ -210,10 +210,28 @@
                 $search_params->full_name = $pattern;
             }
 
-            $search_params->sort_by = 'name';
-            $product_manager        = ModelManagerFactory::getByName('product');
-            $products               = $product_manager->getListByModelSearchCriteria($search_params);
+            //$search_params->sort_by = '_name';
+/*
+	    print_r($search_params);
+	    
+	    $search_params = new ProductSearchCriteria();
+	    $search_params->is_active = 1;
+	    $search_params->is_leader=1;
+          $search_params->by_page = 5;
+            $search_params->page    = 1;
+	    $search_params->get_extra_item = 1;
+	    
+	    
+ */
+	    $search_params->sort_by = "name"; 
+ 	    
+	    
+	    $product_manager        = ModelManagerFactory::getByName('product');
 
+
+
+	    $products               = $product_manager->getListByModelSearchCriteria($search_params);
+//		print_r($products);
             $button_more_enable = '1';
 
             if(count($products) > $search_params->by_page)

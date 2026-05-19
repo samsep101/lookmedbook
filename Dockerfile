@@ -1,4 +1,4 @@
-FROM docker.io/php:5.6-fpm-alpine
+FROM docker.io/php:7.0-fpm-alpine
 
 # Устанавливаем системные зависимости
 RUN apk add --no-cache \
@@ -63,9 +63,9 @@ COPY vendor composer.json composer.lock  ./
 
 COPY . .
 
-RUN chown -R www-data:www-data /var/www \
-    && chmod -R 755 /var/www \
-    && chmod -R 777 /var/www/db /var/www/media /var/www/public;
+#RUN chown -R www-data:www-data /var/www \
+ #   && chmod -R 755 /var/www \
+ #   && chmod -R 777 /var/www/db /var/www/media /var/www/public;
 
 # RUN composer dump-autoload --optimize --ignore-platform-reqs
 

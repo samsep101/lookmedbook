@@ -59,6 +59,7 @@ class Http extends AbstractTransport
             $baseUri = $this->_scheme.'://'.$connection->getHost().':'.$connection->getPort().'/'.$connection->getPath();
         }
 
+
         $requestPath = $request->getPath();
         if (!Util::isDateMathEscaped($requestPath)) {
             $requestPath = Util::escapeDateMath($requestPath);

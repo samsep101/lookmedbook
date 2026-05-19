@@ -34,7 +34,7 @@ $ml->Encoding = 'base64';
 
 $ml->SMTPAuth = true;
 
-$ml->SMTPDebug = 0;
+$ml->SMTPDebug = 1;
  
 
 $ml->Host = 'ssl://smtp.yandex.ru';
@@ -43,7 +43,7 @@ $ml->Port = 465;
 
 $ml->Username = 'info@lookmedbook.ru';
 
-	$ml->Password = 'lvlbedjhffriudmd';
+	$ml->Password = 'gjpetetuyqpulthl';
 
 
 
@@ -196,7 +196,8 @@ EOD;
 
     public function  sendRecordInformation($info){
         $city = SeoLinksHelper::getCityByPageLink();
-        $to = explode(',', 'info@lookmedbook.ru,glyapustina@lookmedbook.ru,Yudin@medcore.ru');
+          //$to = ["relay.samsep101@gmail.com"];   
+	$to = explode(',', 'info@lookmedbook.ru,glyapustina@lookmedbook.ru,Yudin@medcore.ru');
         $subject = 'Заявка на посещение врача номер '.$info['visit_id']."\n";
 
 
@@ -264,6 +265,8 @@ EOD;
 
   public function sendVisitCreatedMessage($info=[])
   {
+
+           //$to = ["relay.samsep101@gmail.com"];
     $to = explode(',', 'info@lookmedbook.ru,glyapustina@lookmedbook.ru,Yudin@medcore.ru');
     $subject = $info['id']['title'].' No:'.$info['id']['value'];
     if(isset($info['fio'])) {
@@ -292,6 +295,7 @@ EOD;
      */
     public static function sendVisitConfirmMessage($visit)
     {
+	//$to = "relay.samsep101@gmail.com";
         $to = 'info@lookmedbook.ru,glyapustina@lookmedbook.ru,Yudin@medcore.ru';
         $subject = 'Заявка номер '.$visit->id.' подтверждена';
  

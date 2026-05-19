@@ -45,6 +45,7 @@
 		{
 			while($data = $this->getModelManager()->getListForAddToIndex(500))
 			{
+				//print_r($data);
 				$this->getIndexManager()->addDocuments($data);
 				$this->getModelManager()->markAsIndexed($data);
 			}

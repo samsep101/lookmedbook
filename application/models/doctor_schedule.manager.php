@@ -46,6 +46,16 @@
          */
 		public function getOneCurrentByDoctorIdAndClinicIdAndSpecialtyId($doctor_id, $clinic_id, $specialty_id)
 		{
+
+			$memcache = Register::get('memcache');
+			$cache_key = join('_', ['schedule',$doctor_id, $clinic_id, $specialty_id]);
+			$cache = $memcache->get(
+				$cache_key
+			);
+
+			if ($cache !== false) 
+				return $cache;
+
 			$sql = 'SELECT *
 				FROM doctor_schedule
 				WHERE doctor_id = ' . (int)$doctor_id . '
@@ -61,7 +71,12 @@
 
 			$data = $this->db->query($sql);
 
-			return ($data) ? $this->initOne($data[0]) : null;
+
+			$result = ($data) ? $this->initOne($data[0]) : null;
+
+
+			$memcache->set($cache_key, $result, 1080);
+			return $result;
 		}
 
 	/**
