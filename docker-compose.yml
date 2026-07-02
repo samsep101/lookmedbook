@@ -53,6 +53,20 @@ services:
       - "11211:11211"
     networks:
       - app-network
+  backup:
+    build: ./backup
+    restart: unless-stopped
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=lookmedbook
+      - DB_PASSWORD=dfghmt563
+      - DB_NAME=look
+    volumes:
+      - ../backups/lookmedbook:/backups
+    networks:
+      - app-network  
+    depends_on:
+      - mysql
   mysql:
     restart: unless-stopped
     deploy:
@@ -66,7 +80,7 @@ services:
       - "3306:3306"  # Опционально, если нужен доступ с хоста
     environment:
       - MYSQL_ROOT_PASSWORD=dfghmt563
-      - MYSQL_DATABASE=lookmedbook
+      - MYSQL_DATABASE=look
       - MYSQL_USER=lookmedbook  # Опционально
       - MYSQL_PASSWORD=dfghmt563  # Опционально
     volumes:
