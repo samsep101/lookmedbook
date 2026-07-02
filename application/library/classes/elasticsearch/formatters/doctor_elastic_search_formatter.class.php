@@ -161,16 +161,17 @@
 			$result['is_children'] = (bool)$doctor->is_children;
 			$result['is_pregnant'] = (bool)$doctor->is_pregnant;
 			$result['balls'] = $doctor->balls;
-			$result['rate'] = $doctor->rate;
+			$result['rate'] = (float)$doctor->rate;
 
 
 			$result['is_has_active_clinic'] = (bool)($doctor->clinics);
+//            print_r($doctor->clinics);
             /**
              * @var ClinicManager $clinic_manager
              */
             $clinic_manager = ModelManagerFactory::getByName('clinic');
             $result['is_has_clinic'] = (bool)$clinic_manager->getListByDoctorId($doctor->getId());
-		echo 'new doc';
+//		echo 'new doc';
 			return new Elastica\Document($doctor->getId(), $result);
 		}
 	}

@@ -571,30 +571,30 @@ class DoctorController extends BaseController
     {
 
 
-      if (isset($_GET['debug'])){
-
-        //$search = new ElasticSearchDoctorIndexControl();
-//print_r($search->buildQueryObject());
-
-        $doctorSearchParams = DoctorSearchHelper::initDoctorSearchParams($this->request, $this->city->getId());
-
-	print_r($this->city->getId());
-	$doctorSearchAlgorithm = new DoctorSearchAlgorithm();
-        $doctorSearchAlgorithm->setIsSearchNearestAllowed(true);
-        $doctors = $doctorSearchAlgorithm->search($doctorSearchParams);
-
-
-	print_r($doctors);
-  
-
-        $search = new ElasticSearchDoctorIndexControl();
-	
-	print_r($search);
-	print_r($search->buildQueryObject($doctorSearchParams));
-
-
-       return exit(1);
-       }
+//      if (isset($_GET['debug'])){
+//
+//        //$search = new ElasticSearchDoctorIndexControl();
+////print_r($search->buildQueryObject());
+//
+//        $doctorSearchParams = DoctorSearchHelper::initDoctorSearchParams($this->request, $this->city->getId());
+//
+////	print_r($this->city->getId());
+//	$doctorSearchAlgorithm = new DoctorSearchAlgorithm();
+////        $doctorSearchAlgorithm->setIsSearchNearestAllowed(true);
+//        $doctors = $doctorSearchAlgorithm->search($doctorSearchParams);
+//
+//
+//	print_r($doctors);
+//
+//
+//        $search = new ElasticSearchDoctorIndexControl();
+////
+////	print_r($search);
+////	print_r($search->buildQueryObject($doctorSearchParams));
+//
+//
+//       return exit(1);
+//       }
 
 
 

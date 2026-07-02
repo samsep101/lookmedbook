@@ -180,7 +180,11 @@ class ProductManager extends AliasManager
     try {
       $ids = $index_control->search($criteria);
     } catch (Exception $e) {
-      $ids = [];
+        if (debug) {
+            print_r($e);
+        }
+        $ids = [];
+
     }
 
     return $this->getListByIds($ids);

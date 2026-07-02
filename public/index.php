@@ -1,6 +1,5 @@
 <?php
 
-
 ini_set('memory_limit', '-1');
 
 if (php_sapi_name()!='cli') {
@@ -14,7 +13,7 @@ if(!empty($_SERVER['SERVER_NAME'])){
     define('SERVER_NAME', 'lookmedbook.ru');
 }
 
-define(debug, true);
+define(debug, false);
 // абсолютный путь до корня сайта
 define('ABS_ROOT', realpath(__DIR__ . '/../'));
 define('PUBLIC_ROOT', realpath(__DIR__));

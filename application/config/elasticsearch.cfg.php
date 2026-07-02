@@ -10,17 +10,20 @@
 	Register::add('ELASTIC_SEARCH_CACHE', 'lookmedbook_cache');
 
         Register::add('ELASTICA_SERVERS', array(
-                "servers" => array(
-			array(
+          //      "servers" => array(
+	//		array(
                         	'host' => 'elastic',
-                        	'port' => 9200
-               		),
+				'port' => 9200,
+				'password' => "/1}M~9;A@]^=RYduf/*",
+				'username'=>'elastic'	
+//               		),
 		/*	[
 				'host' => 'localhost',
 				'port' => 9100
 			]
 */ )	
-        ));
+	//)
+	);
 
 	$index_models = array(
 		'ProductModel',

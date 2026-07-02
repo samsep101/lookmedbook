@@ -82,7 +82,9 @@ class DoctorSearchAlgorithm
 
   public function search(DoctorSearchParams $doctor_search_params)
   {
-    $doctor_search_params = $this->prepareSearchParams($doctor_search_params);
+
+
+  $doctor_search_params = $this->prepareSearchParams($doctor_search_params);
 
     $doctors = $this->manager->getListByDoctorSearchParams($doctor_search_params);
     $this->totalDoctorCount = $this->manager->getTotalHits();

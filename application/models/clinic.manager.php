@@ -693,6 +693,10 @@ class ClinicManager extends AliasManager
     try {
       $result = $clinic_index_manager->search($clinic_search_params, $get_total_hits);
     }catch(Exception $e) {
+        if (debug) {
+            print_r($e);
+//            $e->getMessage());
+        }
       $result = [];
     }
     $this->total_hits = $clinic_index_manager->getTotalHits();

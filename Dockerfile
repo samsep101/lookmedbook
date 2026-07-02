@@ -25,9 +25,14 @@ RUN apk add --no-cache --virtual .build-deps \
         g++ \
         make \
         libc-dev \
-        pcre-dev \
-    && pecl install memcache-2.2.7 \
-    && docker-php-ext-enable memcache
+        pcre-dev;
+
+
+RUN pecl install memcache-4.0.5.2
+
+
+
+RUN docker-php-ext-enable memcache
 
 # RUN apk add --no-cache libmemcached-dev \
     # && pecl install memcache-3.0.8 \

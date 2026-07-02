@@ -334,6 +334,9 @@ class DoctorManager extends AliasManager
         try {
             $ids = $search->search($doctor_search_params);
         } catch (Exception $e) {
+            if (debug) {
+                print_r($e);
+            }
             $ids = [];
         }
 
