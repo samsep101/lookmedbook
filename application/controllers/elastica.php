@@ -321,6 +321,26 @@ class ElasticaController extends BaseController
     $doctor_index_command->reIndexAll();
   }
 
+  public function reindexSingleDoctor()
+  {
+      ini_set('memory_limit', '512M');
+      ModelManager::disableEntityMapGlobal();
+
+      // IDs for Golubinskaya (Irina and Olga)
+      $ids = [229132, 148101];
+
+      $doctorManager = new SearchIndexDoctorManager();
+      $doctors = $doctorManager->getListByIds($ids);
+
+      if ($doctors) {
+          $index_manager = new ElasticSearchDoctorIndexControl();
+          $index_manager->addDocuments($doctors);
+          echo "Doctors " . implode(', ', $ids) . " indexed successfully.\n";
+      } else {
+          echo "Doctors not found.\n";
+      }
+  }
+
   public function reindexDiseases()
   {
     $disease_index_command = new DiseaseIndexCommand();
