@@ -177,7 +177,47 @@ class ImportController extends BaseController
             self::log("Finished import clinics' services from cityId=$docDocCityId");
         }
     }
+    public function testFaceClinic()
+    {
+        set_time_limit(0);
+        $clinicManager = new ClinicManager();
+        $dbClinic = $clinicManager->getOneById(11552);
 
+        if (!$dbClinic || !$dbClinic->docdoc_id) {
+            echo "Clinic 11552 not found or no docdoc_id\n";
+            return;
+        }
+
+        try {
+            $fullClinicInfo = json_decode(file_get_contents(sprintf($this->clinicFullInfoDataUrl, $dbClinic->docdoc_id)), true);
+            $fullClinicInfo = $fullClinicInfo['Clinic'][0];
+        } catch (\Exception $exception) {
+            echo "Failed to fetch full clinic info\n";
+            return;
+        }
+
+        $docDocClinic = [
+            'Id' => $fullClinicInfo['Id'],
+            'Description' => $fullClinicInfo['Description'] ?? '',
+            'Name' => $fullClinicInfo['Name'],
+            'URL' => $fullClinicInfo['URL'] ?? '',
+            'IsDoctor' => $fullClinicInfo['IsDoctor'] ?? 'yes',
+            'IsDiagnostic' => $fullClinicInfo['IsDiagnostic'] ?? 'yes',
+            'Latitude' => $fullClinicInfo['Latitude'] ?? '',
+            'Longitude' => $fullClinicInfo['Longitude'] ?? '',
+            'House' => $fullClinicInfo['House'] ?? '',
+            'StreetId' => $fullClinicInfo['StreetId'] ?? '',
+            'Phone' => $fullClinicInfo['Phone'] ?? '',
+            'Logo' => $fullClinicInfo['Logo'] ?? '',
+            'Rating' => $fullClinicInfo['Rating'] ?? 0,
+            'Stations' => $fullClinicInfo['Stations'] ?? []
+        ];
+
+        // This will update the clinic, import doctors for it, and download ALL images that are missing or broken
+        $this->createOrUpdateClinic($dbClinic, $docDocClinic, $dbClinic->city_id, true);
+
+        echo "Clinic {$dbClinic->id} import complete!\n";
+    }
     /**
      * Импорт клиник с DocDoc.ru по конкретному городу
      * @param $cityId
@@ -1012,12 +1052,18 @@ $context = stream_context_create($opts);
 
                 // продолжаем процесс только если картинка сохранена
                 if(false !== file_put_contents($tmpName, file_get_contents($picture['url']))){
-                    chmod($tmpName , 0755);
-                    $imageId = ImageUploader::upload(['upload_folder' => 'clinic/license/'], ['name' => 'clinic_' . $dbClinicId . '_' . $idx . '.jpg', 'tmp_name' => $tmpName], 'clinic_'.$dbClinicId . '_' . $idx);
-                    $imageIds[] = $imageId;
+                    if (getimagesize($tmpName) !== false) {
+                        chmod($tmpName , 0755);
+                        $imageId = ImageUploader::upload(['upload_folder' => 'clinic/license/'], ['name' => 'clinic_' . $dbClinicId . '_' . $idx . '.jpg', 'tmp_name' => $tmpName], 'clinic_'.$dbClinicId . '_' . $idx);
+                        $imageIds[] = $imageId;
 
-                    if (file_exists($tmpName)) {
-                        @unlink($tmpName);
+                        if (file_exists($tmpName)) {
+                            @unlink($tmpName);
+                        }
+                    } else {
+                        if (file_exists($tmpName)) {
+                            @unlink($tmpName);
+                        }
                     }
                 }
             }
