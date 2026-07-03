@@ -1169,6 +1169,28 @@ $context = stream_context_create($opts);
             @unlink(ABS_ROOT . $clinicImage->path);
         }
 
+        $opts = [
+            'http' => [
+                'method' => "GET",
+                'header' => implode("\n", [
+                       'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0',
+                        'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                        'Accept-Language: ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3',
+                        'Accept-Encoding: gzip, deflate, br, zstd',
+                        'Connection: keep-alive',
+                        'Upgrade-Insecure-Requests: 1',
+                        'Sec-Fetch-Dest: document',
+                        'Sec-Fetch-Mode: navigate',
+                        'Sec-Fetch-Site: none',
+                        'Sec-Fetch-User: ?1',
+                        'Priority: u=0, i',
+                        'Pragma: no-cache',
+                        'Cache-Control: no-cache'
+                ])
+            ]
+        ];
+        $context = stream_context_create($opts);
+
         $imageIds = [];
         foreach ($pictures as $idx => $picture) {
             if (isset($picture['url'])){
@@ -1179,7 +1201,7 @@ $context = stream_context_create($opts);
                 }
 
                 // продолжаем процесс только если картинка сохранена
-                if(false !== file_put_contents($tmpName, file_get_contents($picture['url']))){
+                if(false !== file_put_contents($tmpName, @file_get_contents($picture['url'], false, $context))){
                     if (getimagesize($tmpName) !== false) {
                         chmod($tmpName , 0755);
                         $imageId = ImageUploader::upload(['upload_folder' => 'clinic/license/'], ['name' => 'clinic_' . $dbClinicId . '_' . $idx . '.jpg', 'tmp_name' => $tmpName], 'clinic_'.$dbClinicId . '_' . $idx);
@@ -1583,9 +1605,9 @@ $context = stream_context_create($opts);
 
         /** @var SpecialtyManager $specialtyManager */
         $specialtyManager = ModelManagerFactory::getByName('specialty');
-
-        foreach ($ddSpecialities as $ddSpeciality) {
-            // try to update by name
+        if (is_array($ddSpecialities)) {
+            foreach ($ddSpecialities as $ddSpeciality) {
+                // try to update by name
             $specialty = $specialtyManager->getOneByDocDocId((int)$ddSpeciality['Id']);
             if (!$specialty) {
                 $specialty = $specialtyManager->getOneByName(trim($ddSpeciality['Name']));
@@ -1596,6 +1618,7 @@ $context = stream_context_create($opts);
                 } else {
                     self::log('Specialty wasn\'t found: ' . $ddSpeciality['Name'] . ' id=' . $ddSpeciality['Id']);
                 }
+            }
             }
         }
         self::log('Done!');
@@ -1701,9 +1724,11 @@ $context = stream_context_create($opts);
 
             $docDocRegions = $this->getRegionsInfoByDocDocId($docDocRegionId, $cityId);
             $matchTable = [];
-            foreach ($docDocRegions as $id => $region) {
-                if (!empty($region['SiteId'])) {
-                    $matchTable[$id] = $region['SiteId'];
+            if (is_array($docDocRegions)) {
+                foreach ($docDocRegions as $id => $region) {
+                    if (!empty($region['SiteId'])) {
+                        $matchTable[$id] = $region['SiteId'];
+                    }
                 }
             }
         }

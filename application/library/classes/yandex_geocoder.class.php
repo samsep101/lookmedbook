@@ -25,12 +25,13 @@
 			$region_name = '';
             $this->getApiDataByGeoPointAndKind($geo_point, 'district');
             $api_data = $this->api_data;
-			foreach($api_data['response']['GeoObjectCollection']['featureMember'] as $v)
-			{
-				if (mb_strpos($v['GeoObject']['name'], 'район', null, 'utf-8') !== FALSE)
+			if (isset($api_data['response']['GeoObjectCollection']['featureMember']) && is_array($api_data['response']['GeoObjectCollection']['featureMember'])) {
+				foreach($api_data['response']['GeoObjectCollection']['featureMember'] as $v)
 				{
-
-					$region_name = $v['GeoObject']['name'];
+					if (mb_strpos($v['GeoObject']['name'], 'район', null, 'utf-8') !== FALSE)
+					{
+						$region_name = $v['GeoObject']['name'];
+					}
 				}
 			}
 
@@ -72,7 +73,7 @@
             $url = str_replace('%name%',urlencode($geo_point->getLongitude().','.$geo_point->getLatitude()), $url);
 
 
-            $api_data = file_get_contents($url);
+            $api_data = @file_get_contents($url);
             $api_data = json_decode($api_data, true);
 
             $this->api_data = $api_data;
