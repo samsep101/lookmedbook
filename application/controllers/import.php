@@ -198,19 +198,19 @@ class ImportController extends BaseController
 
         $docDocClinic = [
             'Id' => $fullClinicInfo['Id'],
-            'Description' => $fullClinicInfo['Description'] ?? '',
+            'Description' => isset($fullClinicInfo['Description']) ? $fullClinicInfo['Description'] : '',
             'Name' => $fullClinicInfo['Name'],
-            'URL' => $fullClinicInfo['URL'] ?? '',
-            'IsDoctor' => $fullClinicInfo['IsDoctor'] ?? 'yes',
-            'IsDiagnostic' => $fullClinicInfo['IsDiagnostic'] ?? 'yes',
-            'Latitude' => $fullClinicInfo['Latitude'] ?? '',
-            'Longitude' => $fullClinicInfo['Longitude'] ?? '',
-            'House' => $fullClinicInfo['House'] ?? '',
-            'StreetId' => $fullClinicInfo['StreetId'] ?? '',
-            'Phone' => $fullClinicInfo['Phone'] ?? '',
-            'Logo' => $fullClinicInfo['Logo'] ?? '',
-            'Rating' => $fullClinicInfo['Rating'] ?? 0,
-            'Stations' => $fullClinicInfo['Stations'] ?? []
+            'URL' => isset($fullClinicInfo['URL']) ? $fullClinicInfo['URL'] : '',
+            'IsDoctor' => isset($fullClinicInfo['IsDoctor']) ? $fullClinicInfo['IsDoctor'] : 'yes',
+            'IsDiagnostic' => isset($fullClinicInfo['IsDiagnostic']) ? $fullClinicInfo['IsDiagnostic'] : 'yes',
+            'Latitude' => isset($fullClinicInfo['Latitude']) ? $fullClinicInfo['Latitude'] : '',
+            'Longitude' => isset($fullClinicInfo['Longitude']) ? $fullClinicInfo['Longitude'] : '',
+            'House' => isset($fullClinicInfo['House']) ? $fullClinicInfo['House'] : '',
+            'StreetId' => isset($fullClinicInfo['StreetId']) ? $fullClinicInfo['StreetId'] : '',
+            'Phone' => isset($fullClinicInfo['Phone']) ? $fullClinicInfo['Phone'] : '',
+            'Logo' => isset($fullClinicInfo['Logo']) ? $fullClinicInfo['Logo'] : '',
+            'Rating' => isset($fullClinicInfo['Rating']) ? $fullClinicInfo['Rating'] : 0,
+            'Stations' => isset($fullClinicInfo['Stations']) ? $fullClinicInfo['Stations'] : []
         ];
 
         // This will update the clinic, import doctors for it, and download ALL images that are missing or broken
