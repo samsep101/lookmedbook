@@ -218,6 +218,134 @@ class ImportController extends BaseController
 
         echo "Clinic {$dbClinic->id} import complete!\n";
     }
+
+    public function testSingleDoctor()
+    {
+        set_time_limit(0);
+        $docdoc_id = 144648; // novoselova-natalya-gennadevna
+
+        try {
+            $s = file_get_contents($this->doctorDataUrl . $docdoc_id . '/withSlots/1');
+            $docdata = json_decode($s);
+            if (!isset($docdata->Doctor[0])) {
+                echo "Doctor not found in docdoc\n";
+                return;
+            }
+            $docdata = $docdata->Doctor[0];
+        } catch (Exception $exp) {
+            echo "Exception fetching doctor\n";
+            return;
+        }
+
+        $doctorManager = new DoctorManager();
+        $doctor = $doctorManager->getOneByDocDocId($docdata->Id);
+        if (!$doctor) {
+            echo "Doctor not found in DB\n";
+            return;
+        }
+
+        echo "Doctor {$doctor->id} found in DB.\n";
+
+        $needsDownload = true;
+        if ($doctor->image_id) {
+            $imageManager = new ImageManager();
+            $existingImage = $imageManager->getOneById($doctor->image_id);
+            if ($existingImage) {
+                $existingPath = ABS_ROOT . $existingImage->path;
+                if (file_exists($existingPath) && getimagesize($existingPath) !== false) {
+                    $needsDownload = false;
+                    echo "Doctor already has a valid image.\n";
+                } else {
+                    echo "Doctor has broken or missing image, needs download.\n";
+                }
+            } else {
+                echo "Doctor image record missing, needs download.\n";
+            }
+        } else {
+            echo "Doctor has no image_id, needs download.\n";
+        }
+
+        if ($needsDownload && $docdata->Img) {
+            $opts = [
+                'http' => [
+                    'method' => "GET",
+                    'header' => implode("\n", [
+                           'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0',
+                            'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                            'Accept-Language: ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3',
+                            'Accept-Encoding: gzip, deflate, br, zstd',
+                            'Connection: keep-alive',
+                            'Upgrade-Insecure-Requests: 1',
+                            'Sec-Fetch-Dest: document',
+                            'Sec-Fetch-Mode: navigate',
+                            'Sec-Fetch-Site: none',
+                            'Sec-Fetch-User: ?1',
+                            'Priority: u=0, i',
+                            'Pragma: no-cache',
+                            'Cache-Control: no-cache'
+                    ])
+                ]
+            ];
+            $context = stream_context_create($opts);
+
+            $tmp_name = ABS_ROOT.'/media/upload/clinic/license/tmp_doctor_'.$doctor->id.'.jpg';
+            echo "tmp file name: ".$tmp_name."\n";
+            if (file_exists($tmp_name)) {
+                @unlink($tmp_name);
+            }
+
+            echo "Downloading from: " . $docdata->Img . "\n";
+            $data = file_get_contents($docdata->Img, false, $context);
+            if(false !== file_put_contents($tmp_name, $data)) {
+                if (getimagesize($tmp_name) !== false) {
+                    echo "Valid image downloaded!\n";
+                    $imageIds = [];
+                    if ($doctor->image_id) {
+                        $imageIds[] = $doctor->image_id;
+                    }
+                    if ($doctor->card_image_id) {
+                        $imageIds[] = $doctor->card_image_id;
+                    }
+                    if ($imageIds) {
+                        $imageManager = new ImageManager();
+                        $images = $imageManager->getListByIds($imageIds);
+                        foreach ($images as $image) {
+                            $image->delete();
+                            @unlink(ABS_ROOT . $image->path);
+                        }
+                    }
+
+                    chmod($tmp_name , 0755);
+
+                    $image_id = ImageUploader::upload(['upload_folder' => 'clinic/license/'], ['name' => 'doctor_'.$doctor->id.'.jpg', 'tmp_name' => $tmp_name], 'doctor_'.$doctor->id);
+                    echo "Saved new image_id = ".$image_id."\n";
+                    $doctor->image_id = $image_id;
+                    $doctor->card_image_id = $image_id;
+
+                    if (file_exists($tmp_name)) {
+                        @unlink($tmp_name);
+                    }
+
+                    $q = "delete from image_to_doctor where doctor_id=?";
+                    $this->db->query($q, [$doctor->id]);
+
+                    $q = "insert into image_to_doctor set doctor_id=?, image_id=?";
+                    $this->db->query($q, [$doctor->id, $image_id]);
+                    $doctor->save();
+                    echo "Doctor saved successfully.\n";
+                } else {
+                    echo "Downloaded file is NOT a valid image (broken or 404).\n";
+                    if (file_exists($tmp_name)) {
+                        @unlink($tmp_name);
+                    }
+                }
+            } else {
+                echo "Failed to save file locally.\n";
+            }
+        } else {
+            echo "Skipping image download.\n";
+        }
+    }
     /**
      * Импорт клиник с DocDoc.ru по конкретному городу
      * @param $cityId
