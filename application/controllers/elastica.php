@@ -328,17 +328,17 @@ class ElasticaController extends BaseController
 
       // IDs for Golubinskaya (Irina and Olga)
       $ids = [229132, 148101];
+      $idString = implode(',', $ids);
 
-      $doctorManager = new SearchIndexDoctorManager();
-      $doctors = $doctorManager->getListByIds($ids);
+      // Force mark them for indexing
+      $db = DBFactory::getInstance();
+      $db->query("UPDATE doctor SET is_need_to_index_update = 0");
+      $db->query("UPDATE doctor SET is_need_to_index_update = 1 WHERE id IN ($idString)");
 
-      if ($doctors) {
-          $index_manager = new ElasticSearchDoctorIndexControl();
-          $index_manager->addDocuments($doctors);
-          echo "Doctors " . implode(', ', $ids) . " indexed successfully.\n";
-      } else {
-          echo "Doctors not found.\n";
-      }
+      $doctor_index_command = new DoctorIndexCommand();
+      $doctor_index_command->processNotIndexedDocuments();
+
+      echo "Doctors " . $idString . " indexed successfully using processNotIndexedDocuments.\n";
   }
 
   public function reindexDiseases()
