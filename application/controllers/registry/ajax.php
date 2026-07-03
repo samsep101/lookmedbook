@@ -1276,7 +1276,7 @@ class AjaxRegistryController extends BaseController
         $doctor_specialties_to_clinic = $doctor_specialty_to_clinic_manager->getListByClinicIdAndDoctorId($clinic_id, $doctor_id);
         if ($doctor_specialties_to_clinic) {
           foreach ($doctor_specialties_to_clinic as $doctor_specialty_to_clinic) {
-            $doctor_specialty_to_clinic->is_to_delete = 0;
+            $doctor_specialty_to_clinic->is_to_delete = null;
             $doctor_specialty_to_clinic->save();
           }
         }
@@ -1285,7 +1285,7 @@ class AjaxRegistryController extends BaseController
         $purposes_of_visit_to_doctor = $purpose_of_visit_to_doctor_manager->getListByDoctorIdAndClinicId($doctor_id, $clinic_id);
         if ($purposes_of_visit_to_doctor) {
           foreach ($purposes_of_visit_to_doctor as $purpose_of_visit_to_doctor) {
-            $purpose_of_visit_to_doctor->is_to_delete = 0;
+            $purpose_of_visit_to_doctor->is_to_delete = null;
             $purpose_of_visit_to_doctor->save();
           }
         }

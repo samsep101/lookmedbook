@@ -526,46 +526,62 @@ $context = stream_context_create($opts);
 
         if ($loadImage && isset($docDocClinic['Logo'])) {
 
-            $tmp_name = ABS_ROOT . '/media/upload/clinic/tmp_clinic_' . $dbClinic->docdoc_id . '.jpg';
-            self::log("tmp file name:" . $tmp_name);
-            if (file_exists($tmp_name)) {
-                @unlink($tmp_name);
-            }
-		
-
-	    $data =  file_get_contents($docDocClinic['Logo'], false, $context);
-
-	    print_r($data);
-            // продолжаем процесс только если картинка сохранена
-            if (false !== file_put_contents($tmp_name, $data)) {
-                $imageIds = [];
-                if ($dbClinic->image_id) {
-                    $imageIds[] = $dbClinic->image_id;
-                }
-                if ($dbClinic->card_image_id) {
-                    $imageIds[] = $dbClinic->card_image_id;
-                }
-                if ($imageIds) {
-                    $imageManager = new ImageManager();
-                    /** @var ImageModel[] $images */
-                    $images = $imageManager->getListByIds($imageIds);
-                    foreach ($images as $image) {
-                        $image->delete();
-                        @unlink(ABS_ROOT . $image->path);
+            $needsDownload = true;
+            if ($dbClinic->image_id) {
+                $imageManager = new ImageManager();
+                $existingImage = $imageManager->getOneById($dbClinic->image_id);
+                if ($existingImage) {
+                    $existingPath = ABS_ROOT . $existingImage->path;
+                    if (file_exists($existingPath) && getimagesize($existingPath) !== false) {
+                        $needsDownload = false;
                     }
                 }
+            }
 
-                chmod($tmp_name , 0755);
-
-
-                $image_id = ImageUploader::upload(['upload_folder' => 'clinic/logo/'], ['name' => 'clinic_'.$dbClinic->docdoc_id.'.jpg', 'tmp_name' => $tmp_name], 'clinic_'.$dbClinic->docdoc_id);
-
-                $dbClinic->image_id = $image_id;
-                $dbClinic->card_image_id = $image_id;
-
-                if (file_exists($tmp_name))
-                {
+            if ($needsDownload) {
+                $tmp_name = ABS_ROOT . '/media/upload/clinic/tmp_clinic_' . $dbClinic->docdoc_id . '.jpg';
+                self::log("tmp file name:" . $tmp_name);
+                if (file_exists($tmp_name)) {
                     @unlink($tmp_name);
+                }
+
+                $data = file_get_contents($docDocClinic['Logo'], false, $context);
+
+                // продолжаем процесс только если картинка сохранена
+                if (false !== file_put_contents($tmp_name, $data)) {
+                    if (getimagesize($tmp_name) !== false) {
+                        $imageIds = [];
+                        if ($dbClinic->image_id) {
+                            $imageIds[] = $dbClinic->image_id;
+                        }
+                        if ($dbClinic->card_image_id) {
+                            $imageIds[] = $dbClinic->card_image_id;
+                        }
+                        if ($imageIds) {
+                            $imageManager = new ImageManager();
+                            /** @var ImageModel[] $images */
+                            $images = $imageManager->getListByIds($imageIds);
+                            foreach ($images as $image) {
+                                $image->delete();
+                                @unlink(ABS_ROOT . $image->path);
+                            }
+                        }
+
+                        chmod($tmp_name , 0755);
+
+                        $image_id = ImageUploader::upload(['upload_folder' => 'clinic/logo/'], ['name' => 'clinic_'.$dbClinic->docdoc_id.'.jpg', 'tmp_name' => $tmp_name], 'clinic_'.$dbClinic->docdoc_id);
+
+                        $dbClinic->image_id = $image_id;
+                        $dbClinic->card_image_id = $image_id;
+
+                        if (file_exists($tmp_name)) {
+                            @unlink($tmp_name);
+                        }
+                    } else {
+                        if (file_exists($tmp_name)) {
+                            @unlink($tmp_name);
+                        }
+                    }
                 }
             }
         }
@@ -739,7 +755,19 @@ $context = stream_context_create($opts);
                 }
 
 		
-                if (($isNewDoctor || true) && $docdata->Img){
+                $needsDownload = true;
+                if ($doctor->image_id) {
+                    $imageManager = new ImageManager();
+                    $existingImage = $imageManager->getOneById($doctor->image_id);
+                    if ($existingImage) {
+                        $existingPath = ABS_ROOT . $existingImage->path;
+                        if (file_exists($existingPath) && getimagesize($existingPath) !== false) {
+                            $needsDownload = false;
+                        }
+                    }
+                }
+
+                if ($needsDownload && $docdata->Img) {
                     $tmp_name = ABS_ROOT.'/media/upload/clinic/license/tmp_doctor_'.$doctor->id.'.jpg';
                     self::log("tmp file name:".$tmp_name);
                     if (file_exists($tmp_name)) {
@@ -747,51 +775,54 @@ $context = stream_context_create($opts);
                     }
 
                     // продолжаем процесс только если картинка сохранена
+                    if(false !== file_put_contents($tmp_name, file_get_contents($docdata->Img, false, $context))) {
+                        if (getimagesize($tmp_name) !== false) {
+                            print_r($docdata->Img);
+                            $imageIds = [];
+                            if ($doctor->image_id) {
+                                $imageIds[] = $doctor->image_id;
+                            }
+                            if ($doctor->card_image_id) {
+                                $imageIds[] = $doctor->card_image_id;
+                            }
+                            if ($imageIds) {
+                                $imageManager = new ImageManager();
+                                /** @var ImageModel[] $images */
+                                $images = $imageManager->getListByIds($imageIds);
+                                foreach ($images as $image) {
+                                    $image->delete();
+                                    @unlink(ABS_ROOT . $image->path);
+                                }
+                            }
 
-		    if(false !== file_put_contents($tmp_name, file_get_contents($docdata->Img, false, $context))){
-			
-		    	print_r($docdata->Img);
-                        $imageIds = [];
-                        if ($doctor->image_id) {
-                            $imageIds[] = $doctor->image_id;
-                        }
-                        if ($doctor->card_image_id) {
-                            $imageIds[] = $doctor->card_image_id;
-                        }
-                        if ($imageIds) {
-                            $imageManager = new ImageManager();
-                            /** @var ImageModel[] $images */
-                            $images = $imageManager->getListByIds($imageIds);
-                            foreach ($images as $image) {
-                                $image->delete();
-                                @unlink(ABS_ROOT . $image->path);
+                            chmod($tmp_name , 0755);
+
+                            $image_id = ImageUploader::upload(['upload_folder' => 'clinic/license/'], ['name' => 'doctor_'.$doctor->id.'.jpg', 'tmp_name' => $tmp_name], 'doctor_'.$doctor->id);
+                            echo 'image_id = '.$image_id;
+                            $doctor->image_id = $image_id;
+                            $doctor->card_image_id = $image_id;
+
+                            if (file_exists($tmp_name)) {
+                                @unlink($tmp_name);
+                            }
+
+                            $q = "delete from image_to_doctor where doctor_id=?";
+                            $this->db->query($q, [$doctor->id]);
+
+                            $q = "insert into image_to_doctor set doctor_id=?, image_id=?";
+                            $this->db->query($q, [$doctor->id, $image_id]);
+                        } else {
+                            echo 'скачанный файл не является картинкой';
+                            if (file_exists($tmp_name)) {
+                                @unlink($tmp_name);
                             }
                         }
-
-
-                        chmod($tmp_name , 0755);
-
-                        $image_id = ImageUploader::upload(['upload_folder' => 'clinic/license/'], ['name' => 'doctor_'.$doctor->id.'.jpg', 'tmp_name' => $tmp_name], 'doctor_'.$doctor->id);
-			echo 'image_id = '.$image_id;
-                        $doctor->image_id = $image_id;
-                        $doctor->card_image_id = $image_id;
-
-                        if (file_exists($tmp_name)) {
-                            @unlink($tmp_name);
-                        }
-
-                        $q = "delete from image_to_doctor where doctor_id=?";
-                        $this->db->query($q, [$doctor->id]);
-
-                        $q = "insert into image_to_doctor set doctor_id=?, image_id=?";
-                        $this->db->query($q, [$doctor->id, $image_id]);
-		    }else {
-	
-			echo 'картинка не сохранена';
-		}
-		}else {
-			echo 'pass';
-		}
+                    } else {
+                        echo 'картинка не сохранена';
+                    }
+                } else {
+                    echo 'pass';
+                }
 		
                 $doctor->save();
             }

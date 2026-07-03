@@ -740,7 +740,7 @@
              */
             $specialty_manager = ModelManagerFactory::getByName('specialty');
 
-            return $specialty_manager->getDoctorSpecialtyListByClinicId($this->getId(), $clinic_id);
+            return $specialty_manager->getDoctorSpecialtyListByDoctorIdAndClinicId($this->getId(), $clinic_id);
         }
 
         public function isWorkInClinic($clinic_id)

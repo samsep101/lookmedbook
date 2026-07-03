@@ -655,6 +655,19 @@
             return $this->initList($data);
         }
 
+        public function getDoctorSpecialtyListByDoctorIdAndClinicId($doctor_id, $clinic_id)
+        {
+            $sql = 'SELECT s.*
+                    FROM specialty s
+                    INNER JOIN doctor_specialty_to_clinic ds2c ON ds2c.specialty_id = s.id
+                    WHERE ds2c.doctor_id = ' . (int)$doctor_id . ' AND ds2c.clinic_id = ' . (int)$clinic_id . '
+                    GROUP BY s.id';
+
+            $data = $this->db->query($sql);
+
+            return $this->initList($data);
+        }
+
         public function getSuitableListBySpecialtyIdAndPurposeOfVisitId($specialty_ids, $purpose_of_visit_id)
         {
           $specialty_ids = implode(", ", array_map('intval', $specialty_ids));
