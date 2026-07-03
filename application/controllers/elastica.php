@@ -331,7 +331,7 @@ class ElasticaController extends BaseController
       $idString = implode(',', $ids);
 
       // Force mark them for indexing
-      $db = DBFactory::getInstance();
+      $db = Register::get('db');
       $db->query("UPDATE doctor SET is_need_to_index_update = 0");
       $db->query("UPDATE doctor SET is_need_to_index_update = 1 WHERE id IN ($idString)");
 
